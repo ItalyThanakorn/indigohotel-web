@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17243a">
+  <link rel="icon" type="image/png" href="../assets/images/bestier-mark.png">
+  <meta name="description" content="ส่งคำขอสำรองห้องพักกับ Bestier Hotel หาดใหญ่">
+  <title>สำรองห้องพัก | Bestier Hotel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/bestier.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html#home" aria-label="Bestier Hotel home"><img class="brand-logo" src="../assets/images/bestier-logo-lockup.png" alt="Bestier by Indigo Hat Yai Hotel"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="เปิดเมนู"><span></span><span></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="เมนูหลัก"><a href="index.html#home">หน้าแรก</a><a href="index.html#philosophy">ปรัชญาของเรา</a><a href="rooms.html">ห้องพัก</a><a href="dining.html">ห้องอาหาร</a><a href="contact.html">ติดต่อและทำเล</a><a class="nav-book" href="booking.html" aria-current="page">สำรองห้องพัก <span>↗</span></a></nav>
+  </header>
+  <main>
+    <section class="page-hero" style="background-image:linear-gradient(90deg,#111c2bd9,#111c2b30),url('../assets/images/deluxe-room-cover.jpg')">
+      <div><span class="eyebrow">YOUR STAY, YOUR WAY</span><h1>เริ่มต้นการพักผ่อน<br><i>ที่เป็นของคุณ</i></h1><p>บอกวันเดินทางและรายละเอียดที่ต้องการ ทีมงาน Bestier จะช่วยดูแลคำขอของคุณ</p></div>
+    </section>
+    <section class="page-content">
+      <div class="reservation-layout">
+        <form class="reservation-form" id="reservationForm">
+          <span class="eyebrow">PLAN YOUR STAY</span><h2>วางแผนการเข้าพัก</h2><p class="form-note">กรอกข้อมูลเพื่อเตรียมรายละเอียดการเดินทาง ขณะนี้แบบฟอร์มยังไม่ส่งข้อมูลและไม่ยืนยันการจอง</p>
+          <div class="form-grid">
+            <div class="form-field"><label for="guestName">ชื่อผู้ติดต่อ</label><input id="guestName" name="guestName" autocomplete="name" required></div>
+            <div class="form-field"><label for="guestEmail">อีเมล</label><input id="guestEmail" name="guestEmail" type="email" autocomplete="email" required></div>
+            <div class="form-field"><label for="checkin">เช็กอิน</label><input id="checkin" name="checkin" type="date" required></div>
+            <div class="form-field"><label for="checkout">เช็กเอาต์</label><input id="checkout" name="checkout" type="date" required></div>
+            <div class="form-field"><label for="roomType">ประเภทห้องที่สนใจ</label><select id="roomType" name="roomType"><option value="ไม่ระบุ">ยังไม่แน่ใจ</option><option value="Superior King">Superior King</option><option value="Superior Twin">Superior Twin</option><option value="Triple">Triple</option><option value="Business">Business</option><option value="Deluxe">Deluxe</option></select></div>
+            <div class="form-field"><label for="guests">จำนวนผู้เข้าพัก</label><select id="guests" name="guests"><option>1 ท่าน</option><option selected>2 ท่าน</option><option>3 ท่าน</option><option>4 ท่าน</option></select></div>
+            <div class="form-field full"><label for="requests">คำขอเพิ่มเติม</label><textarea id="requests" name="requests" placeholder="เช่น เวลาเดินทางถึง หรือความต้องการพิเศษ"></textarea></div>
+          </div>
+          <button class="gold-button" type="submit">ดูช่องทางสอบถาม ↗</button>
+          <p id="bookingStatus" class="form-note" role="status" aria-live="polite"></p>
+        </form>
+        <aside class="reservation-aside"><span class="eyebrow">A PERSONAL TOUCH</span><h3>เราพร้อมช่วยคุณวางแผน</h3><p>ส่งคำขอพร้อมวันเข้าพักที่ต้องการ แล้วทีมงานจะช่วยตรวจสอบรายละเอียดและตอบกลับทางอีเมล</p><ul><li>แจ้งประเภทห้องหรือความต้องการพิเศษได้</li><li>ราคาและห้องว่างยืนยันโดยทีมงาน</li><li>การจองสมบูรณ์เมื่อได้รับการยืนยันจากโรงแรม</li></ul><p>หากสะดวก สามารถติดต่อเราโดยตรงได้ที่</p><a class="underlined-link" href="mailto:hello@bestierhotel.com">hello@bestierhotel.com <span>↗</span></a></aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="wordmark footer-wordmark" href="index.html#home"><img class="brand-logo" src="../assets/images/bestier-logo-lockup.png" alt="Bestier by Indigo Hat Yai Hotel"></a><div class="footer-contact"><span>BESTIER HOTEL</span><span>หาดใหญ่ · สงขลา · ประเทศไทย</span><a href="mailto:hello@bestierhotel.com">hello@bestierhotel.com</a></div><div class="footer-social"><a href="contact.html">ติดต่อเรา ↗</a><a href="rooms.html">ดูห้องพัก ↗</a></div><small class="copyright">© 2026 BESTIER HOTEL. ALL RIGHTS RESERVED.</small></footer>
+  <script src="../assets/js/bestier.js" defer></script>
+</body>
+</html>
