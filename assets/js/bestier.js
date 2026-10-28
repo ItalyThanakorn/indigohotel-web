@@ -63,3 +63,37 @@ if (reservationForm) {
     document.querySelector('#bookingStatus').textContent = 'เว็บไซต์นี้ยังไม่ได้เชื่อมต่อระบบรับคำขอจอง ข้อมูลที่กรอกยังไม่ถูกส่ง กรุณาติดต่อ hello@bestierhotel.com เพื่อสอบถามห้องว่างและยืนยันการจอง';
   });
 }
+
+const galleryTrack = document.querySelector('#roomGalleryTrack');
+if (galleryTrack) {
+  const galleryCards = [...galleryTrack.querySelectorAll('.room-gallery-card')];
+  const previousButton = document.querySelector('[data-gallery-prev]');
+  const nextButton = document.querySelector('[data-gallery-next]');
+  const galleryCount = document.querySelector('.gallery-count');
+  const stepSize = () => {
+    const firstCard = galleryCards[0];
+    const styles = window.getComputedStyle(galleryTrack);
+    return firstCard.getBoundingClientRect().width + parseFloat(styles.columnGap || styles.gap || 0);
+  };
+  const updateGallery = () => {
+    const maxScroll = galleryTrack.scrollWidth - galleryTrack.clientWidth;
+    const activeIndex = Math.round(galleryTrack.scrollLeft / stepSize());
+    previousButton.disabled = galleryTrack.scrollLeft <= 1;
+    nextButton.disabled = galleryTrack.scrollLeft >= maxScroll - 1;
+    galleryCount.textContent = `${String(Math.min(activeIndex + 1, galleryCards.length)).padStart(2, '0')} / ${String(galleryCards.length).padStart(2, '0')}`;
+  };
+  const moveGallery = (direction) => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    galleryTrack.scrollBy({ left: direction * stepSize(), behavior: reducedMotion ? 'auto' : 'smooth' });
+  };
+
+  previousButton.addEventListener('click', () => moveGallery(-1));
+  nextButton.addEventListener('click', () => moveGallery(1));
+  galleryTrack.addEventListener('scroll', updateGallery, { passive: true });
+  galleryTrack.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') moveGallery(-1);
+    if (event.key === 'ArrowRight') moveGallery(1);
+  });
+  window.addEventListener('resize', updateGallery);
+  updateGallery();
+}
