@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ติดต่อเรา | Indigo Hotel 3</title>
+  <link rel="stylesheet" href="styleindigo-3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">INDIGO HOTEL 3<span>STAY · RELAX · DISCOVER</span></a>
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="rooms.html">ห้องพัก</a>
+    <a href="services.html">บริการของเรา</a>
+    <a href="about.html">เกี่ยวกับเรา</a>
+    <a class="active" href="contact.html">ติดต่อเรา</a>
+  </nav>
+  <a href="#booking" class="nav-button">จองห้องพัก ↗</a>
+</header>
+
+<section class="page-hero contact-hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h1>Let's Plan Your<br><em>Next Stay.</em></h1>
+    <p>เริ่มต้นการพักผ่อนครั้งต่อไปกับ Indigo Hotel 3</p>
+  </div>
+</section>
+
+<main class="section contact-layout">
+  <div class="contact-info">
+    <p class="eyebrow dark">CONTACT INDIGO</p>
+    <h2>เรายินดี<br><em>ที่จะได้พูดคุยกับคุณ</em></h2>
+    <p>สอบถามข้อมูลห้องพัก บริการ หรือรายละเอียดการเข้าพักได้ตามช่องทางด้านล่าง</p>
+
+    <div class="contact-detail">
+      <span>EMAIL</span>
+      <a href="mailto:hello@indigohotel3.example">hello@indigohotel3.example</a>
+    </div>
+
+    <div class="contact-detail">
+      <span>TELEPHONE</span>
+      <a href="tel:+66000000000">+66 (0) 00 000 0000</a>
+    </div>
+
+    <div class="contact-detail">
+      <span>ADDRESS</span>
+      <p>กรุณาระบุที่อยู่จริงของโรงแรมที่นี่</p>
+    </div>
+  </div>
+
+  <form class="contact-form" id="booking"
+        action="mailto:hello@indigohotel3.example"
+        method="post" enctype="text/plain">
+    <p class="eyebrow dark">BOOKING ENQUIRY</p>
+    <h2>สอบถามการจองห้องพัก</h2>
+
+    <label>ชื่อผู้ติดต่อ
+      <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required>
+    </label>
+
+    <label>อีเมล
+      <input type="email" name="email" placeholder="you@example.com" required>
+    </label>
+
+    <label>เบอร์โทรศัพท์
+      <input type="tel" name="phone" placeholder="หมายเลขโทรศัพท์">
+    </label>
+
+    <div class="form-row">
+      <label>วันที่เช็กอิน
+        <input type="date" name="checkin" required>
+      </label>
+
+      <label>วันที่เช็กเอาต์
+        <input type="date" name="checkout" required>
+      </label>
+    </div>
+
+    <label>ประเภทห้องพัก
+      <select name="room">
+        <option value="Deluxe Room">Deluxe Room</option>
+        <option value="Premier Room">Premier Room</option>
+        <option value="Indigo Suite">Indigo Suite</option>
+      </select>
+    </label>
+
+    <label>รายละเอียดเพิ่มเติม
+      <textarea name="message" rows="4" placeholder="จำนวนผู้เข้าพักหรือคำถามเพิ่มเติม"></textarea>
+    </label>
+
+    <button class="button dark-button" type="submit">ส่งคำถามการจอง ↗</button>
+    <p class="note">แบบฟอร์มนี้เป็นตัวอย่าง ต้องตั้งค่าระบบรับข้อมูลจริงก่อนใช้งาน</p>
+  </form>
+</main>
+
+<section class="section soft">
+  <p class="eyebrow dark">FAQ</p>
+  <h2>คำถามที่พบบ่อย</h2>
+  <div class="faq">
+    <details>
+      <summary>จะตรวจสอบห้องว่างได้อย่างไร?</summary>
+      <p>กรอกแบบฟอร์มหรือติดต่อโรงแรมโดยตรงเพื่อสอบถามห้องว่าง</p>
+    </details>
+    <details>
+      <summary>สามารถเปลี่ยนวันเข้าพักได้หรือไม่?</summary>
+      <p>โปรดสอบถามเงื่อนไขการเปลี่ยนแปลงวันเข้าพักจากโรงแรม</p>
+    </details>
+    <details>
+      <summary>ราคาที่แสดงเป็นราคาจริงหรือไม่?</summary>
+      <p>ราคาที่ใช้ในเว็บไซต์ตัวอย่างต้องเปลี่ยนเป็นราคาจริงก่อนเผยแพร่</p>
+    </details>
+  </div>
+</section>
+
+<footer class="footer">
+  <div><h3>INDIGO HOTEL 3</h3><p>Stay · Relax · Discover</p></div>
+  <div><h4>QUICK LINKS</h4><a href="index.html">หน้าแรก</a><a href="rooms.html">ห้องพัก</a><a href="services.html">บริการของเรา</a><a href="about.html">เกี่ยวกับเรา</a></div>
+  <div><h4>CONTACT</h4><p>hello@indigohotel3.example</p><p>+66 (0) 00 000 0000</p></div>
+  <p class="copyright">© 2026 INDIGO HOTEL 3</p>
+</footer>
+
+</body>
+</html>
