@@ -1,0 +1,758 @@
+
+/* ==================================
+   1. COLORS & RESET
+================================== */
+
+:root {
+    --navy: #17252b;
+    --navy-light: #263940;
+    --gold: #c7a66a;
+    --cream: #f7f4ed;
+    --white: #ffffff;
+    --text: #303a3c;
+    --muted: #777f7d;
+    --border: #e7e2d7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.8;
+    background: var(--white);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+
+/* ==================================
+   2. TOP BAR
+================================== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 7%;
+    background: var(--navy);
+    color: #e7dcc8;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+
+/* ==================================
+   3. HEADER & NAVIGATION
+================================== */
+
+.header {
+    min-height: 100px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    color: var(--navy);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.logo small {
+    display: block;
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: var(--muted);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 13px;
+}
+
+.nav a:not(.nav-button):hover {
+    color: var(--gold);
+}
+
+.nav-button {
+    padding: 12px 20px;
+    background: var(--navy);
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--navy);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* ==================================
+   4. HERO BANNER
+================================== */
+
+.hero {
+    min-height: 610px;
+    padding: 90px 10%;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    background:
+        url("../assets/images/room1.jpg")
+        center 55% / cover no-repeat;
+}
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 31, 37, 0.88),
+        rgba(15, 31, 37, 0.55) 55%,
+        rgba(15, 31, 37, 0.12)
+    );
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 75px);
+    font-weight: 400;
+    line-height: 1.18;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #e0c28d;
+}
+
+.hero-description {
+    max-width: 500px;
+    color: #e6e9e8;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 47px;
+    padding: 11px 24px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.gold:hover {
+    background: #dfc58f;
+}
+
+.outline {
+    border-color: #ffffffa6;
+    color: white;
+}
+
+.outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 25px;
+    right: 7%;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #e7dcc8;
+}
+
+
+/* ==================================
+   5. BOOKING FORM
+================================== */
+
+.booking {
+    position: relative;
+    z-index: 2;
+    padding: 0 7%;
+}
+
+.booking form {
+    max-width: 1250px;
+    margin: -30px auto 0;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr 0.7fr auto;
+    align-items: end;
+    gap: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 45px #17252b10;
+}
+
+.booking-title h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+}
+
+.booking-title .eyebrow {
+    margin-bottom: 4px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.field input,
+.field select {
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--gold);
+}
+
+.search-button {
+    white-space: nowrap;
+}
+
+
+/* ==================================
+   6. SECTION COMMON STYLE
+================================== */
+
+.section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--navy);
+}
+
+.section-heading > p:not(.eyebrow) {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.gold-line {
+    width: 48px;
+    height: 2px;
+    margin: 22px auto 0;
+    background: var(--gold);
+}
+
+
+/* ==================================
+   7. ABOUT HOTEL
+================================== */
+
+.about {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-photo {
+    position: relative;
+}
+
+.about-photo img {
+    height: 440px;
+}
+
+.photo-label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 12px 18px;
+    background: var(--navy);
+    color: #e5c995;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.about-text .section-title {
+    margin-bottom: 15px;
+}
+
+.about-text .gold-line {
+    margin: 0 0 22px;
+}
+
+.about-text > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.text-link {
+    color: var(--navy);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+
+/* ==================================
+   8. ROOM CARDS
+================================== */
+
+.rooms {
+    background: var(--cream);
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.room-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px #17252b12;
+}
+
+.room-card > img {
+    height: 250px;
+    transition: transform 0.4s;
+}
+
+.room-card:hover > img {
+    transform: scale(1.03);
+}
+
+.room-info {
+    padding: 24px;
+}
+
+.room-type {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.room-info h3 {
+    margin: 5px 0 10px;
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.room-info > p:not(.room-type) {
+    min-height: 50px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.room-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--gold);
+    color: var(--navy);
+    font-size: 12px;
+}
+
+.disclaimer {
+    margin-top: 25px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 11px;
+}
+
+
+/* ==================================
+   9. GALLERY
+================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 200px;
+    gap: 14px;
+}
+
+.gallery-grid img {
+    height: 100%;
+    transition: filter 0.3s;
+}
+
+.gallery-grid img:hover {
+    filter: brightness(0.8);
+}
+
+.gallery-grid img:first-child {
+    grid-row: span 2;
+}
+
+
+/* ==================================
+   10. CONTACT
+================================== */
+
+.contact {
+    background: var(--navy);
+    color: white;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    padding: 28px;
+    border: 1px solid #ffffff25;
+    transition: border-color 0.3s;
+}
+
+.contact-card:hover {
+    border-color: var(--gold);
+}
+
+.contact-icon {
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+}
+
+.contact-card h3 {
+    margin: 12px 0;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.contact-card p {
+    margin-bottom: 15px;
+    color: #d5dcda;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.contact-card a {
+    color: #e1c48d;
+    font-size: 12px;
+}
+
+
+/* ==================================
+   11. FOOTER
+================================== */
+
+.footer {
+    padding: 35px 7%;
+    background: #101b20;
+    color: #c6ceca;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    letter-spacing: 4px;
+}
+
+.footer p {
+    font-size: 11px;
+}
+
+.copyright {
+    margin-top: 16px;
+    color: #8d9995;
+}
+
+
+/* ==================================
+   12. TABLET
+================================== */
+
+@media (max-width: 1050px) {
+    .header {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .nav {
+        gap: 13px;
+    }
+
+    .booking form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .booking-title {
+        grid-column: 1 / -1;
+    }
+
+    .about {
+        gap: 35px;
+    }
+
+    .room-grid {
+        gap: 15px;
+    }
+
+    .room-info {
+        padding: 18px;
+    }
+}
+
+
+/* ==================================
+   13. MOBILE
+================================== */
+
+@media (max-width: 760px) {
+    .topbar {
+        justify-content: center;
+    }
+
+    .header {
+        min-height: 82px;
+        padding: 14px 6%;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav.is-open {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 11px 5px;
+        border-top: 1px solid var(--border);
+    }
+
+    .nav .nav-button {
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 540px;
+        padding: 65px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 10vw, 56px);
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .booking {
+        padding: 0 5%;
+    }
+
+    .booking form {
+        margin-top: 20px;
+        padding: 22px;
+        grid-template-columns: 1fr;
+    }
+
+    .booking-title {
+        grid-column: auto;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-photo img {
+        height: 310px;
+    }
+
+    .room-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .room-card > img {
+        height: 260px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 230px;
+        grid-auto-rows: 160px;
+        gap: 10px;
+    }
+
+    .gallery-grid img:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==================================
+   14. SMALL MOBILE
+================================== */
+
+@media (max-width: 380px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+}
