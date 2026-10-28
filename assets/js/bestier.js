@@ -1,0 +1,65 @@
+const menuButton = document.querySelector('.menu-toggle');
+const primaryNav = document.querySelector('#primary-nav');
+
+if (menuButton && primaryNav) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = primaryNav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+  primaryNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      primaryNav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+const params = new URLSearchParams(window.location.search);
+const checkin = document.querySelector('[name="checkin"]');
+const checkout = document.querySelector('[name="checkout"]');
+
+function asLocalDate(date) {
+  const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+  return localDate.toISOString().slice(0, 10);
+}
+
+if (checkin && checkout) {
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  checkin.min = asLocalDate(today);
+  checkout.min = asLocalDate(tomorrow);
+  checkin.value = params.get('checkin') || checkin.value || asLocalDate(today);
+  checkout.value = params.get('checkout') || checkout.value || asLocalDate(tomorrow);
+  if (checkin.value < checkin.min) checkin.value = checkin.min;
+  const nextDay = new Date(`${checkin.value}T12:00:00`);
+  nextDay.setDate(nextDay.getDate() + 1);
+  checkout.min = asLocalDate(nextDay);
+  if (checkout.value <= checkin.value) checkout.value = checkout.min;
+  checkin.addEventListener('change', () => {
+    const next = new Date(`${checkin.value}T12:00:00`);
+    next.setDate(next.getDate() + 1);
+    checkout.min = asLocalDate(next);
+    if (checkout.value <= checkin.value) checkout.value = checkout.min;
+  });
+}
+
+const guestSelect = document.querySelector('[name="guests"]');
+if (guestSelect && params.has('guests')) {
+  const option = [...guestSelect.options].find((item) => item.value === params.get('guests') || item.textContent.trim() === params.get('guests'));
+  if (option) guestSelect.value = option.value;
+}
+
+const roomSelect = document.querySelector('[name="roomType"]');
+if (roomSelect && params.has('room')) {
+  const option = [...roomSelect.options].find((item) => item.value === params.get('room'));
+  if (option) roomSelect.value = option.value;
+}
+
+const reservationForm = document.querySelector('#reservationForm');
+if (reservationForm) {
+  reservationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.querySelector('#bookingStatus').textContent = 'เว็บไซต์นี้ยังไม่ได้เชื่อมต่อระบบรับคำขอจอง ข้อมูลที่กรอกยังไม่ถูกส่ง กรุณาติดต่อ hello@bestierhotel.com เพื่อสอบถามห้องว่างและยืนยันการจอง';
+  });
+}
