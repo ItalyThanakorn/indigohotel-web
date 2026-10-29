@@ -1,3 +1,4 @@
+// เมนูมือถือ: เปิด/ปิดเมนูและปรับสถานะสำหรับโปรแกรมอ่านหน้าจอ
 const menuButton = document.querySelector('.menu-toggle');
 const primaryNav = document.querySelector('#primary-nav');
 
@@ -14,10 +15,88 @@ if (menuButton && primaryNav) {
   });
 }
 
+// ตัวโหลดระหว่างเปลี่ยนไปยังหน้าอื่นภายในเว็บไซต์
+const pageLoader = document.createElement('div');
+pageLoader.className = 'page-loader';
+pageLoader.id = 'pageLoader';
+pageLoader.setAttribute('aria-hidden', 'true');
+pageLoader.innerHTML = `
+  <div class="page-loader-card" role="status" aria-live="polite">
+    <img src="../assets/images/bestier/bestier-mark.png" alt="" width="48" height="48">
+    <span class="page-loader-brand">BESTIER</span>
+    <span class="page-loader-message">กำลังเตรียมการเข้าพักของคุณ</span>
+    <span class="page-loader-track"><span></span></span>
+  </div>`;
+document.body.append(pageLoader);
+
+const currentDirectory = new URL('.', window.location.href).pathname;
+const pendingNavigationKey = 'bestierPendingNavigation';
+
+function hidePageLoader() {
+  pageLoader.classList.remove('is-visible');
+  pageLoader.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('is-navigating');
+}
+
+let arrivedFromInternalNavigation = false;
+try {
+  const pendingNavigation = JSON.parse(sessionStorage.getItem(pendingNavigationKey) || 'null');
+  sessionStorage.removeItem(pendingNavigationKey);
+  arrivedFromInternalNavigation = pendingNavigation
+    && pendingNavigation.path === `${window.location.pathname}${window.location.search}`
+    && Date.now() - pendingNavigation.startedAt < 15000;
+} catch {
+  // เบราว์เซอร์บางโหมดอาจปิดการใช้งานพื้นที่จัดเก็บข้อมูล
+}
+
+if (arrivedFromInternalNavigation) {
+  pageLoader.classList.add('is-visible');
+  pageLoader.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('is-navigating');
+  if (document.readyState === 'complete') {
+    hidePageLoader();
+  } else {
+    window.addEventListener('load', hidePageLoader, { once: true });
+  }
+}
+
+document.addEventListener('click', (event) => {
+  const clickedElement = event.target instanceof Element ? event.target : event.target.parentElement;
+  const link = clickedElement?.closest('a[href]');
+  const isModifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+  if (!link || event.defaultPrevented || event.button !== 0 || isModifiedClick) {
+    return;
+  }
+  const opensSeparateTab = link.target && link.target !== '_self';
+  if (opensSeparateTab || link.hasAttribute('download')) {
+    return;
+  }
+
+  const destination = new URL(link.href, window.location.href);
+  if (destination.origin !== window.location.origin || !destination.pathname.startsWith(currentDirectory)) return;
+  if (destination.pathname === window.location.pathname && destination.search === window.location.search) return;
+
+  try {
+    sessionStorage.setItem(pendingNavigationKey, JSON.stringify({
+      path: `${destination.pathname}${destination.search}`,
+      startedAt: Date.now()
+    }));
+  } catch {
+    // ยังแสดงตัวโหลดในหน้าปัจจุบันได้ แม้พื้นที่จัดเก็บข้อมูลจะใช้ไม่ได้
+  }
+  pageLoader.classList.add('is-visible');
+  pageLoader.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('is-navigating');
+});
+
+window.addEventListener('pageshow', hidePageLoader);
+
+// อ่านวันเข้าพักและจำนวนผู้เข้าพักจาก URL เพื่อเติมลงในแบบฟอร์ม
 const params = new URLSearchParams(window.location.search);
 const checkin = document.querySelector('[name="checkin"]');
 const checkout = document.querySelector('[name="checkout"]');
 
+// แปลงวันที่ตามเขตเวลาของเครื่อง ป้องกันวันที่คลาดเคลื่อนหนึ่งวัน
 function asLocalDate(date) {
   const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
   return localDate.toISOString().slice(0, 10);
@@ -44,9 +123,13 @@ if (checkin && checkout) {
   });
 }
 
+// เลือกจำนวนผู้เข้าพักและประเภทห้องจากค่าที่ส่งมากับ URL
 const guestSelect = document.querySelector('[name="guests"]');
 if (guestSelect && params.has('guests')) {
-  const option = [...guestSelect.options].find((item) => item.value === params.get('guests') || item.textContent.trim() === params.get('guests'));
+  const requestedGuests = params.get('guests');
+  const option = [...guestSelect.options].find((item) => (
+    item.value === requestedGuests || item.textContent.trim() === requestedGuests
+  ));
   if (option) guestSelect.value = option.value;
 }
 
@@ -56,6 +139,7 @@ if (roomSelect && params.has('room')) {
   if (option) roomSelect.value = option.value;
 }
 
+// แจ้งผู้ใช้ว่าแบบฟอร์มยังไม่เชื่อมต่อระบบจองจริง
 const reservationForm = document.querySelector('#reservationForm');
 if (reservationForm) {
   reservationForm.addEventListener('submit', (event) => {
@@ -64,6 +148,7 @@ if (reservationForm) {
   });
 }
 
+// แกลเลอรีห้องพัก: เลื่อนภาพ อัปเดตเลขลำดับ และรองรับปุ่มลูกศร
 const galleryTrack = document.querySelector('#roomGalleryTrack');
 if (galleryTrack) {
   const galleryCards = [...galleryTrack.querySelectorAll('.room-gallery-card')];
