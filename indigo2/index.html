@@ -1,11 +1,231 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย">
+    <title>INDIGO 2 HOTEL | Hatyai</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+<!-- 1. TOP BAR -->
+<div class="topbar">
+    <span>INDIGO 2 HOTEL · HATYAI</span>
+    <span>074 813 380</span>
+</div>
+
+<!-- 2. HEADER / MENU -->
+<header class="header" id="home">
+    <a href="#home" class="logo">
+        INDIGO <span>2</span>
+        <small>HOTEL · HATYAI</small>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+        aria-label="เปิดเมนู" aria-expanded="false">☰</button>
+
+    <nav class="nav" id="mainNav">
+        <a href="#home">หน้าแรก</a>
+        <a href="#about">เกี่ยวกับเรา</a>
+        <a href="#rooms">ห้องพัก</a>
+        <a href="#gallery">แกลเลอรี</a>
+        <a href="#contact">ติดต่อเรา</a>
+        <a href="#booking" class="nav-button">ค้นหาห้องพัก ↗</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- 3. HERO / BANNER -->
+<section class="hero">
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+        <p class="eyebrow">WELCOME TO INDIGO 2 HOTEL</p>
+        <h1>Stay in Comfort.<br><span>Live in Style.</span></h1>
+        <p class="hero-description">
+            ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย
+            สำหรับนักเดินทางยุคใหม่ ในย่านเขต 8 หาดใหญ่
+        </p>
+        <div class="hero-buttons">
+            <a href="#rooms" class="button gold">สำรวจห้องพัก</a>
+            <a href="#about" class="button outline">รู้จักโรงแรม</a>
+        </div>
+    </div>
+    <div class="hero-bottom">MODERN COMFORT · HATYAI, THAILAND</div>
+</section>
+
+<!-- 4. BOOKING SEARCH -->
+<section class="booking" id="booking">
+    <form id="bookingForm">
+        <div class="booking-title">
+            <p class="eyebrow">PLAN YOUR STAY</p>
+            <h2>ค้นหาห้องพัก</h2>
+        </div>
+
+        <div class="field">
+            <label for="checkin">วันเช็กอิน</label>
+            <input type="date" id="checkin" required>
+        </div>
+
+        <div class="field">
+            <label for="checkout">วันเช็กเอาต์</label>
+            <input type="date" id="checkout" required>
+        </div>
+
+        <div class="field">
+            <label for="guests">ผู้เข้าพัก</label>
+            <select id="guests">
+                <option value="1">1 คน</option>
+                <option value="2" selected>2 คน</option>
+                <option value="3">3 คน</option>
+                <option value="4">4 คน</option>
+            </select>
+        </div>
+
+        <button class="button gold search-button" type="submit">
+            ค้นหาห้อง ↗
+        </button>
+    </form>
+</section>
+
+<!-- 5. ABOUT HOTEL -->
+<section class="about section" id="about">
+    <div class="about-photo">
+        <img src="../assets/images/room1.jpg" alt="บรรยากาศห้องพัก INDIGO 2">
+        <span class="photo-label">INDIGO 2 · KHET 8</span>
+    </div>
+
+    <div class="about-text">
+        <p class="eyebrow">ABOUT OUR HOTEL</p>
+        <h2 class="section-title">ความเรียบง่าย<br>ที่มาพร้อมความสบาย</h2>
+        <div class="gold-line"></div>
+        <p>
+            INDIGO 2 HOTEL เขต 8 หาดใหญ่
+            ที่พักสำหรับผู้ที่ต้องการความสะดวกสบาย
+            บรรยากาศผ่อนคลาย และพื้นที่พักผ่อนหลังการเดินทาง
+            เหมาะสำหรับนักท่องเที่ยวและผู้ที่เดินทางมาติดต่อธุรกิจ
+        </p>
+        <a href="#contact" class="text-link">ติดต่อสอบถาม ↗</a>
+    </div>
+</section>
+
+<!-- 6. ROOM CARDS -->
+<section class="rooms section" id="rooms">
+    <div class="section-heading">
+        <p class="eyebrow">FIND YOUR COMFORT</p>
+        <h2 class="section-title">ห้องพักของเรา</h2>
+        <p>พื้นที่พักผ่อนที่ออกแบบมาเพื่อการเข้าพักอย่างสบาย</p>
+        <div class="gold-line"></div>
+    </div>
+
+    <div class="room-grid">
+        <article class="room-card">
+            <img src="../assets/images/room1.jpg" alt="ห้องพักแบบที่ 1" loading="lazy">
+            <div class="room-info">
+                <p class="room-type">ROOM 01</p>
+                <h3>Standard Room</h3>
+                <p>ห้องพักเรียบง่าย เหมาะสำหรับการพักผ่อน</p>
+                <a href="#contact" class="room-link">สอบถามราคา ↗</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <img src="../assets/images/room2.jpg" alt="ห้องพักแบบที่ 2" loading="lazy">
+            <div class="room-info">
+                <p class="room-type">ROOM 02</p>
+                <h3>Superior Room</h3>
+                <p>พื้นที่พักผ่อนที่ให้ความรู้สึกอบอุ่นและผ่อนคลาย</p>
+                <a href="#contact" class="room-link">สอบถามราคา ↗</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <img src="../assets/images/room3.jpg" alt="ห้องพักแบบที่ 3" loading="lazy">
+            <div class="room-info">
+                <p class="room-type">ROOM 03</p>
+                <h3>Deluxe Room</h3>
+                <p>ห้องพักสำหรับผู้ที่มองหาความสะดวกสบาย</p>
+                <a href="#contact" class="room-link">สอบถามราคา ↗</a>
+            </div>
+        </article>
+    </div>
+    <p class="disclaimer">ชื่อประเภทห้องพักเป็นตัวอย่าง กรุณาแก้ไขให้ตรงกับห้องจริงของโรงแรม</p>
+</section>
+
+<!-- 7. GALLERY -->
+<section class="gallery section" id="gallery">
+    <div class="section-heading">
+        <p class="eyebrow">OUR SPACE</p>
+        <h2 class="section-title">บรรยากาศของโรงแรม</h2>
+        <div class="gold-line"></div>
+    </div>
+
+    <div class="gallery-grid">
+        <img src="../assets/images/room1.jpg" alt="บรรยากาศห้องพัก 1" loading="lazy">
+        <img src="../assets/images/room2.jpg" alt="บรรยากาศห้องพัก 2" loading="lazy">
+        <img src="../assets/images/room3.jpg" alt="บรรยากาศห้องพัก 3" loading="lazy">
+        <img src="../assets/images/room4_n.jpg" alt="บรรยากาศห้องพัก 4" loading="lazy">
+        <img src="../assets/images/room5.jpg" alt="บรรยากาศห้องพัก 5" loading="lazy">
+        <img src="../assets/images/room6.jpg" alt="บรรยากาศห้องพัก 6" loading="lazy">
+        <img src="../assets/images/room7.jpg" alt="บรรยากาศห้องพัก 7" loading="lazy">
+        <img src="../assets/images/room8.jpg" alt="บรรยากาศห้องพัก 8" loading="lazy">
+        <img src="../assets/images/room9.jpg" alt="บรรยากาศห้องพัก 9" loading="lazy">
+    </div>
+</section>
+
+<!-- 8. CONTACT -->
+<section class="contact section" id="contact">
+    <div class="section-heading">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2 class="section-title">ติดต่อ INDIGO 2</h2>
+        <div class="gold-line"></div>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <span class="contact-icon">01</span>
+            <h3>โทรศัพท์</h3>
+            <p>สอบถามรายละเอียดและการเข้าพัก</p>
+            <a href="tel:074813380">074 813 380</a>
+        </div>
+
+        <div class="contact-card">
+            <span class="contact-icon">02</span>
+            <h3>ที่อยู่</h3>
+            <p>
+                251 ถนนรัตนอุทิศ ซอย 15<br>
+                ตำบลหาดใหญ่ อำเภอหาดใหญ่<br>
+                จังหวัดสงขลา 90110
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=INDIGO+HATYAI+HOTEL+2+251+Ratana+Uthit+Soi+15+Hat+Yai"
+               target="_blank" rel="noopener">เปิดแผนที่ ↗</a>
+        </div>
+
+        <div class="contact-card">
+            <span class="contact-icon">03</span>
+            <h3>ทำเลที่ตั้ง</h3>
+            <p>เขต 8 อำเภอหาดใหญ่ จังหวัดสงขลา</p>
+            <a href="https://indigohatyai.com/" target="_blank" rel="noopener">
+                เว็บไซต์โรงแรม ↗
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <a href="#home" class="footer-logo">INDIGO 2</a>
+    <p>ที่พักอบอุ่น เงียบสงบ และสะดวกสบายสำหรับนักเดินทางยุคใหม่</p>
+    <p class="copyright">© 2026 INDIGO 2 HOTEL · HATYAI, THAILAND</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
