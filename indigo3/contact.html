@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ติดต่อเรา | Indigo Hotel 3</title>
   <link rel="stylesheet" href="styleindigo-3.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="navbar">
-  <a href="index.html" class="logo">INDIGO HOTEL 3<span>STAY · RELAX · DISCOVER</span></a>
+  <a href="index.html" class="logo"><img class="logo-image" src="logo.png" alt="โลโก้โรงแรมอินดิโก้ หาดใหญ่ 3"></a>
   <nav>
     <a href="index.html">หน้าแรก</a>
     <a href="rooms.html">ห้องพัก</a>
@@ -19,52 +19,50 @@
     <a href="about.html">เกี่ยวกับเรา</a>
     <a class="active" href="contact.html">ติดต่อเรา</a>
   </nav>
-  <a href="#booking" class="nav-button">จองห้องพัก ↗</a>
+  <a href="#booking" class="nav-button">เตรียมเปิดให้บริการ</a>
 </header>
 
 <section class="page-hero contact-hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="eyebrow">GET IN TOUCH</p>
-    <h1>Let's Plan Your<br><em>Next Stay.</em></h1>
-    <p>เริ่มต้นการพักผ่อนครั้งต่อไปกับ Indigo Hotel 3</p>
+    <p class="eyebrow">ติดต่อโรงแรม</p>
+    <h1>โรงแรมกำลัง<br><em>เตรียมเปิดให้บริการ</em></h1>
+    <p>ข้อมูลการติดต่อและการจองจะแจ้งให้ทราบเมื่อโรงแรมเปิดให้บริการ</p>
   </div>
 </section>
 
 <main class="section contact-layout">
   <div class="contact-info">
-    <p class="eyebrow dark">CONTACT INDIGO</p>
-    <h2>เรายินดี<br><em>ที่จะได้พูดคุยกับคุณ</em></h2>
+    <p class="eyebrow dark">ช่องทางติดต่อ</p>
+    <h2>ติดต่อโรงแรม<br><em>อินดิโก้ หาดใหญ่ 3</em></h2>
     <p>สอบถามข้อมูลห้องพัก บริการ หรือรายละเอียดการเข้าพักได้ตามช่องทางด้านล่าง</p>
 
     <div class="contact-detail">
-      <span>EMAIL</span>
-      <a href="mailto:hello@indigohotel3.example">hello@indigohotel3.example</a>
+      <span>อีเมล</span>
+      <p>จะแจ้งให้ทราบเมื่อโรงแรมเปิดให้บริการ</p>
     </div>
 
     <div class="contact-detail">
-      <span>TELEPHONE</span>
-      <a href="tel:+66000000000">+66 (0) 00 000 0000</a>
+      <span>โทรศัพท์</span>
+      <p>จะแจ้งให้ทราบเมื่อโรงแรมเปิดให้บริการ</p>
     </div>
 
     <div class="contact-detail">
-      <span>ADDRESS</span>
-      <p>กรุณาระบุที่อยู่จริงของโรงแรมที่นี่</p>
+      <span>ที่อยู่</span>
+      <p>ย่านลีการ์เดนส์ พลาซ่า อำเภอหาดใหญ่ จังหวัดสงขลา</p>
     </div>
   </div>
 
-  <form class="contact-form" id="booking"
-        action="mailto:hello@indigohotel3.example"
-        method="post" enctype="text/plain">
-    <p class="eyebrow dark">BOOKING ENQUIRY</p>
-    <h2>สอบถามการจองห้องพัก</h2>
+  <form class="contact-form" id="booking">
+    <p class="eyebrow dark">การจองห้องพัก</p>
+    <h2>ยังไม่เปิดรับจอง</h2>
 
     <label>ชื่อผู้ติดต่อ
       <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required>
     </label>
 
     <label>อีเมล
-      <input type="email" name="email" placeholder="you@example.com" required>
+      <input type="email" name="email" placeholder="กรอกอีเมลของคุณ" required>
     </label>
 
     <label>เบอร์โทรศัพท์
@@ -83,9 +81,9 @@
 
     <label>ประเภทห้องพัก
       <select name="room">
-        <option value="Deluxe Room">Deluxe Room</option>
-        <option value="Premier Room">Premier Room</option>
-        <option value="Indigo Suite">Indigo Suite</option>
+        <option value="ห้องดีลักซ์">ห้องดีลักซ์</option>
+        <option value="ห้องพรีเมียร์">ห้องพรีเมียร์</option>
+        <option value="ห้องสวีทอินดิโก">ห้องสวีทอินดิโก</option>
       </select>
     </label>
 
@@ -93,34 +91,34 @@
       <textarea name="message" rows="4" placeholder="จำนวนผู้เข้าพักหรือคำถามเพิ่มเติม"></textarea>
     </label>
 
-    <button class="button dark-button" type="submit">ส่งคำถามการจอง ↗</button>
-    <p class="note">แบบฟอร์มนี้เป็นตัวอย่าง ต้องตั้งค่าระบบรับข้อมูลจริงก่อนใช้งาน</p>
+    <button class="button dark-button" type="submit" disabled>ยังไม่เปิดรับจอง</button>
+    <p class="note">แบบฟอร์มนี้ยังไม่สามารถส่งข้อมูลได้ โรงแรมยังไม่เปิดรับจอง</p>
   </form>
 </main>
 
 <section class="section soft">
-  <p class="eyebrow dark">FAQ</p>
+  <p class="eyebrow dark">คำถามที่พบบ่อย</p>
   <h2>คำถามที่พบบ่อย</h2>
   <div class="faq">
     <details>
       <summary>จะตรวจสอบห้องว่างได้อย่างไร?</summary>
-      <p>กรอกแบบฟอร์มหรือติดต่อโรงแรมโดยตรงเพื่อสอบถามห้องว่าง</p>
+      <p>ขณะนี้โรงแรมยังไม่เปิดรับจอง โปรดติดตามประกาศเปิดให้บริการ</p>
     </details>
     <details>
-      <summary>สามารถเปลี่ยนวันเข้าพักได้หรือไม่?</summary>
-      <p>โปรดสอบถามเงื่อนไขการเปลี่ยนแปลงวันเข้าพักจากโรงแรม</p>
+      <summary>โรงแรมตั้งอยู่ที่ไหน?</summary>
+      <p>ย่านลีการ์เดนส์ พลาซ่า อำเภอหาดใหญ่ จังหวัดสงขลา</p>
     </details>
     <details>
       <summary>ราคาที่แสดงเป็นราคาจริงหรือไม่?</summary>
-      <p>ราคาที่ใช้ในเว็บไซต์ตัวอย่างต้องเปลี่ยนเป็นราคาจริงก่อนเผยแพร่</p>
+      <p>ราคาในหน้านี้เป็นข้อมูลตัวอย่าง โปรดตรวจสอบประกาศราคาจริงเมื่อโรงแรมเปิดให้บริการ</p>
     </details>
   </div>
 </section>
 
 <footer class="footer">
-  <div><h3>INDIGO HOTEL 3</h3><p>Stay · Relax · Discover</p></div>
-  <div><h4>QUICK LINKS</h4><a href="index.html">หน้าแรก</a><a href="rooms.html">ห้องพัก</a><a href="services.html">บริการของเรา</a><a href="about.html">เกี่ยวกับเรา</a></div>
-  <div><h4>CONTACT</h4><p>hello@indigohotel3.example</p><p>+66 (0) 00 000 0000</p></div>
+  <div><h3>INDIGO HOTEL 3</h3><p>โรงแรมใจกลางเมืองหาดใหญ่</p></div>
+  <div><h4>เมนูลัด</h4><a href="index.html">หน้าแรก</a><a href="rooms.html">ห้องพัก</a><a href="services.html">บริการของเรา</a><a href="about.html">เกี่ยวกับเรา</a></div>
+  <div><h4>ติดต่อเรา</h4><p>จะแจ้งช่องทางติดต่อเมื่อโรงแรมเปิดให้บริการ</p></div>
   <p class="copyright">© 2026 INDIGO HOTEL 3</p>
 </footer>
 
