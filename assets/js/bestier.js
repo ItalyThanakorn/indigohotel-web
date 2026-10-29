@@ -60,7 +60,7 @@ const reservationForm = document.querySelector('#reservationForm');
 if (reservationForm) {
   reservationForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    document.querySelector('#bookingStatus').textContent = 'เว็บไซต์นี้ยังไม่ได้เชื่อมต่อระบบรับคำขอจอง ข้อมูลที่กรอกยังไม่ถูกส่ง กรุณาติดต่อ hello@bestierhotel.com เพื่อสอบถามห้องว่างและยืนยันการจอง';
+    document.querySelector('#bookingStatus').textContent = 'เว็บไซต์นี้ยังไม่ได้เชื่อมต่อระบบรับคำขอจอง ข้อมูลที่กรอกยังไม่ถูกส่ง กรุณาติดต่อ bestierhotel.hatyai@gmail.com เพื่อสอบถามห้องว่างและยืนยันการจอง';
   });
 }
 

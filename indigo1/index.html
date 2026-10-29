@@ -471,6 +471,17 @@
             margin-left: 10px;
         }
 
+        #loadingModal .modal-dialog.loading-modal-dialog { width: min(500px, calc(100vw - 32px)); max-width: none; }
+        #loadingModal .modal-content { box-sizing: border-box; width: 100%; height: 300px; min-height: 0; justify-content: center; padding: 10px 48px !important; }
+        #loadingModal .modal-header { position: absolute; top: 24px; right: 28px; z-index: 2; }
+        #loadingModal .modal-body { display: flex; flex-direction: column; justify-content: center; width: 100%; padding: 0 !important; }
+        #loadingModal .btn-close { font-size: 1.5rem; }
+        #loadingModal #modalIcon { font-size: 4rem; margin-bottom: 0.35rem !important; }
+        #loadingModal #modalTitle { font-size: 2rem; margin-bottom: 0.25rem !important; }
+        #loadingModal #modalDesc { font-size: 1.2rem; margin-bottom: 0.5rem !important; }
+        #loadingModal .progress { height: 6px !important; margin-top: 8px; }
+        @media (max-width: 600px) { #loadingModal .modal-dialog.loading-modal-dialog { width: calc(100vw - 24px); } #loadingModal .modal-content { height: 300px; padding: 10px 24px !important; } #loadingModal .btn-close { font-size: 1.25rem; } }
+
         /* --- Liquid Glass Modal Styling --- */
         .modal-content {
             background: rgba(40, 40, 40, 0.25);
@@ -630,7 +641,7 @@
                 <div class="hover-reveal">
                     <p class="text-light opacity-75 small mb-0 mt-2" data-hotel-id="bestier" data-hotel-prop="hoverDesc">ห้องพักหรูหรา สไตล์พรีเมี่ยม<br>ถ.นิพัทธ์สงเคราะห์ 4 (หลัง ร.ร ญว)</p>
                     <div class="d-flex justify-content-center align-items-center mt-3">
-                        <button class="btn btn-custom mt-0" data-i18n="btn_explore">เข้าชม</button>
+                        <button class="btn btn-custom mt-0" type="button" onclick="event.stopPropagation(); selectHotel('bestier')" data-i18n="btn_explore">เข้าชม</button>
                         <button class="btn btn-custom btn-icon mt-0" onclick="openContactModal(event, 'bestier')" title="Contact Info" aria-label="ติดต่อ Bestier">
                             <i class="fa-solid fa-info"></i>
                         </button>
@@ -691,7 +702,7 @@
 
     <!-- Loading Modal -->
     <div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered loading-modal-dialog">
             <div class="modal-content text-center p-4 shadow-lg">
                 <div class="modal-header border-0 justify-content-end p-0">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -702,7 +713,7 @@
                     <p id="modalDesc" class="text-white-50 mb-4">Please wait...</p>
                     
                     <div class="progress bg-secondary" style="height: 4px;">
-                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%; transition: width 1.5s ease-in-out;"></div>
+                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%; transition: width 1.4s ease-in-out;"></div>
                     </div>
                 </div>
             </div>
@@ -716,14 +727,14 @@
         // --- Bilingual System ---
         function getInitialLanguage() {
             const savedLang = localStorage.getItem('indigo_lang');
-            if (savedLang) return savedLang; 
-            
+            if (savedLang) return savedLang;
+
             const browserLang = navigator.language || navigator.userLanguage;
             return (browserLang && browserLang.toLowerCase().startsWith('th')) ? 'th' : 'en';
         }
-
-        let currentLang = getInitialLanguage();
+let currentLang = getInitialLanguage();
         let activeHotelId = null;
+        let hotelNavigationTimer = null;
 
         // 1. Translations
         const translations = {
@@ -834,15 +845,15 @@
                 phoneRaw: '074813380',
                 line: '@bestier',
                 lineUrl: 'https://line.me/ti/p/@bestier',
-                mapUrl: 'https://maps.google.com/?q=Bestier+Hatyai',
-                address: { th: 'ถ.นิพัทธ์สงเคราะห์ 4 (หลัง ร.ร ญว)', en: 'Nipat Songkhraw 4 Rd. (behind Yor Wor School)' },
+                mapUrl: 'https://maps.app.goo.gl/VKP1nrbNQ7dc6dJy8',
+                address: { th: '116 ซอย 1 นิพัทธ์สงเคราะห์ 4 ต.หาดใหญ่ อ.หาดใหญ่ สงขลา 90110', en: '116 Soi 1, Niphat Songkhro 4, Hat Yai, Songkhla 90110' },
                 whatsapp: 'https://wa.me/66921500002',
                 facebookUrl: 'https://www.facebook.com/BestierHotelHatyai', 
                 colorClass: 'text-bestier',
                 iconHtml: '<i class="fa-solid fa-crown text-bestier fa-bounce" style="--fa-animation-duration: 3s;"></i>',
                 barClass: 'bg-warning',
                 barColor: '#fde047',
-                targetUrl: 'https://indigohatyai.com',
+                targetUrl: '../bestier/index.html',
                 isComingSoon: false
             },
             'pool-villa': {
@@ -910,6 +921,7 @@
             const desc = document.getElementById('contactModalDesc');
             const list = document.getElementById('contactList');
             const modal = new bootstrap.Modal(modalEl);
+            if (hotelNavigationTimer) clearTimeout(hotelNavigationTimer);
 
             title.innerHTML = `<i class="fa-solid fa-hotel me-2 ${data.colorClass}"></i> ${data.modalName[currentLang]}`;
             desc.innerText = data.modalDesc[currentLang];
@@ -983,43 +995,43 @@
         function selectHotel(hotelId) {
             const data = hotelData[hotelId];
             const t = translations[currentLang];
-            
+            if (!data) return;
+
             const modalEl = document.getElementById('loadingModal');
             const title = document.getElementById('modalTitle');
             const desc = document.getElementById('modalDesc');
             const icon = document.getElementById('modalIcon');
             const bar = document.getElementById('progressBar');
-            const modal = new bootstrap.Modal(modalEl);
+            const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
 
+            if (hotelNavigationTimer) clearTimeout(hotelNavigationTimer);
             bar.style.width = '0%';
-            bar.className = `progress-bar ${data.barClass}`; 
+            bar.className = `progress-bar ${data.barClass}`;
             bar.style.backgroundColor = data.barColor;
-            
             title.innerText = data.name[currentLang];
             icon.innerHTML = data.iconHtml;
-            
-            if (data.isComingSoon) {
-                desc.innerText = t.loading_coming_soon;
-            } else {
-                desc.innerText = `${t.loading_desc_prefix} ${data.name[currentLang]}...`;
-            }
+            desc.innerText = data.isComingSoon
+                ? t.loading_coming_soon
+                : `${t.loading_desc_prefix} ${data.name[currentLang]}...`;
 
             modal.show();
+            setTimeout(() => { bar.style.width = '100%'; }, 100);
 
-            setTimeout(() => {
-                bar.style.width = '100%';
-            }, 100);
-
-            setTimeout(() => { 
-                if (!data.isComingSoon && data.targetUrl != '') {
-                    modal.hide();
-                    window.location.href = data.targetUrl; 
-                } else {
-                     setTimeout(() => { modal.hide(); }, 2000);
+            hotelNavigationTimer = setTimeout(() => {
+                hotelNavigationTimer = null;
+                modal.hide();
+                if (!data.isComingSoon && data.targetUrl) {
+                    window.location.href = data.targetUrl;
                 }
             }, 1500);
         }
-        
+        document.getElementById('loadingModal').addEventListener('hidden.bs.modal', () => {
+            if (hotelNavigationTimer) {
+                clearTimeout(hotelNavigationTimer);
+                hotelNavigationTimer = null;
+            }
+        });
+
         updateUI();
     </script>
 </body>
