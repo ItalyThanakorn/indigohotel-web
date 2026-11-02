@@ -1,0 +1,76 @@
+/* Extra depth and tactile states for the homepage content. */
+.hero-image{transition:opacity .36s,transform 7s cubic-bezier(.18,.7,.25,1)}
+.hero-image.changing{opacity:.35;transform:scale(1.035)}
+.hero:hover .hero-image:not(.changing){transform:scale(1.035)}
+.hero-sticker{position:absolute;right:max(calc((100% - 1030px)/2),8%);top:50%;transform:translateY(-50%) rotate(7deg);width:116px;height:116px;border-radius:50%;background:#fff;color:var(--blue-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 26px #07283b3d;animation:stickerFloat 4.5s ease-in-out infinite}
+.hero-sticker:before{content:'';position:absolute;inset:7px;border:1px dashed #7cb5c7;border-radius:50%}
+.hero-sticker span{font:italic 42px/1 var(--serif)}
+.hero-sticker small{text-align:center;font-size:10px;line-height:1.4;margin-top:3px}
+.hero-pagination{gap:7px;align-items:center}
+.hero-pagination button{border:0;padding:0;width:8px;height:8px;border-radius:8px;background:#ffffff9c;cursor:pointer;transition:width .25s,background .25s}
+.hero-pagination button.active{width:24px;background:white}
+.villa-card{overflow:hidden;border-radius:2px;box-shadow:0 5px 19px #15394c10;transform:translateY(0);transition:transform .32s cubic-bezier(.2,.7,.3,1),box-shadow .32s,border-color .32s}
+.villa-card:hover{transform:translateY(-7px);box-shadow:0 16px 36px #15394c24;border-color:#d5e7ed}
+.villa-card:after{content:'';position:absolute;inset:0;pointer-events:none;border:1px solid transparent;transition:border-color .3s}
+.villa-card:hover:after{border-color:#89c6d7}
+.photo-button:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(0deg,#102f4359,transparent);opacity:.7;transition:opacity .3s}
+.photo-button:hover:after{opacity:1}
+.photo-count{z-index:1;border-radius:20px;padding:6px 11px}
+.villa-ribbon{position:absolute;z-index:2;left:0;top:17px;padding:6px 12px 6px 10px;background:#ee9152;color:#fff;font-size:9px;letter-spacing:.3px;box-shadow:0 3px 9px #173d5330}
+.villa-ribbon:after{content:'';position:absolute;right:-8px;top:0;border-top:13px solid #ee9152;border-bottom:13px solid #ee9152;border-right:8px solid transparent}
+.ribbon-gold{background:#d6a653}.ribbon-gold:after{border-top-color:#d6a653;border-bottom-color:#d6a653}
+.ribbon-green{background:#6aa58b}.ribbon-green:after{border-top-color:#6aa58b;border-bottom-color:#6aa58b}
+.detail-button{border:0;background:transparent;padding:4px 0 4px 8px;color:var(--blue-dark);font-size:10px;cursor:pointer}
+.detail-button span{display:inline-block;margin-left:4px;transition:transform .2s}
+.detail-button:hover span{transform:translateX(4px)}
+.villa-price{margin-top:1px}
+.favorite{z-index:3;box-shadow:0 2px 8px #173d5326}
+.favorite.saved{animation:heartPop .35s cubic-bezier(.17,.89,.32,1.5)}
+#favorite-count{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-right:3px;padding:0 5px;border-radius:12px;background:#e7f4f8;color:#367f9e;font-weight:500}
+.filter-chip{position:relative;overflow:hidden}
+.filter-chip:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff50,transparent 75%);transform:translateX(-130%);transition:transform .55s}
+.filter-chip:hover:after{transform:translateX(130%)}
+.benefits article{padding-top:15px;padding-bottom:17px;border:1px solid transparent;transition:transform .3s,background .3s,border-color .3s,box-shadow .3s}
+.benefits article:hover{transform:translateY(-6px);background:#fff;border-color:#e1eef2;box-shadow:0 10px 24px #143b4b11}
+.benefit-icon{transition:transform .35s,background .35s,color .35s}
+.benefits article:hover .benefit-icon{transform:rotate(-8deg) scale(1.09);background:var(--blue);color:#fff}
+.area-card{border-radius:3px;box-shadow:0 5px 18px #123d5120}
+.area-card:before{content:'';position:absolute;z-index:1;inset:10px;border:1px solid #ffffff00;transition:inset .3s,border-color .3s;pointer-events:none}
+.area-card:hover:before{inset:15px;border-color:#ffffffa8}
+.area-card>span{transition:transform .3s}
+.area-card:hover>span{transform:translateY(-5px)}
+.review-card{position:relative;border-radius:3px;padding-left:62px;padding-right:62px;transition:box-shadow .3s,transform .3s}
+.review-card:hover{box-shadow:0 12px 32px #15394c17;transform:translateY(-2px)}
+.review-quote{position:absolute;left:25px;top:3px;font:88px/.9 var(--serif);color:#d7edf3}
+.review-arrow{position:absolute;top:50%;transform:translateY(-50%);width:33px;height:33px;border:1px solid #c9e0e8;border-radius:50%;background:#fff;color:var(--blue);font:26px/1 var(--serif);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.review-arrow:hover{background:var(--blue);color:#fff;transform:translateY(-50%) scale(1.08)}
+.review-prev{left:15px}.review-next{right:15px}
+.review-dots button{width:7px;height:7px;border:0;padding:0;border-radius:50%;background:#c9d8de;cursor:pointer;transition:width .2s,background .2s}
+.review-dots button.on{width:20px;border-radius:9px;background:var(--blue)}
+.review-card blockquote{transition:opacity .18s,transform .18s}
+.review-card blockquote.quote-changing{opacity:0;transform:translateY(5px)}
+.villa-modal{position:fixed;inset:0;z-index:40;background:#0e2938b8;display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;backdrop-filter:blur(5px)}
+.villa-modal.open{opacity:1;visibility:visible}
+.villa-modal-card{width:min(770px,96vw);display:grid;grid-template-columns:1fr 1fr;background:#fff;box-shadow:0 24px 80px #081e2c70;transform:translateY(18px) scale(.98);transition:transform .3s;position:relative;overflow:hidden}
+.villa-modal.open .villa-modal-card{transform:translateY(0) scale(1)}
+.modal-photo{min-height:390px;background:#c6dce4;position:relative}
+.modal-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.modal-body{position:relative;padding:42px 34px;align-self:center}
+.modal-close{position:absolute;z-index:3;right:13px;top:13px;width:35px;height:35px;border:1px solid #dce7eb;border-radius:50%;background:#fff;color:#508ca5;font-size:23px;cursor:pointer;transition:transform .2s,background .2s}
+.modal-close:hover{transform:rotate(90deg);background:#eaf6f8}
+.modal-body h2{font-size:23px;line-height:1.35;font-weight:500;color:#2e4854;margin:9px 0 15px}
+.modal-tags{display:flex;flex-wrap:wrap;gap:7px}
+.modal-tags span{padding:5px 9px;background:#eaf5f9;color:#3883a1;font-size:10px}
+.modal-description{font-size:12px;color:#78868b;line-height:1.8;margin:18px 0}
+.modal-price{padding:13px 0;border-top:1px solid #e6edef;border-bottom:1px solid #e6edef;color:#78868b;font-size:11px}
+.modal-price b{color:#de8d37;font-size:18px}
+.modal-contact{margin-top:18px;display:flex;align-items:center;justify-content:space-between;background:var(--blue);color:#fff;padding:13px 15px;font-size:12px;transition:background .2s,transform .2s}
+.modal-contact:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.reveal-ready{opacity:0;transform:translateY(20px);transition:opacity .65s ease var(--reveal-delay,0ms),transform .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms)}
+.reveal-ready.revealed{opacity:1;transform:translateY(0)}
+.feedback-pop{animation:feedbackPop .45s ease both}
+@keyframes stickerFloat{0%,100%{margin-top:0}50%{margin-top:-8px}}
+@keyframes heartPop{0%{transform:scale(1)}45%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes feedbackPop{0%{opacity:0;transform:translate(-50%,6px)}100%{opacity:1;transform:translate(-50%,0)}}
+@media(max-width:620px){.hero-sticker{width:75px;height:75px;right:6%;top:auto;bottom:26px;transform:none}.hero-sticker span{font-size:29px}.hero-sticker small{font-size:7px;margin-top:1px}.villa-modal{padding:14px}.villa-modal-card{grid-template-columns:1fr;max-height:92vh;overflow:auto}.modal-photo{min-height:220px;height:45vw;position:relative}.modal-body{padding:23px 21px 25px}.modal-body h2{font-size:19px}.review-card{padding:24px 39px 19px}.review-quote{left:10px;top:9px;font-size:65px}.review-prev{left:5px}.review-next{right:5px}.review-arrow{width:27px;height:27px;font-size:22px}.villa-price{align-items:flex-end}.detail-button{font-size:9px}.reveal-ready{transform:translateY(13px)}}
+@media(prefers-reduced-motion:reduce){.hero-sticker{animation:none}.reveal-ready{opacity:1;transform:none;transition:none}}

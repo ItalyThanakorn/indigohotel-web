@@ -131,31 +131,31 @@ button, input, select, textarea {
   height: min(760px, 80vh);
   min-height: 580px;
   background-image: url(
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2200&q=85"
+    "images/hero-hotel.jpg"
   );
 }
 
 .rooms-hero {
   background-image: url(
-    "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=2000&q=85"
+    "images/room-deluxe.jpg"
   );
 }
 
 .services-hero {
   background-image: url(
-    "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=2000&q=85"
+    "images/hotel-pool.jpg"
   );
 }
 
 .about-hero {
   background-image: url(
-    "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2000&q=85"
+    "images/room-premier.jpg"
   );
 }
 
 .contact-hero {
   background-image: url(
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85"
+    "images/hero-hotel.jpg"
   );
 }
 
@@ -400,7 +400,7 @@ button, input, select, textarea {
 .feature-image {
   min-height: 560px;
   background: url(
-    "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1200&q=85"
+    "images/hotel-pool.jpg"
   ) center / cover no-repeat;
 }
 
