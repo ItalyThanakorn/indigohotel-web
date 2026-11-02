@@ -31,7 +31,11 @@ function filterListings() {
 
 if (listingForm) {
   const params = new URLSearchParams(location.search);
-  if (params.has('area')) document.querySelector('#page-area').value = params.get('area');
+  if (params.has('area')) {
+    const requestedArea = params.get('area');
+    document.querySelector('#page-area').value = requestedArea;
+    document.querySelectorAll('[data-filter-area]').forEach(button => button.classList.toggle('selected', button.dataset.filterArea === requestedArea));
+  }
   listingForm.addEventListener('submit', event => { event.preventDefault(); filterListings(); });
   document.querySelectorAll('[data-filter-area]').forEach(button => button.addEventListener('click', () => {
     document.querySelector('#page-area').value = button.dataset.filterArea;

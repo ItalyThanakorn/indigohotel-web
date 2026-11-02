@@ -1,0 +1,7 @@
+.page-fav{position:absolute;z-index:3;right:12px;top:12px;padding:8px 12px;border:0;border-radius:18px;background:#fffffff0;color:#4389a8;font:10px 'Prompt',sans-serif;cursor:pointer;box-shadow:0 2px 8px #173d5326;transition:background .2s,color .2s,transform .2s}
+.page-fav:hover{transform:translateY(-2px)}
+.page-fav.saved{background:#ee825e;color:white}
+.page-body a.photo-button{cursor:pointer}
+.subpage .site-footer a:not(.brand){color:#4587a0;transition:color .2s}
+.subpage .site-footer a:not(.brand):hover{color:#df8d37}
+@media(prefers-reduced-motion:reduce){.page-fav,.page-body .villa-card,.area-detail-card,.reason-card{transition:none}}
