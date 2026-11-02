@@ -1,3 +1,5 @@
+const siteBase = document.currentScript?.dataset.siteBase || '';
+
 // --- Bilingual System ---
         function getInitialLanguage() {
             const savedLang = localStorage.getItem('indigo_lang');
@@ -85,7 +87,7 @@ let currentLang = getInitialLanguage();
                 iconHtml: '<i class="fa-solid fa-building text-indigo2 fa-bounce" style="--fa-animation-duration: 3s;"></i>',
                 barClass: 'bg-primary',
                 barColor: '#a5b4fc',
-                targetUrl: 'https://indigohatyai.com',
+                targetUrl: `${siteBase}indigo2/index.html`,
                 isComingSoon: false
             },
             'indigo-hatyai-3': {
@@ -105,8 +107,8 @@ let currentLang = getInitialLanguage();
                 iconHtml: '<i class="fa-solid fa-hotel text-indigo3 fa-fade" style="--fa-animation-duration: 2s;"></i>',
                 barClass: 'bg-secondary',
                 barColor: '#e0e7ff',
-                targetUrl: '',
-                isComingSoon: true
+                targetUrl: `${siteBase}indigo3/index.html`,
+                isComingSoon: false
             },
             'bestier': {
                 label: { th: 'Luxury', en: 'Luxury' },
@@ -127,7 +129,7 @@ let currentLang = getInitialLanguage();
                 iconHtml: '<i class="fa-solid fa-crown text-bestier fa-bounce" style="--fa-animation-duration: 3s;"></i>',
                 barClass: 'bg-warning',
                 barColor: '#fde047',
-                targetUrl: '../bestier/index.html',
+                targetUrl: `${siteBase}bestier/index.html`,
                 isComingSoon: false
             },
             'pool-villa': {
