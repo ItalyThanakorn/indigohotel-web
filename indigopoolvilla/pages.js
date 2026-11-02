@@ -90,7 +90,11 @@ if (contactForm) {
   });
 }
 
-const revealItems = document.querySelectorAll('.reveal-ready');
+const revealItems = document.querySelectorAll('.page-hero-copy,.page-intro,.area-detail-card,.reason-card,.step-card,.faq-list,.contact-panel,.contact-card');
+revealItems.forEach((item, index) => {
+  item.classList.add('reveal-ready');
+  item.style.setProperty('--reveal-delay', `${(index % 3) * 80}ms`);
+});
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }

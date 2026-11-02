@@ -59,18 +59,24 @@ document.querySelectorAll('[data-area-link]').forEach(link => link.addEventListe
 // Remember favorites locally and keep the count visible while browsing.
 const favoriteCount = document.querySelector('#favorite-count');
 let savedFavorites = [];
-try { savedFavorites = JSON.parse(localStorage.getItem('indigo-favorites') || '[]'); } catch { savedFavorites = []; }
+const favoriteKeys = cards.map(card => card.dataset.favoriteId).filter(Boolean);
+try {
+  const storedFavorites = JSON.parse(localStorage.getItem('indigo-favorites') || '[]');
+  savedFavorites = storedFavorites.map(item => typeof item === 'number' ? favoriteKeys[item] : item).filter(item => favoriteKeys.includes(item));
+} catch { savedFavorites = []; }
 function updateFavorites() {
-  document.querySelectorAll('.favorite').forEach((button, index) => {
-    const saved = savedFavorites.includes(index);
+  document.querySelectorAll('.favorite').forEach(button => {
+    const key = button.closest('.villa-card').dataset.favoriteId;
+    const saved = savedFavorites.includes(key);
     button.classList.toggle('saved', saved);
     button.textContent = saved ? '♥' : '♡';
     button.setAttribute('aria-pressed', String(saved));
   });
   favoriteCount.textContent = savedFavorites.length;
 }
-document.querySelectorAll('.favorite').forEach((button, index) => button.addEventListener('click', () => {
-  savedFavorites = savedFavorites.includes(index) ? savedFavorites.filter(item => item !== index) : [...savedFavorites, index];
+document.querySelectorAll('.favorite').forEach(button => button.addEventListener('click', () => {
+  const key = button.closest('.villa-card').dataset.favoriteId;
+  savedFavorites = savedFavorites.includes(key) ? savedFavorites.filter(item => item !== key) : [...savedFavorites, key];
   localStorage.setItem('indigo-favorites', JSON.stringify(savedFavorites));
   updateFavorites();
 }));
