@@ -112,7 +112,7 @@ button,input,select {
   background: var(--navy)
 }
 .hero-photo {
-  background: linear-gradient(0deg,#0b152130,#0b152100 46%),url('../images/bestier/cda44bb70aa301843a47059bf0bcd6b4.jpeg') center/cover
+  background: linear-gradient(0deg,#0b152130,#0b152100 46%),url('../images/bestier/Building1.JPG') center/cover
 }
 .hero-panel {
   background: var(--navy);
@@ -535,7 +535,7 @@ button,input,select {
   position: relative
 }
 .interlude-image {
-  background: linear-gradient(90deg,#18233800,#17243a80),url('../images/bestier/5500683d5d6c7a4eeff6256e26705270.webp') center/cover
+  background: linear-gradient(90deg,#18233800,#17243a80),url('../images/bestier/counter.jpg') center/cover
 }
 .interlude-copy {
   padding: 90px 10%;
@@ -1441,7 +1441,7 @@ p {
   background: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/cda44bb70aa301843a47059bf0bcd6b4.jpeg') center/cover
 }
 .page-hero-rooms {
-  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/0561e46517a57fa51c250cc2e4eced3a.webp')
+  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/hallway.JPG')
 }
 .page-hero-dining {
   background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/257935f46f15c8b4ffc49da28856382a.webp')
