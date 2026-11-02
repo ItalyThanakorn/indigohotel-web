@@ -353,6 +353,10 @@ button, input, select, textarea {
   transition: 0.4s;
 }
 
+.room-card .deluxe-room-image {
+  aspect-ratio: 550 / 411;
+}
+
 .room-card img:hover {
   filter: brightness(0.88);
 }
