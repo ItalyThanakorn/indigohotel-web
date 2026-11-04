@@ -1,6 +1,7 @@
 // เมนูมือถือ: เปิด/ปิดเมนูและปรับสถานะสำหรับโปรแกรมอ่านหน้าจอ
 const menuButton = document.querySelector('.menu-toggle');
 const primaryNav = document.querySelector('#primary-nav');
+const pageLoader = document.querySelector('.page-loader');
 
 if (menuButton && primaryNav) {
   menuButton.addEventListener('click', () => {
@@ -16,6 +17,7 @@ if (menuButton && primaryNav) {
 }
 
 function updateLoaderLanguage() {
+  if (!pageLoader) return;
   const brand = pageLoader.querySelector('.page-loader-brand');
   const message = pageLoader.querySelector('.page-loader-message');
   brand.textContent = document.documentElement.lang === 'th' ? 'เบสเทียร์' : 'BESTIER';
@@ -28,6 +30,7 @@ const currentDirectory = new URL('.', window.location.href).pathname;
 const pendingNavigationKey = 'bestierPendingNavigation';
 
 function hidePageLoader() {
+  if (!pageLoader) return;
   pageLoader.classList.remove('is-visible');
   pageLoader.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('is-navigating');
@@ -44,10 +47,12 @@ try {
   // เบราว์เซอร์บางโหมดอาจปิดการใช้งานพื้นที่จัดเก็บข้อมูล
 }
 
-if (arrivedFromInternalNavigation) {
-  pageLoader.classList.add('is-visible');
-  pageLoader.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('is-navigating');
+if (arrivedFromInternalNavigation && pageLoader) {
+  if (pageLoader) {
+    pageLoader.classList.add('is-visible');
+    pageLoader.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-navigating');
+  }
   if (document.readyState === 'complete') {
     hidePageLoader();
   } else {
