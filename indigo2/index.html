@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย">
+    <meta name="description" content="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย" data-th="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย" data-en="INDIGO 2 HOTEL in Hatyai's Khet 8, offering a comfortable and relaxing stay.">
     <title>INDIGO 2 HOTEL | Hatyai</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,12 +30,13 @@
         aria-label="เปิดเมนู" aria-expanded="false">☰</button>
 
     <nav class="nav" id="mainNav">
-        <a href="#home">หน้าแรก</a>
-        <a href="#about">เกี่ยวกับเรา</a>
-        <a href="#rooms">ห้องพัก</a>
-        <a href="#gallery">แกลเลอรี</a>
-        <a href="#contact">ติดต่อเรา</a>
-        <a href="#booking" class="nav-button">ค้นหาห้องพัก ↗</a>
+        <a href="#home" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+        <a href="#about" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</a>
+        <a href="#rooms" data-th="ห้องพัก" data-en="Rooms">ห้องพัก</a>
+        <a href="#gallery" data-th="แกลเลอรี" data-en="Gallery">แกลเลอรี</a>
+        <a href="#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a>
+        <a href="#booking" class="nav-button" data-th="ค้นหาห้องพัก ↗" data-en="Find a Room ↗">ค้นหาห้องพัก ↗</a>
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English">EN</button>
     </nav>
 </header>
 
@@ -45,50 +46,51 @@
 <section class="hero">
     <div class="hero-shade"></div>
     <div class="hero-content">
-        <p class="eyebrow">WELCOME TO INDIGO 2 HOTEL</p>
-        <h1>Stay in Comfort.<br><span>Live in Style.</span></h1>
-        <p class="hero-description">
-            ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย
-            สำหรับนักเดินทางยุคใหม่ ในย่านเขต 8 หาดใหญ่
+        <p class="eyebrow" data-th="ยินดีต้อนรับสู่ INDIGO 2 HOTEL" data-en="WELCOME TO INDIGO 2 HOTEL">WELCOME TO INDIGO 2 HOTEL</p>
+        <h1><span data-th="พักผ่อนอย่างสบาย" data-en="Stay in Comfort.">Stay in Comfort.</span><br><span data-th="ใช้ชีวิตอย่างมีสไตล์" data-en="Live in Style.">Live in Style.</span></h1>
+        <p class="hero-description"
+           data-th="ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย สำหรับนักเดินทางยุคใหม่ ในย่านเขต 8 หาดใหญ่"
+           data-en="A welcoming, peaceful, and comfortable stay for modern travelers in Hatyai's Khet 8.">
+            ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย สำหรับนักเดินทางยุคใหม่ ในย่านเขต 8 หาดใหญ่
         </p>
         <div class="hero-buttons">
-            <a href="#rooms" class="button gold">สำรวจห้องพัก</a>
-            <a href="#about" class="button outline">รู้จักโรงแรม</a>
+            <a href="#rooms" class="button gold" data-th="สำรวจห้องพัก" data-en="Explore Rooms">สำรวจห้องพัก</a>
+            <a href="#about" class="button outline" data-th="รู้จักโรงแรม" data-en="About the Hotel">รู้จักโรงแรม</a>
         </div>
     </div>
-    <div class="hero-bottom">MODERN COMFORT · HATYAI, THAILAND</div>
+    <div class="hero-bottom" data-th="สะดวกสบายทันสมัย · หาดใหญ่ ประเทศไทย" data-en="MODERN COMFORT · HATYAI, THAILAND">MODERN COMFORT · HATYAI, THAILAND</div>
 </section>
 
 <!-- 4. BOOKING SEARCH -->
 <section class="booking" id="booking">
     <form id="bookingForm">
         <div class="booking-title">
-            <p class="eyebrow">PLAN YOUR STAY</p>
-            <h2>ค้นหาห้องพัก</h2>
+            <p class="eyebrow" data-th="วางแผนการเข้าพัก" data-en="PLAN YOUR STAY">PLAN YOUR STAY</p>
+            <h2 data-th="ค้นหาห้องพัก" data-en="Find a Room">ค้นหาห้องพัก</h2>
         </div>
 
         <div class="field">
-            <label for="checkin">วันเช็กอิน</label>
+            <label for="checkin" data-th="วันเช็กอิน" data-en="Check-in">วันเช็กอิน</label>
             <input type="date" id="checkin" required>
         </div>
 
         <div class="field">
-            <label for="checkout">วันเช็กเอาต์</label>
+            <label for="checkout" data-th="วันเช็กเอาต์" data-en="Check-out">วันเช็กเอาต์</label>
             <input type="date" id="checkout" required>
         </div>
 
         <div class="field">
-            <label for="guests">ผู้เข้าพัก</label>
+            <label for="guests" data-th="ผู้เข้าพัก" data-en="Guests">ผู้เข้าพัก</label>
             <select id="guests">
-                <option value="1">1 คน</option>
-                <option value="2" selected>2 คน</option>
-                <option value="3">3 คน</option>
-                <option value="4">4 คน</option>
+                <option value="1" data-th="1 คน" data-en="1 guest">1 คน</option>
+                <option value="2" selected data-th="2 คน" data-en="2 guests">2 คน</option>
+                <option value="3" data-th="3 คน" data-en="3 guests">3 คน</option>
+                <option value="4" data-th="4 คน" data-en="4 guests">4 คน</option>
             </select>
         </div>
 
         <button class="button gold search-button" type="submit">
-            ค้นหาห้อง ↗
+            <span data-th="ค้นหาห้อง ↗" data-en="Search Rooms ↗">ค้นหาห้อง ↗</span>
         </button>
     </form>
 </section>
@@ -96,122 +98,146 @@
 <!-- 5. ABOUT HOTEL -->
 <section class="about section" id="about">
     <div class="about-photo">
-        <img src="../assets/images/room1.jpg" alt="บรรยากาศห้องพัก INDIGO 2">
+        <img src="../assets/images/indigo2/room1.jpg" alt="บรรยากาศห้องพัก INDIGO 2" data-th-alt="บรรยากาศห้องพัก INDIGO 2" data-en-alt="INDIGO 2 guest room">
         <span class="photo-label">INDIGO 2 · KHET 8</span>
     </div>
 
     <div class="about-text">
-        <p class="eyebrow">ABOUT OUR HOTEL</p>
-        <h2 class="section-title">ความเรียบง่าย<br>ที่มาพร้อมความสบาย</h2>
+        <p class="eyebrow" data-th="เกี่ยวกับโรงแรม" data-en="ABOUT OUR HOTEL">ABOUT OUR HOTEL</p>
+        <h2 class="section-title"><span data-th="ความเรียบง่าย" data-en="Simple Comfort">ความเรียบง่าย</span><br><span data-th="ที่มาพร้อมความสบาย" data-en="Made for Your Stay">ที่มาพร้อมความสบาย</span></h2>
         <div class="gold-line"></div>
-        <p>
-            INDIGO 2 HOTEL เขต 8 หาดใหญ่
-            ที่พักสำหรับผู้ที่ต้องการความสะดวกสบาย
-            บรรยากาศผ่อนคลาย และพื้นที่พักผ่อนหลังการเดินทาง
-            เหมาะสำหรับนักท่องเที่ยวและผู้ที่เดินทางมาติดต่อธุรกิจ
+        <p data-th="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักสำหรับผู้ที่ต้องการความสะดวกสบาย บรรยากาศผ่อนคลาย และพื้นที่พักผ่อนหลังการเดินทาง เหมาะสำหรับนักท่องเที่ยวและผู้ที่เดินทางมาติดต่อธุรกิจ"
+           data-en="INDIGO 2 HOTEL in Hatyai's Khet 8 offers a comfortable, relaxing place to unwind after a journey. It is suitable for visitors and business travelers.">
+            INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักสำหรับผู้ที่ต้องการความสะดวกสบาย บรรยากาศผ่อนคลาย และพื้นที่พักผ่อนหลังการเดินทาง เหมาะสำหรับนักท่องเที่ยวและผู้ที่เดินทางมาติดต่อธุรกิจ
         </p>
-        <a href="#contact" class="text-link">ติดต่อสอบถาม ↗</a>
+        <a href="#contact" class="text-link" data-th="ติดต่อสอบถาม ↗" data-en="Get in Touch ↗">ติดต่อสอบถาม ↗</a>
     </div>
 </section>
 
 <!-- 6. ROOM CARDS -->
 <section class="rooms section" id="rooms">
     <div class="section-heading">
-        <p class="eyebrow">FIND YOUR COMFORT</p>
-        <h2 class="section-title">ห้องพักของเรา</h2>
-        <p>พื้นที่พักผ่อนที่ออกแบบมาเพื่อการเข้าพักอย่างสบาย</p>
+        <p class="eyebrow" data-th="เลือกห้องพักที่ใช่" data-en="FIND YOUR COMFORT">FIND YOUR COMFORT</p>
+        <h2 class="section-title" data-th="ห้องพักของเรา" data-en="Our Rooms">ห้องพักของเรา</h2>
+        <p data-th="เลือกห้องพักที่เหมาะกับการเดินทางของคุณ" data-en="Choose the room that suits your stay.">เลือกห้องพักที่เหมาะกับการเดินทางของคุณ</p>
         <div class="gold-line"></div>
     </div>
 
     <div class="room-grid">
         <article class="room-card">
-            <img src="../assets/images/room1.jpg" alt="ห้องพักแบบที่ 1" loading="lazy">
+            <img src="../assets/images/indigo2/room2.jpg" alt="ห้องทวิน ลอฟต์" data-th-alt="ห้องทวิน ลอฟต์" data-en-alt="Loft twin room" loading="lazy">
             <div class="room-info">
                 <p class="room-type">ROOM 01</p>
-                <h3>Standard Room</h3>
-                <p>ห้องพักเรียบง่าย เหมาะสำหรับการพักผ่อน</p>
-                <a href="#contact" class="room-link">สอบถามราคา ↗</a>
+                <h3><span data-th="ห้องทวิน" data-en="Twin Room">ห้องทวิน</span><small data-th="Loft Twin Room" data-en="Loft Twin Room">Loft Twin Room</small></h3>
+                <p data-th="ห้องพักเตียงแฝดในรูปแบบลอฟต์" data-en="A loft-style room with twin beds.">ห้องพักเตียงแฝดในรูปแบบลอฟต์</p>
+                <p class="room-price" data-th="สอบถามราคากับโรงแรม" data-en="Contact the hotel for rates">สอบถามราคากับโรงแรม</p>
+                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
             </div>
         </article>
 
         <article class="room-card">
-            <img src="../assets/images/room2.jpg" alt="ห้องพักแบบที่ 2" loading="lazy">
+            <img src="../assets/images/indigo2/room1.jpg" alt="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง" data-th-alt="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง" data-en-alt="Superior king room with city view" loading="lazy">
             <div class="room-info">
                 <p class="room-type">ROOM 02</p>
-                <h3>Superior Room</h3>
-                <p>พื้นที่พักผ่อนที่ให้ความรู้สึกอบอุ่นและผ่อนคลาย</p>
-                <a href="#contact" class="room-link">สอบถามราคา ↗</a>
+                <h3><span data-th="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง" data-en="Superior King Room - City View">ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง</span><small data-th="Superior King Room - City View" data-en="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง">Superior King Room - City View</small></h3>
+                <p data-th="ห้องสุพีเรียร์พร้อมเตียงคิงไซส์และวิวเมือง" data-en="A superior room with a king bed and city view.">ห้องสุพีเรียร์พร้อมเตียงคิงไซส์และวิวเมือง</p>
+                <p class="room-price" data-th="สอบถามราคากับโรงแรม" data-en="Contact the hotel for rates">สอบถามราคากับโรงแรม</p>
+                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
             </div>
         </article>
 
         <article class="room-card">
-            <img src="../assets/images/room3.jpg" alt="ห้องพักแบบที่ 3" loading="lazy">
+            <img src="../assets/images/indigo2/room3.jpg" alt="ห้องมาตรฐานสำหรับ 3 คน" data-th-alt="ห้องมาตรฐานสำหรับ 3 คน" data-en-alt="Triple standard room" loading="lazy">
             <div class="room-info">
                 <p class="room-type">ROOM 03</p>
-                <h3>Deluxe Room</h3>
-                <p>ห้องพักสำหรับผู้ที่มองหาความสะดวกสบาย</p>
-                <a href="#contact" class="room-link">สอบถามราคา ↗</a>
+                <h3><span data-th="ห้องมาตรฐาน สำหรับ 3 คน" data-en="Triple Standard">ห้องมาตรฐาน สำหรับ 3 คน</span><small data-th="Triple Standard" data-en="ห้องมาตรฐาน สำหรับ 3 คน">Triple Standard</small></h3>
+                <p data-th="ห้องมาตรฐานสำหรับผู้เข้าพัก 3 คน" data-en="A standard room for up to 3 guests.">ห้องมาตรฐานสำหรับผู้เข้าพัก 3 คน</p>
+                <p class="room-price" data-th="สอบถามราคากับโรงแรม" data-en="Contact the hotel for rates">สอบถามราคากับโรงแรม</p>
+                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <img src="../assets/images/indigo2/room2.jpg" alt="ห้องสุพีเรียร์เตียงแฝด" data-th-alt="ห้องสุพีเรียร์เตียงแฝด" data-en-alt="Superior twin room" loading="lazy">
+            <div class="room-info">
+                <p class="room-type">ROOM 04</p>
+                <h3><span data-th="ซูพีเรีย เตียงแฝด" data-en="Superior Twin Room">ซูพีเรีย เตียงแฝด</span><small data-th="Superior Twin Room" data-en="ซูพีเรีย เตียงแฝด">Superior Twin Room</small></h3>
+                <p data-th="ห้องสุพีเรียร์พร้อมเตียงแฝด" data-en="A superior room with twin beds.">ห้องสุพีเรียร์พร้อมเตียงแฝด</p>
+                <p class="room-price" data-th="สอบถามราคากับโรงแรม" data-en="Contact the hotel for rates">สอบถามราคากับโรงแรม</p>
+                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
+            </div>
+        </article>
+
+        <article class="room-card">
+            <img src="../assets/images/indigo2/room9.jpg" alt="ห้องสุพีเรียร์เตียงคิงไซส์" data-th-alt="ห้องสุพีเรียร์เตียงคิงไซส์" data-en-alt="Superior king room" loading="lazy">
+            <div class="room-info">
+                <p class="room-type">ROOM 05</p>
+                <h3><span data-th="ห้องสุพีเรียร์เตียงคิงไซส์" data-en="Superior King Room">ห้องสุพีเรียร์เตียงคิงไซส์</span><small data-th="Superior King Room" data-en="ห้องสุพีเรียร์เตียงคิงไซส์">Superior King Room</small></h3>
+                <p data-th="ห้องสุพีเรียร์พร้อมเตียงคิงไซส์" data-en="A superior room with a king bed.">ห้องสุพีเรียร์พร้อมเตียงคิงไซส์</p>
+                <p class="room-price" data-th="สอบถามราคากับโรงแรม" data-en="Contact the hotel for rates">สอบถามราคากับโรงแรม</p>
+                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
             </div>
         </article>
     </div>
-    <p class="disclaimer">ชื่อประเภทห้องพักเป็นตัวอย่าง กรุณาแก้ไขให้ตรงกับห้องจริงของโรงแรม</p>
+    <p class="disclaimer" data-th="ราคาและห้องว่างอาจเปลี่ยนแปลง กรุณาติดต่อโรงแรมเพื่อยืนยันก่อนจอง" data-en="Rates and availability may change. Please contact the hotel to confirm before booking.">ราคาและห้องว่างอาจเปลี่ยนแปลง กรุณาติดต่อโรงแรมเพื่อยืนยันก่อนจอง</p>
 </section>
 
 <!-- 7. GALLERY -->
 <section class="gallery section" id="gallery">
     <div class="section-heading">
-        <p class="eyebrow">OUR SPACE</p>
-        <h2 class="section-title">บรรยากาศของโรงแรม</h2>
+        <p class="eyebrow" data-th="บรรยากาศของเรา" data-en="OUR SPACE">OUR SPACE</p>
+        <h2 class="section-title" data-th="บรรยากาศของโรงแรม" data-en="Hotel Gallery">บรรยากาศของโรงแรม</h2>
         <div class="gold-line"></div>
     </div>
 
     <div class="gallery-grid">
-        <img src="../assets/images/indigo2/room1.jpg" alt="บรรยากาศห้องพัก 1" loading="lazy">
-        <img src="../assets/images/indigo2/room2.jpg" alt="บรรยากาศห้องพัก 2" loading="lazy">
-        <img src="../assets/images/indigo2/room3.jpg" alt="บรรยากาศห้องพัก 3" loading="lazy">
-        <img src="../assets/images/indigo2/room4_n.jpg" alt="บรรยากาศห้องพัก 4" loading="lazy">
-        <img src="../assets/images/indigo2/room5.jpg" alt="บรรยากาศห้องพัก 5" loading="lazy">
-        <img src="../assets/images/indigo2/room6.jpg" alt="บรรยากาศห้องพัก 6" loading="lazy">
-        <img src="../assets/images/indigo2/room7.jpg" alt="บรรยากาศห้องพัก 7" loading="lazy">
-        <img src="../assets/images/indigo2/room8.jpg" alt="บรรยากาศห้องพัก 8" loading="lazy">
-        <img src="../assets/images/indigo2/room9.jpg" alt="บรรยากาศห้องพัก 9" loading="lazy">
+        <img src="../assets/images/indigo2/room1.jpg" alt="ห้องพักเตียงคิงไซส์" data-th-alt="ห้องพักเตียงคิงไซส์" data-en-alt="King room" loading="lazy">
+        <img src="../assets/images/indigo2/room2.jpg" alt="ห้องพักเตียงแฝด" data-th-alt="ห้องพักเตียงแฝด" data-en-alt="Twin room" loading="lazy">
+        <img src="../assets/images/indigo2/room3.jpg" alt="ห้องพักตกแต่งพิเศษ" data-th-alt="ห้องพักตกแต่งพิเศษ" data-en-alt="Specially decorated room" loading="lazy">
+        <img src="../assets/images/indigo2/room4_n.jpg" alt="มุมโทรทัศน์ภายในห้องพัก" data-th-alt="มุมโทรทัศน์ภายในห้องพัก" data-en-alt="In-room TV area" loading="lazy">
+        <img src="../assets/images/indigo2/room5.jpg" alt="ห้องน้ำและฝักบัว" data-th-alt="ห้องน้ำและฝักบัว" data-en-alt="Bathroom and shower" loading="lazy">
+        <img src="../assets/images/indigo2/room6.jpg" alt="มุมเครื่องดื่ม" data-th-alt="มุมเครื่องดื่ม" data-en-alt="Refreshment station" loading="lazy">
+        <img src="../assets/images/indigo2/room7.jpg" alt="พื้นที่ส่วนกลาง" data-th-alt="พื้นที่ส่วนกลาง" data-en-alt="Hotel lounge" loading="lazy">
+        <img src="../assets/images/indigo2/room8.jpg" alt="อาคารโรงแรม" data-th-alt="อาคารโรงแรม" data-en-alt="Hotel exterior" loading="lazy">
+        <img src="../assets/images/indigo2/room9.jpg" alt="ห้องพักเตียงคิงไซส์" data-th-alt="ห้องพักเตียงคิงไซส์" data-en-alt="King room" loading="lazy">
     </div>
 </section>
 
 <!-- 8. CONTACT -->
 <section class="contact section" id="contact">
     <div class="section-heading">
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2 class="section-title">ติดต่อ INDIGO 2</h2>
+        <p class="eyebrow" data-th="ติดต่อเรา" data-en="GET IN TOUCH">GET IN TOUCH</p>
+        <h2 class="section-title" data-th="ติดต่อ INDIGO 2" data-en="Contact INDIGO 2">ติดต่อ INDIGO 2</h2>
         <div class="gold-line"></div>
     </div>
 
     <div class="contact-grid">
         <div class="contact-card">
             <span class="contact-icon">01</span>
-            <h3>โทรศัพท์</h3>
-            <p>สอบถามรายละเอียดและการเข้าพัก</p>
+            <h3 data-th="โทรศัพท์" data-en="Phone">โทรศัพท์</h3>
+            <p data-th="สอบถามรายละเอียดและการเข้าพัก" data-en="For room details and booking inquiries.">สอบถามรายละเอียดและการเข้าพัก</p>
             <a href="tel:074813380">074 813 380</a>
         </div>
 
         <div class="contact-card">
             <span class="contact-icon">02</span>
-            <h3>ที่อยู่</h3>
-            <p>
+            <h3 data-th="ที่อยู่" data-en="Address">ที่อยู่</h3>
+            <p data-th="251 ถนนรัตนอุทิศ ซอย 15 ตำบลหาดใหญ่ อำเภอหาดใหญ่ จังหวัดสงขลา 90110"
+               data-en="251 Ratana Uthit Road, Soi 15, Hat Yai Subdistrict, Hat Yai District, Songkhla 90110, Thailand">
                 251 ถนนรัตนอุทิศ ซอย 15<br>
                 ตำบลหาดใหญ่ อำเภอหาดใหญ่<br>
                 จังหวัดสงขลา 90110
             </p>
             <a href="https://www.google.com/maps/search/?api=1&query=INDIGO+HATYAI+HOTEL+2+251+Ratana+Uthit+Soi+15+Hat+Yai"
-               target="_blank" rel="noopener">เปิดแผนที่ ↗</a>
+               target="_blank" rel="noopener" data-th="เปิดแผนที่ ↗" data-en="Open Map ↗">เปิดแผนที่ ↗</a>
         </div>
 
         <div class="contact-card">
             <span class="contact-icon">03</span>
-            <h3>ทำเลที่ตั้ง</h3>
-            <p>เขต 8 อำเภอหาดใหญ่ จังหวัดสงขลา</p>
+            <h3 data-th="ทำเลที่ตั้ง" data-en="Location">ทำเลที่ตั้ง</h3>
+            <p data-th="เขต 8 อำเภอหาดใหญ่ จังหวัดสงขลา" data-en="Khet 8, Hat Yai District, Songkhla">เขต 8 อำเภอหาดใหญ่ จังหวัดสงขลา</p>
             <a href="https://indigohatyai.com/" target="_blank" rel="noopener">
-                เว็บไซต์โรงแรม ↗
+                <span data-th="เว็บไซต์โรงแรม ↗" data-en="Hotel Website ↗">เว็บไซต์โรงแรม ↗</span>
             </a>
         </div>
     </div>
@@ -222,7 +248,7 @@
 <!-- FOOTER -->
 <footer class="footer">
     <a href="#home" class="footer-logo">INDIGO 2</a>
-    <p>ที่พักอบอุ่น เงียบสงบ และสะดวกสบายสำหรับนักเดินทางยุคใหม่</p>
+    <p data-th="ที่พักอบอุ่น เงียบสงบ และสะดวกสบายสำหรับนักเดินทางยุคใหม่" data-en="A welcoming, peaceful, and comfortable stay for modern travelers.">ที่พักอบอุ่น เงียบสงบ และสะดวกสบายสำหรับนักเดินทางยุคใหม่</p>
     <p class="copyright">© 2026 INDIGO 2 HOTEL · HATYAI, THAILAND</p>
 </footer>
 

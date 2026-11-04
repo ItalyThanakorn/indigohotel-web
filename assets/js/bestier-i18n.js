@@ -1,5 +1,31 @@
 (() => {
   const translations = {
+    'อีเมล:': 'Email:',
+    'อีเมล: bestierhotel.hatyai@gmail.com': 'Email: bestierhotel.hatyai@gmail.com',
+    'ดูรูปห้องเพิ่มเติม': 'View more room photos',
+    'ชมภาพพื้นที่ส่วนกลางและบริเวณรอบโรงแรม เพื่อประกอบการวางแผนเข้าพัก': 'Explore the hotel common areas and surroundings as you plan your stay.',
+    'สวนและมุมนั่งพักกลางแจ้ง': 'Garden and outdoor seating',
+    'เลือกห้องพักจาก 5 รูปแบบ พร้อมอินเทอร์เน็ตไร้สายฟรี ที่จอดรถส่วนตัว และสิ่งอำนวยความสะดวกสำหรับผู้เข้าพัก': 'Choose from five room types, with free wireless internet, private parking, and guest amenities.',
+    'บรรยากาศโรงแรมเบสเทียร์': 'Bestier Hotel atmosphere',
+    'บรรยากาศ': 'Atmosphere',
+    'โรงแรม': 'Hotel',
+    'โรงแรมตั้งอยู่ในหาดใหญ่': 'Located in Hat Yai',
+    'ดูตำแหน่งและเส้นทางไปโรงแรมบนแผนที่': 'View the hotel location and directions on the map.',
+    'เวลาเช็กอิน / เช็กเอาต์': 'Check-in / check-out times',
+    'เช็กอิน 14:00 น. เป็นต้นไป': 'Check-in from 14:00',
+    'เช็กเอาต์ไม่เกิน 12:00 น.': 'Check-out by 12:00',
+    'บริการรถตุ๊กตุ๊กรับ–ส่งฟรี ภายในรัศมี 1 กิโลเมตร': 'Free tuk-tuk shuttle service within a 1-kilometer radius',
+    'เมื่อกดปุ่ม ระบบจะเปิดอีเมลร่างพร้อมข้อมูลที่กรอก โปรดตรวจสอบและกดส่งในโปรแกรมอีเมล การส่งคำขอยังไม่ถือเป็นการยืนยันการจอง': 'The button opens an email draft with the information you entered. Please review and send it from your email app. This enquiry does not confirm a reservation.',
+    'หากไม่สามารถเปิดโปรแกรมอีเมลได้ โปรดส่งรายละเอียดถึง': 'If your email app does not open, please send the details to',
+    'สอบถามห้องว่างและราคาได้ที่โรงแรม': 'Contact the hotel to check availability and rates.',
+    'การจองจะสมบูรณ์เมื่อโรงแรมยืนยันแล้ว': 'Your reservation is complete once confirmed by the hotel.',
+    'ดูภาพรวมประเภทห้องพัก': 'View the room type overview',
+    'ราคาห้องพักอาจเปลี่ยนแปลงตามช่วงเวลา กรุณาสอบถามราคาและห้องว่างกับโรงแรมก่อนจอง': 'Room rates may vary by season. Please confirm rates and availability with the hotel before booking.',
+    'WhatsApp': 'WhatsApp',
+    'ห้องพักสำหรับผู้เข้าพัก 2 ท่าน เหมาะสำหรับผู้ที่ต้องการแยกเตียง พร้อมเตียงขนาด 3.5 ฟุต 2 เตียง': 'A room for two guests who prefer separate beds, with two 3.5-foot beds.',
+    'ห้องพักสำหรับผู้เดินทางเพื่อธุรกิจ พร้อมเตียงขนาด 6 ฟุต 1 เตียง': 'A room for business travelers with one 6-foot bed.',
+    'ห้องพักพร้อมพื้นที่นั่งเล่นและเตียงขนาด 6 ฟุต 1 เตียง': 'A room with a seating area and one 6-foot bed.',
+    'ส่งคำขอสอบถามห้องพัก': 'Send a room enquiry',
     'หน้าแรก': 'Home',
     'ห้องพัก': 'Rooms',
     'บรรยากาศโรงแรม': 'Hotel Gallery',
@@ -30,7 +56,6 @@
     'เกี่ยวกับโรงแรม': 'About the hotel',
     'ข้อมูลโรงแรม': 'Hotel information',
     'โรงแรม': 'Hotel',
-    'เบสเทียร์': 'Bestier',
     'Bestier Hotel ให้บริการห้องพักในอำเภอหาดใหญ่ จังหวัดสงขลา': 'Bestier Hotel offers accommodation in Hat Yai, Songkhla.',
     'เลือกห้องพักที่ใช่จาก 5 รูปแบบ พร้อมฟรี Wi-Fi ที่จอดรถส่วนตัว และบริการครบวงจร': 'Choose from five room types, with free wireless internet, private parking, and hotel services.',
     'ข้อมูลติดต่อ': 'Contact information',
@@ -249,6 +274,7 @@
 
   const reverse = Object.fromEntries(Object.entries(translations).map(([th, en]) => [en, th]));
   const thaiOnly = {
+    'WhatsApp': 'วอตส์แอป',
     'Bestier': 'เบสเทียร์',
     'Bestier Hotel': 'โรงแรมเบสเทียร์',
     'Superior King': 'ซูพีเรียร์ คิง',
@@ -327,6 +353,7 @@
     const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (textWalker.nextNode()) {
       const node = textWalker.currentNode;
+      if (node.parentElement?.closest('[data-no-translate]')) continue;
       if (!node.__bestierSourceText) node.__bestierSourceText = node.nodeValue.replace(/\s+/g, ' ').trim();
       const source = node.__bestierSourceText;
       if (!source) continue;
