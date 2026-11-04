@@ -15,19 +15,14 @@ if (menuButton && primaryNav) {
   });
 }
 
-// ตัวโหลดระหว่างเปลี่ยนไปยังหน้าอื่นภายในเว็บไซต์
-const pageLoader = document.createElement('div');
-pageLoader.className = 'page-loader';
-pageLoader.id = 'pageLoader';
-pageLoader.setAttribute('aria-hidden', 'true');
-pageLoader.innerHTML = `
-  <div class="page-loader-card" role="status" aria-live="polite">
-    <img src="../assets/images/bestier/bestier-mark.png" alt="" width="48" height="48">
-    <span class="page-loader-brand">BESTIER</span>
-    <span class="page-loader-message">กำลังเตรียมการเข้าพักของคุณ</span>
-    <span class="page-loader-track"><span></span></span>
-  </div>`;
-document.body.append(pageLoader);
+function updateLoaderLanguage() {
+  const brand = pageLoader.querySelector('.page-loader-brand');
+  const message = pageLoader.querySelector('.page-loader-message');
+  brand.textContent = document.documentElement.lang === 'th' ? 'เบสเทียร์' : 'BESTIER';
+  message.textContent = document.documentElement.lang === 'th' ? 'กำลังโหลดหน้าเว็บ' : 'Loading page';
+}
+updateLoaderLanguage();
+document.addEventListener('bestierlanguagechange', updateLoaderLanguage);
 
 const currentDirectory = new URL('.', window.location.href).pathname;
 const pendingNavigationKey = 'bestierPendingNavigation';
@@ -139,12 +134,39 @@ if (roomSelect && params.has('room')) {
   if (option) roomSelect.value = option.value;
 }
 
-// แจ้งผู้ใช้ว่าแบบฟอร์มยังไม่เชื่อมต่อระบบจองจริง
+// เตรียมอีเมลคำขอสอบถามห้องพักให้ลูกค้าตรวจสอบและส่งเอง
 const reservationForm = document.querySelector('#reservationForm');
 if (reservationForm) {
   reservationForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    document.querySelector('#bookingStatus').textContent = 'เว็บไซต์นี้ยังไม่ได้เชื่อมต่อระบบรับคำขอจอง ข้อมูลที่กรอกยังไม่ถูกส่ง กรุณาติดต่อ bestierhotel.hatyai@gmail.com เพื่อสอบถามห้องว่างและยืนยันการจอง';
+    const formData = new FormData(reservationForm);
+    const isThaiPage = document.documentElement.lang === 'th';
+    const fields = [
+      [isThaiPage ? 'ชื่อผู้ติดต่อ' : 'Name', formData.get('guestName')],
+      [isThaiPage ? 'อีเมล' : 'Email', formData.get('guestEmail')],
+      [isThaiPage ? 'เบอร์โทรศัพท์' : 'Phone number', formData.get('guestPhone') || (isThaiPage ? 'ไม่ระบุ' : 'Not provided')],
+      [isThaiPage ? 'เช็กอิน' : 'Check-in', formData.get('checkin')],
+      [isThaiPage ? 'เช็กเอาต์' : 'Check-out', formData.get('checkout')],
+      [isThaiPage ? 'ประเภทห้อง' : 'Room type', roomSelect?.selectedOptions[0]?.textContent.trim() || ''],
+      [isThaiPage ? 'จำนวนผู้เข้าพัก' : 'Guests', guestSelect?.selectedOptions[0]?.textContent.trim() || ''],
+      [isThaiPage ? 'คำขอเพิ่มเติม' : 'Additional requests', formData.get('requests')?.trim() || (isThaiPage ? 'ไม่มี' : 'None')]
+    ];
+    const subject = isThaiPage
+      ? `คำขอสอบถามห้องพักโรงแรมเบสเทียร์ - ${formData.get('guestName')}`
+      : `Bestier Hotel room enquiry - ${formData.get('guestName')}`;
+    const body = [
+      isThaiPage ? 'เรียน โรงแรมเบสเทียร์' : 'Hello Bestier Hotel,',
+      '',
+      isThaiPage ? 'ขอสอบถามห้องพักตามรายละเอียดด้านล่าง' : 'I would like to enquire about a room with the following details:',
+      ...fields.map(([label, value]) => `${label}: ${value}`),
+      '',
+      isThaiPage ? 'กรุณาติดต่อกลับเพื่อแจ้งห้องว่างและยืนยันราคา' : 'Please contact me to confirm availability and rates.',
+      isThaiPage ? 'หมายเหตุ: อีเมลฉบับนี้เป็นคำขอสอบถาม ยังไม่ใช่การยืนยันการจอง' : 'Note: This is an enquiry and does not confirm a reservation.'
+    ].join('\n');
+    document.querySelector('#bookingStatus').textContent = isThaiPage
+      ? 'กำลังเปิดโปรแกรมอีเมล กรุณาตรวจสอบรายละเอียดและกดส่งในโปรแกรมอีเมล คำขอนี้ยังไม่ถือเป็นการยืนยันห้องพัก'
+      : 'Opening your email app. Review the details and send the message there. This enquiry does not confirm a reservation.';
+    window.location.href = `mailto:lolggwpxddd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 

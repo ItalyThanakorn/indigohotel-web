@@ -9,9 +9,9 @@
   --ink: #202b3b;
   --muted: #7d817f;
   --line: #dcd8ce;
-  --serif: 'Playfair Display',Georgia,serif;
-  --sans: 'DM Sans','Noto Sans Thai',sans-serif;
-  --thai: 'Noto Sans Thai',sans-serif
+  --serif: 'Playfair Display','Noto Serif Thai',Georgia,serif;
+  --sans: 'DM Sans','Noto Serif Thai',serif;
+  --thai: 'Noto Serif Thai',serif
 }
 * {
   box-sizing: border-box
@@ -26,6 +26,12 @@ body {
   color: var(--ink);
   font-family: var(--thai);
   font-weight: 300
+}
+html[lang="en"] body {
+  font-family: var(--sans)
+}
+html[lang="th"] .room-poster {
+  display: none
 }
 a {
   color: inherit;
@@ -98,6 +104,27 @@ button,input,select {
 .nav-book span {
   color: var(--gold);
   padding-left: 12px
+}
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  padding: 5px 2px;
+  color: #747875;
+  background: transparent;
+  font: 500 10px var(--sans);
+  white-space: nowrap;
+  cursor: pointer
+}
+.language-option.is-active {
+  color: var(--navy);
+  font-weight: 600
+}
+.localized-brand-name {
+  color: var(--navy);
+  font: 500 22px/1 var(--serif);
+  letter-spacing: .06em
 }
 .menu-toggle {
   display: none
@@ -981,6 +1008,12 @@ button,input,select {
     margin-top: 15px;
     text-align: center
   }
+  .language-toggle {
+    align-self: center;
+    margin-top: 12px;
+    padding: 8px 2px;
+    text-align: center
+  }
   .hero {
     height: auto;
     min-height: 0;
@@ -1443,14 +1476,11 @@ p {
 .page-hero-rooms {
   background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/hallway.JPG')
 }
-.page-hero-dining {
-  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/257935f46f15c8b4ffc49da28856382a.webp')
-}
 .page-hero-booking {
-  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/7e87335355ba15be483b00ce5e33c50f.webp')
+  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/inside-room.jpg')
 }
 .page-hero-contact {
-  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/5500683d5d6c7a4eeff6256e26705270.webp')
+  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/counter2.jpg')
 }
 
 .page-hero h1 {
