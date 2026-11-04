@@ -6,7 +6,7 @@
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 const languageToggle = document.getElementById("languageToggle");
-let currentLanguage = "th";
+let currentLanguage = document.documentElement.lang === "en" ? "en" : "th";
 
 function applyLanguage(language) {
     currentLanguage = language;
@@ -16,7 +16,10 @@ function applyLanguage(language) {
         : "INDIGO 2 HOTEL | Hat Yai";
 
     document.querySelectorAll("body [data-th][data-en]").forEach(function (element) {
-        element.textContent = element.getAttribute(`data-${language}`);
+        const translation = element.getAttribute(`data-${language}`);
+        if (translation !== null) {
+            element.textContent = translation;
+        }
     });
 
     document.querySelectorAll("[data-th-alt][data-en-alt]").forEach(function (image) {
@@ -40,7 +43,8 @@ function applyLanguage(language) {
 }
 
 languageToggle.addEventListener("click", function () {
-    applyLanguage(currentLanguage === "th" ? "en" : "th");
+    const nextLanguage = document.documentElement.lang === "th" ? "en" : "th";
+    applyLanguage(nextLanguage);
 });
 
 menuToggle.addEventListener("click", function () {
