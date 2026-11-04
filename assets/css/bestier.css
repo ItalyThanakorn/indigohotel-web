@@ -1948,12 +1948,6 @@ p {
 .room-detail-photo a:hover img {
   transform: scale(1.025)
 }
-.room-detail-photo figcaption {
-  padding: 11px 15px;
-  border-top: 1px solid var(--line);
-  color: #60676d;
-  font-size: 13px
-}
 .room-detail-cta {
   margin-top: 56px
 }

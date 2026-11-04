@@ -48,7 +48,6 @@
     const isThai = document.documentElement.lang === 'th';
     const roomName = isThai ? room.nameTh : room.nameEn;
     const roomDescription = isThai ? room.descriptionTh : room.descriptionEn;
-    const photoLabel = isThai ? 'ภาพที่' : 'Photo';
     document.title = isThai ? `ห้อง${room.nameTh} | โรงแรมเบสเทียร์` : `${room.nameEn} Room | Bestier Hotel`;
     document.querySelector('meta[name="description"]').content = isThai
       ? `ชมภาพห้อง${room.nameTh} เพิ่มเติมของโรงแรมเบสเทียร์ หาดใหญ่`
@@ -79,9 +78,7 @@
         ? `ห้อง${room.nameTh} ภาพที่ ${index + 1}`
         : `${room.nameEn} room, photo ${index + 1}`;
       link.append(image);
-      const caption = document.createElement('figcaption');
-      caption.textContent = `${photoLabel} ${String(index + 1).padStart(2, '0')}`;
-      figure.append(link, caption);
+      figure.append(link);
       return figure;
     }));
   };
