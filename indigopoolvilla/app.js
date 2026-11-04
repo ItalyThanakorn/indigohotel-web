@@ -1,65 +1,7 @@
-const cards = [...document.querySelectorAll('.villa-card')];
-const chips = [...document.querySelectorAll('.filter-chip')];
-const destination = document.querySelector('#destination');
-const emptyState = document.querySelector('#empty-state');
-const feedback = document.querySelector('#search-feedback');
-let activeArea = 'all';
-
-function applyFilters() {
-  const area = destination.value || activeArea;
-  const guestLimit = Number(document.querySelector('#guests').value || 0);
-  const bedroomLimit = Number(document.querySelector('#bedrooms').value || 0);
-  let shown = 0;
-  cards.forEach(card => {
-    const matchesArea = area === 'all' || !area || card.dataset.area === area;
-    const matchesGuests = !guestLimit || Number(card.dataset.guests) >= guestLimit;
-    const matchesBedrooms = !bedroomLimit || Number(card.dataset.bedrooms) >= bedroomLimit;
-    card.hidden = !(matchesArea && matchesGuests && matchesBedrooms);
-    if (!card.hidden) shown += 1;
-  });
-  emptyState.hidden = shown !== 0;
-  return shown;
-}
-
-function syncAreaChip(area) {
-  chips.forEach(chip => chip.classList.toggle('selected', chip.dataset.filter === area));
-  activeArea = area;
-}
-
-chips.forEach(chip => chip.addEventListener('click', () => {
-  const area = chip.dataset.filter;
-  syncAreaChip(area);
-  destination.value = area === 'all' ? '' : area;
-  feedback.textContent = '';
-  applyFilters();
-}));
-
-document.querySelector('#search-form').addEventListener('submit', event => {
-  event.preventDefault();
-  const selectedArea = destination.value || 'all';
-  syncAreaChip(selectedArea);
-  const shown = applyFilters();
-  const guest = document.querySelector('#guests');
-  const bedrooms = document.querySelector('#bedrooms');
-  feedback.textContent = shown
-    ? `พบที่พัก ${shown} แห่ง${selectedArea !== 'all' ? ` · ${selectedArea}` : ''}${guest.value ? ` · ${guest.selectedOptions[0].textContent}` : ''}${bedrooms.value ? ` · ${bedrooms.selectedOptions[0].textContent}` : ''}`
-    : 'ไม่พบบ้านพักตามตัวเลือกนี้ ลองเปลี่ยนพื้นที่หรือจำนวนผู้เข้าพัก';
-  feedback.classList.remove('feedback-pop');
-  requestAnimationFrame(() => feedback.classList.add('feedback-pop'));
-  document.querySelector('#stays').scrollIntoView({behavior:'smooth',block:'start'});
-});
-
-document.querySelectorAll('[data-area-link]').forEach(link => link.addEventListener('click', () => {
-  const area = link.dataset.areaLink;
-  destination.value = area;
-  syncAreaChip(area);
-  applyFilters();
-}));
-
 // Remember favorites locally and keep the count visible while browsing.
 const favoriteCount = document.querySelector('#favorite-count');
 let savedFavorites = [];
-const favoriteKeys = cards.map(card => card.dataset.favoriteId).filter(Boolean);
+const favoriteKeys = [...document.querySelectorAll('.villa-card')].map(card => card.dataset.favoriteId).filter(Boolean);
 try {
   const storedFavorites = JSON.parse(localStorage.getItem('indigo-favorites') || '[]');
   savedFavorites = storedFavorites.map(item => typeof item === 'number' ? favoriteKeys[item] : item).filter(item => favoriteKeys.includes(item));
@@ -137,15 +79,14 @@ villaModal.querySelector('.modal-contact').addEventListener('click', closeVillaM
 
 // Hero carousel: selectable dots plus a slow, hands-free advance.
 const heroImages = [
-  {src:'images/palm-house.jpg', alt:'บ้านพักพูลวิลล่าหัวหิน', title:'บ้านพักพูลวิลล่า', area:'หัวหิน · ชะอำ · ปราณบุรี', line:'เลือกบ้านพักที่ใช่ สำหรับทริปพิเศษของคุณ'},
+  {src:'images/p1.png', alt:'Indigo Beachfront Pool Villa พร้อมสระว่ายน้ำส่วนตัว', title:'บ้านพักพูลวิลล่า', area:'หัวหิน · ชะอำ · ปราณบุรี', line:'เลือกบ้านพักที่ใช่ สำหรับทริปพิเศษของคุณ'},
   {src:'images/casa-azul.jpg', alt:'พูลวิลล่าชะอำพร้อมสระว่ายน้ำ', title:'ชวนคนที่คุณรัก', area:'มาพักผ่อนริมทะเล', line:'บ้านพักกว้าง สระส่วนตัว พร้อมช่วงเวลาดี ๆ'},
-  {src:'images/villa-sol.jpg', alt:'พูลวิลล่าปราณบุรีท่ามกลางธรรมชาติ', title:'พักผ่อนให้เต็มที่', area:'ในแบบที่เป็นคุณ', line:'ค้นหาพูลวิลล่าสำหรับครอบครัวและกลุ่มเพื่อน'}
+  {src:'images/villa-sol.jpg', alt:'พูลวิลล่าปราณบุรีท่ามกลางธรรมชาติ', title:'พักผ่อนให้เต็มที่', area:'ในแบบที่เป็นคุณ', line:'เลือกพูลวิลล่าสำหรับครอบครัวและกลุ่มเพื่อน'}
 ];
 const hero = document.querySelector('.hero');
 const heroImage = hero.querySelector('.hero-image');
 const heroHeading = hero.querySelector('h1');
 const heroLine = hero.querySelector('.hero-caption p');
-const heroDots = [...hero.querySelectorAll('[data-slide]')];
 let heroIndex = 0;
 function showHero(index) {
   heroIndex = (index + heroImages.length) % heroImages.length;
@@ -158,21 +99,16 @@ function showHero(index) {
     heroLine.textContent = slide.line;
     heroImage.classList.remove('changing');
   }, 180);
-  heroDots.forEach((dot, dotIndex) => {
-    dot.classList.toggle('active', dotIndex === heroIndex);
-    dot.setAttribute('aria-current', dotIndex === heroIndex ? 'true' : 'false');
-  });
 }
-heroDots.forEach(dot => dot.addEventListener('click', () => showHero(Number(dot.dataset.slide))));
 let heroTimer = window.setInterval(() => showHero(heroIndex + 1), 6500);
 hero.addEventListener('mouseenter', () => window.clearInterval(heroTimer));
 hero.addEventListener('mouseleave', () => { heroTimer = window.setInterval(() => showHero(heroIndex + 1), 6500); });
 
 // Review carousel with short sample quotes.
 const reviews = [
-  {quote:'“บ้านพักสะอาด บรรยากาศดีมาก ได้ใช้เวลากับครอบครัวเต็มที่ เด็ก ๆ สนุกกับสระว่ายน้ำ ไว้มีโอกาสจะกลับมาพักอีกค่ะ”', author:'คุณลูกค้า Indigo Pool Villa · หัวหิน'},
-  {quote:'“ไปกันหลายคนแต่บ้านกว้างขวาง มีพื้นที่ทำกิจกรรมด้วยกันครบ จองและประสานงานง่ายมากค่ะ”', author:'คุณลูกค้า Indigo Pool Villa · ชะอำ'},
-  {quote:'“บรรยากาศสงบ เป็นส่วนตัว ตื่นเช้ามาได้พักจริง ๆ เหมาะกับทริปครอบครัวมากครับ”', author:'คุณลูกค้า Indigo Pool Villa · ปราณบุรี'}
+  {quote:'“บ้านพักสะอาด บรรยากาศดีมาก ได้ใช้เวลากับครอบครัวเต็มที่ เด็ก ๆ สนุกกับสระว่ายน้ำ ไว้มีโอกาสจะกลับมาพักอีกค่ะ”', author:'คุณลูกค้า Indigo Beachfront Pool Villa · หัวหิน'},
+  {quote:'“ไปกันหลายคนแต่บ้านกว้างขวาง มีพื้นที่ทำกิจกรรมด้วยกันครบ จองและประสานงานง่ายมากค่ะ”', author:'คุณลูกค้า Indigo Beachfront Pool Villa · ชะอำ'},
+  {quote:'“บรรยากาศสงบ เป็นส่วนตัว ตื่นเช้ามาได้พักจริง ๆ เหมาะกับทริปครอบครัวมากครับ”', author:'คุณลูกค้า Indigo Beachfront Pool Villa · ปราณบุรี'}
 ];
 let reviewIndex = 0;
 const reviewQuote = document.querySelector('.review-card blockquote');
@@ -193,7 +129,7 @@ document.querySelector('.review-next').addEventListener('click', () => showRevie
 reviewDots.forEach((dot, index) => dot.addEventListener('click', () => showReview(index)));
 
 // Reveal content as it enters the viewport.
-const revealTargets = document.querySelectorAll('.about-copy,.search-heading,.search-bar,.section-heading,.villa-card,.area-card,.benefits article,.review-card,.contact-cta');
+const revealTargets = document.querySelectorAll('.about-copy,.section-heading,.villa-card,.area-card,.benefits article,.review-card,.contact-cta');
 revealTargets.forEach((item, index) => {
   item.classList.add('reveal-ready');
   item.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
