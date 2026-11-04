@@ -11,41 +11,6 @@ if (menuButton && nav) {
   }));
 }
 
-const villaCards = [...document.querySelectorAll('[data-listing]')];
-const listingForm = document.querySelector('#page-search-form');
-const listingStatus = document.querySelector('#page-filter-result');
-function filterListings() {
-  if (!villaCards.length) return;
-  const area = document.querySelector('#page-area')?.value || '';
-  const guestCount = Number(document.querySelector('#page-guests')?.value || 0);
-  const roomCount = Number(document.querySelector('#page-rooms')?.value || 0);
-  const visible = villaCards.filter(card => {
-    const matchesArea = !area || card.dataset.area === area;
-    const matchesGuests = !guestCount || Number(card.dataset.guests) >= guestCount;
-    const matchesRooms = !roomCount || Number(card.dataset.bedrooms) >= roomCount;
-    card.hidden = !(matchesArea && matchesGuests && matchesRooms);
-    return !card.hidden;
-  }).length;
-  if (listingStatus) listingStatus.textContent = visible ? `แสดงบ้านพัก ${visible} หลังตามตัวเลือกของคุณ` : 'ยังไม่พบบ้านพักที่ตรงกับตัวเลือก ลองปรับตัวกรองอีกครั้ง';
-}
-
-if (listingForm) {
-  const params = new URLSearchParams(location.search);
-  if (params.has('area')) {
-    const requestedArea = params.get('area');
-    document.querySelector('#page-area').value = requestedArea;
-    document.querySelectorAll('[data-filter-area]').forEach(button => button.classList.toggle('selected', button.dataset.filterArea === requestedArea));
-  }
-  listingForm.addEventListener('submit', event => { event.preventDefault(); filterListings(); });
-  document.querySelectorAll('[data-filter-area]').forEach(button => button.addEventListener('click', () => {
-    document.querySelector('#page-area').value = button.dataset.filterArea;
-    document.querySelectorAll('[data-filter-area]').forEach(item => item.classList.toggle('selected', item === button));
-    filterListings();
-    document.querySelector('#villa-listings').scrollIntoView({behavior:'smooth',block:'start'});
-  }));
-  filterListings();
-}
-
 // Keep favorite choices in sync with the homepage.
 const pageFavorites = [...document.querySelectorAll('[data-page-favorite]')];
 let favoriteIndexes = [];

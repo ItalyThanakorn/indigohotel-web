@@ -1,45 +1,178 @@
 <!doctype html>
 <html lang="th">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#408db9">
-  <meta name="description" content="รวมบ้านพัก Pool Villa หัวหิน ชะอำ และปราณบุรี เลือกบ้านพักที่เหมาะกับทริปของคุณ">
-  <title>Indigo Pool Villa | รวมบ้านพักพูลวิลล่า หัวหิน ชะอำ ปราณบุรี</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="effects.css"><script src="app.js" defer></script>
-</head>
-<body>
-  <header class="topbar">
-    <button class="menu-toggle" aria-label="เปิดเมนู" aria-expanded="false"><span></span><span></span><span></span></button>
-    <a href="tel:0959140011" aria-label="โทรหาเรา">☎</a><a href="#search-form" aria-label="ค้นหาที่พัก">⌕</a><a href="#contact" aria-label="Facebook">f</a><a class="line-icon" href="#contact" aria-label="LINE">LINE</a>
-    <nav class="main-nav" aria-label="เมนูหลัก"><a href="index.html" aria-current="page">หน้าแรก</a><a href="poolvilla-a.html">POOLVILLA (A)</a><a href="poolvilla-b.html">POOLVILLA (B)</a><a href="poolvilla-c.html">POOLVILLA (C)</a><a href="contact.html">ติดต่อเรา</a></nav>
-  </header>
-  <main>
-    <section class="hero" id="home"><img class="hero-image zoom-image" src="images/palm-house.jpg" alt="บ้านพักพูลวิลล่าริมทะเลพร้อมสระส่วนตัว" fetchpriority="high"><div class="hero-overlay"></div><div class="hero-caption"><span>INDIGO POOL VILLA</span><h1>บ้านพักพูลวิลล่า<br><em>หัวหิน · ชะอำ · ปราณบุรี</em></h1><p>เลือกบ้านพักที่ใช่ สำหรับทริปพิเศษของคุณ</p><a href="#search-form" class="hero-button">ค้นหาบ้านพัก <b>⌕</b></a></div><div class="hero-sticker"><span>3</span><small>จุดหมาย<br>ริมทะเล</small></div><div class="hero-pagination" aria-label="เลือกแบนเนอร์"><button class="active" aria-label="แบนเนอร์ 1" data-slide="0"></button><button aria-label="แบนเนอร์ 2" data-slide="1"></button><button aria-label="แบนเนอร์ 3" data-slide="2"></button></div></section>
-
-    <section class="about-intro" id="experience"><div class="about-photos"><img class="about-photo photo-one zoom-image" src="images/casa-azul.jpg" alt="มุมพักผ่อนริมสระในพูลวิลล่า" loading="lazy"><img class="about-photo photo-two zoom-image" src="images/indigo-experience.jpg" alt="บรรยากาศบ้านพักสำหรับวันหยุด" loading="lazy"><span class="photo-stamp">INDIGO<br>POOL VILLA</span></div><div class="about-copy"><span class="section-kicker">ยินดีต้อนรับสู่ INDIGO POOL VILLA</span><h2>วันพักผ่อนดี ๆ<br>เริ่มต้นจากบ้านพักที่ใช่</h2><p>เรารวบรวมบ้านพัก Pool Villa หลากหลายรูปแบบในหัวหิน ชะอำ และปราณบุรี มีทั้งบ้านพักใกล้ทะเล สระว่ายน้ำส่วนตัว และพื้นที่สำหรับครอบครัวหรือกลุ่มเพื่อน ให้คุณเลือกที่พักสำหรับทริปพิเศษได้ง่ายขึ้น</p><a class="blue-link" href="#stays">รู้จักบ้านพักของเรา <span>➜</span></a></div></section>
-
-    <section class="search-section" id="search-section"><div class="search-heading"><span>FIND YOUR PERFECT STAY</span><h2>ค้นหาบ้านพักพูลวิลล่า</h2><p>เลือกพื้นที่ จำนวนห้องนอน และจำนวนผู้เข้าพัก</p></div><form class="search-bar" id="search-form"><label class="search-field"><span class="field-icon">⌖</span><span><small>สถานที่</small><select id="destination"><option value="">เลือกสถานที่</option><option>หัวหิน</option><option>ชะอำ</option><option>ปราณบุรี</option></select></span></label><label class="search-field"><span class="field-icon">▦</span><span><small>จำนวนห้องพัก</small><select id="bedrooms"><option value="">จำนวนห้องนอน</option><option value="2">2 ห้องนอนขึ้นไป</option><option value="3">3 ห้องนอนขึ้นไป</option><option value="4">4 ห้องนอนขึ้นไป</option><option value="5">5 ห้องนอนขึ้นไป</option></select></span></label><label class="search-field"><span class="field-icon">♧</span><span><small>ผู้เข้าพัก</small><select id="guests"><option value="">เลือกจำนวนผู้เข้าพัก</option><option value="10">8–12 ท่าน</option><option value="15">12–15 ท่าน</option><option value="20">15–20 ท่าน</option><option value="25">20 ท่านขึ้นไป</option></select></span></label><button class="search-submit" type="submit">ค้นหา <span>⌕</span></button></form><p class="search-feedback" id="search-feedback" aria-live="polite"></p></section>
-
-    <section class="stays content-section" id="stays"><div class="section-heading"><div><span class="section-kicker">POPULAR POOL VILLAS</span><h2>บ้านพักยอดจองสูงสุด</h2><span class="title-rule"></span></div><a class="all-link" href="#villa-grid">ดูบ้านพักทั้งหมด <span>➜</span></a></div><div class="filter-row" role="group" aria-label="กรองบ้านพักตามพื้นที่"><button class="filter-chip selected" data-filter="all">ทั้งหมด</button><button class="filter-chip" data-filter="หัวหิน">หัวหิน</button><button class="filter-chip" data-filter="ชะอำ">ชะอำ</button><button class="filter-chip" data-filter="ปราณบุรี">ปราณบุรี</button><span class="filter-hint"><span id="favorite-count">0</span> รายการโปรด · คลิกภาพเพื่อขยาย</span></div>
-      <div class="villa-grid" id="villa-grid">
-        <article class="villa-card" data-area="ชะอำ" data-guests="27" data-bedrooms="6" data-favorite-id="grand-ocean"><button class="photo-button" aria-label="ขยายภาพ Grand Ocean Pool Villa"><img class="zoom-image" src="images/casa-azul.jpg" alt="บ้านพัก Grand Ocean Pool Villa พร้อมสระว่ายน้ำ" loading="lazy"><span class="photo-count">ดูภาพขนาดใหญ่ ⤢</span><span class="villa-ribbon">ขายดี</span></button><button class="favorite" aria-label="บันทึก Grand Ocean Pool Villa">♡</button><div class="villa-title"><h3>Grand Ocean Pool Villa</h3><span class="rating">★ 4.9</span></div><div class="villa-details"><span>ชะอำ</span><span>6 ห้องนอน</span><span>27 ท่าน</span></div><p class="villa-desc">ติดทะเล · สระส่วนตัว · คาราโอเกะ</p><div class="villa-price"><span>เริ่มต้น <b>฿9,900</b> / คืน</span><button class="detail-button" data-villa-open>ดูรายละเอียด <span>➜</span></button></div></article>
-        <article class="villa-card" data-area="ชะอำ" data-guests="32" data-bedrooms="8" data-favorite-id="mira-beachfront"><button class="photo-button" aria-label="ขยายภาพ Mira Beachfront Pool Villa"><img class="zoom-image" src="images/indigo-experience.jpg" alt="บ้านพัก Mira Beachfront Pool Villa ริมทะเล" loading="lazy"><span class="photo-count">ดูภาพขนาดใหญ่ ⤢</span><span class="villa-ribbon ribbon-gold">ติดทะเล</span></button><button class="favorite" aria-label="บันทึก Mira Beachfront Pool Villa">♡</button><div class="villa-title"><h3>Mira Beachfront Pool Villa</h3><span class="rating">★ 5.0</span></div><div class="villa-details"><span>ชะอำ</span><span>8 ห้องนอน</span><span>32 ท่าน</span></div><p class="villa-desc">บ้านพักติดทะเล · สระว่ายน้ำริมชายหาด</p><div class="villa-price"><span>เริ่มต้น <b>฿30,900</b> / คืน</span><button class="detail-button" data-villa-open>ดูรายละเอียด <span>➜</span></button></div></article>
-        <article class="villa-card" data-area="หัวหิน" data-guests="10" data-bedrooms="4" data-favorite-id="palm-house"><button class="photo-button" aria-label="ขยายภาพ The Palm House"><img class="zoom-image" src="images/palm-house.jpg" alt="บ้านพัก The Palm House หัวหิน" loading="lazy"><span class="photo-count">ดูภาพขนาดใหญ่ ⤢</span><span class="villa-ribbon ribbon-green">เหมาะกับครอบครัว</span></button><button class="favorite" aria-label="บันทึก The Palm House">♡</button><div class="villa-title"><h3>The Palm House</h3><span class="rating">★ 4.9</span></div><div class="villa-details"><span>หัวหิน</span><span>4 ห้องนอน</span><span>10 ท่าน</span></div><p class="villa-desc">สระส่วนตัว · พื้นที่บาร์บีคิว · ใกล้ทะเล</p><div class="villa-price"><span>เริ่มต้น <b>฿6,900</b> / คืน</span><button class="detail-button" data-villa-open>ดูรายละเอียด <span>➜</span></button></div></article>
-        <article class="villa-card" data-area="ปราณบุรี" data-guests="20" data-bedrooms="6" data-favorite-id="villa-sol"><button class="photo-button" aria-label="ขยายภาพ Villa Sol"><img class="zoom-image" src="images/villa-sol.jpg" alt="บ้านพัก Villa Sol พร้อมสระส่วนตัว" loading="lazy"><span class="photo-count">ดูภาพขนาดใหญ่ ⤢</span><span class="villa-ribbon ribbon-green">วิวธรรมชาติ</span></button><button class="favorite" aria-label="บันทึก Villa Sol">♡</button><div class="villa-title"><h3>Villa Sol Pool Villa</h3><span class="rating">★ 4.8</span></div><div class="villa-details"><span>ปราณบุรี</span><span>6 ห้องนอน</span><span>20 ท่าน</span></div><p class="villa-desc">สระขนาดใหญ่ · วิวธรรมชาติ · เหมาะกับกลุ่มเพื่อน</p><div class="villa-price"><span>เริ่มต้น <b>฿11,900</b> / คืน</span><button class="detail-button" data-villa-open>ดูรายละเอียด <span>➜</span></button></div></article>
-      </div><p class="empty-state" id="empty-state" hidden>ไม่พบบ้านพักตามตัวเลือกนี้ ลองเปลี่ยนจำนวนผู้เข้าพักหรือเลือกพื้นที่อื่น</p>
-    </section>
-
-    <section class="areas-section" id="areas"><div class="content-section"><div class="section-heading centered"><div><span class="section-kicker">FIND YOUR DESTINATION</span><h2>เลือกบ้านพักตามพื้นที่</h2><span class="title-rule"></span></div></div><div class="area-grid"><a href="#stays" class="area-card" data-area-link="หัวหิน"><img class="zoom-image" src="images/palm-house.jpg" alt="พูลวิลล่าหัวหิน" loading="lazy"><span><small>POOL VILLA</small><b>บ้านพักหัวหิน</b><i>ดูบ้านพัก ➜</i></span></a><a href="#stays" class="area-card" data-area-link="ชะอำ"><img class="zoom-image" src="images/casa-azul.jpg" alt="พูลวิลล่าชะอำ" loading="lazy"><span><small>POOL VILLA</small><b>บ้านพักชะอำ</b><i>ดูบ้านพัก ➜</i></span></a><a href="#stays" class="area-card" data-area-link="ปราณบุรี"><img class="zoom-image" src="images/villa-sol.jpg" alt="พูลวิลล่าปราณบุรี" loading="lazy"><span><small>POOL VILLA</small><b>บ้านพักปราณบุรี</b><i>ดูบ้านพัก ➜</i></span></a></div></div></section>
-
-    <section class="why-section content-section" id="why-us"><div class="section-heading centered"><div><span class="section-kicker">A BETTER WAY TO GET AWAY</span><h2>ทำไมต้องจองกับเรา</h2><span class="title-rule"></span></div></div><div class="benefits"><article><span class="benefit-icon">⌂</span><h3>บ้านพักคัดสรร</h3><p>เลือกบ้านพักหลากหลายรูปแบบ พร้อมข้อมูลชัดเจนเพื่อให้คุณตัดสินใจได้ง่าย</p></article><article><span class="benefit-icon">♡</span><h3>ดูแลทุกการเข้าพัก</h3><p>ช่วยประสานงานและตอบคำถาม เพื่อให้การวางแผนวันหยุดสะดวกสบาย</p></article><article><span class="benefit-icon">✧</span><h3>ทริปที่เป็นของคุณ</h3><p>บ้านพักสำหรับครอบครัว กลุ่มเพื่อน วันเกิด และช่วงเวลาพิเศษทุกโอกาส</p></article></div></section>
-
-    <section class="reviews"><div class="content-section"><span class="section-kicker">GUEST STORIES</span><h2>รีวิวจากลูกค้า</h2><span class="title-rule"></span><div class="review-card"><span class="review-quote">“</span><button class="review-arrow review-prev" aria-label="รีวิวก่อนหน้า">‹</button><div class="review-stars">★★★★★</div><blockquote>“บ้านพักสะอาด บรรยากาศดีมาก ได้ใช้เวลากับครอบครัวเต็มที่ เด็ก ๆ สนุกกับสระว่ายน้ำ ไว้มีโอกาสจะกลับมาพักอีกค่ะ”</blockquote><span class="review-author">คุณลูกค้า Indigo Pool Villa · หัวหิน</span><button class="review-arrow review-next" aria-label="รีวิวถัดไป">›</button><div class="review-dots"><button class="on" aria-label="รีวิว 1"></button><button aria-label="รีวิว 2"></button><button aria-label="รีวิว 3"></button></div></div></div></section>
-
-    <section class="contact" id="contact"><div><span class="section-kicker">LET'S PLAN YOUR STAY</span><h2>ให้เราช่วยเลือกบ้านพัก<br>สำหรับทริปของคุณ</h2></div><div class="contact-cta"><p>สอบถามบ้านพักและช่วงวันที่ต้องการเข้าพัก</p><a href="https://line.me/" class="line-button" target="_blank" rel="noreferrer"><span class="line-label">LINE</span> ติดต่อเราใน LINE <b>➜</b></a><a class="phone-link" href="tel:0959140011">☎ &nbsp;095-914-0011</a></div></section>
-  </main>
-  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">i</span><span>INDIGO<small>POOL VILLA</small></span></a><span>บ้านพักพูลวิลล่าหัวหิน ชะอำ และปราณบุรี</span><span>© 2026 INDIGO POOL VILLA</span></footer>
-  <a href="#contact" class="floating-contact" aria-label="ติดต่อเราใน LINE">▣</a>
-  <div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="ปิดภาพ">×</button><button class="lightbox-zoom" aria-label="ซูมเข้าออก">＋</button><img src="" alt="ภาพพูลวิลล่าขนาดใหญ่"><span class="lightbox-caption"></span></div>
-  <div class="villa-modal" id="villa-modal" aria-hidden="true"><div class="villa-modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" aria-label="ปิดรายละเอียด">×</button><div class="modal-photo"><img src="" alt=""></div><div class="modal-body"><span class="section-kicker">INDIGO POOL VILLA</span><h2 id="modal-title"></h2><div class="modal-tags"></div><p class="modal-description"></p><div class="modal-price"></div><a class="modal-contact" href="#contact">สอบถามและจองบ้านพัก <span>➜</span></a></div></div></div>
-</body>
+  <head>
+     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#408db9">
+      <meta name="description" content="บ้านพักPoolVilla ">
+      <title>Indigo Beachfront Pool Villa | บ้านพักพูลวิลล่INDIGO </title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="header-logo.css">
+      <script src="app.js" defer>
+      </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="site-logo" href="index.html" aria-label="Indigo Beachfront Pool Villa">
+      <img src="images/indigo-beachfront-logo.png" alt="Indigo Beachfront Pool Villa">
+      </a>
+      <button class="menu-toggle" aria-label="เปิดเมนู" aria-expanded="false">เมนู</button>
+      <nav class="main-nav" aria-label="เมนูหลัก">
+      <a href="index.html" aria-current="page">หน้าแรก</a>
+      <a href="poolvilla-a.html">พลูวิลล่า A</a>
+      <a href="poolvilla-b.html">พลูวิลล่า B</a>
+      <a href="poolvilla-c.html">พลูวิลล่า C</a>
+      <a href="contact.html">ติดต่อเรา</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <img class="hero-image zoom-image" src="images/p1.png" alt="Indigo Beachfront Pool Villa พร้อมสระว่ายน้ำส่วนตัว" fetchpriority="high">
+        <div class="hero-overlay">
+        </div>
+        <div class="hero-caption">
+          <span>Indigo Beachfront Pool Villa</span>
+          <h1>
+            บ้านพักพูลวิลล่า<br><em>ติดริมทะเล</em>
+          </h1>
+        </div>
+        <div class="hero-sticker">
+          <span>3</span><small>จุดหมาย<br>ริมทะเล</small>
+        </div>
+      </section>
+      <section class="about-intro" id="experience">
+        <div class="about-photos">
+          <img class="about-photo photo-one zoom-image" src="images/casa-azul.jpg" alt="มุมพักผ่อนริมสระในพูลวิลล่า" loading="lazy"><img class="about-photo photo-two zoom-image" src="images/indigo-experience.jpg" alt="บรรยากาศบ้านพักสำหรับวันหยุด" loading="lazy"><span class="photo-stamp">Indigo<br>Beachfront<br>Pool Villa</span>
+        </div>
+        <div class="about-copy">
+          <span class="section-kicker">Indigo Beachfront Pool Villa</span>
+          <h2>
+            วันพักผ่อนดี ๆ<br>เริ่มต้นจากบ้านพักที่ใช่
+          </h2>
+          <p>
+            สัมผัสประสบการณ์พักผ่อนสุดพิเศษ ในพูลวิลล่าติดทะเล พร้อมวิวทะเลที่สวยงาม และสระว่ายน้ำที่ให้พวกคุณได้ผ่อนคลายอย่างเต็มที่ ไม่ว่าคุณจะเป็นคู่รัก ครอบครัวหรือกลุ่มเพื่อน
+          </p>
+        </div>
+      </section>
+      <section class="areas-section" id="areas">
+        <div class="content-section">
+          <div class="section-heading centered">
+            <div>
+              <span class="section-kicker">FIND YOUR DESTINATION</span>
+              <h2>
+                เลือกบ้านพักตามพื้นที่
+              </h2>
+              <span class="title-rule"></span>
+            </div>
+          </div>
+          <div class="area-grid">
+            <a href="poolvilla-b.html" class="area-card"><img class="zoom-image" src="images/palm-house.jpg" alt="พูลวิลล่าหัวหิน" loading="lazy"><span><small>POOL VILLA</small><b>บ้านพักหัวหิน</b><i>ดูบ้านพัก ➜</i></span></a><a href="poolvilla-b.html" class="area-card"><img class="zoom-image" src="images/casa-azul.jpg" alt="พูลวิลล่าชะอำ" loading="lazy"><span><small>POOL VILLA</small><b>บ้านพักชะอำ</b><i>ดูบ้านพัก ➜</i></span></a><a href="poolvilla-b.html" class="area-card"><img class="zoom-image" src="images/villa-sol.jpg" alt="พูลวิลล่าปราณบุรี" loading="lazy"><span><small>POOL VILLA</small><b>บ้านพักปราณบุรี</b><i>ดูบ้านพัก ➜</i></span></a>
+          </div>
+        </div>
+      </section>
+      <section class="why-section content-section" id="why-us">
+        <div class="section-heading centered">
+          <div>
+            <span class="section-kicker">A BETTER WAY TO GET AWAY</span>
+            <h2>
+              ทำไมต้องจองกับเรา
+            </h2>
+            <span class="title-rule"></span>
+          </div>
+        </div>
+        <div class="benefits">
+          <article>
+            <span class="benefit-icon">⌂</span>
+            <h3>
+              บ้านพักคัดสรร
+            </h3>
+            <p>
+              เลือกบ้านพักหลากหลายรูปแบบ พร้อมข้อมูลชัดเจนเพื่อให้คุณตัดสินใจได้ง่าย
+            </p>
+          </article>
+          <article>
+            <span class="benefit-icon">♡</span>
+            <h3>
+              ดูแลทุกการเข้าพัก
+            </h3>
+            <p>
+              ช่วยประสานงานและตอบคำถาม เพื่อให้การวางแผนวันหยุดสะดวกสบาย
+            </p>
+          </article>
+          <article>
+            <span class="benefit-icon">✧</span>
+            <h3>
+              ทริปที่เป็นของคุณ
+            </h3>
+            <p>
+              บ้านพักสำหรับครอบครัว กลุ่มเพื่อน วันเกิด และช่วงเวลาพิเศษทุกโอกาส
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="reviews">
+        <div class="content-section">
+          <span class="section-kicker">GUEST STORIES</span>
+          <h2>
+            รีวิวจากลูกค้า
+          </h2>
+          <span class="title-rule"></span>
+          <div class="review-card">
+            <span class="review-quote">“</span><button class="review-arrow review-prev" aria-label="รีวิวก่อนหน้า">‹</button>
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <blockquote>“บ้านพักสะอาด บรรยากาศดีมาก ได้ใช้เวลากับครอบครัวเต็มที่ เด็ก ๆ สนุกกับสระว่ายน้ำ ไว้มีโอกาสจะกลับมาพักอีกค่ะ”</blockquote><span class="review-author">คุณลูกค้า Indigo Beachfront Pool Villa · หัวหิน</span><button class="review-arrow review-next" aria-label="รีวิวถัดไป">›</button>
+            <div class="review-dots">
+              <button class="on" aria-label="รีวิว 1"></button><button aria-label="รีวิว 2"></button><button aria-label="รีวิว 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div>
+          <span class="section-kicker">LET'S PLAN YOUR STAY</span>
+          <h2>
+            ให้เราช่วยเลือกบ้านพัก<br>สำหรับทริปของคุณ
+          </h2>
+        </div>
+        <div class="contact-cta">
+          <p>
+            สอบถามบ้านพักและช่วงวันที่ต้องการเข้าพัก
+          </p>
+          <a href="https://line.me/R/ti/p/@indigovilla" class="line-button" target="_blank" rel="noreferrer"><span class="line-label">LINE</span> @indigovilla <b>➜</b></a><a class="phone-link" href="tel:074813380">☎ &nbsp;074 813 380</a><a class="phone-link" href="mailto:indigopoolvilla@gmail.com">✉ &nbsp;indigopoolvilla@gmail.com</a><a class="phone-link" href="https://www.facebook.com/search/top/?q=Indigo%20Beachfront%20Pool%20Villa%20-%20%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B8%B4%E0%B9%82%E0%B8%81%E0%B9%89%20%E0%B8%9A%E0%B8%B5%E0%B8%8A%E0%B8%9F%E0%B8%A3%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B9%8C%20%E0%B8%9E%E0%B8%B9%E0%B8%A5%E0%B8%A7%E0%B8%B4%E0%B8%A5%E0%B8%A5%E0%B9%88%E0%B8%B2" target="_blank" rel="noreferrer">Facebook: Indigo Beachfront Pool Villa - อินดิโก้ บีชฟรอนท์ พูลวิลล่า</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">i</span><span>Indigo Beachfront<small>Pool Villa</small></span></a><span>บ้านพักพูลวิลล่าหัวหิน ชะอำ และปราณบุรี</span><span>© 2026 Indigo Beachfront Pool Villa</span>
+    </footer>
+     <a href="#contact" class="floating-contact" aria-label="ติดต่อเราใน LINE">▣</a>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="ปิดภาพ">×</button><button class="lightbox-zoom" aria-label="ซูมเข้าออก">＋</button><img src="" alt="ภาพพูลวิลล่าขนาดใหญ่"><span class="lightbox-caption"></span>
+    </div>
+    <div class="villa-modal" id="villa-modal" aria-hidden="true">
+      <div class="villa-modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" aria-label="ปิดรายละเอียด">×</button>
+        <div class="modal-photo">
+          <img src="" alt="">
+        </div>
+        <div class="modal-body">
+          <span class="section-kicker">Indigo Beachfront Pool Villa</span>
+          <h2 id="modal-title">
+          </h2>
+          <div class="modal-tags">
+          </div>
+          <p class="modal-description">
+          </p>
+          <div class="modal-price">
+          </div>
+          <a class="modal-contact" href="#contact">สอบถามและจองบ้านพัก <span>➜</span></a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
