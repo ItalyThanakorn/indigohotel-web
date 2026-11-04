@@ -683,13 +683,13 @@ button,select {
   gap:6px;
   margin-top:16px
 }
-.review-dots i {
+.review-dots button {
   width:6px;
   height:6px;
   border-radius:50%;
   background:#c9d8de
 }
-.review-dots i.on {
+.review-dots button.on {
   background:var(--blue)
 }
 .contact {

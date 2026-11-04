@@ -14,7 +14,7 @@ function updateFavorites() {
     button.textContent = saved ? '♥' : '♡';
     button.setAttribute('aria-pressed', String(saved));
   });
-  favoriteCount.textContent = savedFavorites.length;
+  if (favoriteCount) favoriteCount.textContent = savedFavorites.length;
 }
 document.querySelectorAll('.favorite').forEach(button => button.addEventListener('click', () => {
   const key = button.closest('.villa-card').dataset.favoriteId;
