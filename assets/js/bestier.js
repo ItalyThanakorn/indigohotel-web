@@ -24,7 +24,7 @@ pageLoader.innerHTML = `
   <div class="page-loader-card" role="status" aria-live="polite">
     <img src="../assets/images/bestier/bestier-mark.png" alt="" width="48" height="48">
     <span class="page-loader-brand">BESTIER</span>
-    <span class="page-loader-message">กำลังเตรียมการเข้าพักของคุณ</span>
+    <span class="page-loader-message">กำลังโหลดหน้าเว็บ</span>
     <span class="page-loader-track"><span></span></span>
   </div>`;
 document.body.append(pageLoader);
@@ -139,12 +139,34 @@ if (roomSelect && params.has('room')) {
   if (option) roomSelect.value = option.value;
 }
 
-// แจ้งผู้ใช้ว่าแบบฟอร์มยังไม่เชื่อมต่อระบบจองจริง
+// เตรียมอีเมลคำขอสอบถามห้องพักให้ลูกค้าตรวจสอบและส่งเอง
 const reservationForm = document.querySelector('#reservationForm');
 if (reservationForm) {
   reservationForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    document.querySelector('#bookingStatus').textContent = 'เว็บไซต์นี้ยังไม่ได้เชื่อมต่อระบบรับคำขอจอง ข้อมูลที่กรอกยังไม่ถูกส่ง กรุณาติดต่อ bestierhotel.hatyai@gmail.com เพื่อสอบถามห้องว่างและยืนยันการจอง';
+    const formData = new FormData(reservationForm);
+    const fields = [
+      ['ชื่อผู้ติดต่อ', formData.get('guestName')],
+      ['อีเมล', formData.get('guestEmail')],
+      ['เบอร์โทรศัพท์', formData.get('guestPhone') || 'ไม่ระบุ'],
+      ['เช็กอิน', formData.get('checkin')],
+      ['เช็กเอาต์', formData.get('checkout')],
+      ['ประเภทห้อง', formData.get('roomType')],
+      ['จำนวนผู้เข้าพัก', formData.get('guests')],
+      ['คำขอเพิ่มเติม', formData.get('requests')?.trim() || 'ไม่มี']
+    ];
+    const subject = `คำขอสอบถามห้องพัก Bestier Hotel - ${formData.get('guestName')}`;
+    const body = [
+      'เรียน Bestier Hotel',
+      '',
+      'ขอสอบถามห้องพักตามรายละเอียดด้านล่าง',
+      ...fields.map(([label, value]) => `${label}: ${value}`),
+      '',
+      'กรุณาติดต่อกลับเพื่อแจ้งห้องว่างและยืนยันราคา',
+      'หมายเหตุ: อีเมลฉบับนี้เป็นคำขอสอบถาม ยังไม่ใช่การยืนยันการจอง'
+    ].join('\n');
+    document.querySelector('#bookingStatus').textContent = 'กำลังเปิดโปรแกรมอีเมล กรุณาตรวจสอบรายละเอียดและกดส่งในโปรแกรมอีเมล คำขอนี้ยังไม่ถือเป็นการยืนยันห้องพัก';
+    window.location.href = `mailto:lolggwpxddd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 

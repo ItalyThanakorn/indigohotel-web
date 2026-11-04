@@ -46,7 +46,7 @@
           ห้องพัก
         </a>
         <a href="view.html">
-          ห้องอาหาร
+          บรรยากาศโรงแรม
         </a>
         <a href="contact.html">
           ติดต่อ
@@ -82,7 +82,7 @@
               จองที่พัก
             </h2>
             <p class="form-note">
-              กรอกข้อมูลเพื่อเตรียมรายละเอียดการเดินทาง ขณะนี้แบบฟอร์มยังไม่ส่งข้อมูลและไม่ยืนยันการจอง
+              เมื่อกดส่ง ระบบจะเปิดโปรแกรมอีเมลพร้อมรายละเอียดคำขอ กรุณาตรวจสอบและกดส่งในโปรแกรมอีเมลอีกครั้ง การส่งคำขอยังไม่ถือเป็นการยืนยันห้องพัก
             </p>
             <div class="form-grid">
               <div class="form-field">
@@ -96,6 +96,12 @@
                   อีเมล
                 </label>
                 <input id="guestEmail" name="guestEmail" type="email" autocomplete="email" required>
+              </div>
+              <div class="form-field">
+                <label for="guestPhone">
+                  เบอร์โทรศัพท์ (ไม่บังคับ)
+                </label>
+                <input id="guestPhone" name="guestPhone" type="tel" autocomplete="tel">
               </div>
               <div class="form-field">
                 <label for="checkin">
@@ -157,13 +163,16 @@
                 <label for="requests">
                   คำขอเพิ่มเติม
                 </label>
-                <textarea id="requests" name="requests" placeholder="เช่น เวลาเดินทางถึง หรือความต้องการพิเศษ"> </textarea>
+                <textarea id="requests" name="requests" maxlength="500" placeholder="เช่น เวลาเดินทางถึง หรือความต้องการพิเศษ"></textarea>
               </div>
             </div>
             <button class="gold-button" type="submit">
-              ส่งข้อมูล
+              ส่งคำขอผ่านอีเมล
             </button>
             <p id="bookingStatus" class="form-note" role="status" aria-live="polite">
+            </p>
+            <p class="form-note">
+              โหมดทดสอบ: หากโปรแกรมอีเมลไม่เปิด สามารถส่งรายละเอียดถึง <a href="mailto:lolggwpxddd@gmail.com">lolggwpxddd@gmail.com</a> ได้โดยตรง
             </p>
           </form>
           <aside class="reservation-aside">
