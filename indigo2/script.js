@@ -15,7 +15,7 @@ function applyLanguage(language) {
         ? "INDIGO 2 HOTEL | Hatyai"
         : "INDIGO 2 HOTEL | Hat Yai";
 
-    document.querySelectorAll("[data-th][data-en]:not(meta)").forEach(function (element) {
+    document.querySelectorAll("body [data-th][data-en]").forEach(function (element) {
         element.textContent = element.getAttribute(`data-${language}`);
     });
 
@@ -23,8 +23,8 @@ function applyLanguage(language) {
         image.alt = image.getAttribute(`data-${language}-alt`);
     });
 
-    document.querySelector('meta[name="description"]').content =
-        document.querySelector('meta[name="description"]').getAttribute(`data-${language}`);
+    const description = document.querySelector('meta[name="description"]');
+    description.content = description.getAttribute(`data-${language}`);
 
     languageToggle.textContent = language === "th" ? "EN" : "TH";
     languageToggle.setAttribute(
@@ -57,7 +57,7 @@ menuToggle.addEventListener("click", function () {
     menuToggle.textContent = isOpen ? "✕" : "☰";
 });
 
-mainNav.querySelectorAll("a, .language-toggle").forEach(function (link) {
+mainNav.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
         mainNav.classList.remove("is-open");
         menuToggle.setAttribute("aria-expanded", "false");
@@ -68,6 +68,8 @@ mainNav.querySelectorAll("a, .language-toggle").forEach(function (link) {
         menuToggle.textContent = "☰";
     });
 });
+
+applyLanguage(currentLanguage);
 
 
 /* ==================================
