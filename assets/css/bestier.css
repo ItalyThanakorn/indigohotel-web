@@ -9,9 +9,9 @@
   --ink: #202b3b;
   --muted: #7d817f;
   --line: #dcd8ce;
-  --serif: 'Playfair Display',Georgia,serif;
-  --sans: 'DM Sans','Noto Sans Thai',sans-serif;
-  --thai: 'Noto Sans Thai',sans-serif
+  --serif: 'Playfair Display','Noto Serif Thai',Georgia,serif;
+  --sans: 'DM Sans','Noto Serif Thai',serif;
+  --thai: 'Noto Serif Thai',serif
 }
 * {
   box-sizing: border-box
@@ -1444,7 +1444,7 @@ p {
   background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/hallway.jpg')
 }
 .page-hero-booking {
-  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/inside-room.jpg')
+  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/inside')
 }
 .page-hero-contact {
   background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/counter2.jpg')
