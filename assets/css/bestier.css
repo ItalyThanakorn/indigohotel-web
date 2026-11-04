@@ -9,9 +9,9 @@
   --ink: #202b3b;
   --muted: #7d817f;
   --line: #dcd8ce;
-  --serif: 'Playfair Display','Noto Serif Thai',Georgia,serif;
-  --sans: 'DM Sans','Noto Serif Thai',serif;
-  --thai: 'Noto Serif Thai',serif
+  --serif: 'Playfair Display','Kanit',sans-serif;
+  --sans: 'DM Sans','Kanit',sans-serif;
+  --thai: 'Kanit',sans-serif
 }
 * {
   box-sizing: border-box
@@ -381,6 +381,9 @@ button,input,select {
   font-size: 10px;
   color: var(--navy);
   margin-top: 14px
+}
+.underlined-link.email-contact {
+  gap: 6px
 }
 .underlined-link span {
   color: var(--gold);

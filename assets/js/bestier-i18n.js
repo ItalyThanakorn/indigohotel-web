@@ -1,5 +1,7 @@
 (() => {
   const translations = {
+    'อีเมล:': 'Email:',
+    'อีเมล: bestierhotel.hatyai@gmail.com': 'Email: bestierhotel.hatyai@gmail.com',
     'ดูรูปห้องเพิ่มเติม': 'View more room photos',
     'ชมภาพพื้นที่ส่วนกลางและบริเวณรอบโรงแรม เพื่อประกอบการวางแผนเข้าพัก': 'Explore the hotel common areas and surroundings as you plan your stay.',
     'สวนและมุมนั่งพักกลางแจ้ง': 'Garden and outdoor seating',
@@ -54,7 +56,6 @@
     'เกี่ยวกับโรงแรม': 'About the hotel',
     'ข้อมูลโรงแรม': 'Hotel information',
     'โรงแรม': 'Hotel',
-    'เบสเทียร์': 'Bestier',
     'Bestier Hotel ให้บริการห้องพักในอำเภอหาดใหญ่ จังหวัดสงขลา': 'Bestier Hotel offers accommodation in Hat Yai, Songkhla.',
     'เลือกห้องพักที่ใช่จาก 5 รูปแบบ พร้อมฟรี Wi-Fi ที่จอดรถส่วนตัว และบริการครบวงจร': 'Choose from five room types, with free wireless internet, private parking, and hotel services.',
     'ข้อมูลติดต่อ': 'Contact information',
@@ -352,6 +353,7 @@
     const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (textWalker.nextNode()) {
       const node = textWalker.currentNode;
+      if (node.parentElement?.closest('[data-no-translate]')) continue;
       if (!node.__bestierSourceText) node.__bestierSourceText = node.nodeValue.replace(/\s+/g, ' ').trim();
       const source = node.__bestierSourceText;
       if (!source) continue;
