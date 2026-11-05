@@ -1,13 +1,13 @@
 /* ตัวแปรสีและฟอนต์หลัก */
 :root {
-  --deep: #103b46;
-  --deep-soft: #1b5360;
-  --sea: #2d8991;
-  --foam: #edf6f3;
-  --sand: #e8dec9;
-  --ink: #193d45;
-  --muted: #6d8587;
-  --paper: #fbfcf9;
+  --deep: #0b3d57;
+  --deep-soft: #17677a;
+  --sea: #10a6b5;
+  --foam: #e6f5f6;
+  --sand: #f1e4cc;
+  --ink: #173d52;
+  --muted: #647f8b;
+  --paper: #f7fbfa;
   --sans: "DM Sans", sans-serif;
   --thai: "Anuphan", sans-serif;
 }
@@ -181,7 +181,7 @@ footer > span { color: #b8ccc5; font: 500 8px var(--sans); letter-spacing: 1.2px
   .villa-description { font-size: 12px; }
   /* ส่วนสิ่งอำนวยความสะดวก */
 .amenities { grid-template-columns: 1fr; margin: 0 5% 75px; }
-  .amenity-photo { min-height: 280px; }
+  .amenity-photo { min-height: 200px; }
   .amenity-copy { padding: 36px 8% 42px; }
   .amenity-copy h2 { font-size: 43px; }
   .notes-grid { grid-template-columns: 1fr; gap: 22px; }
@@ -221,3 +221,36 @@ footer > span { color: #b8ccc5; font: 500 8px var(--sans); letter-spacing: 1.2px
 
 /* จัดชื่อบ้านและคำโปรยชิดซ้าย พร้อมเว้นช่องไฟพอดี */
 .hero-content{top:auto;bottom:12%;left:7%;width:min(690px,86%);max-width:690px;transform:none;text-align:left}.hero-content .eyebrow{display:none}.hero h1{margin:0 0 10px}.hero-content>p{max-width:470px;margin:0;text-align:left;line-height:1.8}@media(max-width:620px){.hero-content{top:auto;bottom:12%;right:auto;left:5%;width:90%;transform:none}.hero h1{font-size:40px}}
+
+/* หน้าแสดงสิ่งอำนวยความสะดวก */
+.facilities-hero{position:relative;min-height:420px;display:grid;place-items:center;overflow:hidden;color:#fff;background:#356a70}.facilities-cover,.facilities-shade{position:absolute;inset:0}.facilities-cover{background:url("assets/facilities-cover.jpg") center 56%/cover no-repeat}.facilities-shade{background:linear-gradient(90deg,#10353bbd,#10353b45),linear-gradient(0deg,#10353b50,transparent 65%)}.facilities-hero-copy{position:relative;z-index:1;max-width:760px;padding:130px 24px 45px;text-align:center}.facilities-kicker{color:#c2ded3;font:500 10px var(--sans);letter-spacing:2px}.facilities-hero h1{margin:15px 0;font-size:clamp(38px,5vw,58px);font-weight:400;line-height:1.25}.facilities-hero p{max-width:590px;margin:0 auto;color:#eef7f3;font-size:14px;line-height:1.9}.facilities-main{padding-top:75px;padding-bottom:90px}.facilities-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}.facilities-heading h2{margin:10px 0 0;font-size:clamp(28px,4vw,40px);font-weight:400}.facilities-heading>p{max-width:390px;margin:0 0 5px;color:#6b8180;font-size:13px;line-height:1.9}.facility-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.facility-card{padding:25px 27px 22px;border:1px solid #e1eae5;background:#fff;box-shadow:0 10px 30px #153c4510}.facility-card-head{position:relative;min-height:74px;padding-left:54px;border-bottom:1px solid #e5ece8}.facility-number{position:absolute;top:3px;left:0;color:#80a49a;font:500 11px var(--sans);letter-spacing:1px}.facility-icon{position:absolute;top:24px;left:0;font-size:26px}.facility-card h3{margin:0;padding:23px 0 18px;color:var(--deep);font-size:20px;font-weight:400;line-height:1.45}.facility-list{display:grid;gap:0;margin:10px 0 0;padding:0;list-style:none}.facility-list li{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #eff3f0;color:#526d6e;font-size:12px;line-height:1.8}.facility-list li:last-child{border-bottom:0}.facility-emoji{font-size:16px;line-height:1.6}.complimentary-card{display:flex;align-items:center;gap:24px;margin-top:24px;padding:27px 32px;color:white;background:linear-gradient(115deg,#1b5962,#2f8585)}.complimentary-icon{font-size:40px}.complimentary-card .facilities-kicker{color:#c2e3d6}.complimentary-card h2{margin:6px 0;font-size:28px;font-weight:400}.complimentary-card p{margin:0;color:#e0eeea;font-size:13px;line-height:1.8}.facilities-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:36px;padding-top:24px;border-top:1px solid #d9e4de}.facilities-cta p{margin:0;color:#526d6e;font-size:14px}.facilities-cta .button{background:var(--deep);color:#fff}.facilities-cta .button:hover{background:var(--deep-soft)}
+@media(max-width:900px){.facilities-main{padding-top:60px}.facility-card{padding:22px 20px}.facility-card h3{font-size:18px}}
+@media(max-width:620px){.facilities-hero{min-height:370px}.facilities-hero-copy{padding-top:115px}.facilities-hero h1{font-size:38px}.facilities-hero p{font-size:12px}.facilities-main{padding-top:48px;padding-bottom:65px}.facilities-heading{display:block}.facilities-heading>p{margin-top:12px}.facility-grid{grid-template-columns:1fr;gap:14px}.facility-card{padding:20px 18px}.facility-list li{font-size:12px}.complimentary-card{gap:15px;padding:22px 18px}.complimentary-icon{font-size:32px}.complimentary-card h2{font-size:24px}.facilities-cta{align-items:flex-start;flex-direction:column}.facilities-cta .button{width:100%;justify-content:space-between}}
+
+/* ปรับหน้าสิ่งอำนวยความสะดวกให้มีลำดับสายตาและนำทางง่าย */
+.facilities-hero{min-height:460px}.facilities-hero-copy{max-width:820px}.facilities-hero h1{letter-spacing:-.5px}.facilities-heading{padding-bottom:24px;border-bottom:1px solid #dce7e1}.facilities-heading>p{font-size:14px}.facility-jump{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 28px}.facility-jump a{padding:9px 14px;border:1px solid #d5e3dc;border-radius:999px;color:#42676a;background:#fff;font-size:11px;transition:color .2s,border-color .2s,background .2s}.facility-jump a:hover{border-color:#2d8991;color:#fff;background:#2d8991}.facility-card{position:relative;overflow:hidden;border-color:#e3ebe6;border-radius:3px;box-shadow:0 8px 26px #153c450b;transition:transform .2s,box-shadow .2s}.facility-card::before{position:absolute;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,#3c9692,#b6d7c9);content:""}.facility-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #153c4515}.facility-card-head{min-height:78px;padding-left:50px}.facility-number{top:0;font-size:10px}.facility-icon{top:25px;font-size:23px}.facility-card h3{font-size:19px}.facility-list li{grid-template-columns:22px 1fr;gap:11px;padding:11px 0;font-size:13px;line-height:1.75}.facility-emoji{font-size:15px;filter:saturate(.82)}.complimentary-card{position:relative;overflow:hidden;border-radius:3px;background:linear-gradient(110deg,#144953,#2b7d7e)}.complimentary-card::after{position:absolute;right:-45px;bottom:-100px;width:270px;height:270px;border:1px solid #ffffff20;border-radius:50%;content:""}.facilities-cta .button{min-width:190px;justify-content:space-between}.facilities-main{padding-bottom:100px}
+@media(max-width:620px){.facilities-hero{min-height:390px}.facilities-heading{padding-bottom:18px}.facility-jump{gap:7px;margin:18px 0 22px}.facility-jump a{padding:8px 11px;font-size:10px}.facility-card h3{font-size:18px}.facility-list li{font-size:12px}.facilities-main{padding-bottom:70px}}
+
+/* ธีมทะเล: น้ำเงินเข้ม เทอร์ควอยซ์ และคลื่นขอบแบนเนอร์ */
+.hero-shade{background:linear-gradient(90deg,#082f49df 0%,#0b465a75 44%,#0b465a12 84%),linear-gradient(0deg,#0a3a50a3,transparent 44%)}.hero-content,.hero-note,.hero-scroll{z-index:2}.hero::after{position:absolute;z-index:1;right:0;bottom:-1px;left:0;height:52px;background:var(--paper);clip-path:polygon(0 58%,14% 72%,30% 58%,46% 78%,62% 57%,79% 72%,100% 52%,100% 100%,0 100%);content:""}.facilities-shade{background:linear-gradient(90deg,#082f49c9,#0b465a48),linear-gradient(0deg,#0a3a5070,transparent 65%)}.facilities-hero::after{position:absolute;z-index:2;right:0;bottom:-1px;left:0;height:38px;background:var(--paper);clip-path:polygon(0 50%,18% 68%,36% 54%,53% 73%,71% 52%,87% 68%,100% 48%,100% 100%,0 100%);content:""}.booking{background:linear-gradient(115deg,#0b3d57,#126c78)}.amenities{background:#e8f4f2}.facility-card{border-color:#dce9e8}.facility-card::before{background:linear-gradient(90deg,#10a6b5,#8fd6d0,#f1e4cc)}.complimentary-card{background:linear-gradient(115deg,#0b5264,#138b91)}
+/* ลดช่องไฟในรายการเพื่อให้อ่านข้อมูลได้รวดเร็วขึ้น */
+.facility-list li{padding:8px 0;line-height:1.65}@media(max-width:620px){.facility-list li{padding:7px 0}}
+
+/* แกลเลอรีภาพสระว่ายน้ำและกิจกรรม */
+.facility-card#pool-activities{grid-column:1/-1}.facility-card#pool-activities .facility-list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.pool-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 12px}.pool-gallery-item{position:relative;overflow:hidden;aspect-ratio:1.55;margin:0;background:#d9e9e8}.pool-gallery-item img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s}.pool-gallery-item:hover img{transform:scale(1.04)}.pool-gallery-item figcaption{position:absolute;right:0;bottom:0;left:0;padding:20px 10px 8px;color:#fff;background:linear-gradient(transparent,#092f45c9);font-size:10px;line-height:1.4}
+@media(max-width:620px){.facility-card#pool-activities .facility-list{grid-template-columns:1fr;column-gap:0}.pool-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pool-gallery-item{aspect-ratio:1.35}.pool-gallery-item figcaption{font-size:9px}}
+
+/* สไลด์ภาพเดียวสำหรับมือถือและจอคอม */
+.pool-carousel{position:relative;margin:18px 0 12px}.pool-carousel-viewport{position:relative;overflow:hidden;aspect-ratio:16/9;background:#d9e9e8;touch-action:pan-y}.pool-slide{position:absolute;inset:0;margin:0;visibility:hidden;opacity:0;transition:opacity .55s ease}.pool-slide.is-active{visibility:visible;opacity:1}.pool-slide img{display:block;width:100%;height:100%;object-fit:cover}.pool-slide figcaption{position:absolute;right:0;bottom:0;left:0;padding:48px 22px 18px;color:#fff;background:linear-gradient(transparent,#092f45c9);font-size:14px}.pool-control{position:absolute;top:calc(50% - 22px);z-index:2;display:grid;width:44px;height:44px;place-items:center;border:1px solid #ffffffbd;border-radius:50%;color:#fff;background:#0b3d5775;font:300 30px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s}.pool-control:hover{transform:scale(1.06);background:#0b3d57e8}.pool-prev{left:16px}.pool-next{right:16px}.pool-carousel-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 2px 0}.pool-counter{color:#55777c;font:500 10px var(--sans);letter-spacing:1.2px}.pool-dots{display:flex;align-items:center;gap:7px}.pool-dot{width:7px;height:7px;padding:0;border:0;border-radius:99px;background:#bbd0cd;cursor:pointer;transition:width .2s,background .2s}.pool-dot.is-active{width:22px;background:#159bab}.pool-dot:focus-visible,.pool-control:focus-visible{outline:2px solid #f0c779;outline-offset:3px}
+@media(max-width:620px){.pool-carousel-viewport{aspect-ratio:4/3}.pool-slide img{object-position:center}.pool-slide figcaption{padding:38px 14px 13px;font-size:12px}.pool-control{top:calc(50% - 19px);width:38px;height:38px;font-size:26px}.pool-prev{left:10px}.pool-next{right:10px}.pool-dots{gap:5px}.pool-dot{width:6px;height:6px}.pool-dot.is-active{width:17px}}
+@media(prefers-reduced-motion:reduce){.pool-slide{transition:none}.pool-control,.pool-dot{transition:none}}
+
+/* ลดขนาดแกลเลอรีให้อยู่กึ่งกลางในการ์ด */
+.pool-carousel{width:min(100%,560px);margin:18px auto 12px}@media(max-width:620px){.pool-carousel{width:76%}}
+
+/* จัดภาพส่วนสิ่งอำนวยความสะดวกให้ชิดขอบซ้ายของพื้นหลัง */
+.amenities.section-wrap{padding-left:0}
+
+/* หัวข้อข้อกำหนดและตัวอักษรข้อมูลย่อย */
+.stay-heading{margin-bottom:28px}.stay-kicker{color:#668e8d;font:500 10px var(--sans);letter-spacing:1.8px}.stay-heading h2{margin:8px 0 0;color:var(--deep);font-size:clamp(25px,3.2vw,34px);font-weight:400;line-height:1.35}.notes-grid{margin-top:0}.note-number{font-size:12px}.notes-grid h3{margin:13px 0 7px;font-size:18px}.notes-grid p{font-size:13px;line-height:1.8}
+@media(max-width:620px){.stay-heading{margin-bottom:22px}.stay-heading h2{font-size:26px}.notes-grid h3{font-size:17px}.notes-grid p{font-size:13px}}
