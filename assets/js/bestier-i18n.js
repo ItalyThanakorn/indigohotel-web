@@ -2,6 +2,7 @@
   const translations = {
     'อีเมล:': 'Email:',
     'อีเมล: bestierhotel.hatyai@gmail.com': 'Email: bestierhotel.hatyai@gmail.com',
+    'bestierhotel.hatyai@gmail.com': 'bestierhotel.hatyai@gmail.com',
     'ดูรูปห้องเพิ่มเติม': 'View more room photos',
     'ชมภาพพื้นที่ส่วนกลางและบริเวณรอบโรงแรม เพื่อประกอบการวางแผนเข้าพัก': 'Explore the hotel common areas and surroundings as you plan your stay.',
     'สวนและมุมนั่งพักกลางแจ้ง': 'Garden and outdoor seating',
