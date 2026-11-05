@@ -139,16 +139,20 @@ if (roomSelect && params.has('room')) {
   if (option) roomSelect.value = option.value;
 }
 
-// เตรียมอีเมลคำขอสอบถามห้องพักให้ลูกค้าตรวจสอบและส่งเอง
+// ส่งคำขอสอบถามห้องพักผ่านบริการรับแบบฟอร์มสำหรับเว็บไซต์สแตติก
 const reservationForm = document.querySelector('#reservationForm');
 if (reservationForm) {
-  reservationForm.addEventListener('submit', (event) => {
+  reservationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (!reservationForm.reportValidity()) return;
+
     const formData = new FormData(reservationForm);
     const isThaiPage = document.documentElement.lang === 'th';
+    const status = document.querySelector('#bookingStatus');
+    const submitButton = reservationForm.querySelector('button[type="submit"]');
     const fields = [
       [isThaiPage ? 'ชื่อผู้ติดต่อ' : 'Name', formData.get('guestName')],
-      [isThaiPage ? 'อีเมล' : 'Email', formData.get('guestEmail')],
+      [isThaiPage ? 'อีเมล' : 'Email', formData.get('email')],
       [isThaiPage ? 'เบอร์โทรศัพท์' : 'Phone number', formData.get('guestPhone') || (isThaiPage ? 'ไม่ระบุ' : 'Not provided')],
       [isThaiPage ? 'เช็กอิน' : 'Check-in', formData.get('checkin')],
       [isThaiPage ? 'เช็กเอาต์' : 'Check-out', formData.get('checkout')],
@@ -159,19 +163,48 @@ if (reservationForm) {
     const subject = isThaiPage
       ? `คำขอสอบถามห้องพักโรงแรมเบสเทียร์ - ${formData.get('guestName')}`
       : `Bestier Hotel room enquiry - ${formData.get('guestName')}`;
-    const body = [
+    const message = [
       isThaiPage ? 'เรียน โรงแรมเบสเทียร์' : 'Hello Bestier Hotel,',
       '',
       isThaiPage ? 'ขอสอบถามห้องพักตามรายละเอียดด้านล่าง' : 'I would like to enquire about a room with the following details:',
       ...fields.map(([label, value]) => `${label}: ${value}`),
       '',
       isThaiPage ? 'กรุณาติดต่อกลับเพื่อแจ้งห้องว่างและยืนยันราคา' : 'Please contact me to confirm availability and rates.',
-      isThaiPage ? 'หมายเหตุ: อีเมลฉบับนี้เป็นคำขอสอบถาม ยังไม่ใช่การยืนยันการจอง' : 'Note: This is an enquiry and does not confirm a reservation.'
+      isThaiPage ? 'หมายเหตุ: คำขอนี้ยังไม่ใช่การยืนยันการจอง' : 'Note: This enquiry does not confirm a reservation.'
     ].join('\n');
-    document.querySelector('#bookingStatus').textContent = isThaiPage
-      ? 'กำลังเปิดโปรแกรมอีเมล กรุณาตรวจสอบรายละเอียดและกดส่งในโปรแกรมอีเมล คำขอนี้ยังไม่ถือเป็นการยืนยันห้องพัก'
-      : 'Opening your email app. Review the details and send the message there. This enquiry does not confirm a reservation.';
-    window.location.href = `mailto:lolggwpxddd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const payload = Object.fromEntries(formData.entries());
+    payload.name = payload.guestName;
+    payload._replyto = payload.email;
+    payload._subject = subject;
+    payload._template = 'table';
+    payload.message = message;
+    delete payload.guestName;
+
+    submitButton.disabled = true;
+    status.textContent = isThaiPage ? 'กำลังส่งคำขอ กรุณารอสักครู่…' : 'Sending your enquiry…';
+    try {
+      const response = await fetch(reservationForm.dataset.endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error('Form submission failed');
+
+      status.textContent = isThaiPage
+        ? 'ส่งคำขอเรียบร้อยแล้ว เจ้าหน้าที่จะติดต่อกลับเพื่อแจ้งห้องว่างและราคา การส่งคำขอนี้ยังไม่ยืนยันการจอง'
+        : 'Your enquiry was sent. The hotel team will contact you about availability and rates. This does not confirm a reservation.';
+      reservationForm.reset();
+    } catch {
+      status.textContent = isThaiPage
+        ? 'ส่งคำขอไม่สำเร็จ โปรดลองอีกครั้ง หรือติดต่อโรงแรมผ่านอีเมลด้านล่าง'
+        : 'We could not send your enquiry. Please try again or contact the hotel using the email below.';
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }
 

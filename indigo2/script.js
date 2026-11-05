@@ -6,7 +6,7 @@
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 const languageToggle = document.getElementById("languageToggle");
-let currentLanguage = "th";
+let currentLanguage = document.documentElement.lang === "en" ? "en" : "th";
 
 function applyLanguage(language) {
     currentLanguage = language;
@@ -15,16 +15,19 @@ function applyLanguage(language) {
         ? "INDIGO 2 HOTEL | Hatyai"
         : "INDIGO 2 HOTEL | Hat Yai";
 
-    document.querySelectorAll("[data-th][data-en]:not(meta)").forEach(function (element) {
-        element.textContent = element.getAttribute(`data-${language}`);
+    document.querySelectorAll("body [data-th][data-en]").forEach(function (element) {
+        const translation = element.getAttribute(`data-${language}`);
+        if (translation !== null) {
+            element.textContent = translation;
+        }
     });
 
     document.querySelectorAll("[data-th-alt][data-en-alt]").forEach(function (image) {
         image.alt = image.getAttribute(`data-${language}-alt`);
     });
 
-    document.querySelector('meta[name="description"]').content =
-        document.querySelector('meta[name="description"]').getAttribute(`data-${language}`);
+    const description = document.querySelector('meta[name="description"]');
+    description.content = description.getAttribute(`data-${language}`);
 
     languageToggle.textContent = language === "th" ? "EN" : "TH";
     languageToggle.setAttribute(
@@ -40,7 +43,8 @@ function applyLanguage(language) {
 }
 
 languageToggle.addEventListener("click", function () {
-    applyLanguage(currentLanguage === "th" ? "en" : "th");
+    const nextLanguage = document.documentElement.lang === "th" ? "en" : "th";
+    applyLanguage(nextLanguage);
 });
 
 menuToggle.addEventListener("click", function () {
@@ -57,7 +61,7 @@ menuToggle.addEventListener("click", function () {
     menuToggle.textContent = isOpen ? "✕" : "☰";
 });
 
-mainNav.querySelectorAll("a, .language-toggle").forEach(function (link) {
+mainNav.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
         mainNav.classList.remove("is-open");
         menuToggle.setAttribute("aria-expanded", "false");
@@ -68,6 +72,8 @@ mainNav.querySelectorAll("a, .language-toggle").forEach(function (link) {
         menuToggle.textContent = "☰";
     });
 });
+
+applyLanguage(currentLanguage);
 
 
 /* ==================================
