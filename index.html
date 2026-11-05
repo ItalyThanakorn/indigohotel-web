@@ -260,11 +260,11 @@
         </div>
 
         <div class="split-pane" onclick="selectHotel('pool-villa')" aria-label="Indigo Beachfront Pool Villa พูลวิลล่า ม่วงงาม สงขลา" role="button">
-            <div class="bg-image" style="background-image: url('https://indigohatyai.com/images/index/642893390_2103612950470953_6163212692981066976_n.png'); filter: grayscale(50%);" role="img" aria-label="ภาพ Indigo Beachfront Pool Villa สงขลา"></div>
+            <div class="bg-image" style="background-image: url('https://indigohatyai.com/images/index/642893390_2103612950470953_6163212692981066976_n.png');" role="img" aria-label="ภาพ Indigo Beachfront Pool Villa สงขลา"></div>
             <div class="overlay"></div>
             <div class="content-box">
                 <span class="branch-num">Branch 5</span>
-                <span class="text-beach fw-bold text-uppercase small" style="letter-spacing: 2px;" data-hotel-id="pool-villa" data-hotel-prop="label">เร็วๆ นี้</span>
+                <span class="text-beach fw-bold text-uppercase small" style="letter-spacing: 2px;" data-hotel-id="pool-villa" data-hotel-prop="label">Available</span>
                 <h2 class="fw-bold text-white mb-0" data-hotel-id="pool-villa" data-hotel-prop="name">อินดิโก้ บีชฟรอนท์ พูลวิลล่า</h2>
                 
                 <div class="btn-contact-mobile" onclick="openContactModal(event, 'pool-villa')">
@@ -274,7 +274,7 @@
                 <div class="hover-reveal">
                     <p class="text-light opacity-75 small mb-0 mt-2" data-hotel-id="pool-villa" data-hotel-prop="hoverDesc">พูลวิลล่าแบบส่วนตัว ติดชายหาด<br>หาดม่วงงาม อ.สิงหนคร</p>
                     <div class="d-flex justify-content-center align-items-center mt-3">
-                        <button class="btn btn-custom mt-0" data-i18n="btn_waitlist">เร็วๆนี้</button>
+                        <button class="btn btn-custom mt-0" type="button" onclick="event.stopPropagation(); selectHotel('pool-villa')" data-i18n="btn_explore">เข้าชม</button>
                         <button class="btn btn-custom btn-icon mt-0" onclick="openContactModal(event, 'pool-villa')" title="Contact Info" aria-label="ติดต่อ Pool Villa">
                             <i class="fa-solid fa-info"></i>
                         </button>

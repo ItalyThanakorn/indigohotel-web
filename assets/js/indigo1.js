@@ -133,11 +133,11 @@ let currentLang = getInitialLanguage();
                 isComingSoon: false
             },
             'pool-villa': {
-                label: { th: 'เร็วๆ นี้', en: 'Coming Soon' },
+                label: { th: 'Available', en: 'Available' },
                 name: { th: 'อินดิโก้ บีชฟรอนท์ พูลวิลล่า', en: 'Indigo Beachfront Pool Villa' },
                 modalName: { th: '5. Indigo Beachfront Pool Villa', en: '5. Indigo Beachfront Pool Villa' },
                 hoverDesc: { th: 'พูลวิลล่าแบบส่วนตัว ติดชายหาด<br>หาดม่วงงาม อ.สิงหนคร', en: 'Private beachfront pool villa<br>Muang Ngam Beach, Singhanakhon' },
-                modalDesc: { th: 'สาขา 5: หาดม่วงงาม อ.สิงหนคร (เร็วๆนี้)', en: 'Branch 5: Muang Ngam Beach (Soon)' },
+                modalDesc: { th: 'สาขา 5: หาดม่วงงาม อ.สิงหนคร', en: 'Branch 5: Muang Ngam Beach' },
                 phone: { th: '074-813380 (กด 0)', en: '074-813380 (Press 0)' },
                 phoneRaw: '074813380', 
                 line: '@indigovilla',
@@ -150,8 +150,8 @@ let currentLang = getInitialLanguage();
                 iconHtml: '<i class="fa-solid fa-water text-beach fa-beat-fade" style="--fa-animation-duration: 3s;"></i>',
                 barClass: 'bg-info',
                 barColor: '#67e8f9',
-                targetUrl: '',
-                isComingSoon: true
+                targetUrl: `${siteBase}indigopoolvilla1/index.html`,
+                isComingSoon: false
             }
         };
 
