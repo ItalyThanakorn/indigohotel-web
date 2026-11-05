@@ -1,5 +1,8 @@
 (() => {
   const translations = {
+    'อีเมล:': 'Email:',
+    'อีเมล: bestierhotel.hatyai@gmail.com': 'Email: bestierhotel.hatyai@gmail.com',
+    'bestierhotel.hatyai@gmail.com': 'bestierhotel.hatyai@gmail.com',
     'ดูรูปห้องเพิ่มเติม': 'View more room photos',
     'ชมภาพพื้นที่ส่วนกลางและบริเวณรอบโรงแรม เพื่อประกอบการวางแผนเข้าพัก': 'Explore the hotel common areas and surroundings as you plan your stay.',
     'สวนและมุมนั่งพักกลางแจ้ง': 'Garden and outdoor seating',
@@ -13,8 +16,12 @@
     'เช็กอิน 14:00 น. เป็นต้นไป': 'Check-in from 14:00',
     'เช็กเอาต์ไม่เกิน 12:00 น.': 'Check-out by 12:00',
     'บริการรถตุ๊กตุ๊กรับ–ส่งฟรี ภายในรัศมี 1 กิโลเมตร': 'Free tuk-tuk shuttle service within a 1-kilometer radius',
-    'เมื่อกดปุ่ม ระบบจะเปิดอีเมลร่างพร้อมข้อมูลที่กรอก โปรดตรวจสอบและกดส่งในโปรแกรมอีเมล การส่งคำขอยังไม่ถือเป็นการยืนยันการจอง': 'The button opens an email draft with the information you entered. Please review and send it from your email app. This enquiry does not confirm a reservation.',
-    'หากไม่สามารถเปิดโปรแกรมอีเมลได้ โปรดส่งรายละเอียดถึง': 'If your email app does not open, please send the details to',
+    'เมื่อส่งแบบฟอร์ม ระบบจะส่งคำขอไปยังอีเมลของโรงแรมเพื่อให้เจ้าหน้าที่ติดต่อกลับ คำขอนี้ยังไม่ถือเป็นการยืนยันการจอง': 'The form sends your enquiry to the hotel email so staff can follow up. This enquiry does not confirm a reservation.',
+    'ข้อมูลในแบบฟอร์มจะถูกส่งผ่านผู้ให้บริการแบบฟอร์มภายนอกไปยังอีเมลของโรงแรมเพื่อดำเนินการตามคำขอ โดยไม่ถือเป็นการยืนยันการจอง': 'Your form details are sent through an external form service to the hotel email so the team can handle your enquiry. This does not confirm a reservation.',
+    'หากส่งแบบฟอร์มไม่สำเร็จ โปรดติดต่อโรงแรมที่': 'If the form does not send, contact the hotel at',
+    'กำลังส่งคำขอ กรุณารอสักครู่…': 'Sending your enquiry…',
+    'ส่งคำขอเรียบร้อยแล้ว เจ้าหน้าที่จะติดต่อกลับเพื่อแจ้งห้องว่างและราคา การส่งคำขอนี้ยังไม่ยืนยันการจอง': 'Your enquiry was sent. The hotel team will contact you about availability and rates. This does not confirm a reservation.',
+    'ส่งคำขอไม่สำเร็จ โปรดลองอีกครั้ง หรือติดต่อโรงแรมผ่านอีเมลด้านล่าง': 'We could not send your enquiry. Please try again or contact the hotel using the email below.',
     'สอบถามห้องว่างและราคาได้ที่โรงแรม': 'Contact the hotel to check availability and rates.',
     'การจองจะสมบูรณ์เมื่อโรงแรมยืนยันแล้ว': 'Your reservation is complete once confirmed by the hotel.',
     'ดูภาพรวมประเภทห้องพัก': 'View the room type overview',
@@ -54,7 +61,6 @@
     'เกี่ยวกับโรงแรม': 'About the hotel',
     'ข้อมูลโรงแรม': 'Hotel information',
     'โรงแรม': 'Hotel',
-    'เบสเทียร์': 'Bestier',
     'Bestier Hotel ให้บริการห้องพักในอำเภอหาดใหญ่ จังหวัดสงขลา': 'Bestier Hotel offers accommodation in Hat Yai, Songkhla.',
     'เลือกห้องพักที่ใช่จาก 5 รูปแบบ พร้อมฟรี Wi-Fi ที่จอดรถส่วนตัว และบริการครบวงจร': 'Choose from five room types, with free wireless internet, private parking, and hotel services.',
     'ข้อมูลติดต่อ': 'Contact information',
@@ -79,8 +85,12 @@
     'ผู้เข้าพัก 3 ท่าน · ฿1,590': '3 guests · ฿1,590',
     'ผู้เข้าพัก 2 ท่าน · ฿1,690': '2 guests · ฿1,690',
     'ผู้เข้าพัก 2 ท่าน · ฿1,890': '2 guests · ฿1,890',
+    'ผู้เข้าพัก 3 ท่าน': '3 guests',
     'ห้อง Superior King พร้อมเตียงคิงไซซ์': 'Superior King room with a king bed',
     'ห้อง Superior Twin พร้อมเตียงแยกสองเตียง': 'Superior Twin room with two separate beds',
+    'ห้อง Superior Twin พร้อมเตียงคู่': 'Superior Twin room with two separate beds',
+    'ห้อง Business สำหรับการเดินทางเพื่อธุรกิจ': 'Business room for business travelers',
+    'ห้อง Deluxe โทนอบอุ่นพร้อมพื้นที่นั่งเล่น': 'Deluxe room with a warm tone and sitting area',
     'ห้อง Triple สำหรับผู้เข้าพักสามท่าน': 'Triple room for three guests',
     'ห้อง Business พร้อมเตียงขนาด 6 ฟุต': 'Business room with a 6-foot bed',
     'ห้อง Deluxe พร้อมพื้นที่นั่งเล่น': 'Deluxe room with a sitting area',
@@ -158,7 +168,6 @@
     'ระบุวันเข้าพักและประเภทห้องที่สนใจ แล้วติดต่อโรงแรมเพื่อสอบถามห้องว่าง': 'Enter your stay dates and preferred room, then contact the hotel to check availability.',
     'ข้อมูลการจอง': 'Enquiry details',
     'จองที่พัก': 'Request a stay',
-    'เมื่อกดส่ง ระบบจะเปิดโปรแกรมอีเมลพร้อมรายละเอียดคำขอ กรุณาตรวจสอบและกดส่งในโปรแกรมอีเมลอีกครั้ง การส่งคำขอยังไม่ถือเป็นการยืนยันห้องพัก': 'Submit to open an email draft with your enquiry. Review it and send it from your email app. This does not confirm a reservation.',
     'ชื่อผู้ติดต่อ': 'Your name',
     'เบอร์โทรศัพท์ (ไม่บังคับ)': 'Phone number (optional)',
     'ประเภทห้องที่สนใจ': 'Room type',
@@ -166,8 +175,6 @@
     'จำนวนผู้เข้าพัก': 'Number of guests',
     'คำขอเพิ่มเติม': 'Additional requests',
     'เช่น เวลาเดินทางถึง หรือความต้องการพิเศษ': 'For example, arrival time or special requests',
-    'ส่งคำขอผ่านอีเมล': 'Prepare enquiry email',
-    'โหมดทดสอบ: หากโปรแกรมอีเมลไม่เปิด สามารถส่งรายละเอียดถึง': 'Test mode: if your email app does not open, send the details to',
     'ติดต่อโรงแรมโดยตรง': 'Contact the hotel directly',
     'สอบถามข้อมูลกับโรงแรม': 'Ask the hotel',
     'กรุณาติดต่อโรงแรมโดยตรงเพื่อสอบถามห้องว่างและราคา': 'Contact the hotel directly to check availability and rates.',
@@ -318,7 +325,6 @@
     'เคาน์เตอร์ต้อนรับของ Bestier Hotel': 'เคาน์เตอร์ต้อนรับของโรงแรมเบสเทียร์',
     'รายละเอียดด้านหน้าอาคาร Bestier Hotel': 'รายละเอียดด้านหน้าอาคารโรงแรมเบสเทียร์',
     'ชมบรรยากาศและพื้นที่ต่าง ๆ ของ Bestier Hotel หาดใหญ่ ทั้งบริเวณต้อนรับ พื้นที่นั่งเล่น และด้านนอกอาคาร': 'ชมบรรยากาศและพื้นที่ต่าง ๆ ของโรงแรมเบสเทียร์ หาดใหญ่ ทั้งบริเวณต้อนรับ พื้นที่นั่งเล่น และด้านนอกอาคาร',
-    'โหมดทดสอบ: หากโปรแกรมอีเมลไม่เปิด สามารถส่งรายละเอียดถึง': 'โหมดทดสอบ: หากโปรแกรมอีเมลไม่เปิด สามารถส่งรายละเอียดถึง',
     'ได้โดยตรง': 'ได้โดยตรง'
   };
   const langKey = 'bestierLanguage';
@@ -352,6 +358,7 @@
     const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (textWalker.nextNode()) {
       const node = textWalker.currentNode;
+      if (node.parentElement?.closest('[data-no-translate]')) continue;
       if (!node.__bestierSourceText) node.__bestierSourceText = node.nodeValue.replace(/\s+/g, ' ').trim();
       const source = node.__bestierSourceText;
       if (!source) continue;

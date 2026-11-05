@@ -71,9 +71,13 @@
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       const image = document.createElement('img');
-      image.src = link.href;
+      image.src = link.href.replace(/\.jpg$/i, '-preview.jpg');
       image.loading = 'lazy';
       image.decoding = 'async';
+      image.onerror = () => {
+        image.onerror = null;
+        image.src = link.href;
+      };
       image.alt = isThai
         ? `ห้อง${room.nameTh} ภาพที่ ${index + 1}`
         : `${room.nameEn} room, photo ${index + 1}`;

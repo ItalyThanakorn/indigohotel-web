@@ -9,9 +9,9 @@
   --ink: #202b3b;
   --muted: #7d817f;
   --line: #dcd8ce;
-  --serif: 'Playfair Display','Noto Serif Thai',Georgia,serif;
-  --sans: 'DM Sans','Noto Serif Thai',serif;
-  --thai: 'Noto Serif Thai',serif
+  --serif: 'Playfair Display','Kanit',sans-serif;
+  --sans: 'DM Sans','Kanit',sans-serif;
+  --thai: 'Kanit',sans-serif
 }
 * {
   box-sizing: border-box
@@ -381,6 +381,9 @@ button,input,select {
   font-size: 10px;
   color: var(--navy);
   margin-top: 14px
+}
+.underlined-link.email-contact {
+  gap: 6px
 }
 .underlined-link span {
   color: var(--gold);
@@ -1681,6 +1684,17 @@ p {
   font-size: 14px;
   color: #686f73;
   line-height: 1.8
+}
+.form-honeypot {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0
 }
 .reservation-aside {
   padding: 30px;
