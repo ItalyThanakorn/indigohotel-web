@@ -15,10 +15,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Kanit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Kanit:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="../assets/css/bestier.css?v=4">
+    <link rel="stylesheet" href="../assets/css/bestier.css?v=5">
+    <link rel="stylesheet" href="assets/css/bestier.css?v=5">
   </head>
   <body>
     <header class="site-header">
@@ -134,7 +135,7 @@
           </button>
         </form>
       </section>
-      <section class="philosophy section-shell" id="philosophy">
+      <section class="hotel-overview section-shell" id="hotel-overview">
         <div class="section-marker">
           <span>
             01
@@ -144,33 +145,41 @@
             เกี่ยวกับโรงแรม
           </span>
         </div>
-        <div class="philosophy-layout">
-          <div class="philosophy-heading">
-            <p class="eyebrow">
-              ข้อมูลโรงแรม
-            </p>
-            <h2>
-              โรงแรม<br><i>Bestier</i>
-            </h2>
+        <div class="hotel-overview-layout">
+          <div class="home-gallery" data-home-gallery role="region" aria-roledescription="ภาพสไลด์" aria-label="ภาพบรรยากาศโรงแรมเบสเทียร์">
+            <figure class="home-gallery-slide is-active" data-gallery-slide role="group" aria-roledescription="ภาพ" aria-label="ภาพที่ 1 จาก 4" aria-hidden="false">
+              <img src="../assets/images/bestier/front2.JPG" alt="ด้านหน้าอาคารโรงแรมเบสเทียร์" fetchpriority="high">
+              <figcaption>ยินดีต้อนรับสู่โรงแรมเบสเทียร์ · หาดใหญ่</figcaption>
+            </figure>
+            <figure class="home-gallery-slide" data-gallery-slide role="group" aria-roledescription="ภาพ" aria-label="ภาพที่ 2 จาก 4" aria-hidden="true" hidden>
+              <img src="../assets/images/bestier/counter.jpg" alt="เคาน์เตอร์ต้อนรับของโรงแรม" loading="lazy">
+              <figcaption>เริ่มต้นการเข้าพักที่เคาน์เตอร์ต้อนรับ</figcaption>
+            </figure>
+            <figure class="home-gallery-slide" data-gallery-slide role="group" aria-roledescription="ภาพ" aria-label="ภาพที่ 3 จาก 4" aria-hidden="true" hidden>
+              <img src="../assets/images/bestier/center.jpg" alt="สวนและมุมนั่งพักกลางแจ้งของโรงแรม" loading="lazy">
+              <figcaption>พื้นที่พักผ่อนและสวนกลางแจ้ง</figcaption>
+            </figure>
+            <figure class="home-gallery-slide" data-gallery-slide role="group" aria-roledescription="ภาพ" aria-label="ภาพที่ 4 จาก 4" aria-hidden="true" hidden>
+              <img src="../assets/images/bestier/breakspace.jpg" alt="พื้นที่นั่งพักภายในล็อบบี้" loading="lazy">
+              <figcaption>มุมนั่งพักภายในล็อบบี้</figcaption>
+            </figure>
+            <div class="home-gallery-controls" role="group" aria-label="ควบคุมภาพสไลด์">
+              <button class="gallery-arrow" type="button" data-home-gallery-prev aria-label="ภาพก่อนหน้า">‹</button>
+              <div class="gallery-dots" role="group" aria-label="เลือกภาพ">
+                <button class="gallery-dot is-active" type="button" data-gallery-go="0" aria-label="แสดงภาพที่ 1" aria-pressed="true"></button>
+                <button class="gallery-dot" type="button" data-gallery-go="1" aria-label="แสดงภาพที่ 2" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-gallery-go="2" aria-label="แสดงภาพที่ 3" aria-pressed="false"></button>
+                <button class="gallery-dot" type="button" data-gallery-go="3" aria-label="แสดงภาพที่ 4" aria-pressed="false"></button>
+              </div>
+              <span class="home-gallery-count" data-home-gallery-count aria-live="polite">01 / 04</span>
+              <button class="gallery-arrow" type="button" data-home-gallery-next aria-label="ภาพถัดไป">›</button>
+            </div>
           </div>
-          <div class="philosophy-copy">
-            <p class="lead">
-              Bestier Hotel ให้บริการห้องพักในอำเภอหาดใหญ่ จังหวัดสงขลา
-            </p>
-            <p>
-              เลือกห้องพักจาก 5 รูปแบบ พร้อมอินเทอร์เน็ตไร้สายฟรี ที่จอดรถส่วนตัว และสิ่งอำนวยความสะดวกสำหรับผู้เข้าพัก
-            </p>
-            <a class="underlined-link" href="contact.html">
-              ข้อมูลติดต่อ
-            </a>
+          <div class="home-overview-copy">
+            <p class="eyebrow">พักสบายใจกลางหาดใหญ่</p>
+            <h2>รู้จัก<br><i>เบสเทียร์</i></h2>
+            <p>เลือกห้องพักได้ 5 รูปแบบ พร้อมอินเทอร์เน็ตไร้สายฟรี ที่จอดรถส่วนตัว และสิ่งอำนวยความสะดวกสำหรับผู้เข้าพัก</p>
           </div>
-          <figure class="philosophy-image">
-            <img
-              src="../assets/images/bestier/center.jpg"
-              alt="สวนและมุมนั่งพักกลางแจ้งของ Bestier Hotel"
-              loading="lazy"
-            >
-          </figure>
         </div>
       </section>
       <section class="rooms section-shell" id="rooms">
@@ -198,8 +207,7 @@
         </div>
         <div class="room-gallery" aria-label="ภาพห้องพักทั้งห้ารูปแบบ">
           <div class="room-gallery-toolbar">
-            <span>
-            </span>
+            <span class="gallery-count" aria-live="polite">01 / 05</span>
             <div class="gallery-controls">
               <button type="button" data-gallery-prev aria-label="ดูห้องก่อนหน้า" disabled>
                 ก่อนหน้า
@@ -211,31 +219,31 @@
           </div>
           <div class="room-gallery-track" id="roomGalleryTrack" tabindex="0" aria-label="เลื่อนดูภาพห้องพัก">
             <a class="room-gallery-card" href="rooms.html">
-              <img src="../assets/images/bestier/Superior-king-room.jpg" alt="ห้อง Superior King พร้อมเตียงคิงไซซ์" loading="lazy">
+              <img src="../assets/images/bestier/superiorking.jpg" alt="ห้อง Superior King พร้อมเตียงคิงไซซ์" loading="lazy">
               <span>
                 <strong> Superior King</strong><small>ผู้เข้าพัก 2 ท่าน · ฿1,290</small>
               </span>
             </a>
             <a class="room-gallery-card" href="rooms.html">
-              <img src="../assets/images/bestier/Superior-twin-room.jpg" alt="ห้อง Superior Twin พร้อมเตียงแยกสองเตียง" loading="lazy">
+              <img src="../assets/images/bestier/superiortwin.jpg" alt="ห้อง Superior Twin พร้อมเตียงแยกสองเตียง" loading="lazy">
               <span>
                 <strong> Superior Twin</strong><small>ผู้เข้าพัก 2 ท่าน · ฿1,290</small>
               </span>
             </a>
             <a class="room-gallery-card" href="rooms.html">
-              <img src="../assets/images/bestier/Triple-room.jpg" alt="ห้อง Triple สำหรับผู้เข้าพักสามท่าน" loading="lazy">
+              <img src="../assets/images/bestier/triple.jpg" alt="ห้อง Triple สำหรับผู้เข้าพักสามท่าน" loading="lazy">
               <span>
                 <strong> Triple</strong><small>ผู้เข้าพัก 3 ท่าน · ฿1,590</small>
               </span>
             </a>
             <a class="room-gallery-card" href="rooms.html">
-              <img src="../assets/images/bestier/Business-room.jpg" alt="ห้อง Business พร้อมเตียงขนาด 6 ฟุต" loading="lazy">
+              <img src="../assets/images/bestier/business.jpg" alt="ห้อง Business พร้อมเตียงขนาด 6 ฟุต" loading="lazy">
               <span>
                 <strong> Business</strong><small>ผู้เข้าพัก 2 ท่าน · ฿1,690</small>
               </span>
             </a>
             <a class="room-gallery-card" href="rooms.html">
-              <img src="../assets/images/bestier/Deluxe-room.jpg" alt="ห้อง Deluxe พร้อมพื้นที่นั่งเล่น" loading="lazy">
+              <img src="../assets/images/bestier/deluxe.jpg" alt="ห้อง Deluxe พร้อมพื้นที่นั่งเล่น" loading="lazy">
               <span>
                 <strong> Deluxe</strong><small>ผู้เข้าพัก 2 ท่าน · ฿1,890</small>
               </span>
@@ -466,8 +474,13 @@
       </div>
       <small class="copyright">© 2026 BESTIER HOTEL. ALL RIGHTS RESERVED.</small>
     </footer>
-    <script src="../assets/js/bestier-i18n.js?v=7" defer></script>
+    <button class="back-to-top" type="button" aria-label="กลับขึ้นด้านบน" aria-hidden="true" tabindex="-1">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6" /></svg>
+    </button>
+    <script src="../assets/js/bestier-i18n.js?v=8" defer></script>
     <script src="../assets/js/bestier.js?v=2" defer>
     </script>
+    <script src="assets/bestier-home.js?v=1" defer></script>
+    <script src="assets/back-to-top.js?v=1" defer></script>
   </body>
 </html>

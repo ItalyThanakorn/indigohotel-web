@@ -42,6 +42,7 @@
     'Bestier Hotel — โรงแรมเบสเทียร์ หาดใหญ่': 'Bestier Hotel — Hat Yai',
     'ที่พักในหาดใหญ่': 'A stay in Hat Yai',
     'โรงแรมเบสเทียร์': 'Bestier Hotel',
+    'เบสเทียร์': 'Bestier Hotel',
     'ห้องพักและบริการสำหรับการเข้าพัก': 'Rooms and services for your stay',
     'ในอำเภอหาดใหญ่ จังหวัดสงขลา': 'in Hat Yai, Songkhla',
     'ยินดีต้อนรับ': 'Welcome',
@@ -126,6 +127,31 @@
     'ชมภาพพื้นที่ต้อนรับ มุมนั่งพัก และบริเวณรอบโรงแรม': 'See the reception area, lounge spaces, and hotel surroundings.',
     'ดูรูปภาพเพิ่มเติม': 'View more photos',
     'ภาพบรรยากาศ Bestier Hotel': 'Bestier Hotel atmosphere',
+    'กลับขึ้นด้านบน': 'Back to top',
+    'ภาพบรรยากาศโรงแรมเบสเทียร์': 'Bestier Hotel atmosphere',
+    'พักสบายใจกลางหาดใหญ่': 'A comfortable stay in Hat Yai',
+    'รู้จัก': 'Meet',
+    'ยินดีต้อนรับสู่โรงแรมเบสเทียร์ · หาดใหญ่': 'Welcome to Bestier Hotel · Hat Yai',
+    'เริ่มต้นการเข้าพักที่เคาน์เตอร์ต้อนรับ': 'Begin your stay at the reception desk',
+    'พื้นที่พักผ่อนและสวนกลางแจ้ง': 'Outdoor garden and a place to unwind',
+    'มุมนั่งพักภายในล็อบบี้': 'A quiet corner in the lobby',
+    'เลือกห้องพักได้ 5 รูปแบบ พร้อมอินเทอร์เน็ตไร้สายฟรี ที่จอดรถส่วนตัว และสิ่งอำนวยความสะดวกสำหรับผู้เข้าพัก': 'Choose from five room types, with free Wi-Fi, private parking, and guest facilities.',
+    'เคาน์เตอร์ต้อนรับของโรงแรม': 'Hotel reception desk',
+    'สวนและมุมนั่งพักกลางแจ้งของโรงแรม': 'Hotel garden and outdoor seating area',
+    'ภาพสไลด์': 'carousel',
+    'ภาพ': 'slide',
+    'ควบคุมภาพสไลด์': 'Slideshow controls',
+    'เลือกภาพ': 'Choose a photo',
+    'ภาพก่อนหน้า': 'Previous photo',
+    'ภาพถัดไป': 'Next photo',
+    'แสดงภาพที่ 1': 'Show photo 1',
+    'แสดงภาพที่ 2': 'Show photo 2',
+    'แสดงภาพที่ 3': 'Show photo 3',
+    'แสดงภาพที่ 4': 'Show photo 4',
+    'ภาพที่ 1 จาก 4': 'Photo 1 of 4',
+    'ภาพที่ 2 จาก 4': 'Photo 2 of 4',
+    'ภาพที่ 3 จาก 4': 'Photo 3 of 4',
+    'ภาพที่ 4 จาก 4': 'Photo 4 of 4',
     'ที่ตั้งโรงแรม': 'Hotel location',
     'ที่ตั้งในหาดใหญ่': 'Located in Hat Yai',
     'ที่อยู่โรงแรม': 'Hotel address',
@@ -221,6 +247,7 @@
     'ชมบรรยากาศและพื้นที่ต่าง ๆ ของ Bestier Hotel หาดใหญ่ ทั้งบริเวณต้อนรับ พื้นที่นั่งเล่น และด้านนอกอาคาร': 'Explore the reception, lounge, and outdoor areas at Bestier Hotel in Hat Yai.',
     'หน้าแรก Bestier Hotel': 'Bestier Hotel home',
     'ด้านหน้าอาคาร Bestier Hotel': 'Exterior of Bestier Hotel',
+    'ด้านหน้าอาคารโรงแรมเบสเทียร์': 'Exterior of Bestier Hotel',
     'ด้านหน้าอาคารโรงแรม': 'Hotel exterior',
     'บรรยากาศ': 'Hotel atmosphere',
     'ชมพื้นที่ต้อนรับ มุมนั่งพัก และรายละเอียดภายในโรงแรม': 'Explore the reception, lounge spaces, and interior details.',
@@ -368,8 +395,8 @@
       node.nodeValue = `${leading}${translated}${trailing}`;
     }
 
-    document.querySelectorAll('[alt], [aria-label], [title], [placeholder]').forEach((element) => {
-      ['alt', 'aria-label', 'title', 'placeholder'].forEach((attribute) => {
+    document.querySelectorAll('[alt], [aria-label], [aria-roledescription], [title], [placeholder]').forEach((element) => {
+      ['alt', 'aria-label', 'aria-roledescription', 'title', 'placeholder'].forEach((attribute) => {
         if (!element.hasAttribute(attribute)) return;
         const sourceAttribute = attribute.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
         const sourceKey = `bestierSource${sourceAttribute}`;

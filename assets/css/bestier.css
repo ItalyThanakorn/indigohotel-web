@@ -172,7 +172,7 @@ button,input,select {
   letter-spacing: -.035em;
   margin: 28px 0 22px
 }
-.hero h1 i,.philosophy h2 i,.rooms-heading h2 i,.table-copy h2 i,.address h2 i,.closing h2 i {
+.hero h1 i,.hotel-overview h2 i,.rooms-heading h2 i,.table-copy h2 i,.address h2 i,.closing h2 i {
   font-weight: 400;
   color: var(--gold-pale)
 }
@@ -324,21 +324,21 @@ button,input,select {
   height: 1px;
   background: var(--gold)
 }
-.philosophy {
+.hotel-overview {
   padding-top: 127px;
   padding-bottom: 118px
 }
-.philosophy-layout {
+.hotel-overview-layout {
   display: grid;
   grid-template-columns: 1fr .72fr 1.2fr;
   gap: 5%;
   align-items: center;
   margin-top: 63px
 }
-.philosophy-heading {
+.hotel-overview-heading {
   position: relative
 }
-.philosophy-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
+.hotel-overview-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
   font: 400 clamp(43px,5.2vw,69px)/1.12 var(--serif);
   letter-spacing: -.035em;
   color: var(--navy);
@@ -346,7 +346,7 @@ button,input,select {
   position: relative;
   z-index: 1
 }
-.philosophy-heading .eyebrow,.rooms-heading .eyebrow,.details-heading .eyebrow,.table-copy .eyebrow,.address .eyebrow {
+.hotel-overview-heading .eyebrow,.rooms-heading .eyebrow,.details-heading .eyebrow,.table-copy .eyebrow,.address .eyebrow {
   font-size: 8px
 }
 .heading-ornament {
@@ -357,17 +357,17 @@ button,input,select {
   color: #eeeae1;
   font: 400 240px/.8 var(--serif)
 }
-.philosophy-copy {
+.hotel-overview-copy {
   align-self: center;
   padding-top: 23px
 }
-.philosophy-copy p {
+.hotel-overview-copy p {
   font-size: 11px;
   line-height: 2.2;
   color: #777b7c;
   margin: 0 0 17px
 }
-.philosophy-copy .lead {
+.hotel-overview-copy .lead {
   font-size: 13px;
   color: var(--navy);
   line-height: 2
@@ -389,18 +389,18 @@ button,input,select {
   color: var(--gold);
   font-size: 16px
 }
-.philosophy-image {
+.hotel-overview-image {
   margin: 0;
   position: relative
 }
-.philosophy-image:before {
+.hotel-overview-image:before {
   content: '';
   position: absolute;
   inset: -12px 12px 12px -12px;
   border: 1px solid var(--gold);
   z-index: 0
 }
-.philosophy-image img {
+.hotel-overview-image img {
   display: block;
   width: 100%;
   height: 360px;
@@ -408,7 +408,7 @@ button,input,select {
   position: relative;
   z-index: 1
 }
-.philosophy-image figcaption {
+.hotel-overview-image figcaption {
   font: italic 10px var(--serif);
   color: #77776f;
   margin-top: 12px;
@@ -577,6 +577,7 @@ button,input,select {
 .interlude-copy h2,.closing h2 {
   font: 400 clamp(50px,6vw,78px)/.98 var(--serif);
   letter-spacing: -.03em;
+  line-height: 1.15;
   margin: 22px 0
 }
 .interlude-copy h2 i,.closing h2 i {
@@ -921,11 +922,11 @@ button,input,select {
     padding-left: 7%;
     padding-right: 7%
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: .9fr .8fr 1fr;
     gap: 4%
   }
-  .philosophy-image img {
+  .hotel-overview-image img {
     height: 310px
   }
   .booking {
@@ -1114,16 +1115,16 @@ button,input,select {
   .section-marker {
     font-size: 7px
   }
-  .philosophy {
+  .hotel-overview {
     padding-top: 77px;
     padding-bottom: 76px
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: 1fr;
     gap: 23px;
     margin-top: 38px
   }
-  .philosophy-heading h2 {
+  .hotel-overview-heading h2 {
     font-size: 55px;
     margin: 14px 0 2px
   }
@@ -1133,17 +1134,17 @@ button,input,select {
     right: 0;
     bottom: -60px
   }
-  .philosophy-copy {
+  .hotel-overview-copy {
     padding: 0;
     max-width: 420px
   }
-  .philosophy-image {
+  .hotel-overview-image {
     margin: 8px 9px 0 0
   }
-  .philosophy-image img {
+  .hotel-overview-image img {
     height: 280px
   }
-  .philosophy-image figcaption {
+  .hotel-overview-image figcaption {
     font-size: 9px
   }
   .rooms {
@@ -1411,14 +1412,14 @@ p {
 .section-marker {
   font-size: 11px
 }
-.philosophy-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
+.hotel-overview-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
   font-size: 15px;
   line-height: 1.85
 }
-.philosophy-copy .lead {
+.hotel-overview-copy .lead {
   font-size: 18px
 }
-.philosophy-image figcaption {
+.hotel-overview-image figcaption {
   font-size: 13px
 }
 .underlined-link {
@@ -1799,10 +1800,10 @@ p {
   .section-marker {
     font-size: 9px
   }
-  .philosophy-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
+  .hotel-overview-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
     font-size: 14px
   }
-  .philosophy-copy .lead {
+  .hotel-overview-copy .lead {
     font-size: 17px
   }
   .room-number,.room-small>span {
@@ -2445,15 +2446,15 @@ body.is-navigating {
     padding-left: 6%;
     padding-right: 6%
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 28px 5%;
     margin-top: 42px
   }
-  .philosophy-heading,.philosophy-copy,.philosophy-image {
+  .hotel-overview-heading,.hotel-overview-copy,.hotel-overview-image {
     min-width: 0
   }
-  .philosophy-image {
+  .hotel-overview-image {
     grid-column: 1/-1;
     width: min(100%,560px);
     justify-self: center
@@ -2684,16 +2685,16 @@ body.is-navigating {
     gap: 9px;
     font-size: 10px
   }
-  .philosophy {
+  .hotel-overview {
     padding-top: 68px;
     padding-bottom: 68px
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: minmax(0,1fr);
     gap: 20px;
     margin-top: 32px
   }
-  .philosophy-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
+  .hotel-overview-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
     font-size: clamp(38px,10vw,50px);
     line-height: 1.2
   }
@@ -2704,22 +2705,22 @@ body.is-navigating {
     bottom: -48px;
     pointer-events: none
   }
-  .philosophy-copy {
+  .hotel-overview-copy {
     padding: 0;
     max-width: none
   }
-  .philosophy-copy p,.philosophy-copy .lead,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro {
+  .hotel-overview-copy p,.hotel-overview-copy .lead,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro {
     font-size: 15px;
     line-height: 1.9
   }
-  .philosophy-image {
+  .hotel-overview-image {
     grid-column: auto;
     margin: 5px 8px 0 0
   }
-  .philosophy-image img {
+  .hotel-overview-image img {
     height: clamp(240px,70vw,330px)
   }
-  .philosophy-image figcaption {
+  .hotel-overview-image figcaption {
     font-size: 12px;
     line-height: 1.6
   }
