@@ -103,6 +103,8 @@
     'ดูภาพพื้นที่ส่วนกลางและบรรยากาศของโรงแรม': 'Explore the hotel’s common areas and atmosphere.',
     'ดูบรรยากาศโรงแรม': 'Explore the hotel',
     'ข้อมูลโรงแรม Bestier Hotel': 'Bestier Hotel information',
+    'ดูข้อมูลต่างๆของโรงแรม': 'Learn more about the hotel.',
+    'ดูข้อมูลโรงแรม': 'View hotel information',
     'บริการของโรงแรม': 'Hotel services',
     'สิ่งอำนวยความสะดวก': 'Facilities',
     'บริการสำหรับ': 'Services for',
