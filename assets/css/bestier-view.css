@@ -160,14 +160,15 @@
   }
 
   .view-gallery {
+    grid-template-columns: minmax(0, 1fr);
     grid-auto-rows: 76px;
     gap: 12px;
-    padding: 0 7% 64px;
+    padding: 0 3% 64px;
   }
 
   .view-photo,
   .view-photo--wide {
-    grid-column: span 12;
+    grid-column: 1 / -1;
     grid-row: span 4;
   }
 
@@ -190,15 +191,18 @@
 
 @media (max-width: 420px) {
   .view-gallery {
+    grid-template-columns: minmax(0, 1fr);
     grid-auto-rows: 68px;
     gap: 9px;
+    padding-right: 3%;
+    padding-left: 3%;
   }
 
   .view-photo,
   .view-photo--wide,
   .view-photo--tall,
   .view-photo--short {
-    grid-column: span 16;
+    grid-column: 1 / -1;
     grid-row: span 4;
   }
 }
