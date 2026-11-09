@@ -139,7 +139,7 @@ button,input,select {
   background: var(--navy)
 }
 .hero-photo {
-  background: linear-gradient(0deg,#0b152130,#0b152100 46%),url('../images/bestier/Building1.JPG') center/cover
+  background: linear-gradient(0deg,#0b152130,#0b152100 46%),url('../images/bestier/Building1.jpg') center/cover
 }
 .hero-panel {
   background: var(--navy);
@@ -1478,7 +1478,7 @@ p {
   background: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/cda44bb70aa301843a47059bf0bcd6b4.jpeg') center/cover
 }
 .page-hero-rooms {
-  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/hallway.JPG')
+  background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/hallway.jpg')
 }
 .page-hero-booking {
   background-image: linear-gradient(90deg,#111c2bd9,#111c2b30),url('../images/bestier/inside-room.jpg')
