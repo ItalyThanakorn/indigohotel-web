@@ -1,0 +1,15 @@
+indigo2-hotel/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+└── images/
+    ├── hero-room.jpg
+    ├── twin-room.jpg
+    ├── king-room.jpg
+    ├── triple-room.jpg
+    ├── hallway.jpg
+    ├── hotel-exterior.jpg
+    ├── gallery-room.jpg
+    └── gallery-lobby.jpg
