@@ -11,246 +11,2160 @@
   --sans: "DM Sans", sans-serif;
   --thai: "Anuphan", sans-serif;
 }
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--thai); font-weight: 300; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-button:focus-visible, a:focus-visible { outline: 3px solid #edc990; outline-offset: 4px; }
-.skip-link { position: fixed; z-index: 40; top: -60px; left: 12px; padding: 10px 16px; background: white; color: var(--deep); }
-.skip-link:focus { top: 12px; }
-
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--thai);
+  font-weight: 300;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+}
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #edc990;
+  outline-offset: 4px;
+}
+.skip-link {
+  position: fixed;
+  z-index: 40;
+  top: -60px;
+  left: 12px;
+  padding: 10px 16px;
+  background: white;
+  color: var(--deep);
+}
+.skip-link:focus {
+  top: 12px;
+}
 /* แถบเมนูและโลโก้ */
-.topbar { position: absolute; z-index: 5; top: 0; left: 0; display: flex; width: 100%; height: 78px; align-items: center; justify-content: space-between; padding: 0 6.2%; color: white; border-bottom: 1px solid #ffffff38; }
-.brand { display: flex; align-items: center; gap: 11px; font: 600 15px var(--sans); letter-spacing: 2px; }
-.brand small { display: block; margin-top: 2px; font-size: 8px; font-weight: 500; letter-spacing: 3px; }
-.brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid #ffffffb0; border-radius: 50%; font: italic 20px var(--thai); letter-spacing: 0; }
-.nav-links { display: flex; gap: 38px; font-size: 12px; }
-.nav-links a { opacity: .88; transition: opacity .2s; }
-.nav-links a:hover { opacity: 1; }
-.nav-actions { display: flex; align-items: center; gap: 21px; }
-.lang-switch, .menu-toggle { color: inherit; cursor: pointer; border: 0; background: none; }
-.lang-switch { font: 500 11px var(--sans); letter-spacing: 1px; }
-.lang-switch span { padding-left: 3px; font-size: 16px; }
-.menu-toggle { display: none; font-size: 21px; }
-
+.topbar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6.2%;
+  color: white;
+  border-bottom: 1px solid #ffffff38;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font: 600 15px var(--sans);
+  letter-spacing: 2px;
+}
+.brand small {
+  display: block;
+  margin-top: 2px;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #ffffffb0;
+  border-radius: 50%;
+  font: italic 20px var(--thai);
+  letter-spacing: 0;
+}
+.nav-links {
+  display: flex;
+  gap: 38px;
+  font-size: 12px;
+}
+.nav-links a {
+  opacity: .88;
+  transition: opacity .2s;
+}
+.nav-links a:hover {
+  opacity: 1;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+.lang-switch, .menu-toggle {
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+.lang-switch {
+  font: 500 11px var(--sans);
+  letter-spacing: 1px;
+}
+.lang-switch span {
+  padding-left: 3px;
+  font-size: 16px;
+}
+.menu-toggle {
+  display: none;
+  font-size: 21px;
+}
 /* ภาพปกและข้อความหน้าแรก */
-.hero { position: relative; height: min(800px, 100vh); min-height: 660px; overflow: hidden; color: white; background: #426d72; }
-.hero-photo { position: absolute; inset: 0; background: url("assets/home-pool.jpg") center 51% / cover no-repeat; transform: scale(1.015); }
-.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #102f35d9 0%, #102f3591 38%, #102f3512 83%), linear-gradient(0deg, #102f3570, transparent 38%); }
-.hero-content { position: absolute; top: 27%; left: 12%; max-width: 690px; }
-.eyebrow, .intro-kicker { font: 500 10px var(--sans); letter-spacing: 2.3px; }
-.eyebrow { display: flex; align-items: center; gap: 11px; }
-.eyebrow i { width: 26px; height: 1px; background: #b9d4c8; }
-.hero h1 { margin: 26px 0 16px; font-size: clamp(43px, 6.3vw, 78px); font-weight: 400; line-height: 1.22; letter-spacing: -.7px; }
-.hero-content > p { max-width: 470px; margin: 0 0 29px; color: #eef4ef; font-size: 14px; line-height: 2; }
-.button { display: inline-flex; align-items: center; gap: 25px; padding: 13px 18px; font-size: 12px; transition: transform .2s, background .2s; }
-.button:hover { transform: translateY(-2px); }
-.button-light { color: var(--deep); background: #f8faf6; }
-.button-light span:last-child { font-size: 17px; }
-.hero-note { position: absolute; right: 6.2%; bottom: 35px; display: flex; align-items: center; gap: 18px; font-size: 10px; letter-spacing: 1px; }
-.hero-note span:first-child { padding-right: 18px; border-right: 1px solid #ffffff8c; font-family: var(--sans); }
-.hero-scroll { position: absolute; bottom: 35px; left: 6.2%; font: 500 9px var(--sans); letter-spacing: 2px; }
-.hero-scroll span { margin-left: 15px; font-size: 15px; }
-
+.hero {
+  position: relative;
+  height: min(800px, 100vh);
+  min-height: 660px;
+  overflow: hidden;
+  color: white;
+  background: #426d72;
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background: url("assets/home-pool.jpg") center 51% / cover no-repeat;
+  transform: scale(1.015);
+}
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #102f35d9 0%, #102f3591 38%, #102f3512 83%), linear-gradient(0deg, #102f3570, transparent 38%);
+}
+.hero-content {
+  position: absolute;
+  top: 27%;
+  left: 12%;
+  max-width: 690px;
+}
+.eyebrow, .intro-kicker {
+  font: 500 10px var(--sans);
+  letter-spacing: 2.3px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.eyebrow i {
+  width: 26px;
+  height: 1px;
+  background: #b9d4c8;
+}
+.hero h1 {
+  margin: 26px 0 16px;
+  font-size: 78px;
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.7px;
+}
+.hero-content > p {
+  max-width: 470px;
+  margin: 0 0 29px;
+  color: #eef4ef;
+  font-size: 14px;
+  line-height: 2;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 13px 18px;
+  font-size: 12px;
+  transition: transform .2s, background .2s;
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button-light {
+  color: var(--deep);
+  background: #f8faf6;
+}
+.button-light span:last-child {
+  font-size: 17px;
+}
+.hero-note {
+  position: absolute;
+  right: 6.2%;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.hero-note span:first-child {
+  padding-right: 18px;
+  border-right: 1px solid #ffffff8c;
+  font-family: var(--sans);
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 35px;
+  left: 6.2%;
+  font: 500 9px var(--sans);
+  letter-spacing: 2px;
+}
+.hero-scroll span {
+  margin-left: 15px;
+  font-size: 15px;
+}
 /* กรอบและระยะห่างเนื้อหา */
-.section-wrap { max-width: 1200px; margin: auto; padding-right: 35px; padding-left: 35px; }
-.intro { padding-top: 110px; padding-bottom: 110px; }
-.intro-kicker { color: #648a85; }
-.intro-row { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 13%; margin-top: 25px; }
-.intro-row h2, .section-heading h2, .amenity-copy h2, .booking h2 { margin: 0; font-size: clamp(37px, 5vw, 58px); font-weight: 400; line-height: 1.23; letter-spacing: -.8px; }
-.intro-row p { max-width: 425px; margin: 0 0 5px; color: #697b7a; font-size: 14px; line-height: 2.1; }
-
+.section-wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding-right: 35px;
+  padding-left: 35px;
+}
+.intro {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.intro-kicker {
+  color: #648a85;
+}
+.intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 13%;
+  margin-top: 25px;
+}
+.intro-row h2, .section-heading h2, .amenity-copy h2, .booking h2 {
+  margin: 0;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: -.8px;
+}
+.intro-row p {
+  max-width: 425px;
+  margin: 0 0 5px;
+  color: #697b7a;
+  font-size: 14px;
+  line-height: 2.1;
+}
 /* การ์ดแสดงบ้านพัก */
-.villas { padding-bottom: 120px; }
-.section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 34px; padding-bottom: 25px; border-bottom: 1px solid #d9e2dc; }
-.section-heading h2 { margin-top: 11px; font-size: 39px; }
-.heading-count { padding-bottom: 6px; font: 500 12px var(--sans); letter-spacing: 1px; }
-.heading-count i { margin-left: 6px; color: #90a09b; font-size: 9px; font-style: normal; }
-.villa-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.villa-card { overflow: hidden; background: white; box-shadow: 0 10px 35px #183c4510; }
-.villa-image { position: relative; display: block; width: 100%; height: 260px; overflow: hidden; cursor: pointer; border: 0; color: white; text-align: left; background-color: #51848a; background-size: cover; background-position: center; transition: filter .2s; }
-.villa-image:hover { filter: brightness(.92); }
-.image-a { background-image: linear-gradient(0deg, #15373a75, transparent 58%), url("assets/a215-cover.jpg"); }
-.image-b { background-image: linear-gradient(0deg, #15373a75, transparent 58%), url("assets/b216-cover.jpg"); }
-.image-c { background-image: linear-gradient(0deg, #15373a75, transparent 58%), url("assets/c217-cover.jpg"); }
-.image-label { position: absolute; top: 17px; left: 18px; font: 500 8px var(--sans); letter-spacing: 2px; }
-.image-code { position: absolute; bottom: 18px; left: 20px; font: 400 34px var(--sans); letter-spacing: 1px; }
-.image-open { position: absolute; right: 19px; bottom: 20px; font: 20px var(--sans); }
-.villa-info { padding: 22px 21px 20px; }
-.villa-title { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
-.villa-type { color: #77918c; font: 500 8px var(--sans); letter-spacing: 1.5px; }
-.villa-title h3 { margin: 5px 0 0; color: var(--deep); font: 400 27px var(--sans); }
-.villa-price { text-align: right; }
-.villa-price small { display: block; color: #718581; font: 500 8px var(--sans); letter-spacing: .6px; }
-.villa-price strong { color: #38746d; font: 500 19px var(--sans); white-space: nowrap; }
-.villa-specs { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; padding: 12px 0; border-top: 1px solid #e7ece8; border-bottom: 1px solid #e7ece8; color: #77908a; font-size: 10px; white-space: nowrap; }
-.villa-specs b { color: #536b68; font-weight: 400; }
-.villa-description { min-height: 42px; margin: 14px 0; color: #687b78; font-size: 11px; line-height: 1.9; }
-.details-link { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 14px 0 0; cursor: pointer; border: 0; border-top: 1px solid #e7ece8; color: var(--deep); background: none; font-size: 11px; }
-.details-link span:last-child { font-size: 15px; }
-
+.villas {
+  padding-bottom: 120px;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 34px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #d9e2dc;
+}
+.section-heading h2 {
+  margin-top: 11px;
+  font-size: 39px;
+}
+.heading-count {
+  padding-bottom: 6px;
+  font: 500 12px var(--sans);
+  letter-spacing: 1px;
+}
+.heading-count i {
+  margin-left: 6px;
+  color: #90a09b;
+  font-size: 9px;
+  font-style: normal;
+}
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.villa-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 35px #183c4510;
+}
+.villa-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0;
+  color: white;
+  text-align: left;
+  background-color: #51848a;
+  background-size: cover;
+  background-position: center;
+  transition: filter .2s;
+}
+.villa-image:hover {
+  filter: brightness(.92);
+}
+.image-a {
+  background-image: linear-gradient(0deg, #15373a75, transparent 58%), url("assets/a215-cover.jpg");
+}
+.image-b {
+  background-image: linear-gradient(0deg, #15373a75, transparent 58%), url("assets/b216-cover.jpg");
+}
+.image-c {
+  background-image: linear-gradient(0deg, #15373a75, transparent 58%), url("assets/c217-cover.jpg");
+}
+.image-label {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  font: 500 8px var(--sans);
+  letter-spacing: 2px;
+}
+.image-code {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  font: 400 34px var(--sans);
+  letter-spacing: 1px;
+}
+.image-open {
+  position: absolute;
+  right: 19px;
+  bottom: 20px;
+  font: 20px var(--sans);
+}
+.villa-info {
+  padding: 22px 21px 20px;
+}
+.villa-title {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.villa-type {
+  color: #77918c;
+  font: 500 8px var(--sans);
+  letter-spacing: 1.5px;
+}
+.villa-title h3 {
+  margin: 5px 0 0;
+  color: var(--deep);
+  font: 400 27px var(--sans);
+}
+.villa-price {
+  text-align: right;
+}
+.villa-price small {
+  display: block;
+  color: #718581;
+  font: 500 8px var(--sans);
+  letter-spacing: .6px;
+}
+.villa-price strong {
+  color: #38746d;
+  font: 500 19px var(--sans);
+  white-space: nowrap;
+}
+.villa-specs {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 0;
+  border-top: 1px solid #e7ece8;
+  border-bottom: 1px solid #e7ece8;
+  color: #77908a;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.villa-specs b {
+  color: #536b68;
+  font-weight: 400;
+}
+.villa-description {
+  min-height: 42px;
+  margin: 14px 0;
+  color: #687b78;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.details-link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0 0;
+  cursor: pointer;
+  border: 0;
+  border-top: 1px solid #e7ece8;
+  color: var(--deep);
+  background: none;
+  font-size: 11px;
+}
+.details-link span:last-child {
+  font-size: 15px;
+}
 /* ส่วนสิ่งอำนวยความสะดวก */
-.amenities { display: grid; min-height: 460px; grid-template-columns: 1.05fr .95fr; margin-bottom: 115px; background: #eaf0e9; }
-.amenity-photo { min-height: 460px; background: url("assets/b216-cover.jpg") center / cover no-repeat; }
-.amenity-copy { align-self: center; padding: 55px 10%; }
-.amenity-copy h2 { margin: 18px 0; font-size: clamp(39px, 4.7vw, 56px); }
-.amenity-copy > p { max-width: 400px; color: #607571; font-size: 12px; line-height: 2; }
-.amenity-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
-.amenity-tags span { padding: 8px 10px; border: 1px solid #b4c6bd; color: #496e65; font: 500 8px var(--sans); letter-spacing: 1px; }
+.amenities {
+  display: grid;
+  min-height: 460px;
+  grid-template-columns: 1.05fr .95fr;
+  margin-bottom: 115px;
+  background: #eaf0e9;
+}
+.amenity-photo {
+  min-height: 460px;
+  background: url("assets/pvl3.jpg") center / cover no-repeat;
+}
+.amenity-copy {
+  align-self: center;
+  padding: 55px 10%;
+}
+.amenity-copy h2 {
+  margin: 18px 0;
+  font-size: 56px;
+}
+.amenity-copy > p {
+  max-width: 400px;
+  color: #607571;
+  font-size: 12px;
+  line-height: 2;
+}
+.amenity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.amenity-tags span {
+  padding: 8px 10px;
+  border: 1px solid #b4c6bd;
+  color: #496e65;
+  font: 500 8px var(--sans);
+  letter-spacing: 1px;
+}
 /* ข้อมูลก่อนเข้าพัก */
-.stay-notes { padding-bottom: 115px; }
-.notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 45px; margin-top: 30px; }
-.notes-grid > div { padding-top: 18px; border-top: 1px solid #cad9d2; }
-.note-number { color: #70968d; font: 500 10px var(--sans); letter-spacing: 1px; }
-.notes-grid h3 { margin: 16px 0 8px; font-size: 17px; font-weight: 400; }
-.notes-grid p { margin: 0; color: #687c78; font-size: 11px; line-height: 1.9; }
-
+.stay-notes {
+  padding-bottom: 115px;
+}
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  margin-top: 30px;
+}
+.notes-grid > div {
+  padding-top: 18px;
+  border-top: 1px solid #cad9d2;
+}
+.note-number {
+  color: #70968d;
+  font: 500 10px var(--sans);
+  letter-spacing: 1px;
+}
+.notes-grid h3 {
+  margin: 16px 0 8px;
+  font-size: 17px;
+  font-weight: 400;
+}
+.notes-grid p {
+  margin: 0;
+  color: #687c78;
+  font-size: 11px;
+  line-height: 1.9;
+}
 /* ช่องทางติดต่อและท้ายเว็บ */
-.booking { padding: 77px 7%; color: white; background: var(--deep); }
-.booking-inner { display: grid; max-width: 1130px; grid-template-columns: 1.5fr 1fr 1fr; align-items: center; gap: 22px; margin: auto; }
-.booking .intro-kicker { color: #abc9b8; }
-.booking h2 { margin: 17px 0; font-size: 45px; }
-.booking-inner > div > p { max-width: 400px; color: #d1dfdb; font-size: 11px; line-height: 1.9; }
-.booking-inner > div > .rate-note { margin-top: 14px; color: #e9c9a6; font-size: 10px; }
-.contact-card { position: relative; display: flex; min-height: 168px; flex-direction: column; padding: 20px; color: #fff; background: #275761; transition: background .2s, transform .2s; }
-.contact-card:hover { transform: translateY(-3px); background: #326974; }
-.contact-card small { color: #c4d9d2; font: 500 8px var(--sans); letter-spacing: 1.7px; }
-.contact-card strong { margin: 14px 0 6px; font: 500 18px var(--sans); }
-.contact-card > span:last-child { color: #d4e2dd; font-size: 10px; }
-.contact-icon { position: absolute; top: 15px; right: 18px; font-size: 17px; }
-footer { display: flex; height: 90px; align-items: center; justify-content: space-between; padding: 0 6.2%; border-top: 1px solid #ffffff2a; color: #d1dfda; background: var(--deep); }
-footer > span { color: #b8ccc5; font: 500 8px var(--sans); letter-spacing: 1.2px; }
-.footer-brand { font-size: 12px; }
-
+.booking {
+  padding: 77px 7%;
+  color: white;
+  background: var(--deep);
+}
+.booking-inner {
+  display: grid;
+  max-width: 1130px;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: center;
+  gap: 22px;
+  margin: auto;
+}
+.booking .intro-kicker {
+  color: #abc9b8;
+}
+.booking h2 {
+  margin: 17px 0;
+  font-size: 45px;
+}
+.booking-inner > div > p {
+  max-width: 400px;
+  color: #d1dfdb;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.booking-inner > div > .rate-note {
+  margin-top: 14px;
+  color: #e9c9a6;
+  font-size: 10px;
+}
+.contact-card {
+  position: relative;
+  display: flex;
+  min-height: 168px;
+  flex-direction: column;
+  padding: 20px;
+  color: #fff;
+  background: #275761;
+  transition: background .2s, transform .2s;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  background: #326974;
+}
+.contact-card small {
+  color: #c4d9d2;
+  font: 500 10px var(--sans);
+  letter-spacing: 1.2px;
+}
+.contact-card strong {
+  margin: 14px 0 6px;
+  font: 500 18px var(--sans);
+}
+.contact-card > span:last-child {
+  color: #d4e2dd;
+  font-size: 10px;
+}
+.contact-icon {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 17px;
+}
+footer {
+  display: flex;
+  height: 90px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6.2%;
+  border-top: 1px solid #ffffff2a;
+  color: #d1dfda;
+  background: var(--deep);
+}
+footer > span {
+  color: #b8ccc5;
+  font: 500 8px var(--sans);
+  letter-spacing: 1.4px;
+}
+.footer-brand {
+  font-size: 12px;
+}
 /* หน้าต่างภาพประกาศแบบขยาย */
-.modal { position: fixed; z-index: 20; inset: 0; display: none; align-items: center; justify-content: center; padding: 30px; background: #102628ed; }
-.modal.open { display: flex; }
-.modal img { display: block; max-width: min(90vw, 600px); max-height: 90vh; object-fit: contain; box-shadow: 0 20px 70px #0006; }
-.modal-close { position: absolute; top: 20px; right: 32px; cursor: pointer; border: 0; color: #fff; background: none; font-size: 36px; }
-.modal-hint { position: absolute; bottom: 15px; color: #d0dfda; font-size: 10px; }
-
+.modal {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #102628ed;
+}
+.modal.open {
+  display: flex;
+}
+.modal img {
+  display: block;
+  max-width: min(90vw, 600px);
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 20px 70px #0006;
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  cursor: pointer;
+  border: 0;
+  color: #fff;
+  background: none;
+  font-size: 36px;
+}
+.modal-hint {
+  position: absolute;
+  bottom: 15px;
+  color: #d0dfda;
+  font-size: 10px;
+}
 /* ปรับเลย์เอาต์สำหรับแท็บเล็ต */
 @media (max-width: 900px) {
   /* แถบเมนูและโลโก้ */
-.topbar { padding: 0 5%; }
-  .nav-links { gap: 20px; }
-  .hero-content { left: 8%; }
-  /* กรอบและระยะห่างเนื้อหา */
-.section-wrap { padding-right: 5%; padding-left: 5%; }
-  .villa-grid { gap: 12px; }
-  .villa-image { height: 225px; }
-  .villa-info { padding: 17px 14px; }
-  .villa-specs { gap: 6px; font-size: 9px; }
-  .villa-price strong { font-size: 16px; }
-  /* ส่วนสิ่งอำนวยความสะดวก */
-.amenities { margin-right: 5%; margin-left: 5%; }
-  .amenity-copy { padding: 35px 8%; }
-  .booking-inner { grid-template-columns: 1fr 1fr; }
-  .booking-inner > div:first-child { grid-column: span 2; }
+}
+.topbar {
+  padding: 0 5%;
+}
+.nav-links {
+  gap: 20px;
+}
+.hero-content {
+  left: 8%;
+}
+/* กรอบและระยะห่างเนื้อหา */
+.section-wrap {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+.villa-grid {
+  gap: 12px;
+}
+.villa-image {
+  height: 225px;
+}
+.villa-info {
+  padding: 17px 14px;
+}
+.villa-specs {
+  gap: 6px;
+  font-size: 9px;
+}
+.villa-price strong {
+  font-size: 22px;
+}
+
+/* ส่วนสิ่งอำนวยความสะดวก */
+.amenities {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.amenity-copy {
+  padding: 35px 8%;
+}
+.booking-inner {
+  grid-template-columns: 1fr 1fr;
+}
+.booking-inner > div:first-child {
+  grid-column: span 2;
 }
 /* ปรับเลย์เอาต์สำหรับมือถือ */
 @media (max-width: 620px) {
-  html { scroll-padding-top: 68px; }
+  html {
+    scroll-padding-top: 68px;
+  }
   /* แถบเมนูและโลโก้ */
-.topbar { height: 68px; padding: 0 6%; }
-  .nav-links { position: absolute; top: 68px; left: 0; display: none; width: 100%; flex-direction: column; gap: 16px; padding: 18px 6%; background: #173d42f5; }
-  .nav-links.show { display: flex; }
-  .menu-toggle { display: block; }
-  /* ภาพปกและข้อความหน้าแรก */
-.hero { height: 90vh; min-height: 620px; }
-  .hero-photo { background-position: 57% center; }
-  .hero-shade { background: linear-gradient(90deg, #102f35bf, #102f3520), linear-gradient(0deg, #102f3580, transparent 65%); }
-  .hero-content { top: 30%; right: 7%; left: 7%; }
-  .hero h1 { font-size: 47px; }
-  .hero-content > p { max-width: 330px; font-size: 12px; }
-  .hero-note { right: 7%; bottom: 25px; left: 7%; justify-content: flex-end; gap: 8px; font-size: 8px; }
-  .hero-scroll { display: none; }
-  .intro { padding-top: 75px; padding-bottom: 75px; }
-  .intro-row { grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
-  .intro-row h2 { font-size: 44px; }
-  .intro-row p { font-size: 12px; }
-  /* การ์ดแสดงบ้านพัก */
-.villas { padding-bottom: 75px; }
-  .section-heading h2 { font-size: 33px; }
-  .villa-grid { grid-template-columns: 1fr; gap: 18px; }
-  .villa-image { height: 280px; }
-  .villa-info { padding: 20px; }
-  .villa-specs { gap: 14px; font-size: 10px; }
-  .villa-description { font-size: 12px; }
-  /* ส่วนสิ่งอำนวยความสะดวก */
-.amenities { grid-template-columns: 1fr; margin: 0 5% 75px; }
-  .amenity-photo { min-height: 200px; }
-  .amenity-copy { padding: 36px 8% 42px; }
-  .amenity-copy h2 { font-size: 43px; }
-  .notes-grid { grid-template-columns: 1fr; gap: 22px; }
-  /* ข้อมูลก่อนเข้าพัก */
-.stay-notes { padding-bottom: 75px; }
-  /* ช่องทางติดต่อและท้ายเว็บ */
-.booking { padding: 55px 7%; }
-  .booking-inner { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .booking-inner > div:first-child { grid-column: span 2; }
-  .booking h2 { font-size: 40px; }
-  .contact-card { min-height: 145px; padding: 15px; }
-  .contact-card strong { font-size: 15px; }
-  footer { min-height: 100px; height: auto; flex-wrap: wrap; gap: 13px; padding: 22px 6%; }
-  footer > span:nth-child(2) { display: none; }
-  /* หน้าต่างภาพประกาศแบบขยาย */
-.modal { padding: 18px; }
-  .modal img { max-width: 96vw; max-height: 88vh; }
+}
+.topbar {
+  height: 68px;
+  padding: 0 6%;
+}
+.nav-links {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 6%;
+  background: #173d42f5;
+}
+.nav-links.show {
+  display: flex;
+}
+.menu-toggle {
+  display: block;
+}
+/* ภาพปกและข้อความหน้าแรก */
+.hero {
+  height: 90vh;
+  min-height: 620px;
+}
+.hero-photo {
+  background-position: 57% center;
+}
+.hero-shade {
+  background: linear-gradient(90deg, #102f35bf, #102f3520), linear-gradient(0deg, #102f3580, transparent 65%);
+}
+.hero-content {
+  top: 30%;
+  right: 7%;
+  left: 7%;
+}
+.hero h1 {
+  font-size: 47px;
+}
+.hero-content > p {
+  max-width: 330px;
+  font-size: 12px;
+}
+.hero-note {
+  right: 7%;
+  bottom: 25px;
+  left: 7%;
+  justify-content: flex-end;
+  gap: 8px;
+  font-size: 8px;
+}
+.hero-scroll {
+  display: none;
+}
+.intro {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.intro-row {
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+.intro-row h2 {
+  font-size: 44px;
+}
+.intro-row p {
+  font-size: 12px;
+}
+/* การ์ดแสดงบ้านพัก */
+.villas {
+  padding-bottom: 75px;
+}
+.section-heading h2 {
+  font-size: 33px;
+}
+.villa-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.villa-image {
+  height: 280px;
+}
+.villa-info {
+  padding: 20px;
+}
+.villa-specs {
+  gap: 14px;
+  font-size: 10px;
+}
+.villa-description {
+  font-size: 12px;
+}
+/* ส่วนสิ่งอำนวยความสะดวก */
+.amenities {
+  grid-template-columns: 1fr;
+  margin: 0 5% 75px;
+}
+.amenity-photo {
+  min-height: 200px;
+}
+.amenity-copy {
+  padding: 36px 8% 42px;
+}
+.amenity-copy h2 {
+  font-size: 43px;
+}
+.notes-grid {
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+/* ข้อมูลก่อนเข้าพัก */
+.stay-notes {
+  padding-bottom: 75px;
+}
+/* ช่องทางติดต่อและท้ายเว็บ */
+.booking {
+  padding: 55px 7%;
+}
+.booking-inner {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.booking-inner > div:first-child {
+  grid-column: span 2;
+}
+.booking h2 {
+  font-size: 40px;
+}
+.contact-card {
+  min-height: 145px;
+  padding: 15px;
+}
+.contact-card strong {
+  font-size: 15px;
+}
+footer {
+  min-height: 100px;
+  height: auto;
+  flex-wrap: wrap;
+  gap: 13px;
+  padding: 22px 6%;
+}
+footer > span:nth-child(2) {
+  display: none;
+}
+/* หน้าต่างภาพประกาศแบบขยาย */
+.modal {
+  padding: 18px;
+}
+.modal img {
+  max-width: 96vw;
+  max-height: 88vh;
+}
+/* ขนาดโลโก้และการจัดข้อความหน้าแรกให้อยู่กึ่งกลาง */
+.brand-logo{
+  display:block;
+  width:78px;
+  height:auto;
+  filter:brightness(0) invert(1)
+}
+@media(max-width:620px){
+  /* ขนาดโลโก้และการจัดข้อความหน้าแรกให้อยู่กึ่งกลาง */
+}
+.brand-logo{
+  width:66px
+}
+.hero-content{
+  left:50%;
+  width:min(900px,88%);
+  max-width:900px;
+  transform:translateX(-50%);
+  text-align:center
+}
+.hero-content>p{
+  max-width:760px;
+  margin:0 auto;
+  color:#fff
+}
+@media(max-width:620px){
+  .hero-content{
+    top:27%;
+    right:auto;
+    left:50%;
+    width:88%
+  }
+}
+/* จัดหัวข้อโปรโมทและคำอธิบายให้อยู่กึ่งกลาง โดยใช้ตัวปกติ */
+.hero-content .hero-lead{
+  max-width:760px;
+  margin:0 auto 2px;
+  font-size:18px;
+  font-weight:400;
+  line-height:1.5
+}
+.hero-content .hero-description{
+  max-width:760px;
+  margin:0 auto;
+  font-size:14px;
+  font-weight:300;
+  line-height:1.9
+}
+@media(max-width:620px){
+  .hero-content .hero-lead{
+    font-size:16px
+  }
+  .hero-content .hero-description{
+    font-size:12px
+  }
+}
+/* จัดหัวข้อและคำโปรโมทให้อยู่กึ่งกลางและชิดกัน */
+.promo-copy{
+  text-align:center
+}
+.promo-title{
+  margin:0 0 6px;
+  color:var(--deep);
+  font-size:36px;
+  font-weight:400;
+  line-height:1.3
+}
+.promo-description{
+  max-width:850px;
+  margin:0 auto;
+  color:#697b7a;
+  font-size:16px;
+  font-weight:300;
+  line-height:1.9
+}
+@media(max-width:620px){
+  .promo-description{
+    font-size:14px
+  }
+}
+/* เน้นคำว่า Pool Villa ด้วยสีฟ้า */
+.hero-highlight{
+  color:#9fe1ec
+}
+/* ปุ่มสลับภาษาแบบกรอบสี่เหลี่ยม */
+.lang-switch{
+  min-width:40px;
+  padding:8px 11px;
+  border:1px solid #fff;
+  border-radius:3px;
+  color:var(--deep);
+  background:#fff;
+  font:600 11px var(--sans);
+  letter-spacing:1px;
+  box-shadow:0 2px 8px #082b3533;
+  transition:background .2s
+}
+.lang-switch:hover{
+  background:#eaf7f7
+}
+.lang-switch span{
+  display:none
+}
+/* จัดชื่อบ้านและคำโปรยชิดซ้าย พร้อมเว้นช่องไฟพอดี */
+.hero-content{
+  top:auto;
+  bottom:12%;
+  left:7%;
+  width:min(690px,86%);
+  max-width:690px;
+  transform:none;
+  text-align:left
+}
+.hero-content .eyebrow{
+  display:none
+}
+.hero h1{
+  margin:0 0 10px
+}
+.hero-content>p{
+  max-width:470px;
+  margin:0;
+  text-align:left;
+  line-height:1.8
+}
+@media(max-width:620px){
+  .hero-content{
+    top:auto;
+    bottom:12%;
+    right:auto;
+    left:5%;
+    width:90%;
+    transform:none
+  }
+  .hero h1{
+    font-size:40px
+  }
+}
+/* หน้าแสดงสิ่งอำนวยความสะดวก */
+.facilities-hero{
+  position:relative;
+  min-height:420px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  color:#fff;
+  background:#356a70
+}
+.facilities-cover,.facilities-shade{
+  position:absolute;
+  inset:0
+}
+.facilities-cover{
+  background:url("assets/facilities-cover.jpg") center 56%/cover no-repeat
+}
+.facilities-shade{
+  background:linear-gradient(90deg,#10353bbd,#10353b45),linear-gradient(0deg,#10353b50,transparent 65%)
+}
+.facilities-hero-copy{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  padding:130px 24px 45px;
+  text-align:center
+}
+.facilities-kicker{
+  color:#c2ded3;
+  font:500 10px var(--sans);
+  letter-spacing:2px
+}
+.facilities-hero h1{
+  margin:15px 0;
+  font-size:58px;
+  font-weight:400;
+  line-height:1.25
+}
+.facilities-hero p{
+  max-width:590px;
+  margin:0 auto;
+  color:#eef7f3;
+  font-size:14px;
+  line-height:1.9
+}
+.facilities-main{
+  padding-top:75px;
+  padding-bottom:90px
+}
+.facilities-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:30px
+}
+.facilities-heading h2{
+  margin:10px 0 0;
+  font-size:40px;
+  font-weight:400
+}
+.facilities-heading>p{
+  max-width:390px;
+  margin:0 0 5px;
+  color:#6b8180;
+  font-size:13px;
+  line-height:1.9
+}
+.facility-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px
+}
+.facility-card{
+  padding:25px 27px 22px;
+  border:1px solid #e1eae5;
+  background:#fff;
+  box-shadow:0 10px 30px #153c4510
+}
+.facility-card-head{
+  position:relative;
+  min-height:74px;
+  padding-left:54px;
+  border-bottom:1px solid #e5ece8
+}
+.facility-number{
+  position:absolute;
+  top:3px;
+  left:0;
+  color:#80a49a;
+  font:500 11px var(--sans);
+  letter-spacing:1px
+}
+.facility-icon{
+  position:absolute;
+  top:24px;
+  left:0;
+  font-size:26px
+}
+.facility-card h3{
+  margin:0;
+  padding:23px 0 18px;
+  color:var(--deep);
+  font-size:20px;
+  font-weight:400;
+  line-height:1.45
+}
+.facility-list{
+  display:grid;
+  gap:0;
+  margin:10px 0 0;
+  padding:0;
+  list-style:none
+}
+.facility-list li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px solid #eff3f0;
+  color:#526d6e;
+  font-size:12px;
+  line-height:1.8
+}
+.facility-list li:last-child{
+  border-bottom:0
+}
+.facility-emoji{
+  font-size:16px;
+  line-height:1.6
+}
+.complimentary-card{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-top:24px;
+  padding:27px 32px;
+  color:white;
+  background:linear-gradient(115deg,#1b5962,#2f8585)
+}
+.complimentary-icon{
+  font-size:40px
+}
+.complimentary-card .facilities-kicker{
+  color:#c2e3d6
+}
+.complimentary-card h2{
+  margin:6px 0;
+  font-size:28px;
+  font-weight:400
+}
+.complimentary-card p{
+  margin:0;
+  color:#e0eeea;
+  font-size:13px;
+  line-height:1.8
+}
+.facilities-cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:36px;
+  padding-top:24px;
+  border-top:1px solid #d9e4de
+}
+.facilities-cta p{
+  margin:0;
+  color:#526d6e;
+  font-size:14px
+}
+.facilities-cta .button{
+  background:var(--deep);
+  color:#fff
+}
+.facilities-cta .button:hover{
+  background:var(--deep-soft)
+}
+@media(max-width:900px){
+  .facilities-main{
+    padding-top:60px
+  }
+  .facility-card{
+    padding:22px 20px
+  }
+  .facility-card h3{
+    font-size:18px
+  }
+}
+@media(max-width:620px){
+  .facilities-hero{
+    min-height:370px
+  }
+  .facilities-hero-copy{
+    padding-top:115px
+  }
+  .facilities-hero h1{
+    font-size:38px
+  }
+  .facilities-hero p{
+    font-size:12px
+  }
+  .facilities-main{
+    padding-top:48px;
+    padding-bottom:65px
+  }
+  .facilities-heading{
+    display:block
+  }
+  .facilities-heading>p{
+    margin-top:12px
+  }
+  .facility-grid{
+    grid-template-columns:1fr;
+    gap:14px
+  }
+  .facility-card{
+    padding:20px 18px
+  }
+  .facility-list li{
+    font-size:12px
+  }
+  .complimentary-card{
+    gap:15px;
+    padding:22px 18px
+  }
+  .complimentary-icon{
+    font-size:32px
+  }
+  .complimentary-card h2{
+    font-size:24px
+  }
+  .facilities-cta{
+    align-items:flex-start;
+    flex-direction:column
+  }
+  .facilities-cta .button{
+    width:100%;
+    justify-content:space-between
+  }
+}
+/* ปรับหน้าสิ่งอำนวยความสะดวกให้มีลำดับสายตาและนำทางง่าย */
+.facilities-hero{
+  min-height:460px
+}
+.facilities-hero-copy{
+  max-width:820px
+}
+.facilities-hero h1{
+  letter-spacing:-.5px
+}
+.facilities-heading{
+  padding-bottom:24px;
+  border-bottom:1px solid #dce7e1
+}
+.facilities-heading>p{
+  font-size:14px
+}
+.facility-jump{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:22px 0 28px
+}
+.facility-jump a{
+  padding:9px 14px;
+  border:1px solid #d5e3dc;
+  border-radius:999px;
+  color:#42676a;
+  background:#fff;
+  font-size:11px;
+  transition:color .2s,border-color .2s,background .2s
+}
+.facility-jump a:hover{
+  border-color:#2d8991;
+  color:#fff;
+  background:#2d8991
+}
+.facility-card{
+  position:relative;
+  overflow:hidden;
+  border-color:#e3ebe6;
+  border-radius:3px;
+  box-shadow:0 8px 26px #153c450b;
+  transition:transform .2s,box-shadow .2s
+}
+.facility-card::before{
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  height:3px;
+  background:linear-gradient(90deg,#3c9692,#b6d7c9);
+  content:""
+}
+.facility-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px #153c4515
+}
+.facility-card-head{
+  min-height:78px;
+  padding-left:50px
+}
+.facility-number{
+  top:0;
+  font-size:10px
+}
+.facility-icon{
+  top:25px;
+  font-size:23px
+}
+.facility-card h3{
+  font-size:19px
+}
+.facility-list li{
+  grid-template-columns:22px 1fr;
+  gap:11px;
+  padding:11px 0;
+  font-size:13px;
+  line-height:1.75
+}
+.facility-emoji{
+  font-size:15px;
+  filter:saturate(.82)
+}
+.complimentary-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:3px;
+  background:linear-gradient(110deg,#144953,#2b7d7e)
+}
+.complimentary-card::after{
+  position:absolute;
+  right:-45px;
+  bottom:-100px;
+  width:270px;
+  height:270px;
+  border:1px solid #ffffff20;
+  border-radius:50%;
+  content:""
+}
+.facilities-cta .button{
+  min-width:190px;
+  justify-content:space-between
+}
+.facilities-main{
+  padding-bottom:100px
+}
+@media(max-width:620px){
+  .facilities-hero{
+    min-height:390px
+  }
+  .facilities-heading{
+    padding-bottom:18px
+  }
+  .facility-jump{
+    gap:7px;
+    margin:18px 0 22px
+  }
+  .facility-jump a{
+    padding:8px 11px;
+    font-size:10px
+  }
+  .facility-card h3{
+    font-size:18px
+  }
+  .facility-list li{
+    font-size:12px
+  }
+  .facilities-main{
+    padding-bottom:70px
+  }
+}
+/* ธีมทะเล: น้ำเงินเข้ม เทอร์ควอยซ์ และคลื่นขอบแบนเนอร์ */
+.hero-shade{
+  background:linear-gradient(90deg,#082f49df 0%,#0b465a75 44%,#0b465a12 84%),linear-gradient(0deg,#0a3a50a3,transparent 44%)
+}
+.hero-content,.hero-note,.hero-scroll{
+  z-index:2
+}
+.hero::after{
+  position:absolute;
+  z-index:1;
+  right:0;
+  bottom:-1px;
+  left:0;
+  height:52px;
+  background:var(--paper);
+  clip-path:polygon(0 58%,14% 72%,30% 58%,46% 78%,62% 57%,79% 72%,100% 52%,100% 100%,0 100%);
+  content:""
+}
+.facilities-shade{
+  background:linear-gradient(90deg,#082f49c9,#0b465a48),linear-gradient(0deg,#0a3a5070,transparent 65%)
+}
+.facilities-hero::after{
+  position:absolute;
+  z-index:2;
+  right:0;
+  bottom:-1px;
+  left:0;
+  height:38px;
+  background:var(--paper);
+  clip-path:polygon(0 50%,18% 68%,36% 54%,53% 73%,71% 52%,87% 68%,100% 48%,100% 100%,0 100%);
+  content:""
+}
+.booking{
+  background:linear-gradient(115deg,#0b3d57,#126c78)
+}
+.amenities{
+  background:#e8f4f2
+}
+.facility-card{
+  border-color:#dce9e8
+}
+.facility-card::before{
+  background:linear-gradient(90deg,#10a6b5,#8fd6d0,#f1e4cc)
+}
+.complimentary-card{
+  background:linear-gradient(115deg,#0b5264,#138b91)
+}
+/* ลดช่องไฟในรายการเพื่อให้อ่านข้อมูลได้รวดเร็วขึ้น */
+.facility-list li{
+  padding:8px 0;
+  line-height:1.65
+}
+@media(max-width:620px){
+  .facility-list li{
+    padding:7px 0
+  }
+}
+/* แกลเลอรีภาพสระว่ายน้ำและกิจกรรม */
+.facility-card#pool-activities{
+  grid-column:1/-1
+}
+.facility-card#pool-activities .facility-list{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:24px
+}
+.pool-gallery{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin:18px 0 12px
+}
+.pool-gallery-item{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:1.55;
+  margin:0;
+  background:#d9e9e8
+}
+.pool-gallery-item img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .35s
+}
+.pool-gallery-item:hover img{
+  transform:scale(1.04)
+}
+.pool-gallery-item figcaption{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  padding:20px 10px 8px;
+  color:#fff;
+  background:linear-gradient(transparent,#092f45c9);
+  font-size:10px;
+  line-height:1.4
+}
+@media(max-width:620px){
+  .facility-card#pool-activities .facility-list{
+    grid-template-columns:1fr;
+    column-gap:0
+  }
+  .pool-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px
+  }
+  .pool-gallery-item{
+    aspect-ratio:1.35
+  }
+  .pool-gallery-item figcaption{
+    font-size:9px
+  }
+}
+/* สไลด์ภาพเดียวสำหรับมือถือและจอคอม */
+.pool-carousel{
+  position:relative;
+  margin:18px 0 12px
+}
+.pool-carousel-viewport{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:16/9;
+  background:#d9e9e8;
+  touch-action:pan-y
+}
+.pool-slide{
+  position:absolute;
+  inset:0;
+  margin:0;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .55s ease
+}
+.pool-slide.is-active{
+  visibility:visible;
+  opacity:1
+}
+.pool-slide img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+.pool-slide figcaption{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  padding:48px 22px 18px;
+  color:#fff;
+  background:linear-gradient(transparent,#092f45c9);
+  font-size:14px
+}
+.pool-control{
+  position:absolute;
+  top:calc(50% - 22px);
+  z-index:2;
+  display:grid;
+  width:44px;
+  height:44px;
+  place-items:center;
+  border:1px solid #ffffffbd;
+  border-radius:50%;
+  color:#fff;
+  background:#0b3d5775;
+  font:300 30px/1 var(--sans);
+  cursor:pointer;
+  transition:background .2s,transform .2s
+}
+.pool-control:hover{
+  transform:scale(1.06);
+  background:#0b3d57e8
+}
+.pool-prev{
+  left:16px
+}
+.pool-next{
+  right:16px
+}
+.pool-carousel-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 2px 0
+}
+.pool-counter{
+  color:#55777c;
+  font:500 10px var(--sans);
+  letter-spacing:1.2px
+}
+.pool-dots{
+  display:flex;
+  align-items:center;
+  gap:7px
+}
+.pool-dot{
+  width:7px;
+  height:7px;
+  padding:0;
+  border:0;
+  border-radius:99px;
+  background:#bbd0cd;
+  cursor:pointer;
+  transition:width .2s,background .2s
+}
+.pool-dot.is-active{
+  width:22px;
+  background:#159bab
+}
+.pool-dot:focus-visible,.pool-control:focus-visible{
+  outline:2px solid #f0c779;
+  outline-offset:3px
+}
+@media(max-width:620px){
+  .pool-carousel-viewport{
+    aspect-ratio:4/3
+  }
+  .pool-slide img{
+    object-position:center
+  }
+  .pool-slide figcaption{
+    padding:38px 14px 13px;
+    font-size:12px
+  }
+  .pool-control{
+    top:calc(50% - 19px);
+    width:38px;
+    height:38px;
+    font-size:26px
+  }
+  .pool-prev{
+    left:10px
+  }
+  .pool-next{
+    right:10px
+  }
+  .pool-dots{
+    gap:5px
+  }
+  .pool-dot{
+    width:6px;
+    height:6px
+  }
+  .pool-dot.is-active{
+    width:17px
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .pool-slide{
+    transition:none
+  }
+  .pool-control,.pool-dot{
+    transition:none
+  }
+}
+/* ลดขนาดแกลเลอรีให้อยู่กึ่งกลางในการ์ด */
+.pool-carousel{
+  width:min(100%,560px);
+  margin:18px auto 12px
+}
+@media(max-width:620px){
+  .pool-carousel{
+    width:76%
+  }
+}
+/* จัดภาพส่วนสิ่งอำนวยความสะดวกให้ชิดขอบซ้ายของพื้นหลัง */
+.amenities.section-wrap{
+  padding-left:0
+}
+/* หัวข้อข้อกำหนดและตัวอักษรข้อมูลย่อย */
+.stay-heading{
+  margin-bottom:28px
+}
+.stay-kicker{
+  color:#668e8d;
+  font:500 10px var(--sans);
+  letter-spacing:1.8px
+}
+.stay-heading h2{
+  margin:8px 0 0;
+  color:var(--deep);
+  font-size:34px;
+  font-weight:400;
+  line-height:1.35
+}
+.notes-grid{
+  margin-top:0
+}
+.note-number{
+  font-size:12px
+}
+.notes-grid h3{
+  margin:13px 0 7px;
+  font-size:18px
+}
+.notes-grid p{
+  font-size:13px;
+  line-height:1.8
+}
+@media(max-width:620px){
+  .stay-heading{
+    margin-bottom:22px
+  }
+  .stay-heading h2{
+    font-size:26px
+  }
+  .notes-grid h3{
+    font-size:17px
+  }
+  .notes-grid p{
+    font-size:13px
+  }
 }
 
-/* ขนาดโลโก้และการจัดข้อความหน้าแรกให้อยู่กึ่งกลาง */
-.brand-logo{display:block;width:78px;height:auto;filter:brightness(0) invert(1)}@media(max-width:620px){/* ขนาดโลโก้และการจัดข้อความหน้าแรกให้อยู่กึ่งกลาง */
-.brand-logo{width:66px}}
+/* สรุปแพ็กเกจเช่าเหมาทั้งโครงการ */
+.rental-kicker {
+  color: var(--deep-soft);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
 
-.hero-content{left:50%;width:min(900px,88%);max-width:900px;transform:translateX(-50%);text-align:center}.hero-content>p{max-width:760px;margin:0 auto;color:#fff}@media(max-width:620px){.hero-content{top:27%;right:auto;left:50%;width:88%}}
+.amenity-copy .rental-kicker + h2 {
+  margin: 12px 0 16px;
+}
 
-/* จัดหัวข้อโปรโมทและคำอธิบายให้อยู่กึ่งกลาง โดยใช้ตัวปกติ */
-.hero-content .hero-lead{max-width:760px;margin:0 auto 2px;font-size:18px;font-weight:400;line-height:1.5}.hero-content .hero-description{max-width:760px;margin:0 auto;font-size:14px;font-weight:300;line-height:1.9}@media(max-width:620px){.hero-content .hero-lead{font-size:16px}.hero-content .hero-description{font-size:12px}}
+.rental-summary {
+  max-width: 440px;
+  color: #607571;
+  font-size: 15px;
+  line-height: 1.8;
+}
 
-/* จัดหัวข้อและคำโปรโมทให้อยู่กึ่งกลางและชิดกัน */
-.promo-copy{text-align:center}.promo-title{margin:0 0 6px;color:var(--deep);font-size:clamp(24px,3.2vw,36px);font-weight:400;line-height:1.3}.promo-description{max-width:850px;margin:0 auto;color:#697b7a;font-size:16px;font-weight:300;line-height:1.9}@media(max-width:620px){.promo-description{font-size:14px}}
+.rental-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
 
-/* เน้นคำว่า Pool Villa ด้วยสีฟ้า */
-.hero-highlight{color:#9fe1ec}
+.rental-highlights span {
+  padding: 9px 12px;
+  border: 1px solid #b4c6bd;
+  color: #315f63;
+  font-size: 13px;
+  line-height: 1.5;
+}
 
-/* ปุ่มสลับภาษาแบบกรอบสี่เหลี่ยม */
-.lang-switch{min-width:40px;padding:8px 11px;border:1px solid #fff;border-radius:3px;color:var(--deep);background:#fff;font:600 11px var(--sans);letter-spacing:1px;box-shadow:0 2px 8px #082b3533;transition:background .2s}.lang-switch:hover{background:#eaf7f7}.lang-switch span{display:none}
+.rental-pricing {
+  display: grid;
+  gap: 5px;
+  margin-top: 22px;
+}
 
-/* จัดชื่อบ้านและคำโปรยชิดซ้าย พร้อมเว้นช่องไฟพอดี */
-.hero-content{top:auto;bottom:12%;left:7%;width:min(690px,86%);max-width:690px;transform:none;text-align:left}.hero-content .eyebrow{display:none}.hero h1{margin:0 0 10px}.hero-content>p{max-width:470px;margin:0;text-align:left;line-height:1.8}@media(max-width:620px){.hero-content{top:auto;bottom:12%;right:auto;left:5%;width:90%;transform:none}.hero h1{font-size:40px}}
+.rental-regular {
+  width: fit-content;
+  color: #607571;
+  font-size: 14px;
+  text-decoration: line-through;
+  text-decoration-color: #d74f5d;
+  text-decoration-thickness: 2px;
+}
 
-/* หน้าแสดงสิ่งอำนวยความสะดวก */
-.facilities-hero{position:relative;min-height:420px;display:grid;place-items:center;overflow:hidden;color:#fff;background:#356a70}.facilities-cover,.facilities-shade{position:absolute;inset:0}.facilities-cover{background:url("assets/facilities-cover.jpg") center 56%/cover no-repeat}.facilities-shade{background:linear-gradient(90deg,#10353bbd,#10353b45),linear-gradient(0deg,#10353b50,transparent 65%)}.facilities-hero-copy{position:relative;z-index:1;max-width:760px;padding:130px 24px 45px;text-align:center}.facilities-kicker{color:#c2ded3;font:500 10px var(--sans);letter-spacing:2px}.facilities-hero h1{margin:15px 0;font-size:clamp(38px,5vw,58px);font-weight:400;line-height:1.25}.facilities-hero p{max-width:590px;margin:0 auto;color:#eef7f3;font-size:14px;line-height:1.9}.facilities-main{padding-top:75px;padding-bottom:90px}.facilities-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}.facilities-heading h2{margin:10px 0 0;font-size:clamp(28px,4vw,40px);font-weight:400}.facilities-heading>p{max-width:390px;margin:0 0 5px;color:#6b8180;font-size:13px;line-height:1.9}.facility-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.facility-card{padding:25px 27px 22px;border:1px solid #e1eae5;background:#fff;box-shadow:0 10px 30px #153c4510}.facility-card-head{position:relative;min-height:74px;padding-left:54px;border-bottom:1px solid #e5ece8}.facility-number{position:absolute;top:3px;left:0;color:#80a49a;font:500 11px var(--sans);letter-spacing:1px}.facility-icon{position:absolute;top:24px;left:0;font-size:26px}.facility-card h3{margin:0;padding:23px 0 18px;color:var(--deep);font-size:20px;font-weight:400;line-height:1.45}.facility-list{display:grid;gap:0;margin:10px 0 0;padding:0;list-style:none}.facility-list li{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #eff3f0;color:#526d6e;font-size:12px;line-height:1.8}.facility-list li:last-child{border-bottom:0}.facility-emoji{font-size:16px;line-height:1.6}.complimentary-card{display:flex;align-items:center;gap:24px;margin-top:24px;padding:27px 32px;color:white;background:linear-gradient(115deg,#1b5962,#2f8585)}.complimentary-icon{font-size:40px}.complimentary-card .facilities-kicker{color:#c2e3d6}.complimentary-card h2{margin:6px 0;font-size:28px;font-weight:400}.complimentary-card p{margin:0;color:#e0eeea;font-size:13px;line-height:1.8}.facilities-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:36px;padding-top:24px;border-top:1px solid #d9e4de}.facilities-cta p{margin:0;color:#526d6e;font-size:14px}.facilities-cta .button{background:var(--deep);color:#fff}.facilities-cta .button:hover{background:var(--deep-soft)}
-@media(max-width:900px){.facilities-main{padding-top:60px}.facility-card{padding:22px 20px}.facility-card h3{font-size:18px}}
-@media(max-width:620px){.facilities-hero{min-height:370px}.facilities-hero-copy{padding-top:115px}.facilities-hero h1{font-size:38px}.facilities-hero p{font-size:12px}.facilities-main{padding-top:48px;padding-bottom:65px}.facilities-heading{display:block}.facilities-heading>p{margin-top:12px}.facility-grid{grid-template-columns:1fr;gap:14px}.facility-card{padding:20px 18px}.facility-list li{font-size:12px}.complimentary-card{gap:15px;padding:22px 18px}.complimentary-icon{font-size:32px}.complimentary-card h2{font-size:24px}.facilities-cta{align-items:flex-start;flex-direction:column}.facilities-cta .button{width:100%;justify-content:space-between}}
+.rental-pricing strong {
+  color: var(--deep);
+  font-size: 18px;
+  font-weight: 600;
+}
 
-/* ปรับหน้าสิ่งอำนวยความสะดวกให้มีลำดับสายตาและนำทางง่าย */
-.facilities-hero{min-height:460px}.facilities-hero-copy{max-width:820px}.facilities-hero h1{letter-spacing:-.5px}.facilities-heading{padding-bottom:24px;border-bottom:1px solid #dce7e1}.facilities-heading>p{font-size:14px}.facility-jump{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 28px}.facility-jump a{padding:9px 14px;border:1px solid #d5e3dc;border-radius:999px;color:#42676a;background:#fff;font-size:11px;transition:color .2s,border-color .2s,background .2s}.facility-jump a:hover{border-color:#2d8991;color:#fff;background:#2d8991}.facility-card{position:relative;overflow:hidden;border-color:#e3ebe6;border-radius:3px;box-shadow:0 8px 26px #153c450b;transition:transform .2s,box-shadow .2s}.facility-card::before{position:absolute;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,#3c9692,#b6d7c9);content:""}.facility-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #153c4515}.facility-card-head{min-height:78px;padding-left:50px}.facility-number{top:0;font-size:10px}.facility-icon{top:25px;font-size:23px}.facility-card h3{font-size:19px}.facility-list li{grid-template-columns:22px 1fr;gap:11px;padding:11px 0;font-size:13px;line-height:1.75}.facility-emoji{font-size:15px;filter:saturate(.82)}.complimentary-card{position:relative;overflow:hidden;border-radius:3px;background:linear-gradient(110deg,#144953,#2b7d7e)}.complimentary-card::after{position:absolute;right:-45px;bottom:-100px;width:270px;height:270px;border:1px solid #ffffff20;border-radius:50%;content:""}.facilities-cta .button{min-width:190px;justify-content:space-between}.facilities-main{padding-bottom:100px}
-@media(max-width:620px){.facilities-hero{min-height:390px}.facilities-heading{padding-bottom:18px}.facility-jump{gap:7px;margin:18px 0 22px}.facility-jump a{padding:8px 11px;font-size:10px}.facility-card h3{font-size:18px}.facility-list li{font-size:12px}.facilities-main{padding-bottom:70px}}
+.rental-pricing strong b {
+  color: #168a83;
+  font-size: 36px;
+}
 
-/* ธีมทะเล: น้ำเงินเข้ม เทอร์ควอยซ์ และคลื่นขอบแบนเนอร์ */
-.hero-shade{background:linear-gradient(90deg,#082f49df 0%,#0b465a75 44%,#0b465a12 84%),linear-gradient(0deg,#0a3a50a3,transparent 44%)}.hero-content,.hero-note,.hero-scroll{z-index:2}.hero::after{position:absolute;z-index:1;right:0;bottom:-1px;left:0;height:52px;background:var(--paper);clip-path:polygon(0 58%,14% 72%,30% 58%,46% 78%,62% 57%,79% 72%,100% 52%,100% 100%,0 100%);content:""}.facilities-shade{background:linear-gradient(90deg,#082f49c9,#0b465a48),linear-gradient(0deg,#0a3a5070,transparent 65%)}.facilities-hero::after{position:absolute;z-index:2;right:0;bottom:-1px;left:0;height:38px;background:var(--paper);clip-path:polygon(0 50%,18% 68%,36% 54%,53% 73%,71% 52%,87% 68%,100% 48%,100% 100%,0 100%);content:""}.booking{background:linear-gradient(115deg,#0b3d57,#126c78)}.amenities{background:#e8f4f2}.facility-card{border-color:#dce9e8}.facility-card::before{background:linear-gradient(90deg,#10a6b5,#8fd6d0,#f1e4cc)}.complimentary-card{background:linear-gradient(115deg,#0b5264,#138b91)}
-/* ลดช่องไฟในรายการเพื่อให้อ่านข้อมูลได้รวดเร็วขึ้น */
-.facility-list li{padding:8px 0;line-height:1.65}@media(max-width:620px){.facility-list li{padding:7px 0}}
+@media (max-width: 620px) {
+  .rental-summary {
+    font-size: 14px;
+  }
 
-/* แกลเลอรีภาพสระว่ายน้ำและกิจกรรม */
-.facility-card#pool-activities{grid-column:1/-1}.facility-card#pool-activities .facility-list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.pool-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 12px}.pool-gallery-item{position:relative;overflow:hidden;aspect-ratio:1.55;margin:0;background:#d9e9e8}.pool-gallery-item img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s}.pool-gallery-item:hover img{transform:scale(1.04)}.pool-gallery-item figcaption{position:absolute;right:0;bottom:0;left:0;padding:20px 10px 8px;color:#fff;background:linear-gradient(transparent,#092f45c9);font-size:10px;line-height:1.4}
-@media(max-width:620px){.facility-card#pool-activities .facility-list{grid-template-columns:1fr;column-gap:0}.pool-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pool-gallery-item{aspect-ratio:1.35}.pool-gallery-item figcaption{font-size:9px}}
+  .rental-highlights span {
+    font-size: 12px;
+  }
+}
 
-/* สไลด์ภาพเดียวสำหรับมือถือและจอคอม */
-.pool-carousel{position:relative;margin:18px 0 12px}.pool-carousel-viewport{position:relative;overflow:hidden;aspect-ratio:16/9;background:#d9e9e8;touch-action:pan-y}.pool-slide{position:absolute;inset:0;margin:0;visibility:hidden;opacity:0;transition:opacity .55s ease}.pool-slide.is-active{visibility:visible;opacity:1}.pool-slide img{display:block;width:100%;height:100%;object-fit:cover}.pool-slide figcaption{position:absolute;right:0;bottom:0;left:0;padding:48px 22px 18px;color:#fff;background:linear-gradient(transparent,#092f45c9);font-size:14px}.pool-control{position:absolute;top:calc(50% - 22px);z-index:2;display:grid;width:44px;height:44px;place-items:center;border:1px solid #ffffffbd;border-radius:50%;color:#fff;background:#0b3d5775;font:300 30px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s}.pool-control:hover{transform:scale(1.06);background:#0b3d57e8}.pool-prev{left:16px}.pool-next{right:16px}.pool-carousel-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 2px 0}.pool-counter{color:#55777c;font:500 10px var(--sans);letter-spacing:1.2px}.pool-dots{display:flex;align-items:center;gap:7px}.pool-dot{width:7px;height:7px;padding:0;border:0;border-radius:99px;background:#bbd0cd;cursor:pointer;transition:width .2s,background .2s}.pool-dot.is-active{width:22px;background:#159bab}.pool-dot:focus-visible,.pool-control:focus-visible{outline:2px solid #f0c779;outline-offset:3px}
-@media(max-width:620px){.pool-carousel-viewport{aspect-ratio:4/3}.pool-slide img{object-position:center}.pool-slide figcaption{padding:38px 14px 13px;font-size:12px}.pool-control{top:calc(50% - 19px);width:38px;height:38px;font-size:26px}.pool-prev{left:10px}.pool-next{right:10px}.pool-dots{gap:5px}.pool-dot{width:6px;height:6px}.pool-dot.is-active{width:17px}}
-@media(prefers-reduced-motion:reduce){.pool-slide{transition:none}.pool-control,.pool-dot{transition:none}}
+/* จัดการ์ดบ้านพักให้เท่ากันและเรียงเป็นแถวบนจอใหญ่ */
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
 
-/* ลดขนาดแกลเลอรีให้อยู่กึ่งกลางในการ์ด */
-.pool-carousel{width:min(100%,560px);margin:18px auto 12px}@media(max-width:620px){.pool-carousel{width:76%}}
+.villa-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  height: 100%;
+}
 
-/* จัดภาพส่วนสิ่งอำนวยความสะดวกให้ชิดขอบซ้ายของพื้นหลัง */
-.amenities.section-wrap{padding-left:0}
+.villa-image {
+  flex: 0 0 260px;
+}
 
-/* หัวข้อข้อกำหนดและตัวอักษรข้อมูลย่อย */
-.stay-heading{margin-bottom:28px}.stay-kicker{color:#668e8d;font:500 10px var(--sans);letter-spacing:1.8px}.stay-heading h2{margin:8px 0 0;color:var(--deep);font-size:clamp(25px,3.2vw,34px);font-weight:400;line-height:1.35}.notes-grid{margin-top:0}.note-number{font-size:12px}.notes-grid h3{margin:13px 0 7px;font-size:18px}.notes-grid p{font-size:13px;line-height:1.8}
-@media(max-width:620px){.stay-heading{margin-bottom:22px}.stay-heading h2{font-size:26px}.notes-grid h3{font-size:17px}.notes-grid p{font-size:13px}}
+.villa-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.villa-description {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .villa-grid {
+    gap: 12px;
+  }
+
+  .villa-image {
+    flex-basis: 225px;
+  }
+}
+
+@media (max-width: 620px) {
+  .villa-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .villa-image {
+    flex-basis: 280px;
+  }
+}
+
+/* คืนเมนูด้านบนเป็นปุ่มข้อความ */
+.topbar .nav-links {
+  position: static;
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  background: transparent;
+}
+
+.topbar .nav-links a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid #ffffff8c;
+  color: inherit;
+  font-size: 12px;
+  opacity: 1;
+  transition: color .2s, background .2s, border-color .2s;
+}
+
+.topbar .nav-links a:hover,
+.topbar .nav-links a[aria-current="page"] {
+  border-color: #fff;
+  color: var(--deep);
+  background: #fff;
+}
+
+.topbar .menu-toggle {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  .topbar .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 18px 6%;
+    background: #173d42f5;
+  }
+
+  .topbar .nav-links.show {
+    display: flex;
+  }
+
+  .topbar .nav-links a {
+    justify-content: flex-start;
+  }
+
+  .topbar .menu-toggle {
+    display: block;
+  }
+}
+
+/* จัดข้อมูลก่อนเข้าพักเป็นสามคอลัมน์บนจอใหญ่ */
+.stay-notes .notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 45px;
+}
+
+@media (max-width: 620px) {
+  .stay-notes .notes-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+}
+
+/* ขยายโลโก้ในแถบด้านบนขึ้นเล็กน้อย */
+.topbar .brand-logo {
+  width: 88px;
+  height: auto;
+}
+
+@media (max-width: 620px) {
+  .topbar .brand-logo {
+    width: 74px;
+  }
+}
+
+/* ให้ภาพส่วนเช่าเหมาชิดขอบกรอบและมีพื้นที่แสดงภาพมากขึ้น */
+.amenities.section-wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: stretch;
+  margin: 0 5% 115px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.amenities.section-wrap .amenity-photo {
+  width: 100%;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+}
+
+.amenities.section-wrap .amenity-copy {
+  align-self: center;
+  padding: 48px 9%;
+}
+
+@media (max-width: 620px) {
+  .amenities.section-wrap {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0 5% 75px;
+  }
+
+  .amenities.section-wrap .amenity-photo {
+    min-height: 280px;
+  }
+
+  .amenities.section-wrap .amenity-copy {
+    padding: 34px 8% 40px;
+  }
+}
+
+/* ปรับระยะห่างระหว่างส่วนต่าง ๆ ให้กระชับขึ้น */
+.intro {
+  padding-top: 86px;
+  padding-bottom: 86px;
+}
+
+.villas {
+  padding-bottom: 82px;
+}
+
+.section-heading {
+  margin-bottom: 26px;
+  padding-bottom: 19px;
+}
+
+.amenities.section-wrap {
+  margin-bottom: 82px;
+}
+
+.stay-notes {
+  padding-bottom: 82px;
+}
+
+.booking {
+  padding-top: 62px;
+  padding-bottom: 62px;
+}
+
+.facilities-main {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.facility-grid {
+  gap: 16px;
+}
+
+@media (max-width: 620px) {
+  .intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .villas {
+    padding-bottom: 56px;
+  }
+
+  .section-heading {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .amenities.section-wrap {
+    margin-bottom: 56px;
+  }
+
+  .stay-notes {
+    padding-bottom: 56px;
+  }
+
+  .booking {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .facilities-main {
+    padding-top: 42px;
+    padding-bottom: 52px;
+  }
+}
+
+/* จัดแนวข้อมูลในการ์ดบ้านพักให้ตรงกัน */
+.villa-title {
+  min-height: 82px;
+  align-items: start;
+}
+
+.villa-price {
+  min-width: 96px;
+}
+
+.villa-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 4px;
+}
+
+.villa-specs span {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.villa-specs span:nth-child(2) {
+  text-align: center;
+}
+
+.villa-specs span:nth-child(3) {
+  text-align: right;
+}
+
+.villa-description {
+  min-height: 62px;
+  margin: 14px 0;
+}
+
+@media (max-width: 900px) {
+  .villa-specs {
+    font-size: 9px;
+  }
+
+  .villa-price {
+    min-width: 82px;
+  }
+}
+
+@media (max-width: 620px) {
+  .villa-title {
+    min-height: 76px;
+  }
+
+  .villa-specs {
+    font-size: 12px;
+  }
+
+  .villa-price {
+    min-width: 100px;
+  }
+}
+
+/* รูปแบบไอคอน SVG เส้นให้สม่ำเสมอทั่วหน้าสิ่งอำนวยความสะดวก */
+.icon-library {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.facility-icon,
+.facility-emoji,
+.complimentary-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.facility-icon {
+  width: 27px;
+  height: 27px;
+  color: #2d7580;
+}
+
+.facility-emoji {
+  width: 18px;
+  height: 18px;
+  align-self: start;
+  margin-top: 3px;
+  color: #38828a;
+  flex-shrink: 0;
+}
+
+.complimentary-icon {
+  width: 38px;
+  height: 38px;
+  color: currentColor;
+  flex: 0 0 auto;
+}
+
+/* ลดพื้นที่ว่างภายในการ์ดช่องทางติดต่อ */
+.booking-inner > .contact-card {
+  min-height: 128px;
+  padding: 16px;
+}
+
+.booking-inner > .contact-card strong {
+  margin: 10px 0 4px;
+}
+
+/* ลดความสูงรวมของแถบสอบถามและจอง */
+.booking {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.booking h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.booking-inner {
+  gap: 16px;
+}
+
+.booking-inner > .contact-card {
+  min-height: 112px;
+  padding: 14px;
+}
+
+.booking-inner > .contact-card strong {
+  margin-top: 8px;
+}
+
+@media (max-width: 620px) {
+  .booking {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+}
+
+/* เพิ่มช่องทาง Facebook ในแถวการติดต่อ */
+.booking-inner {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.booking-inner > div:first-child {
+  grid-column: 1 / -1;
+}
+
+.booking-inner > .contact-card {
+  min-height: 132px;
+}
+
+.facebook-card strong {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+  .booking-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .booking-inner > div:first-child {
+    grid-column: 1;
+  }
+}
+
+/* จัดประเภทบ้านและราคาให้อยู่แนวเดียวกันในการ์ดทั้งสามหลัง */
+.villa-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: 18px auto;
+  align-items: start;
+  gap: 0 10px;
+}
+
+.villa-title > div:first-child {
+  display: contents;
+}
+
+.villa-type {
+  grid-column: 1;
+  grid-row: 1;
+  display: block;
+  line-height: 18px;
+}
+
+.villa-title h3 {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.villa-price {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  grid-template-rows: 18px auto;
+  align-content: start;
+  justify-items: end;
+}
+
+.villa-price small {
+  grid-row: 1;
+  line-height: 18px;
+}
+
+.villa-price strong {
+  grid-row: 2;
+  line-height: 1.3;
+}

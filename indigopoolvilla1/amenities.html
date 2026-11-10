@@ -8,10 +8,40 @@
   <title>สิ่งอำนวยความสะดวก | Indigo Pool Villa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Anuphan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=22">
+  <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Anuphan:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+  <link rel="stylesheet" href="styles.css?v=35">
 </head>
 <body>
+  <!-- ไอคอนเส้น SVG สำหรับรายการสิ่งอำนวยความสะดวก -->
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-wave" viewBox="0 0 24 24"><path d="M3 8c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/><path d="M3 14c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/><path d="M3 20c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/></symbol>
+    <symbol id="icon-slide" viewBox="0 0 24 24"><path d="M5 3v5h5v5h5v5h5"/><path d="M5 8h5M10 13h5M15 18h5"/><path d="M5 3h4M19 18v3"/></symbol>
+    <symbol id="icon-bath" viewBox="0 0 24 24"><path d="M4 12V7a3 3 0 0 1 6 0v1"/><path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M7 20v2M17 20v2M10 8h3"/></symbol>
+    <symbol id="icon-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M5.8 5.8 18.2 18.2M18.2 5.8 5.8 18.2"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></symbol>
+    <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 18v2M3 18v2M3 11h18v3"/><path d="M7 11V8h5a3 3 0 0 1 3 3"/></symbol>
+    <symbol id="icon-snow" viewBox="0 0 24 24"><path d="M12 2v20M4 7l16 10M20 7 4 17M9 4l3 2 3-2M9 20l3-2 3 2M3 10l3-1 1-3M17 18l1-3 3-1M21 10l-3-1-1-3M7 18l-1-3-3-1"/></symbol>
+    <symbol id="icon-wifi" viewBox="0 0 24 24"><path d="M3 9a14 14 0 0 1 18 0M6.5 12.5a9 9 0 0 1 11 0M10 16a4 4 0 0 1 4 0"/><circle cx="12" cy="20" r="1"/></symbol>
+    <symbol id="icon-screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="icon-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></symbol>
+    <symbol id="icon-speaker" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="9" r="2"/><circle cx="12" cy="16" r="3"/></symbol>
+    <symbol id="icon-shower" viewBox="0 0 24 24"><path d="M4 10a8 8 0 0 1 16 0M4 10h16M7 14v1m5-1v1m5-1v1M8 19v1m8-1v1"/><path d="M12 2v2"/></symbol>
+    <symbol id="icon-towel" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 4v16M11 8h5M11 12h5M11 16h4"/></symbol>
+    <symbol id="icon-pot" viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5zM3 10h18M8 7V5h8v2M12 5V3"/></symbol>
+    <symbol id="icon-fridge" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 11h14M9 6v2m0 6v3"/></symbol>
+    <symbol id="icon-microwave" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><rect x="5" y="8" width="11" height="8"/><path d="M19 9v1m0 3v2"/></symbol>
+    <symbol id="icon-grill" viewBox="0 0 24 24"><path d="M4 12h16l-2 6H6zM3 12h18M8 18v3m8-3v3M8 8c-1-1 1-2 0-3m4 3c-1-1 1-2 0-3m4 3c-1-1 1-2 0-3"/></symbol>
+    <symbol id="icon-plate" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M3 3v7m2-7v7m-2-3h2m14-4v8m2-8v8m-2 0v10"/></symbol>
+    <symbol id="icon-chair" viewBox="0 0 24 24"><path d="M6 4v8h12V4M5 12v4h14v-4M7 16v5m10-5v5"/></symbol>
+    <symbol id="icon-ice" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7zM3 7l9 5 9-5M12 12v10"/></symbol>
+    <symbol id="icon-sofa" viewBox="0 0 24 24"><path d="M4 12V9a2 2 0 0 1 4 0v2h8V9a2 2 0 0 1 4 0v3a2 2 0 0 1 2 2v5H2v-5a2 2 0 0 1 2-2zM5 19v2m14-2v2"/></symbol>
+    <symbol id="icon-car" viewBox="0 0 24 24"><path d="m5 11 2-5h10l2 5 2 2v5H3v-5zM5 11h14M6 18v2m12-2v2"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="15" r="1"/></symbol>
+    <symbol id="icon-mosque" viewBox="0 0 24 24"><path d="M3 21h18M5 21V11h14v10M9 21v-5a3 3 0 0 1 6 0v5M12 3v2M10 7a2 2 0 0 1 4 0v1h-4zM3 11l9-4 9 4"/></symbol>
+    <symbol id="icon-gift" viewBox="0 0 24 24"><path d="M3 9h18v4H3zM5 13v8h14v-8M12 9v12"/><path d="M12 9H8a2 2 0 1 1 2-2c0 2 2 2 2 2zm0 0h4a2 2 0 1 0-2-2c0 2-2 2-2 2z"/></symbol>
+  </svg>
   <a class="skip-link" href="#mainContent" data-th="ข้ามไปยังเนื้อหา" data-en="Skip to content">ข้ามไปยังเนื้อหา</a>
   <!-- ส่วนหัวเว็บไซต์ ใช้เมนูและปุ่มภาษาแบบเดียวกับหน้าแรก -->
   <header class="topbar">
@@ -32,19 +62,23 @@
       <div class="facilities-cover" aria-hidden="true"></div>
       <div class="facilities-shade" aria-hidden="true"></div>
       <div class="facilities-hero-copy">
-        <span class="facilities-kicker" data-th="ทุกอย่างพร้อมสำหรับวันพักผ่อน" data-en="MADE FOR YOUR GETAWAY">ทุกอย่างพร้อมสำหรับวันพักผ่อน</span>
         <h1 data-th="สิ่งอำนวยความสะดวก" data-en="Amenities">สิ่งอำนวยความสะดวก</h1>
-        <p data-th="ครบทั้งในบ้านและริมสระ สำหรับวันพักผ่อนกับครอบครัวและเพื่อน" data-en="Thoughtful comforts indoors and poolside for families and friends.">ครบทั้งในบ้านและริมสระ สำหรับวันพักผ่อนกับครอบครัวและเพื่อน</p>
+        <p
+      data-th="ครบทั้งในบ้านและริมสระ สำหรับวันพักผ่อนกับครอบครัวและเพื่อน"
+      data-en="Thoughtful comforts indoors and poolside for families and friends."
+    >ครบทั้งในบ้านและริมสระ สำหรับวันพักผ่อนกับครอบครัวและเพื่อน</p>
       </div>
     </section>
     <!-- รายการสิ่งอำนวยความสะดวก แยกตามการใช้งาน -->
     <section class="facilities-main section-wrap">
       <div class="facilities-heading">
         <div>
-          <div class="intro-kicker" data-th="ใส่ใจทุกรายละเอียด" data-en="THOUGHTFUL DETAILS">ใส่ใจทุกรายละเอียด</div>
           <h2 data-th="มีครบ ให้ทุกคนพักสบาย" data-en="Room for everyone to relax">มีครบ ให้ทุกคนพักสบาย</h2>
         </div>
-        <p data-th="ครบทั้งในบ้าน ริมสระ และครัว พร้อมให้คุณพักผ่อนเต็มที่" data-en="Everything you need indoors, poolside and in the kitchen.">ครบทั้งในบ้าน ริมสระ และครัว พร้อมให้คุณพักผ่อนเต็มที่</p>
+        <p
+      data-th="ครบทั้งในบ้าน ริมสระ และครัว พร้อมให้คุณพักผ่อนเต็มที่"
+      data-en="Everything you need indoors, poolside and in the kitchen."
+    >ครบทั้งในบ้าน ริมสระ และครัว พร้อมให้คุณพักผ่อนเต็มที่</p>
       </div>
             <nav class="facility-jump" aria-label="Facility categories">
         <a href="#pool-activities" data-th="สระและกิจกรรม" data-en="Pool & fun">สระและกิจกรรม</a>
@@ -53,7 +87,7 @@
         <a href="#family-extras" data-th="บริการพิเศษ" data-en="Extras">บริการพิเศษ</a>
       </nav><div class="facility-grid">
         <article id="pool-activities" class="facility-card">
-          <div class="facility-card-head"><span class="facility-number">01</span><span class="facility-icon">🏊‍♂️</span><h3 data-th="สระว่ายน้ำและกิจกรรม" data-en="Poolside & activities">สระว่ายน้ำและกิจกรรม</h3></div>
+          <div class="facility-card-head"><span class="facility-number">01</span><svg class="facility-icon" aria-hidden="true"><use href="#icon-wave"></use></svg><h3 data-th="สระว่ายน้ำและกิจกรรม" data-en="Poolside & activities">สระว่ายน้ำและกิจกรรม</h3></div>
           <div class="pool-carousel" role="region" aria-roledescription="carousel" aria-label="สระว่ายน้ำและกิจกรรม">
   <div class="pool-carousel-viewport">
     <figure class="pool-slide is-active" role="group" aria-roledescription="slide" aria-label="1 / 8">
@@ -73,20 +107,20 @@
       <figcaption data-th="สระและสไลเดอร์กลางแจ้ง" data-en="Outdoor pool and slide">สระและสไลเดอร์กลางแจ้ง</figcaption>
     </figure>
     <figure class="pool-slide" role="group" aria-roledescription="slide" aria-label="5 / 8" aria-hidden="true">
-      <img src="assets/poolside-05.png" alt="มุมพักผ่อนริมสระและทะเล" loading="lazy" decoding="async">
+      <img src="assets/p05.jpg" alt="มุมพักผ่อนริมสระและทะเล" loading="lazy" decoding="async">
       <figcaption data-th="มุมพักผ่อนริมสระ" data-en="Poolside lounge">มุมพักผ่อนริมสระ</figcaption>
     </figure>
     <figure class="pool-slide" role="group" aria-roledescription="slide" aria-label="6 / 8" aria-hidden="true">
-      <img src="assets/poolside-06.png" alt="อ่างอาบน้ำ Outdoor" loading="lazy" decoding="async">
+      <img src="assets/p09.jpg" alt="อ่างอาบน้ำ Outdoor" loading="lazy" decoding="async">
       <figcaption data-th="อ่างอาบน้ำ Outdoor" data-en="Outdoor bathtub">อ่างอาบน้ำ Outdoor</figcaption>
     </figure>
     <figure class="pool-slide" role="group" aria-roledescription="slide" aria-label="7 / 8" aria-hidden="true">
-      <img src="assets/poolside-07.png" alt="โต๊ะพูลในบ้านพัก" loading="lazy" decoding="async">
+      <img src="assets/p06.jpg" alt="โต๊ะพูลในบ้านพัก" loading="lazy" decoding="async">
       <figcaption data-th="โต๊ะพูล" data-en="Pool table">โต๊ะพูล</figcaption>
     </figure>
     <figure class="pool-slide" role="group" aria-roledescription="slide" aria-label="8 / 8" aria-hidden="true">
-      <img src="assets/poolside-08.png" alt="อ่างอาบน้ำกลางแจ้งริมสวน" loading="lazy" decoding="async">
-      <figcaption data-th="อ่างอาบน้ำริมสวน" data-en="Garden-side bathtub">อ่างอาบน้ำริมสวน</figcaption>
+      <img src="assets/p10.jpg" alt="อ่างอาบน้ำริมระเบียง" loading="lazy" decoding="async">
+      <figcaption data-th="อ่างอาบน้ำริมระเบียง" data-en="Balcony bathtub">อ่างอาบน้ำริมระเบียง</figcaption>
     </figure>
   </div>
   <button class="pool-control pool-prev" type="button" aria-label="Previous photo">‹</button>
@@ -106,54 +140,68 @@
   </div>
 </div>
           <ul class="facility-list">
-            <li><span class="facility-emoji">🏊‍♂️</span><span data-th="สระน้ำเกลือแบบน้ำล้น พร้อมไฟสระ" data-en="Saltwater overflow pool with lighting.">สระน้ำเกลือแบบน้ำล้น พร้อมไฟสระ</span></li>
-            <li><span class="facility-emoji">🐳</span><span data-th="สไลเดอร์สูง 5 ม. ยาว 22 ม. (บ้าน A)" data-en="5 m high × 22 m long waterslide (Villa A).">สไลเดอร์สูง 5 ม. ยาว 22 ม. (บ้าน A)</span></li>
-            <li><span class="facility-emoji">🛁</span><span data-th="อ่างอาบน้ำ Outdoor ริมทะเล" data-en="Seaside outdoor bathtub.">อ่างอาบน้ำ Outdoor ริมทะเล</span></li>
-            <li><span class="facility-emoji">🎱</span><span data-th="โต๊ะพูล 7 ฟุต (บ้าน A และ C)" data-en="7 ft pool table (Villas A & C).">โต๊ะพูล 7 ฟุต (บ้าน A และ C)</span></li>
-            <li><span class="facility-emoji">🛟</span><span data-th="ห่วงยางแฟนซีและเก้าอี้อาบแดดริมสระ" data-en="Pool floats and sun loungers.">ห่วงยางแฟนซีและเก้าอี้อาบแดดริมสระ</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-wave"></use></svg><span data-th="สระน้ำเกลือแบบน้ำล้น พร้อมไฟสระ" data-en="Saltwater overflow pool with lighting.">สระน้ำเกลือแบบน้ำล้น พร้อมไฟสระ</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-slide"></use></svg><span data-th="สไลเดอร์สูง 5 ม. ยาว 22 ม. (บ้าน A)" data-en="5 m high × 22 m long waterslide (Villa A).">สไลเดอร์สูง 5 ม. ยาว 22 ม. (บ้าน A)</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-bath"></use></svg><span data-th="อ่างอาบน้ำ Outdoor ริมทะเล" data-en="Seaside outdoor bathtub.">อ่างอาบน้ำ Outdoor ริมทะเล</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-ball"></use></svg><span data-th="โต๊ะพูล 7 ฟุต (บ้าน A และ C)" data-en="7 ft pool table (Villas A & C).">โต๊ะพูล 7 ฟุต (บ้าน A และ C)</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-sun"></use></svg><span data-th="ห่วงยางแฟนซีและเก้าอี้อาบแดดริมสระ" data-en="Pool floats and sun loungers.">ห่วงยางแฟนซีและเก้าอี้อาบแดดริมสระ</span></li>
           </ul>
         </article>
         <article id="room-entertainment" class="facility-card">
-          <div class="facility-card-head"><span class="facility-number">02</span><span class="facility-icon">🛏️</span><h3 data-th="ห้องพักและความบันเทิง" data-en="Rooms & entertainment">ห้องพักและความบันเทิง</h3></div>
+          <div class="facility-card-head"><span class="facility-number">02</span><svg class="facility-icon" aria-hidden="true"><use href="#icon-bed"></use></svg><h3 data-th="ห้องพักและความบันเทิง" data-en="Rooms & entertainment">ห้องพักและความบันเทิง</h3></div>
           <ul class="facility-list">
-            <li><span class="facility-emoji">❄️</span><span data-th="แอร์ทุกห้อง" data-en="Air conditioning in every room.">แอร์ทุกห้อง</span></li>
-            <li><span class="facility-emoji">📶</span><span data-th="Free Wi-Fi ความเร็วสูง 5G" data-en="Free high-speed 5G Wi-Fi.">Free Wi-Fi ความเร็วสูง 5G</span></li>
-            <li><span class="facility-emoji">🖥️</span><span data-th="Smart TV ทุกห้องนอน" data-en="Smart TV in every bedroom.">Smart TV ทุกห้องนอน</span></li>
-            <li><span class="facility-emoji">🎙️</span><span data-th="คาราโอเกะ YouTube บน Smart TV 65 นิ้ว" data-en="YouTube karaoke on a 65-inch Smart TV.">คาราโอเกะ YouTube บน Smart TV 65 นิ้ว</span></li>
-            <li><span class="facility-emoji">🔈</span><span data-th="ลำโพง JBL พร้อมไมค์ไร้สาย 2 ตัว" data-en="JBL speaker with two wireless microphones.">ลำโพง JBL พร้อมไมค์ไร้สาย 2 ตัว</span></li>
-            <li><span class="facility-emoji">🚿</span><span data-th="น้ำอุ่นทุกห้องน้ำ พร้อมไดร์เป่าผมทุกห้อง" data-en="Hot-water showers in every bathroom; hair dryer in every room.">น้ำอุ่นทุกห้องน้ำ พร้อมไดร์เป่าผมทุกห้อง</span></li>
-            <li><span class="facility-emoji">🧖🏻‍♀️</span><span data-th="ผ้าเช็ดตัวตามจำนวนผู้เข้าพัก" data-en="Towels for all guests.">ผ้าเช็ดตัวตามจำนวนผู้เข้าพัก</span></li>
-            <li><span class="facility-emoji">🛏️</span><span data-th="เครื่องนอนและเตียงเกรดโรงแรม 5 ดาว" data-en="Five-star hotel-grade beds and linens.">เครื่องนอนและเตียงเกรดโรงแรม 5 ดาว</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-snow"></use></svg><span data-th="แอร์ทุกห้อง" data-en="Air conditioning in every room.">แอร์ทุกห้อง</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-wifi"></use></svg><span data-th="Free Wi-Fi ความเร็วสูง 5G" data-en="Free high-speed 5G Wi-Fi.">Free Wi-Fi ความเร็วสูง 5G</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-screen"></use></svg><span data-th="Smart TV ทุกห้องนอน" data-en="Smart TV in every bedroom.">Smart TV ทุกห้องนอน</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-mic"></use></svg><span data-th="คาราโอเกะ YouTube บน Smart TV 65 นิ้ว" data-en="YouTube karaoke on a 65-inch Smart TV.">คาราโอเกะ YouTube บน Smart TV 65 นิ้ว</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-speaker"></use></svg><span data-th="ลำโพง JBL พร้อมไมค์ไร้สาย 2 ตัว" data-en="JBL speaker with two wireless microphones.">ลำโพง JBL พร้อมไมค์ไร้สาย 2 ตัว</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-shower"></use></svg><span
+      data-th="น้ำอุ่นทุกห้องน้ำ พร้อมไดร์เป่าผมทุกห้อง"
+      data-en="Hot-water showers in every bathroom; hair dryer in every room."
+    >น้ำอุ่นทุกห้องน้ำ พร้อมไดร์เป่าผมทุกห้อง</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-towel"></use></svg><span data-th="ผ้าเช็ดตัวตามจำนวนผู้เข้าพัก" data-en="Towels for all guests.">ผ้าเช็ดตัวตามจำนวนผู้เข้าพัก</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-bed"></use></svg><span data-th="เครื่องนอนและเตียงเกรดโรงแรม 5 ดาว" data-en="Five-star hotel-grade beds and linens.">เครื่องนอนและเตียงเกรดโรงแรม 5 ดาว</span></li>
           </ul>
         </article>
         <article id="full-kitchen" class="facility-card">
-          <div class="facility-card-head"><span class="facility-number">03</span><span class="facility-icon">🍳</span><h3 data-th="อุปกรณ์ทำครัวครบครัน" data-en="A well-equipped kitchen">อุปกรณ์ทำครัวครบครัน</h3></div>
+          <div class="facility-card-head"><span class="facility-number">03</span><svg class="facility-icon" aria-hidden="true"><use href="#icon-pot"></use></svg><h3 data-th="อุปกรณ์ทำครัวครบครัน" data-en="A well-equipped kitchen">อุปกรณ์ทำครัวครบครัน</h3></div>
           <ul class="facility-list">
-            <li><span class="facility-emoji">🍲</span><span data-th="เตาฝัง เครื่องดูดควัน หม้อและกระทะ (บ้าน A และ C)" data-en="Built-in cooktop, hood, pots and pans (Villas A & C).">เตาฝัง เครื่องดูดควัน หม้อและกระทะ (บ้าน A และ C)</span></li>
-            <li><span class="facility-emoji">🍻</span><span data-th="ตู้เย็นใหญ่: บ้าน B มี 1 ตู้ บ้าน A และ C มีหลังละ 2 ตู้" data-en="Large fridges: 1 in Villa B; 2 each in Villas A and C.">ตู้เย็นใหญ่: บ้าน B มี 1 ตู้ บ้าน A และ C มีหลังละ 2 ตู้</span></li>
-            <li><span class="facility-emoji">🌮</span><span data-th="ไมโครเวฟ กาต้มน้ำ และหม้อหุงข้าว" data-en="Microwave, kettle and rice cooker.">ไมโครเวฟ กาต้มน้ำ และหม้อหุงข้าว</span></li>
-            <li><span class="facility-emoji">🥪</span><span data-th="เตาปิ้งย่างชาบูไฟฟ้า (บ้าน B)" data-en="Electric shabu grill (Villa B).">เตาปิ้งย่างชาบูไฟฟ้า (บ้าน B)</span></li>
-            <li><span class="facility-emoji">🍽️</span><span data-th="จาน ชาม ช้อนส้อม แก้วน้ำ/ไวน์/กาแฟ มีด เขียง และครก" data-en="Plates, bowls, cutlery, glasses, knife, board and mortar.">จาน ชาม ช้อนส้อม แก้วน้ำ/ไวน์/กาแฟ มีด เขียง และครก</span></li>
-            <li><span class="facility-emoji">🧑🏻‍🍳</span><span data-th="เก้าอี้และชุดจานชามสำหรับเด็ก" data-en="Child dining chair and tableware.">เก้าอี้และชุดจานชามสำหรับเด็ก</span></li>
-            <li><span class="facility-emoji">🍤</span><span data-th="เตาถ่าน BBQ พร้อมจานชามพลาสติกสำรอง" data-en="Charcoal BBQ and spare plastic tableware.">เตาถ่าน BBQ พร้อมจานชามพลาสติกสำรอง</span></li>
-            <li><span class="facility-emoji">🧊</span><span data-th="ถังน้ำแข็ง 60 ลิตร" data-en="60 L ice chest.">ถังน้ำแข็ง 60 ลิตร</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-pot"></use></svg><span
+      data-th="เตาฝัง เครื่องดูดควัน หม้อและกระทะ (บ้าน A และ C)"
+      data-en="Built-in cooktop, hood, pots and pans (Villas A & C)."
+    >เตาฝัง เครื่องดูดควัน หม้อและกระทะ (บ้าน A และ C)</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-fridge"></use></svg><span
+      data-th="ตู้เย็นใหญ่: บ้าน B มี 1 ตู้ บ้าน A และ C มีหลังละ 2 ตู้"
+      data-en="Large fridges: 1 in Villa B; 2 each in Villas A and C."
+    >ตู้เย็นใหญ่: บ้าน B มี 1 ตู้ บ้าน A และ C มีหลังละ 2 ตู้</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-microwave"></use></svg><span data-th="ไมโครเวฟ กาต้มน้ำ และหม้อหุงข้าว" data-en="Microwave, kettle and rice cooker.">ไมโครเวฟ กาต้มน้ำ และหม้อหุงข้าว</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-grill"></use></svg><span data-th="เตาปิ้งย่างชาบูไฟฟ้า (บ้าน B)" data-en="Electric shabu grill (Villa B).">เตาปิ้งย่างชาบูไฟฟ้า (บ้าน B)</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-plate"></use></svg><span
+      data-th="จาน ชาม ช้อนส้อม แก้วน้ำ/ไวน์/กาแฟ มีด เขียง และครก"
+      data-en="Plates, bowls, cutlery, glasses, knife, board and mortar."
+    >จาน ชาม ช้อนส้อม แก้วน้ำ/ไวน์/กาแฟ มีด เขียง และครก</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-chair"></use></svg><span data-th="เก้าอี้และชุดจานชามสำหรับเด็ก" data-en="Child dining chair and tableware.">เก้าอี้และชุดจานชามสำหรับเด็ก</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-grill"></use></svg><span data-th="เตาถ่าน BBQ พร้อมจานชามพลาสติกสำรอง" data-en="Charcoal BBQ and spare plastic tableware.">เตาถ่าน BBQ พร้อมจานชามพลาสติกสำรอง</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-ice"></use></svg><span data-th="ถังน้ำแข็ง 60 ลิตร" data-en="60 L ice chest.">ถังน้ำแข็ง 60 ลิตร</span></li>
           </ul>
         </article>
         <article id="family-extras" class="facility-card">
-          <div class="facility-card-head"><span class="facility-number">04</span><span class="facility-icon">🪑</span><h3 data-th="พื้นที่ใช้ร่วมกันและบริการพิเศษ" data-en="Shared spaces & thoughtful extras">พื้นที่ใช้ร่วมกันและบริการพิเศษ</h3></div>
+          <div class="facility-card-head"><span class="facility-number">04</span><svg class="facility-icon" aria-hidden="true"><use href="#icon-chair"></use></svg><h3 data-th="พื้นที่ใช้ร่วมกันและบริการพิเศษ" data-en="Shared spaces & thoughtful extras">พื้นที่ใช้ร่วมกันและบริการพิเศษ</h3></div>
           <ul class="facility-list">
-            <li><span class="facility-emoji">🛋️</span><span data-th="โต๊ะอาหารในบ้านและนอกบ้าน จัดตามจำนวนผู้เข้าพัก" data-en="Indoor and outdoor dining sets for your group.">โต๊ะอาหารในบ้านและนอกบ้าน จัดตามจำนวนผู้เข้าพัก</span></li>
-            <li><span class="facility-emoji">🚗</span><span data-th="จอดในบ้าน 4–8 คัน พร้อมที่จอดเพิ่มรอบบ้าน" data-en="Parking for 4–8 cars, plus nearby spaces.">จอดในบ้าน 4–8 คัน พร้อมที่จอดเพิ่มรอบบ้าน</span></li>
-            <li><span class="facility-emoji">🕌</span><span data-th="รองรับผู้เข้าพักมุสลิม พร้อมชุดอุปกรณ์แยก" data-en="Muslim-friendly stay with separate utensils.">รองรับผู้เข้าพักมุสลิม พร้อมชุดอุปกรณ์แยก</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-sofa"></use></svg><span data-th="โต๊ะอาหารในบ้านและนอกบ้าน จัดตามจำนวนผู้เข้าพัก" data-en="Indoor and outdoor dining sets for your group.">โต๊ะอาหารในบ้านและนอกบ้าน จัดตามจำนวนผู้เข้าพัก</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-car"></use></svg><span data-th="จอดในบ้าน 4–8 คัน พร้อมที่จอดเพิ่มรอบบ้าน" data-en="Parking for 4–8 cars, plus nearby spaces.">จอดในบ้าน 4–8 คัน พร้อมที่จอดเพิ่มรอบบ้าน</span></li>
+            <li><svg class="facility-emoji" aria-hidden="true"><use href="#icon-mosque"></use></svg><span data-th="รองรับผู้เข้าพักมุสลิม พร้อมชุดอุปกรณ์แยก" data-en="Muslim-friendly stay with separate utensils.">รองรับผู้เข้าพักมุสลิม พร้อมชุดอุปกรณ์แยก</span></li>
           </ul>
         </article>
       </div>
       <section class="complimentary-card">
-        <span class="complimentary-icon">🎁</span>
+        <svg class="complimentary-icon" aria-hidden="true"><use href="#icon-gift"></use></svg>
         <div>
-          <span class="facilities-kicker" data-th="บริการพิเศษจากเรา" data-en="A LITTLE EXTRA">บริการพิเศษจากเรา</span>
           <h2 data-th="แถมฟรี ไม่อั้น!" data-en="Complimentary, with our compliments!">แถมฟรี ไม่อั้น!</h2>
-          <p data-th="น้ำแข็ง น้ำดื่ม และถ่านปิ้งย่างไม่อั้น พร้อมช่วยจุดเตา" data-en="Unlimited ice, drinking water and charcoal, with help lighting the grill.">น้ำแข็ง น้ำดื่ม และถ่านปิ้งย่างไม่อั้น พร้อมช่วยจุดเตา</p>
+          <p
+      data-th="น้ำแข็ง น้ำดื่ม และถ่านปิ้งย่างไม่อั้น พร้อมช่วยจุดเตา"
+      data-en="Unlimited ice, drinking water and charcoal, with help lighting the grill."
+    >น้ำแข็ง น้ำดื่ม และถ่านปิ้งย่างไม่อั้น พร้อมช่วยจุดเตา</p>
         </div>
       </section>
       <div class="facilities-cta">
