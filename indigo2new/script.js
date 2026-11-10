@@ -122,13 +122,13 @@ contactForm.addEventListener("submit", (event) => {
     }
 
     const formData = new FormData(contactForm);
-    const message = [
-        `Name: ${formData.get("name")}`,
-        `Contact: ${formData.get("contact")}`,
-        `Message: ${formData.get("message")}`
-    ].join("\n");
+    const message = currentLanguage === "th"
+        ? `ชื่อ: ${formData.get("name")}\nอีเมล: ${formData.get("email")}\nข้อความ: ${formData.get("message")}`
+        : `Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\nMessage: ${formData.get("message")}`;
+    const subject = currentLanguage === "th" ? "สอบถามห้องพัก" : "Room inquiry";
 
-    window.location.href = `sms:074813380?body=${encodeURIComponent(message)}`;
+    window.location.href = `mailto:indigo.hotel02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 });
 
+lucide.createIcons();
 setDefaultDates();
