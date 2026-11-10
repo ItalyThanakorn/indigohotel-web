@@ -1,4 +1,4 @@
-/* 1. สีหลัก ฟอนต์ และค่าที่ใช้ร่วมกัน */
+/* 1. ค่าสีและฟอนต์: tokens และ base ของทุกหน้า */
 :root {
   --navy: #17243a;
   --navy-soft: #263652;
@@ -46,7 +46,7 @@ button,input,select {
   color: var(--gold);
   text-transform: uppercase
 }
-/* 2. ส่วนหัวและเมนูนำทาง */
+/* 2. Header และ nav: header.site-header, .menu-toggle, #primary-nav (ทุกหน้า) */
 .site-header {
   height: 82px;
   padding: 0 6.2%;
@@ -129,7 +129,7 @@ button,input,select {
 .menu-toggle {
   display: none
 }
-/* 3. ภาพและข้อความหน้าแรก */
+/* 3. Hero หน้าแรก: index.html .hero, ข้อความเปิดหน้า และปุ่มจอง */
 .hero {
   height: min(700px,calc(100vh - 82px));
   min-height: 590px;
@@ -172,7 +172,7 @@ button,input,select {
   letter-spacing: -.035em;
   margin: 28px 0 22px
 }
-.hero h1 i,.philosophy h2 i,.rooms-heading h2 i,.table-copy h2 i,.address h2 i,.closing h2 i {
+.hero h1 i,.hotel-overview h2 i,.rooms-heading h2 i,.table-copy h2 i,.address h2 i,.closing h2 i {
   font-weight: 400;
   color: var(--gold-pale)
 }
@@ -244,7 +244,7 @@ button,input,select {
 .hero-caption span:first-child {
   color: var(--gold-pale)
 }
-/* 4. แบบฟอร์มค้นหาห้องพัก */
+/* 4. แบบฟอร์มค้นหา: index.html #bookingSearch และช่องวันเข้าพัก/ผู้เข้าพัก */
 .booking {
   display: grid;
   grid-template-columns: 26% 74%;
@@ -301,7 +301,7 @@ button,input,select {
   font-weight: 400;
   margin-left: 13px
 }
-/* 5. โครงร่างและส่วนเนื้อหาหลัก */
+/* 5. Sections เนื้อหา: index.html ส่วนแนะนำโรงแรมและเนื้อหาหลัก */
 .section-shell {
   padding-left: 10%;
   padding-right: 10%
@@ -324,21 +324,21 @@ button,input,select {
   height: 1px;
   background: var(--gold)
 }
-.philosophy {
+.hotel-overview {
   padding-top: 127px;
   padding-bottom: 118px
 }
-.philosophy-layout {
+.hotel-overview-layout {
   display: grid;
   grid-template-columns: 1fr .72fr 1.2fr;
   gap: 5%;
   align-items: center;
   margin-top: 63px
 }
-.philosophy-heading {
+.hotel-overview-heading {
   position: relative
 }
-.philosophy-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
+.hotel-overview-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
   font: 400 clamp(43px,5.2vw,69px)/1.12 var(--serif);
   letter-spacing: -.035em;
   color: var(--navy);
@@ -346,7 +346,7 @@ button,input,select {
   position: relative;
   z-index: 1
 }
-.philosophy-heading .eyebrow,.rooms-heading .eyebrow,.details-heading .eyebrow,.table-copy .eyebrow,.address .eyebrow {
+.hotel-overview-heading .eyebrow,.rooms-heading .eyebrow,.details-heading .eyebrow,.table-copy .eyebrow,.address .eyebrow {
   font-size: 8px
 }
 .heading-ornament {
@@ -357,17 +357,17 @@ button,input,select {
   color: #eeeae1;
   font: 400 240px/.8 var(--serif)
 }
-.philosophy-copy {
+.hotel-overview-copy {
   align-self: center;
   padding-top: 23px
 }
-.philosophy-copy p {
+.hotel-overview-copy p {
   font-size: 11px;
   line-height: 2.2;
   color: #777b7c;
   margin: 0 0 17px
 }
-.philosophy-copy .lead {
+.hotel-overview-copy .lead {
   font-size: 13px;
   color: var(--navy);
   line-height: 2
@@ -389,18 +389,18 @@ button,input,select {
   color: var(--gold);
   font-size: 16px
 }
-.philosophy-image {
+.hotel-overview-image {
   margin: 0;
   position: relative
 }
-.philosophy-image:before {
+.hotel-overview-image:before {
   content: '';
   position: absolute;
   inset: -12px 12px 12px -12px;
   border: 1px solid var(--gold);
   z-index: 0
 }
-.philosophy-image img {
+.hotel-overview-image img {
   display: block;
   width: 100%;
   height: 360px;
@@ -408,13 +408,13 @@ button,input,select {
   position: relative;
   z-index: 1
 }
-.philosophy-image figcaption {
+.hotel-overview-image figcaption {
   font: italic 10px var(--serif);
   color: #77776f;
   margin-top: 12px;
   text-align: right
 }
-/* 6. ส่วนแสดงห้องพัก */
+/* 6. ห้องพัก: index.html และ rooms.html การ์ดห้องและแกลเลอรี */
 .rooms {
   padding-top: 40px;
   padding-bottom: 130px;
@@ -555,7 +555,7 @@ button,input,select {
   letter-spacing: .14em;
   color: #88867d
 }
-/* 7. แถบภาพคั่นระหว่างเนื้อหา */
+/* 7. แถบภาพคั่น: index.html .interlude */
 .interlude {
   height: 560px;
   background: var(--navy);
@@ -577,6 +577,7 @@ button,input,select {
 .interlude-copy h2,.closing h2 {
   font: 400 clamp(50px,6vw,78px)/.98 var(--serif);
   letter-spacing: -.03em;
+  line-height: 1.15;
   margin: 22px 0
 }
 .interlude-copy h2 i,.closing h2 i {
@@ -598,7 +599,7 @@ button,input,select {
   letter-spacing: .17em;
   color: #b8bdc5
 }
-/* 8. รายการสิ่งอำนวยความสะดวก */
+/* 8. สิ่งอำนวยความสะดวก: index.html รายการ amenities */
 .details {
   padding-top: 115px;
   padding-bottom: 125px
@@ -648,7 +649,7 @@ button,input,select {
   margin: 4px 0 0
 }
 
-/* 9. ส่วนห้องอาหาร */
+/* 9. ห้องอาหาร: index.html ส่วนร้านอาหารและบริการอาหาร */
 .table-section {
   display: grid;
   grid-template-columns: 53% 47%;
@@ -701,7 +702,7 @@ button,input,select {
   font-style: normal;
   margin: 0 6px
 }
-/* 10. ที่ตั้งและแผนที่ */
+/* 10. ที่ตั้ง: index.html .location และแผนที่ */
 .address {
   padding-top: 120px;
   padding-bottom: 125px
@@ -818,7 +819,7 @@ button,input,select {
   color: var(--gold);
   margin-top: 6px
 }
-/* 11. ส่วนท้ายก่อนข้อมูลติดต่อ */
+/* 11. Footer และข้อมูลติดต่อ: ส่วนท้ายของทุกหน้า */
 .closing {
   height: 440px;
   background: var(--navy);
@@ -921,11 +922,11 @@ button,input,select {
     padding-left: 7%;
     padding-right: 7%
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: .9fr .8fr 1fr;
     gap: 4%
   }
-  .philosophy-image img {
+  .hotel-overview-image img {
     height: 310px
   }
   .booking {
@@ -1114,16 +1115,16 @@ button,input,select {
   .section-marker {
     font-size: 7px
   }
-  .philosophy {
+  .hotel-overview {
     padding-top: 77px;
     padding-bottom: 76px
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: 1fr;
     gap: 23px;
     margin-top: 38px
   }
-  .philosophy-heading h2 {
+  .hotel-overview-heading h2 {
     font-size: 55px;
     margin: 14px 0 2px
   }
@@ -1133,17 +1134,17 @@ button,input,select {
     right: 0;
     bottom: -60px
   }
-  .philosophy-copy {
+  .hotel-overview-copy {
     padding: 0;
     max-width: 420px
   }
-  .philosophy-image {
+  .hotel-overview-image {
     margin: 8px 9px 0 0
   }
-  .philosophy-image img {
+  .hotel-overview-image img {
     height: 280px
   }
-  .philosophy-image figcaption {
+  .hotel-overview-image figcaption {
     font-size: 9px
   }
   .rooms {
@@ -1356,7 +1357,7 @@ button,input,select {
     transition: none!important
   }
 }
-/* 12. ขนาดตัวอักษรให้อ่านง่าย */
+/* 12. Typography: ขนาดและระยะตัวอักษรที่ใช้ร่วมกันทุกหน้า */
 /* ปรับขนาดตัวอักษรให้อ่านง่าย โดยคงชุดสีเดิม */
 body {
   font-size: 16px;
@@ -1411,14 +1412,14 @@ p {
 .section-marker {
   font-size: 11px
 }
-.philosophy-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
+.hotel-overview-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
   font-size: 15px;
   line-height: 1.85
 }
-.philosophy-copy .lead {
+.hotel-overview-copy .lead {
   font-size: 18px
 }
-.philosophy-image figcaption {
+.hotel-overview-image figcaption {
   font-size: 13px
 }
 .underlined-link {
@@ -1467,7 +1468,7 @@ p {
 .hero {
   height: min(740px,calc(100vh - 92px))
 }
-/* 13. แม่แบบหน้าอื่น เช่น ห้องพัก ติดต่อ และจอง */
+/* 13. หน้าย่อย: rooms.html, room-detail.html, view.html, contact.html, booking.html */
 .page-hero {
   min-height: 390px;
   padding: 96px 8%;
@@ -1799,10 +1800,10 @@ p {
   .section-marker {
     font-size: 9px
   }
-  .philosophy-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
+  .hotel-overview-copy p,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro,.distance-list span {
     font-size: 14px
   }
-  .philosophy-copy .lead {
+  .hotel-overview-copy .lead {
     font-size: 17px
   }
   .room-number,.room-small>span {
@@ -2256,7 +2257,7 @@ p {
   }
 }
 
-/* 14. หน้ากำลังเปลี่ยนหน้า */
+/* 14. Page loader: .page-loader ในทุกหน้า */
 .page-loader {
   position: fixed;
   inset: 0;
@@ -2346,7 +2347,7 @@ body.is-navigating {
     animation: none
   }
 }
-/* 15. ปรับหน้าจอแท็บเล็ตและมือถือ */
+/* 15. Responsive: breakpoint สำหรับทุก section ด้านบน */
 /* ปรับการจัดวางสำหรับแท็บเล็ตและมือถือ */
 @media(max-width:1024px) {
   .site-header {
@@ -2445,15 +2446,15 @@ body.is-navigating {
     padding-left: 6%;
     padding-right: 6%
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 28px 5%;
     margin-top: 42px
   }
-  .philosophy-heading,.philosophy-copy,.philosophy-image {
+  .hotel-overview-heading,.hotel-overview-copy,.hotel-overview-image {
     min-width: 0
   }
-  .philosophy-image {
+  .hotel-overview-image {
     grid-column: 1/-1;
     width: min(100%,560px);
     justify-self: center
@@ -2684,16 +2685,16 @@ body.is-navigating {
     gap: 9px;
     font-size: 10px
   }
-  .philosophy {
+  .hotel-overview {
     padding-top: 68px;
     padding-bottom: 68px
   }
-  .philosophy-layout {
+  .hotel-overview-layout {
     grid-template-columns: minmax(0,1fr);
     gap: 20px;
     margin-top: 32px
   }
-  .philosophy-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
+  .hotel-overview-heading h2,.rooms-heading h2,.details-heading h2,.table-copy h2,.address h2 {
     font-size: clamp(38px,10vw,50px);
     line-height: 1.2
   }
@@ -2704,22 +2705,22 @@ body.is-navigating {
     bottom: -48px;
     pointer-events: none
   }
-  .philosophy-copy {
+  .hotel-overview-copy {
     padding: 0;
     max-width: none
   }
-  .philosophy-copy p,.philosophy-copy .lead,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro {
+  .hotel-overview-copy p,.hotel-overview-copy .lead,.rooms-heading>p,.room-aside>p,.details-heading>p:last-child,.detail-list p,.table-copy>p:not(.eyebrow),.address-intro {
     font-size: 15px;
     line-height: 1.9
   }
-  .philosophy-image {
+  .hotel-overview-image {
     grid-column: auto;
     margin: 5px 8px 0 0
   }
-  .philosophy-image img {
+  .hotel-overview-image img {
     height: clamp(240px,70vw,330px)
   }
-  .philosophy-image figcaption {
+  .hotel-overview-image figcaption {
     font-size: 12px;
     line-height: 1.6
   }
@@ -3181,5 +3182,828 @@ body.is-navigating {
 @media(max-width:700px) {
   .interlude-index {
     display: block
+  }
+}
+
+/* 16. หน้าแสดงบรรยากาศโรงแรม (view.html: .view-hero, .view-intro, .view-gallery, .view-contact) */
+/* รูปแบบเฉพาะหน้าแสดงบรรยากาศโรงแรม */
+.view-hero {
+  min-height: 560px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  padding: 72px 10%;
+  overflow: hidden;
+  color: #fff;
+  background: #17243a;
+}
+
+.view-hero::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, #111c2bcc 0%, #111c2b52 56%, #111c2b14 100%);
+  z-index: 1;
+}
+
+.view-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.view-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.view-hero h1 {
+  margin: 18px 0;
+  font: 400 clamp(44px, 7vw, 82px)/1.12 var(--serif);
+}
+
+.view-hero h1 i {
+  color: var(--gold-pale);
+  font-weight: 400;
+}
+
+.view-hero p {
+  max-width: 540px;
+  margin: 0;
+  color: #f2f0e9;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.view-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+  align-items: end;
+  gap: 36px;
+  padding: 92px 10% 42px;
+}
+
+.view-intro h2 {
+  margin: 14px 0 0;
+  color: var(--navy);
+  font: 400 clamp(32px, 4vw, 52px)/1.25 var(--serif);
+}
+
+.view-intro p {
+  margin: 0;
+  color: #747875;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.view-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: 92px;
+  gap: 18px;
+  padding: 0 10% 100px;
+}
+
+.view-photo {
+  position: relative;
+  grid-column: span 4;
+  grid-row: span 3;
+  min-width: 0;
+  overflow: hidden;
+  background: #ddd8cf;
+}
+
+.view-photo--wide {
+  grid-column: span 8;
+  grid-row: span 4;
+}
+
+.view-photo--tall {
+  grid-row: span 4;
+}
+
+.view-photo--short {
+  grid-row: span 2;
+}
+
+.view-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.view-photo:hover img {
+  transform: scale(1.035);
+}
+
+.view-photo figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 34px 20px 18px;
+  color: #fff;
+  background: linear-gradient(transparent, #101824c9);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.view-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 0 10% 100px;
+  padding: 34px 40px;
+  background: #efede7;
+}
+
+.view-contact h2 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font: 400 27px/1.3 var(--serif);
+}
+
+.view-contact p {
+  margin: 0;
+  color: #747875;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .view-hero {
+    min-height: 430px;
+    padding: 52px 7%;
+  }
+
+  .view-intro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 62px 7% 30px;
+  }
+
+  .view-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 76px;
+    gap: 12px;
+    padding: 0 3% 64px;
+  }
+
+  .view-photo,
+  .view-photo--wide {
+    grid-column: 1 / -1;
+    grid-row: span 4;
+  }
+
+  .view-photo--tall {
+    grid-row: span 4;
+  }
+
+  .view-photo figcaption {
+    padding: 28px 12px 12px;
+    font-size: 13px;
+  }
+
+  .view-contact {
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0 7% 64px;
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .view-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 68px;
+    gap: 9px;
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .view-photo,
+  .view-photo--wide,
+  .view-photo--tall,
+  .view-photo--short {
+    grid-column: 1 / -1;
+    grid-row: span 4;
+  }
+}
+
+/* 17. ปรับแต่งเฉพาะส่วนของหน้าแรก ห้องพัก และนโยบาย (index.html, rooms.html, booking.html, room-detail.html) */
+/* 17.1 หัวข้อและการ์ดเนื้อหา: h1-h3 และ .interlude-copy (ทุกหน้าที่ใช้) */
+html[lang="th"] body :is(h1, h2, h3) {
+  font-family: "Noto Serif Thai", serif;
+}
+
+.interlude-copy h2 {
+  line-height: 1.15;
+}
+
+/* 17.2 ภาพแนะนำและทางไปจอง: index.html .hotel-overview, [data-home-gallery] */
+.hotel-overview {
+  padding-top: 82px;
+  padding-bottom: 96px;
+}
+
+.hotel-overview .hotel-overview-layout {
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.72fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 92px);
+  margin-top: 42px;
+}
+
+.home-gallery {
+  min-width: 0;
+  position: relative;
+  aspect-ratio: 1.48;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+}
+
+.home-gallery-slide,
+.home-gallery-slide[hidden] {
+  display: none;
+}
+
+.home-gallery-slide.is-active {
+  position: absolute;
+  inset: 0;
+  display: block;
+  margin: 0;
+  animation: home-gallery-in 420ms ease both;
+}
+
+.home-gallery-slide::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(0deg, rgb(13 24 40 / 72%), transparent);
+  pointer-events: none;
+}
+
+.home-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-gallery-slide figcaption {
+  position: absolute;
+  z-index: 1;
+  left: 26px;
+  bottom: 68px;
+  max-width: calc(100% - 52px);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .03em;
+}
+
+.home-gallery-controls {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 17px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gallery-arrow {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  background: rgb(23 36 58 / 38%);
+  color: #fff;
+  font: 300 24px/1 var(--sans);
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.gallery-arrow:hover,
+.gallery-arrow:focus-visible {
+  background: #fff;
+  color: var(--navy);
+}
+
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 55%);
+  cursor: pointer;
+}
+
+.gallery-dot.is-active {
+  background: var(--gold-pale);
+  box-shadow: 0 0 0 3px rgb(217 201 165 / 20%);
+}
+
+.home-gallery-count {
+  min-width: 48px;
+  color: #fff;
+  font: 500 9px var(--sans);
+  letter-spacing: .12em;
+  text-align: center;
+}
+
+.home-overview-copy {
+  max-width: 390px;
+}
+
+.home-overview-copy h2 {
+  margin: 14px 0 22px;
+  color: var(--navy);
+  font: 400 clamp(40px, 4.2vw, 60px)/1.18 var(--serif);
+  letter-spacing: -.035em;
+}
+
+.home-overview-copy h2 i {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.home-overview-copy p:not(.eyebrow) {
+  margin: 0 0 15px;
+  color: #777b7c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.home-overview-copy p.lead {
+  color: var(--navy);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.home-overview-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 25px;
+  margin-top: 24px;
+}
+
+.home-overview-links .underlined-link {
+  gap: 12px;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.home-overview-links .underlined-link span {
+  color: var(--gold);
+}
+
+.home-booking-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: .04em;
+  transition: background-color 180ms ease;
+}
+
+.home-booking-link:hover,
+.home-booking-link:focus-visible {
+  background: var(--navy-soft);
+}
+
+@keyframes home-gallery-in {
+  from { opacity: .55; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  .hotel-overview {
+    padding-top: 68px;
+    padding-bottom: 72px;
+  }
+
+  .hotel-overview .hotel-overview-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+  .home-gallery {
+    aspect-ratio: 1.12;
+  }
+
+  .home-gallery-slide figcaption {
+    left: 18px;
+    bottom: 64px;
+    max-width: calc(100% - 36px);
+    font-size: 11px;
+  }
+
+  .home-gallery-controls {
+    right: 13px;
+    bottom: 13px;
+    left: 13px;
+    gap: 10px;
+  }
+
+  .home-overview-copy {
+    max-width: 540px;
+  }
+
+  .home-overview-copy h2 {
+    margin-bottom: 14px;
+    font-size: clamp(38px, 10vw, 50px);
+  }
+}
+
+@media (max-width: 380px) {
+  html[lang="th"] .hero h1 {
+    font-size: clamp(30px, 10vw, 34px);
+    white-space: nowrap;
+    letter-spacing: -.045em;
+  }
+}
+
+/* 17.3 แถบการ์ดห้อง: index.html/rooms.html .room-gallery และปุ่มเลื่อน */
+.rooms-heading {
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.room-gallery {
+  margin-top: 24px;
+}
+
+.room-gallery-toolbar {
+  margin-bottom: 12px;
+}
+
+.room-gallery-track {
+  grid-auto-columns: calc((100% - 48px) / 3);
+  gap: 24px;
+  padding-bottom: 8px;
+}
+
+.room-gallery-card img {
+  height: clamp(200px, 32vh, 300px);
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 950px) and (min-width: 701px) {
+  .room-gallery-track {
+    grid-auto-columns: calc((100% - 36px) / 3);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .room-gallery-track {
+    grid-auto-columns: min(82vw, 340px);
+    gap: 15px;
+  }
+
+  .room-gallery-card img {
+    height: clamp(220px, 42vh, 310px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-gallery-slide.is-active { animation: none; }
+  .gallery-arrow,
+  .home-booking-link { transition: none; }
+}
+
+.back-to-top {
+  position: fixed;
+  z-index: 20;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 72%);
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 6px 20px rgb(23 36 58 / 24%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease, background-color 180ms ease;
+  cursor: pointer;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--gold);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid var(--gold-pale);
+  outline-offset: 3px;
+}
+
+.back-to-top svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 700px) {
+  .back-to-top {
+    right: 17px;
+    bottom: 17px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: none; }
+}
+
+/* 17.4 รายละเอียดห้องและนโยบาย: rooms.html, room-detail.html, booking.html */
+.room-count-note {
+  margin-top: 22px !important;
+  padding: 18px 22px;
+  border-left: 3px solid var(--gold);
+  background: #f2f0ea;
+  color: var(--navy) !important;
+  text-align: left;
+  line-height: 1.85;
+}
+
+.feature-card-body .room-perk {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 7px 11px;
+  background: #f3f1eb;
+  color: #71674f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.room-amenities-panel {
+  margin: 64px 0 0;
+  padding: clamp(28px, 5vw, 56px);
+  background: #f1efe9;
+}
+
+.room-amenities-heading {
+  max-width: 680px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.room-amenities-heading h2,
+.stay-policy-heading h2 {
+  margin: 10px 0 12px;
+  color: var(--navy);
+  font: 400 clamp(30px, 3.5vw, 42px)/1.25 var(--serif);
+}
+
+.room-amenities-heading p,
+.stay-policy-heading p {
+  margin: 0;
+  color: #62696c;
+  line-height: 1.8;
+}
+
+.room-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.room-amenity-card {
+  position: relative;
+  min-height: 170px;
+  padding: 25px 26px;
+  background: #fff;
+  border: 1px solid rgb(23 36 58 / 6%);
+}
+
+.room-amenity-number {
+  color: var(--gold);
+  font: 500 11px/1 var(--sans);
+  letter-spacing: .16em;
+}
+
+.room-amenity-card h3,
+.stay-policy-card h3 {
+  margin: 12px 0 9px;
+  color: var(--navy);
+  font: 400 21px/1.4 var(--serif);
+}
+
+.room-amenity-card p {
+  margin: 0;
+  color: #60676d;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.room-amenity-highlight {
+  background: var(--navy);
+}
+
+.room-amenity-highlight h3,
+.room-amenity-highlight p {
+  color: #fff;
+}
+
+.stay-policy {
+  margin-top: 76px;
+}
+
+.stay-policy-heading {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.stay-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stay-policy-card {
+  padding: 27px 30px;
+  background: #f3f1eb;
+  border-top: 2px solid var(--gold);
+}
+
+.stay-policy-label {
+  color: #88754b;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+}
+
+.stay-policy-card h3 {
+  margin-top: 9px;
+}
+
+.stay-policy-card p,
+.stay-policy-card li {
+  color: #60676d;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.stay-policy-card p {
+  margin: 8px 0 0;
+}
+
+.stay-policy-card .stay-policy-amount {
+  margin-top: 12px;
+  color: var(--navy);
+  font: 500 26px/1.35 var(--sans);
+}
+
+.stay-policy-amount small {
+  color: #77766f;
+  font: 400 13px/1.5 var(--thai);
+}
+
+.stay-policy-times {
+  background: var(--navy);
+}
+
+.stay-policy-times h3,
+.stay-policy-times p,
+.stay-policy-times .stay-policy-label {
+  color: #fff;
+}
+
+.stay-time-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+  color: #e7e4dc;
+  font-size: 14px;
+}
+
+.stay-time-row strong {
+  color: #fff;
+  font-weight: 500;
+  text-align: right;
+}
+
+.stay-policy-rules {
+  grid-column: 1 / -1;
+  background: #fff;
+}
+
+.stay-policy-rules ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 28px;
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.stay-policy-rules li::marker {
+  color: var(--gold);
+}
+
+.reservation-aside .underlined-link.email-contact {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  overflow-wrap: normal;
+}
+
+.reservation-aside .email-contact-label {
+  color: #77766f;
+  font: 400 14px/1.6 var(--thai);
+}
+
+.reservation-aside .email-contact-address {
+  color: var(--gold);
+  font: 500 14px/1.6 var(--sans);
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+@media (max-width: 700px) {
+  .room-amenities-panel {
+    margin-top: 42px;
+    padding: 26px 18px;
+  }
+
+  .room-amenities-grid,
+  .stay-policy-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .room-amenity-card,
+  .stay-policy-card {
+    min-height: 0;
+    padding: 21px 20px;
+  }
+
+  .stay-policy {
+    margin-top: 52px;
+  }
+
+  .stay-policy-rules {
+    grid-column: auto;
+  }
+
+  .stay-policy-rules ul {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .stay-time-row {
+    font-size: 13px;
+  }
+
+  .reservation-aside .email-contact-address {
+    font-size: 14px;
   }
 }

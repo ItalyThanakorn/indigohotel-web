@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="th">
   <head>
+    <link rel="stylesheet" href="../assets/css/bestier.css?v=7">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#17243a">
@@ -12,10 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Kanit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Kanit:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="../assets/css/bestier.css?v=4">
   </head>
   <body>
     <header class="site-header">
@@ -230,7 +230,8 @@
             </a>
             <br>
             <a class="underlined-link email-contact" href="mailto:bestierhotel.hatyai@gmail.com">
-              อีเมล: <span lang="en" translate="no" data-no-translate>bestierhotel.hatyai@gmail.com</span>
+              <span class="email-contact-label">อีเมล</span>
+              <span class="email-contact-address" lang="en" translate="no" data-no-translate>bestierhotel.hatyai@gmail.com</span>
             </a>
             <br>
             <a class="underlined-link" href="https://www.facebook.com/BestierHotelHatyai/">
@@ -246,6 +247,43 @@
             </a>
           </aside>
         </div>
+        <section class="stay-policy" aria-labelledby="stay-policy-title">
+          <div class="stay-policy-heading">
+            <span class="eyebrow">ข้อมูลก่อนเข้าพัก</span>
+            <h2 id="stay-policy-title">นโยบายการเข้าพัก</h2>
+            <p>เตรียมข้อมูลให้พร้อมและตรวจสอบเงื่อนไขสำคัญก่อนเดินทาง</p>
+          </div>
+          <div class="stay-policy-grid">
+            <article class="stay-policy-card stay-policy-times">
+              <span class="stay-policy-label">เวลาเข้าพัก</span>
+              <h3>เช็กอินและเช็กเอาต์</h3>
+              <div class="stay-time-row"><span>เช็กอิน</span><strong>14:00 น. เป็นต้นไป</strong></div>
+              <div class="stay-time-row"><span>เช็กเอาต์</span><strong>ภายใน 12:00 น.</strong></div>
+              <p>โปรดแจ้งชื่อและนามสกุล แสดงบัตรประชาชน ใบขับขี่ หรือหนังสือเดินทาง และแจ้งทะเบียนรถตอนลงทะเบียน</p>
+            </article>
+            <article class="stay-policy-card">
+              <span class="stay-policy-label">เงินประกัน</span>
+              <h3>มัดจำคีย์การ์ด</h3>
+              <p class="stay-policy-amount">500 บาท <small>หรือ 50 ริงกิต / ห้อง</small></p>
+              <p>ชำระเป็นเงินสดตอนเช็กอิน รับคืนเมื่อคืนห้องและคีย์การ์ด โดยคืนให้ผู้ลงทะเบียนเข้าพักเท่านั้น</p>
+            </article>
+            <article class="stay-policy-card">
+              <span class="stay-policy-label">เช็กเอาต์ล่าช้า</span>
+              <h3>ค่าธรรมเนียม</h3>
+              <p class="stay-policy-amount">200 บาท <small>ต่อชั่วโมง</small></p>
+              <p>เริ่มคิดค่าธรรมเนียมตั้งแต่ 13:00 น. หากเกิน 3 ชั่วโมง คิดค่าห้องพักเป็น 1 วัน</p>
+            </article>
+            <article class="stay-policy-card stay-policy-rules">
+              <span class="stay-policy-label">ข้อกำหนดระหว่างเข้าพัก</span>
+              <h3>เพื่อดูแลห้องพักและผู้เข้าพักทุกท่าน</h3>
+              <ul>
+                <li>ห้ามสูบบุหรี่ บุหรี่ไฟฟ้า และกัญชาภายในห้องพัก มีค่าปรับ 5,000 บาท</li>
+                <li>ห้ามทำสีผมในห้องพัก หากผ้าเช็ดตัว ผ้าปูที่นอน หรืออุปกรณ์ของโรงแรมเสียหาย ผู้เข้าพักต้องรับผิดชอบ</li>
+                <li>ห้ามนำทุเรียน มังคุด และสัตว์เลี้ยงเข้ามาภายในโรงแรม</li>
+              </ul>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
     <footer class="site-footer">
@@ -277,8 +315,9 @@
       </div>
       <small class="copyright">© 2026 BESTIER HOTEL. ALL RIGHTS RESERVED.</small>
     </footer>
-    <script src="../assets/js/bestier-i18n.js?v=7" defer></script>
-    <script src="../assets/js/bestier.js?v=2" defer>
-    </script>
+    <button class="back-to-top" type="button" aria-label="กลับขึ้นด้านบน" aria-hidden="true" tabindex="-1">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6" /></svg>
+    </button>
+    <script src="../assets/js/bestier.js?v=3" defer></script>
   </body>
 </html>
