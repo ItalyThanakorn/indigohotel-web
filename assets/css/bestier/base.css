@@ -1,0 +1,203 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body.bestier-site {
+  min-width: 320px;
+  margin: 0;
+  background: var(--bestier-color-ivory);
+  color: var(--bestier-color-text);
+  font-family: var(--bestier-font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+body.bestier-site :where(h1, h2, h3, p, ul, ol) {
+  margin-top: 0;
+}
+
+body.bestier-site figure {
+  margin: 0;
+}
+
+body.bestier-site :where(h1, h2, h3) {
+  color: var(--bestier-color-indigo);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+body.bestier-site h1 {
+  margin-bottom: var(--bestier-space-6);
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  letter-spacing: -0.035em;
+}
+
+body.bestier-site h2 {
+  margin-bottom: var(--bestier-space-4);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  letter-spacing: -0.025em;
+}
+
+body.bestier-site h3 {
+  margin-bottom: var(--bestier-space-3);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+body.bestier-site p {
+  margin-bottom: var(--bestier-space-4);
+}
+
+body.bestier-site address {
+  margin-bottom: var(--bestier-space-4);
+  font-style: normal;
+}
+
+body.bestier-site img {
+  display: block;
+  max-width: 100%;
+}
+
+body.bestier-site a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+body.bestier-site button,
+body.bestier-site summary {
+  font: inherit;
+}
+
+body.bestier-site :where(a, button, summary):focus-visible {
+  outline: 3px solid var(--bestier-color-focus);
+  outline-offset: 4px;
+}
+
+body.bestier-site .bestier-skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.65rem 1rem;
+  transform: translateY(-150%);
+  border-radius: var(--bestier-radius-sm);
+  background: var(--bestier-color-surface);
+  color: var(--bestier-color-indigo);
+}
+
+body.bestier-site .bestier-skip-link:focus {
+  transform: translateY(0);
+}
+
+body.bestier-site .bestier-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.bestier-site .bestier-shell {
+  width: min(var(--bestier-content-width), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+body.bestier-site .bestier-eyebrow {
+  margin-bottom: var(--bestier-space-3);
+  color: var(--bestier-color-gold-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.bestier-site .bestier-lead {
+  max-width: 42rem;
+  color: var(--bestier-color-muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+}
+
+body.bestier-site .bestier-section {
+  padding-block: clamp(3.5rem, 8vw, 7rem);
+}
+
+body.bestier-site .bestier-section-heading {
+  max-width: 48rem;
+  margin-bottom: var(--bestier-space-12);
+}
+
+body.bestier-site .bestier-section-heading > :last-child {
+  margin-bottom: 0;
+}
+
+body.bestier-site .bestier-section--surface {
+  background: var(--bestier-color-surface);
+}
+
+body.bestier-site .bestier-section--indigo {
+  background: var(--bestier-color-indigo);
+  color: var(--bestier-color-white);
+}
+
+body.bestier-site .bestier-section--indigo :where(h2, h3) {
+  color: var(--bestier-color-white);
+}
+
+body.bestier-site .bestier-section--indigo .bestier-lead {
+  color: rgb(255 255 255 / 78%);
+}
+
+body.bestier-site .bestier-section--indigo .bestier-eyebrow {
+  color: #e5c98f;
+}
+
+body.bestier-site .bestier-section-intro {
+  color: var(--bestier-color-muted);
+}
+
+body.bestier-site .bestier-section--indigo .bestier-section-intro {
+  color: rgb(255 255 255 / 78%);
+}
+
+body.bestier-site .bestier-list-clean {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.bestier-site .bestier-list-clean > li + li {
+  margin-top: var(--bestier-space-2);
+}
+
+body.bestier-site .bestier-divider {
+  height: 1px;
+  border: 0;
+  background: var(--bestier-color-border);
+}
+
+@media (max-width: 640px) {
+  body.bestier-site .bestier-shell {
+    width: min(100% - 2rem, var(--bestier-content-width));
+  }
+
+  body.bestier-site .bestier-section-heading {
+    margin-bottom: var(--bestier-space-8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

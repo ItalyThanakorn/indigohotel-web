@@ -1,0 +1,27 @@
+:root {
+  color-scheme: light;
+  --bestier-color-indigo: #252b42;
+  --bestier-color-indigo-soft: #3a4260;
+  --bestier-color-gold: #b39156;
+  --bestier-color-gold-text: #71531d;
+  --bestier-color-ivory: #f6f3ed;
+  --bestier-color-surface: #fffefa;
+  --bestier-color-text: #262934;
+  --bestier-color-muted: #666872;
+  --bestier-color-border: #e5e0d6;
+  --bestier-color-white: #fff;
+  --bestier-color-focus: #1769aa;
+  --bestier-font-sans: "Leelawadee UI", "Noto Sans Thai", Tahoma, Arial, sans-serif;
+  --bestier-content-width: 1200px;
+  --bestier-space-1: 0.25rem;
+  --bestier-space-2: 0.5rem;
+  --bestier-space-3: 0.75rem;
+  --bestier-space-4: 1rem;
+  --bestier-space-6: 1.5rem;
+  --bestier-space-8: 2rem;
+  --bestier-space-12: 3rem;
+  --bestier-space-16: 4rem;
+  --bestier-radius-sm: 0.375rem;
+  --bestier-radius-md: 0.75rem;
+  --bestier-shadow-soft: 0 1.25rem 3.5rem rgb(30 35 52 / 12%);
+}
