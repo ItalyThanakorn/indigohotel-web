@@ -2168,3 +2168,50 @@ footer > span:nth-child(2) {
   grid-row: 2;
   line-height: 1.3;
 }
+
+/* เพิ่มขนาดข้อความรองในการ์ดบ้านพักให้อ่านง่ายขึ้น */
+.villa-type {
+  color: #5d7b78;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.villa-price small {
+  color: #5c7472;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+}
+
+.villa-specs {
+  font-size: 12px;
+}
+
+.villa-description {
+  min-height: 70px;
+  color: #526c6a;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.details-link {
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .villa-specs {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 620px) {
+  .villa-specs {
+    font-size: 12px;
+  }
+}
+
+/* ใช้ฟอนต์เดียวกับข้อความรายละเอียดในการ์ดบ้านพัก */
+.villa-type,
+.villa-price small {
+  font-family: var(--thai);
+  font-weight: 300;
+}
