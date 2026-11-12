@@ -69,24 +69,35 @@ img {
 }
 
 .brand {
+    display: block;
+    flex: 0 0 auto;
+    width: 132px;
+}
+
+.brand img {
+    height: auto;
+    width: 100%;
+}
+
+.site-header .brand {
     display: inline-flex;
     flex-direction: column;
     line-height: 1;
     min-width: 154px;
 }
 
-.brand-name {
+.site-header .brand-name {
     font-family: var(--serif);
     font-size: 28px;
     letter-spacing: 1.8px;
     white-space: nowrap;
 }
 
-.brand-name > span {
+.site-header .brand-name > span {
     color: var(--gold);
 }
 
-.brand-caption {
+.site-header .brand-caption {
     font-size: 8px;
     letter-spacing: 3.2px;
     margin: 5px 0 0 4px;
@@ -175,9 +186,10 @@ img {
     padding: 0 17px;
 }
 
-.calendar-icon {
-    font-size: 17px;
-    line-height: 1;
+.nav-booking svg {
+    flex: 0 0 auto;
+    height: 15px;
+    width: 15px;
 }
 
 .menu-toggle {
@@ -901,16 +913,8 @@ img {
 }
 
 .footer-brand {
-    align-items: center;
-}
-
-.footer-brand .brand-name {
-    font-size: 22px;
-}
-
-.footer-brand .brand-caption {
-    font-size: 7px;
-    margin-left: 0;
+    margin: 0 auto;
+    width: 108px;
 }
 
 .site-footer > p {
@@ -993,15 +997,15 @@ img {
         padding: 0 6%;
     }
 
-    .brand {
+    .site-header .brand {
         min-width: 0;
     }
 
-    .brand-name {
+    .site-header .brand-name {
         font-size: 24px;
     }
 
-    .brand-caption {
+    .site-header .brand-caption {
         font-size: 7px;
     }
 
