@@ -1,0 +1,66 @@
+/* Shared design values for Bestier only; edit here to adjust the whole site. */
+.bestier-site {
+  color-scheme: light;
+  --bestier-indigo-950: #242543;
+  --bestier-indigo-800: #37395f;
+  --bestier-indigo-700: #4a4b75;
+  --bestier-gold-700: #8a682f;
+  --bestier-gold-500: #c5a45e;
+  --bestier-gold-300: #e0cc98;
+  --bestier-ivory-50: #fbf9f4;
+  --bestier-ivory-100: #f2eee5;
+  --bestier-white: #ffffff;
+  --bestier-ink: #25242a;
+  --bestier-muted: #615f68;
+  --bestier-border: #ddd7ca;
+  --bestier-success: #28664b;
+  --bestier-danger: #923b35;
+
+  /* Typography: Noto Serif (with Thai glyphs) for headings, Kanit for body copy. */
+  --bestier-font-heading: "Noto Serif", "Noto Serif Thai", Georgia, serif;
+  --bestier-font-body: "Kanit", system-ui, "Leelawadee UI", Tahoma, sans-serif;
+
+  /* Change this one value to scale every Bestier text role together. */
+  --bestier-base-font-size: 1rem;
+  --bestier-text-display: clamp(2.75em, calc(4vw + 1.25em), 4.5em);
+  --bestier-text-h1: clamp(2.25em, calc(2.5vw + 1.1em), 3.5em);
+  --bestier-text-h2: clamp(1.75em, calc(1.5vw + 0.8em), 2.5em);
+  --bestier-text-h3: clamp(1.25em, calc(0.8vw + 0.8em), 1.5em);
+  --bestier-text-lead: clamp(1.05em, calc(0.5vw + 1em), 1.2em);
+  --bestier-text-body: var(--bestier-base-font-size);
+  --bestier-text-small: 0.875em;
+  --bestier-text-xs: 0.8em;
+  --bestier-text-nav: 0.95em;
+  --bestier-text-button: 0.9em;
+  --bestier-text-contact: 0.92em;
+  --bestier-text-footer-title: 1.05em;
+  --bestier-text-mobile-nav: 0.85em;
+  --bestier-line-body: 1.7;
+  --bestier-line-heading: 1.2;
+  --bestier-weight-regular: 400;
+  --bestier-weight-semibold: 600;
+  --bestier-weight-bold: 700;
+
+  --bestier-space-1: 0.25rem;
+  --bestier-space-2: 0.5rem;
+  --bestier-space-3: 0.75rem;
+  --bestier-space-4: 1rem;
+  --bestier-space-6: 1.5rem;
+  --bestier-space-8: 2rem;
+  --bestier-space-12: 3rem;
+  --bestier-space-16: 4rem;
+  --bestier-space-20: 5rem;
+  --bestier-space-28: 7rem;
+
+  --bestier-radius-sm: 0.5rem;
+  --bestier-radius-card: 1rem;
+  --bestier-radius-panel: 1.5rem;
+  --bestier-radius-pill: 999px;
+  --bestier-shadow-card: 0 0.5rem 1.75rem rgb(36 37 67 / 8%);
+  --bestier-shadow-dialog: 0 1.5rem 4rem rgb(15 16 35 / 28%);
+
+  --bestier-content-width: 76rem;
+  --bestier-reading-width: 48rem;
+  --bestier-page-gutter: clamp(1.25rem, 4vw, 3rem);
+  --bestier-focus-ring: 0 0 0 3px var(--bestier-gold-500);
+}
