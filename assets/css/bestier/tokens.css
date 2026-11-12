@@ -41,6 +41,11 @@
   --bestier-weight-semibold: 600;
   --bestier-weight-bold: 700;
 
+  --bestier-content-width: 76rem;
+  --bestier-reading-width: 48rem;
+  --bestier-page-gutter: clamp(1.25rem, 4vw, 3rem);
+  --bestier-focus-ring: 0 0 0 3px var(--bestier-gold-500);
+}
   --bestier-space-1: 0.25rem;
   --bestier-space-2: 0.5rem;
   --bestier-space-3: 0.75rem;
@@ -53,11 +58,13 @@
   --bestier-space-28: 7rem;
 
   --bestier-radius-sm: 0.5rem;
+  --bestier-radius-md: 0.75rem;
   --bestier-radius-card: 1rem;
   --bestier-radius-panel: 1.5rem;
   --bestier-radius-pill: 999px;
   --bestier-shadow-card: 0 0.5rem 1.75rem rgb(36 37 67 / 8%);
   --bestier-shadow-dialog: 0 1.5rem 4rem rgb(15 16 35 / 28%);
+  --bestier-shadow-soft: 0 1.25rem 3.5rem rgb(30 35 52 / 12%);
 
   --bestier-content-width: 76rem;
   --bestier-reading-width: 48rem;
