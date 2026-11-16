@@ -276,6 +276,21 @@ button { font: inherit; }
 .home-stats > div { display: grid; min-width: 100px; padding: 12px 18px; border-right: 1px solid rgba(255,255,255,.2); }
 .home-stats strong { font-family: "DM Sans", sans-serif; font-size: calc(24px * var(--font-scale)); font-weight: 500; line-height: 1.2; }
 .home-stats span { font-size: calc(12px * var(--font-scale)); }
+.home-benefits { background: var(--sand); }
+.home-benefit-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 22px 0; margin: 0; list-style: none; }
+.home-benefit-list li { display: flex; flex-direction: column; gap: 4px; padding: 10px 24px; border-right: 1px solid var(--line); }
+.home-benefit-list li:first-child { padding-left: 0; }
+.home-benefit-list li:last-child { padding-right: 0; border-right: 0; }
+.home-benefit-list span { color: var(--muted); font-size: calc(13px * var(--font-scale)); }
+.home-benefit-list strong { color: var(--forest); font-size: calc(15px * var(--font-scale)); font-weight: 500; line-height: 1.6; }
+.home-rooms { padding-top: 85px; padding-bottom: 90px; }
+.home-rooms .section-heading { margin-bottom: 26px; }
+.home-room-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.home-room-grid .room-entry:last-child:nth-child(odd) { grid-column: auto; width: auto; justify-self: stretch; }
+.home-room-grid .room-entry-image { height: 240px; }
+.home-room-grid .room-entry-copy { padding: 18px 20px 20px; }
+.home-room-notice { margin: 20px 0 0; color: var(--muted); font-size: calc(13px * var(--font-scale)); text-align: center; }
+.home-rooms-link { display: flex; width: max-content; max-width: 100%; margin: 24px auto 0; }
 .home-feature { display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; background: var(--forest); }
 .home-feature-image { min-height: 440px; }
 .home-feature-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -346,6 +361,11 @@ button { font: inherit; }
 .policy-card p { margin: 0 0 12px; }
 .policy-card p:last-child { margin-bottom: 0; }
 .policy-card ul { display: grid; gap: 8px; padding-left: 18px; margin: 0; }
+.policy-card-static { padding: 20px; }
+.policy-card-static h3 { margin: 0 0 13px; color: var(--forest); font-size: calc(16px * var(--font-scale)); font-weight: 500; line-height: 1.55; }
+.policy-card-static p { margin: 0 0 12px; color: var(--muted); font-size: calc(14px * var(--font-scale)); line-height: 1.8; }
+.policy-card-static p:last-child { margin-bottom: 0; }
+.policy-card-static .policy-card-emphasis { padding: 10px 12px; color: var(--forest); background: var(--sage); font-weight: 600; }
 .rooms-list .section-heading { margin-bottom: 30px; }
 .room-entry { overflow: hidden; color: inherit; text-decoration: none; transition: box-shadow .25s ease; }
 .room-entry:hover { box-shadow: 0 8px 26px rgba(24,60,54,.08); }
@@ -404,6 +424,7 @@ button { font: inherit; }
   .room-detail-hero-image { height: min(76vw, 390px); }
   .room-detail-information h1 { font-size: calc(30px * var(--font-scale)); }
   .room-not-found { min-height: 50vh; padding-top: 70px; padding-bottom: 70px; }
+  .policy-card-static { padding: 18px; }
 }
 
 @media (max-width: 980px) {
@@ -423,6 +444,16 @@ button { font: inherit; }
   .site-nav .language-switch { align-self: flex-start; margin-top: 10px; }
   .home-intro { grid-template-columns: 1fr; gap: 28px; padding-top: 72px; padding-bottom: 72px; }
   .home-intro-image, .home-intro-image > img { min-height: 300px; height: 300px; }
+  .home-benefit-list { grid-template-columns: 1fr; padding: 10px 0; }
+  .home-benefit-list li, .home-benefit-list li:first-child, .home-benefit-list li:last-child { padding: 13px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .home-benefit-list li:last-child { border-bottom: 0; }
+  .home-rooms { padding-top: 65px; padding-bottom: 70px; }
+  .home-rooms .section-heading { flex-direction: column; gap: 10px; }
+  .home-room-grid { grid-template-columns: 1fr; gap: 18px; }
+  .home-room-grid .room-entry-image { height: min(60vw, 280px); }
+  .home-room-grid .room-entry-copy { padding: 18px; }
+  .home-room-notice { text-align: left; }
+  .home-rooms-link { width: 100%; }
   .home-feature { grid-template-columns: 1fr; }
   .home-feature-image { min-height: 280px; height: 280px; }
   .home-feature-copy { padding: 38px 7%; }
@@ -478,4 +509,6 @@ button { font: inherit; }
   /* Tablet-specific desktop navigation adjustments. */
   .site-nav > a { font-size: calc(12px * var(--font-scale)); }
   .language-switch button { font-size: calc(12px * var(--font-scale)); }
+  .home-room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-room-grid .room-entry:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 11px); justify-self: center; }
 }

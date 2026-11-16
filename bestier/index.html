@@ -52,6 +52,17 @@
       </div>
     </section>
 
+    <!-- A quick summary of verified hotel services. -->
+    <section class="home-benefits" aria-label="จุดเด่นของ Bestier" data-i18n-aria-label="home.benefits.label">
+      <div class="section-wrap">
+        <ul class="home-benefit-list">
+          <li><span data-i18n="home.benefit.frontDesk.label">เคาน์เตอร์ต้อนรับ</span><strong data-i18n="home.benefit.frontDesk.detail">เปิดตลอด 24 ชั่วโมง</strong></li>
+          <li><span data-i18n="home.benefit.parking.label">ที่จอดรถ</span><strong data-i18n="home.benefit.parking.detail">มีทั้งในและนอกอาคาร</strong></li>
+          <li><span data-i18n="home.benefit.tukTuk.label">รถตุ๊กตุ๊กฟรี</span><strong data-i18n="home.benefit.tukTuk.detail">ในระยะ 1 กม. ทุกวัน 09:00–19:00 น.</strong></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Welcome message and quick hotel facts. -->
     <section class="home-intro section-wrap">
       <div class="home-intro-copy">
@@ -67,6 +78,45 @@
           <div><strong>5</strong><span data-i18n="home.stats.types">ประเภทห้อง</span></div>
         </div>
       </div>
+    </section>
+
+    <!-- A small room preview connects the home page to the complete room catalog. -->
+    <section class="home-rooms section-wrap" aria-labelledby="home-rooms-title">
+      <div class="section-heading">
+        <div><p class="eyebrow eyebrow-dark" data-i18n="home.rooms.eyebrow">ห้องพัก Bestier</p><h2 id="home-rooms-title" data-i18n="home.rooms.title">เลือกห้องที่เหมาะกับทริป</h2></div>
+        <p class="section-intro" data-i18n="home.rooms.copy">ดูราคา รูปแบบเตียง และจุดเด่นของแต่ละห้อง</p>
+      </div>
+      <div class="home-room-grid">
+        <a class="room-entry" href="rooms-detail.html?room=superior-king">
+          <div class="room-entry-image"><img src="../assets/images/bestier/superiorking.jpg" alt="ห้องซูพีเรีย คิง พร้อมเตียงขนาด 6 ฟุต" data-i18n-alt="rooms.king.alt" loading="lazy"></div>
+          <div class="room-entry-copy">
+            <div class="room-entry-heading"><span class="room-name" data-i18n="rooms.king.name">ซูพีเรีย คิง</span></div>
+            <span class="room-entry-price"><strong data-room-card-price="superior-king"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span>
+            <span class="room-summary-beds" data-i18n="rooms.king.beds">เตียง 1 เตียง ขนาด 6 ฟุต</span>
+            <span class="room-open-row" data-i18n="home.rooms.open">ดูรายละเอียดห้อง</span>
+          </div>
+        </a>
+        <a class="room-entry" href="rooms-detail.html?room=triple">
+          <div class="room-entry-image"><img src="../assets/images/bestier/triple.jpg" alt="ห้องทริปเปิล สำหรับผู้เข้าพัก 3 ท่าน" data-i18n-alt="rooms.triple.alt" loading="lazy"></div>
+          <div class="room-entry-copy">
+            <div class="room-entry-heading"><span class="room-name" data-i18n="rooms.triple.name">ทริปเปิล รูม</span><span class="room-feature-badge room-card-feature" data-room-card-badge data-i18n="roomDetail.dysonBadge" hidden>ไดร์ Dyson</span></div>
+            <span class="room-entry-price"><strong data-room-card-price="triple"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span>
+            <span class="room-summary-beds" data-i18n="rooms.triple.beds">เตียง 6 ฟุต 1 เตียง และเตียง 3.5 ฟุต 1 เตียง</span>
+            <span class="room-open-row" data-i18n="home.rooms.open">ดูรายละเอียดห้อง</span>
+          </div>
+        </a>
+        <a class="room-entry" href="rooms-detail.html?room=deluxe">
+          <div class="room-entry-image"><img src="../assets/images/bestier/deluxe.jpg" alt="ห้องดีลักซ์ พร้อมเตียงขนาด 6 ฟุต" data-i18n-alt="rooms.deluxe.alt" loading="lazy"></div>
+          <div class="room-entry-copy">
+            <div class="room-entry-heading"><span class="room-name" data-i18n="rooms.deluxe.name">ดีลักซ์ รูม</span><span class="room-feature-badge room-card-feature" data-room-card-badge data-i18n="roomDetail.dysonBadge" hidden>ไดร์ Dyson</span></div>
+            <span class="room-entry-price"><strong data-room-card-price="deluxe"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span>
+            <span class="room-summary-beds" data-i18n="rooms.deluxe.beds">เตียง 1 เตียง ขนาด 6 ฟุต</span>
+            <span class="room-open-row" data-i18n="home.rooms.open">ดูรายละเอียดห้อง</span>
+          </div>
+        </a>
+      </div>
+      <p class="home-room-notice" data-i18n="home.rooms.notice">ราคาต่อคืนอาจเปลี่ยนตามวันเข้าพัก โปรดติดต่อเพื่อยืนยัน</p>
+      <a class="button button-dark home-rooms-link" href="rooms.html#room-catalog" data-i18n="home.rooms.all">ดูห้องพักและราคาทั้งหมด</a>
     </section>
 
     <!-- Highlight the hotel's shared lounge and guest experience. -->
