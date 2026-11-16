@@ -116,7 +116,7 @@ const messages = {
     "facilities.description": "สิ่งอำนวยความสะดวกภายในห้องพัก Bestier บริการต้อนรับ ที่จอดรถ และรถตุ๊กตุ๊กฟรีในระยะ 1 กิโลเมตร",
     "facilities.hero.alt": "พื้นที่ส่วนกลางของ Bestier",
     "facilities.hero.eyebrow": "บริการและสิ่งอำนวยความสะดวก",
-    "facilities.hero.title": "สิ่งที่จำเป็น พร้อมให้คุณ",
+    "facilities.hero.title": "สิ่งจำเป็นที่เราพร้อมให้คุณ",
     "facilities.hero.description": "บริการและของใช้ที่ช่วยให้เข้าพักได้สะดวก ตั้งแต่มาถึงจนถึงเวลาออกเดินทาง",
     "facilities.section.eyebrow": "พร้อมดูแลตลอดการเข้าพัก",
     "facilities.section.title": "สะดวกสบายตลอดการเข้าพัก",
