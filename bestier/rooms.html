@@ -3,99 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#242543">
-  <meta name="description" content="ดูห้องพัก Superior Twin, Superior King, Business, Triple และ Deluxe ที่ Bestier Hotel หาดใหญ่" data-description-th="ดูห้องพัก Superior Twin, Superior King, Business, Triple และ Deluxe ที่ Bestier Hotel หาดใหญ่" data-description-en="Explore Superior Twin, Superior King, Business, Triple and Deluxe rooms at Bestier Hotel in Hat Yai.">
-  <title data-title-th="ห้องพัก | เบสเทียร์ หาดใหญ่" data-title-en="Rooms | Bestier Hotel Hat Yai">ห้องพัก | เบสเทียร์ หาดใหญ่</title>
-  <link rel="icon" href="../assets/images/bestier/bestier-mark.png" type="image/png">
-  <!-- Local font files load first; tokens and components then define the Bestier design. -->
-  <link rel="stylesheet" href="../assets/css/bestier/fonts.css">
-  <link rel="stylesheet" href="../assets/css/bestier/tokens.css">
-  <link rel="stylesheet" href="../assets/css/bestier/site.css">
-  <script src="../assets/js/bestier/language.js" defer></script>
-  <script src="../assets/js/bestier/interactions.js" defer></script>
+  <meta name="theme-color" content="#183c36">
+  <meta name="description" content="ดูห้องพัก Bestier ทั้ง 5 ประเภท จำนวนห้อง จำนวนผู้เข้าพัก และรูปแบบเตียง">
+  <title>ห้องพัก | Bestier</title>
+  <link rel="icon" type="image/png" href="../assets/images/bestier/bestier-mark.png">
+  <!-- Page fonts, shared styles, and translations. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Taviraj:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/bestier.css">
+  <script src="../assets/js/bestier.js" defer></script>
 </head>
-<body class="bestier-site bestier-type-body" id="top" data-page="rooms">
-  <a class="bestier-skip-link" href="#main"><span data-i18n-th="ข้ามไปยังเนื้อหาหลัก" data-i18n-en="Skip to main content">ข้ามไปยังเนื้อหาหลัก</span></a>
-  <!-- Shared header: brand, page navigation, language control and contact shortcut. -->
-  <header class="bestier-header"><div class="bestier-container bestier-header__inner">
-    <a class="bestier-logo" href="index.html" data-aria-th="หน้าแรก" data-aria-en="Bestier home" aria-label="หน้าแรก"><img src="../assets/images/bestier/bestier-logo-lockup.png" alt="เบสเทียร์ บาย อินดิโก้ หาดใหญ่" data-alt-th="เบสเทียร์ บาย อินดิโก้ หาดใหญ่" data-alt-en="Bestier by Indigo Hatyai Hotel" width="802" height="230"></a>
-    <nav class="bestier-desktop-nav" data-aria-th="เมนูหลัก" data-aria-en="Main navigation" aria-label="เมนูหลัก"><a href="index.html"><span data-i18n-th="หน้าแรก" data-i18n-en="Home">หน้าแรก</span></a><a href="rooms.html" aria-current="page"><span data-i18n-th="ห้องพัก" data-i18n-en="Rooms">ห้องพัก</span></a><a href="facilities.html"><span data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</span></a><a href="location.html"><span data-i18n-th="ที่ตั้งและข้อมูล" data-i18n-en="Location & Info">ที่ตั้งและข้อมูล</span></a></nav>
-    <div class="bestier-header__actions"><div class="bestier-language-switch" role="group" data-aria-th="เลือกภาษา" data-aria-en="Choose language" aria-label="เลือกภาษา"><button type="button" data-language-choice="th" aria-pressed="true">TH</button><button type="button" data-language-choice="en" aria-pressed="false">EN</button></div><a class="bestier-button bestier-button--accent bestier-header__contact" href="location.html#contact"><span data-i18n-th="ติดต่อโรงแรม" data-i18n-en="Contact">ติดต่อโรงแรม</span></a></div>
-    <details class="bestier-mobile-nav"><summary><span class="bestier-menu-icon" aria-hidden="true"></span><span class="bestier-visually-hidden" data-i18n-th="เปิดเมนู" data-i18n-en="Open menu">เปิดเมนู</span></summary><nav class="bestier-mobile-nav__panel bestier-mobile-nav__links" data-aria-th="เมนูมือถือ" data-aria-en="Mobile navigation" aria-label="เมนูมือถือ"><a href="index.html"><span data-i18n-th="หน้าแรก" data-i18n-en="Home">หน้าแรก</span></a><a href="rooms.html" aria-current="page"><span data-i18n-th="ห้องพัก" data-i18n-en="Rooms">ห้องพัก</span></a><a href="facilities.html"><span data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</span></a><a href="location.html"><span data-i18n-th="ที่ตั้งและข้อมูล" data-i18n-en="Location & Info">ที่ตั้งและข้อมูล</span></a><a href="location.html#contact"><span data-i18n-th="ช่องทางติดต่อ" data-i18n-en="Contact details">ช่องทางติดต่อ</span></a></nav></details>
-  </div></header>
+<body data-page="rooms">
+  <a class="skip-link" href="#main" data-i18n="common.skip">ข้ามไปยังเนื้อหา</a>
+  <!-- Shared header and bilingual main navigation. -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Bestier" data-i18n-aria-label="common.brand"><img src="../assets/images/bestier/bestier-logo-lockup.png" alt="Bestier by Indigo Hatyai"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="เมนู" data-i18n-aria-label="common.menu"><span class="menu-toggle-label" data-i18n="common.menu">เมนู</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="เมนูหลัก" data-i18n-aria-label="common.navigation">
+      <a href="index.html" data-i18n="common.home">หน้าแรก</a><a class="current" href="rooms.html" aria-current="page" data-i18n="common.rooms">ห้องพัก</a><a href="facilities.html" data-i18n="common.facilities">บริการและสิ่งอำนวยความสะดวก</a><a href="contact.html" data-i18n="common.contact">ติดต่อเรา</a>
+      <div class="language-switch" role="group" aria-label="เลือกภาษา" data-i18n-aria-label="common.language"><button type="button" data-language="th" aria-pressed="true">ไทย</button><button type="button" data-language="en" aria-pressed="false">EN</button></div>
+    </nav>
+  </header>
 
-  <!-- Main content: page-specific information is grouped into labeled sections below. -->
   <main id="main">
-    <!-- Rooms page introduction explains the room categories. -->
-    <section class="bestier-page-intro bestier-page-intro--rooms"><div class="bestier-container bestier-page-intro__inner"><p class="bestier-eyebrow bestier-type-label" data-i18n-th="ที่พัก" data-i18n-en="Accommodation">ที่พัก</p><h1 class="bestier-page-title bestier-type-page-title" data-i18n-th="ห้องพักของเบสเทียร์" data-i18n-en="Rooms at Bestier">ห้องพักของเบสเทียร์</h1><p class="bestier-lead bestier-type-lead" data-i18n-th="เลือกจากห้องพัก 5 ประเภท พร้อมรายละเอียดจำนวนผู้เข้าพักและการจัดเตียง" data-i18n-en="Explore five room types with guest capacity and bed arrangements.">เลือกจากห้องพัก 5 ประเภท พร้อมรายละเอียดจำนวนผู้เข้าพักและการจัดเตียง</p></div></section>
-    <!-- Category links jump to the matching room detail. -->
-    <section class="bestier-container" data-aria-th="ประเภทห้องพัก" data-aria-en="Room categories" aria-label="ประเภทห้องพัก">
-      <nav class="bestier-category-nav" aria-label="เมนูประเภทห้อง / Room type navigation"><a class="bestier-chip" href="#superior-twin">Superior Twin</a><a class="bestier-chip" href="#superior-king">Superior King</a><a class="bestier-chip" href="#business">Business</a><a class="bestier-chip" href="#triple">Triple</a><a class="bestier-chip" href="#deluxe">Deluxe</a></nav>
-      <div class="bestier-room-list">
-        <article class="bestier-room-detail" id="superior-twin">
-          <div class="bestier-gallery" data-gallery data-aria-th="แกลเลอรีห้อง Superior Twin" data-aria-en="Superior Twin gallery" aria-label="แกลเลอรีห้อง Superior Twin">
-            <a class="bestier-gallery__item" href="../assets/images/bestier/superiortwin.jpg" data-gallery-item><img src="../assets/images/bestier/superiortwin.jpg" alt="ภาพห้อง Superior Twin" data-alt-th="ภาพห้อง Superior Twin" data-alt-en="Superior Twin room photograph" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/superiortwin2.jpg" data-gallery-item><img src="../assets/images/bestier/superiortwin2.jpg" alt="อีกมุมของห้อง Superior Twin" data-alt-th="อีกมุมของห้อง Superior Twin" data-alt-en="Another view of the Superior Twin room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/superiortwin3.jpg" data-gallery-item><img src="../assets/images/bestier/superiortwin3.jpg" alt="รายละเอียดห้อง Superior Twin" data-alt-th="รายละเอียดห้อง Superior Twin" data-alt-en="Superior Twin room detail" width="1920" height="1280" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="bestier-room-detail__content"><p class="bestier-eyebrow bestier-type-label">01</p><h2 class="bestier-section-title bestier-type-section-title">Superior Twin</h2><p class="bestier-room-card__facts"><span data-i18n-th="รองรับ 2 ท่าน" data-i18n-en="For 2 guests">รองรับ 2 ท่าน</span></p><p data-i18n-th="เตียงเดี่ยว 2 เตียง ขนาด 3.5 ฟุต" data-i18n-en="Two 3.5-foot single beds.">เตียงเดี่ยว 2 เตียง ขนาด 3.5 ฟุต</p><a class="bestier-button" href="location.html#contact"><span data-i18n-th="สอบถามห้องพัก" data-i18n-en="Ask about this room">สอบถามห้องพัก</span></a></div>
-        </article>
+    <!-- Room-page introduction and featured image. -->
+    <section class="page-hero rooms-hero">
+      <img class="page-hero-image" src="../assets/images/bestier/superiorking.jpg" alt="ห้องพักของโรงแรม Bestier" data-i18n-alt="rooms.hero.alt">
+      <div class="hero-shade"></div>
+      <div class="page-hero-copy"><p class="eyebrow" data-i18n="rooms.hero.eyebrow">ROOMS AT BESTIER</p><h1 data-i18n="rooms.hero.title">ห้องพักสำหรับทุกการเดินทาง</h1><p data-i18n="rooms.hero.description">เลือกห้องที่เหมาะกับจำนวนผู้เข้าพักและรูปแบบเตียงที่ต้องการ</p></div>
+    </section>
 
-        <article class="bestier-room-detail" id="superior-king">
-          <div class="bestier-gallery" data-gallery data-aria-th="แกลเลอรีห้อง Superior King" data-aria-en="Superior King gallery" aria-label="แกลเลอรีห้อง Superior King">
-            <a class="bestier-gallery__item" href="../assets/images/bestier/superiorking.jpg" data-gallery-item><img src="../assets/images/bestier/superiorking.jpg" alt="ภาพห้อง Superior King" data-alt-th="ภาพห้อง Superior King" data-alt-en="Superior King room photograph" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/superiorking2.jpg" data-gallery-item><img src="../assets/images/bestier/superiorking2.jpg" alt="อีกมุมของห้อง Superior King" data-alt-th="อีกมุมของห้อง Superior King" data-alt-en="Another view of the Superior King room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/superiorking3.jpg" data-gallery-item><img src="../assets/images/bestier/superiorking3.jpg" alt="รายละเอียดห้อง Superior King" data-alt-th="รายละเอียดห้อง Superior King" data-alt-en="Superior King room detail" width="1920" height="1280" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="bestier-room-detail__content"><p class="bestier-eyebrow bestier-type-label">02</p><h2 class="bestier-section-title bestier-type-section-title">Superior King</h2><p class="bestier-room-card__facts"><span data-i18n-th="รองรับ 2 ท่าน" data-i18n-en="For 2 guests">รองรับ 2 ท่าน</span></p><p data-i18n-th="เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต" data-i18n-en="One 6-foot bed.">เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต</p><a class="bestier-button" href="location.html#contact"><span data-i18n-th="สอบถามห้องพัก" data-i18n-en="Ask about this room">สอบถามห้องพัก</span></a></div>
-        </article>
-
-        <article class="bestier-room-detail" id="business">
-          <div class="bestier-gallery" data-gallery data-aria-th="แกลเลอรีห้อง Business" data-aria-en="Business room gallery" aria-label="แกลเลอรีห้อง Business">
-            <a class="bestier-gallery__item" href="../assets/images/bestier/business.jpg" data-gallery-item><img src="../assets/images/bestier/business.jpg" alt="ภาพห้อง Business" data-alt-th="ภาพห้อง Business" data-alt-en="Business room photograph" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/business2.jpg" data-gallery-item><img src="../assets/images/bestier/business2.jpg" alt="อีกมุมของห้อง Business" data-alt-th="อีกมุมของห้อง Business" data-alt-en="Another view of the Business room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/business3.jpg" data-gallery-item><img src="../assets/images/bestier/business3.jpg" alt="รายละเอียดห้อง Business" data-alt-th="รายละเอียดห้อง Business" data-alt-en="Business room detail" width="1920" height="1280" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="bestier-room-detail__content"><p class="bestier-eyebrow bestier-type-label">03</p><h2 class="bestier-section-title bestier-type-section-title">Business Room</h2><p class="bestier-room-card__facts"><span data-i18n-th="รองรับ 2 ท่าน" data-i18n-en="For 2 guests">รองรับ 2 ท่าน</span></p><p data-i18n-th="เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต" data-i18n-en="One 6-foot bed.">เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต</p><p data-i18n-th="มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson" data-i18n-en="Includes a complimentary capsule coffee set and Dyson hair dryer.">มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson</p><a class="bestier-button" href="location.html#contact"><span data-i18n-th="สอบถามห้องพัก" data-i18n-en="Ask about this room">สอบถามห้องพัก</span></a></div>
-        </article>
-
-        <article class="bestier-room-detail" id="triple">
-          <div class="bestier-gallery" data-gallery data-aria-th="แกลเลอรีห้อง Triple" data-aria-en="Triple room gallery" aria-label="แกลเลอรีห้อง Triple">
-            <a class="bestier-gallery__item" href="../assets/images/bestier/triple.jpg" data-gallery-item><img src="../assets/images/bestier/triple.jpg" alt="ภาพห้อง Triple" data-alt-th="ภาพห้อง Triple" data-alt-en="Triple room photograph" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/triple2.jpg" data-gallery-item><img src="../assets/images/bestier/triple2.jpg" alt="อีกมุมของห้อง Triple" data-alt-th="อีกมุมของห้อง Triple" data-alt-en="Another view of the Triple room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="bestier-room-detail__content"><p class="bestier-eyebrow bestier-type-label">04</p><h2 class="bestier-section-title bestier-type-section-title">Triple Room</h2><p class="bestier-room-card__facts"><span data-i18n-th="รองรับ 3 ท่าน" data-i18n-en="For 3 guests">รองรับ 3 ท่าน</span></p><p data-i18n-th="เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต และเตียงเดี่ยว 1 เตียง ขนาด 3.5 ฟุต" data-i18n-en="One 6-foot bed and one 3.5-foot single bed.">เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต และเตียงเดี่ยว 1 เตียง ขนาด 3.5 ฟุต</p><p data-i18n-th="มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson" data-i18n-en="Includes a complimentary capsule coffee set and Dyson hair dryer.">มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson</p><a class="bestier-button" href="location.html#contact"><span data-i18n-th="สอบถามห้องพัก" data-i18n-en="Ask about this room">สอบถามห้องพัก</span></a></div>
-        </article>
-
-        <article class="bestier-room-detail" id="deluxe">
-          <div class="bestier-gallery" data-gallery data-aria-th="แกลเลอรีห้อง Deluxe" data-aria-en="Deluxe room gallery" aria-label="แกลเลอรีห้อง Deluxe">
-            <a class="bestier-gallery__item" href="../assets/images/bestier/deluxe.jpg" data-gallery-item><img src="../assets/images/bestier/deluxe.jpg" alt="ภาพห้อง Deluxe" data-alt-th="ภาพห้อง Deluxe" data-alt-en="Deluxe room photograph" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/deluxe2.jpg" data-gallery-item><img src="../assets/images/bestier/deluxe2.jpg" alt="อีกมุมของห้อง Deluxe" data-alt-th="อีกมุมของห้อง Deluxe" data-alt-en="Another view of the Deluxe room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <a class="bestier-gallery__item" href="../assets/images/bestier/deluxe3.jpg" data-gallery-item><img src="../assets/images/bestier/deluxe3.jpg" alt="รายละเอียดห้อง Deluxe" data-alt-th="รายละเอียดห้อง Deluxe" data-alt-en="Deluxe room detail" width="1920" height="1280" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="bestier-room-detail__content"><p class="bestier-eyebrow bestier-type-label">05</p><h2 class="bestier-section-title bestier-type-section-title">Deluxe Room</h2><p class="bestier-room-card__facts"><span data-i18n-th="รองรับ 2 ท่าน" data-i18n-en="For 2 guests">รองรับ 2 ท่าน</span></p><p data-i18n-th="เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต" data-i18n-en="One 6-foot bed.">เตียงเดี่ยว 1 เตียง ขนาด 6 ฟุต</p><p data-i18n-th="มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson" data-i18n-en="Includes a complimentary capsule coffee set and Dyson hair dryer.">มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson</p><a class="bestier-button" href="location.html#contact"><span data-i18n-th="สอบถามห้องพัก" data-i18n-en="Ask about this room">สอบถามห้องพัก</span></a></div>
-        </article>
+    <!-- Room cards are sorted from highest to lowest nightly rate. -->
+    <section class="section-wrap rooms-list" id="room-catalog">
+      <div class="section-heading">
+        <div><p class="eyebrow eyebrow-dark" data-i18n="rooms.list.eyebrow">FIND YOUR ROOM</p><h2 data-i18n="rooms.list.title">ห้องพักทั้ง 5 ประเภท</h2></div>
+        <p class="section-intro" data-i18n="rooms.list.copy">ดูจำนวนห้อง จำนวนผู้เข้าพัก และรูปแบบเตียง เพื่อเลือกห้องให้เหมาะกับทริปของคุณ</p>
+      </div>
+      <p class="room-rate-notice" data-i18n="rooms.rate.notice">ราคาต่อคืนเป็นราคาเริ่มต้นตัวอย่าง อาจเปลี่ยนตามวันเข้าพัก โปรดสอบถามโรงแรมก่อนจอง</p>
+      <div class="room-catalog">
+        <a class="room-entry" href="rooms-detail.html?room=deluxe">
+          <div class="room-entry-image"><img src="../assets/images/bestier/deluxe.jpg" alt="ห้อง Deluxe Room พร้อมเตียงขนาด 6 ฟุต" data-i18n-alt="rooms.deluxe.alt" loading="lazy"></div>
+          <div class="room-entry-copy"><div class="room-entry-heading"><span class="room-name" data-i18n="rooms.deluxe.name">ดีลักซ์ รูม</span><span class="room-feature-badge room-card-feature" data-room-card-badge data-i18n="roomDetail.dysonBadge" hidden>ไดร์ Dyson</span></div><span class="room-entry-price"><strong data-room-card-price="deluxe"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span><span class="room-summary-meta">9 <span data-i18n="rooms.value.rooms">ห้อง</span> · 2 <span data-i18n="rooms.value.guests">ท่าน</span></span><span class="room-summary-beds" data-i18n="rooms.deluxe.beds">เตียง 1 เตียง ขนาด 6 ฟุต</span><span class="room-open-row" data-i18n="rooms.card.open">ดูรูปภาพและรายละเอียด</span></div>
+        </a>
+        <a class="room-entry" href="rooms-detail.html?room=business">
+          <div class="room-entry-image"><img src="../assets/images/bestier/business.jpg" alt="ห้อง Business Room" data-i18n-alt="rooms.business.alt" loading="lazy"></div>
+          <div class="room-entry-copy"><div class="room-entry-heading"><span class="room-name" data-i18n="rooms.business.name">บิสซิเนส รูม</span><span class="room-feature-badge room-card-feature" data-room-card-badge data-i18n="roomDetail.dysonBadge" hidden>ไดร์ Dyson</span></div><span class="room-entry-price"><strong data-room-card-price="business"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span><span class="room-summary-meta">3 <span data-i18n="rooms.value.rooms">ห้อง</span> · 2 <span data-i18n="rooms.value.guests">ท่าน</span></span><span class="room-summary-beds" data-i18n="rooms.business.beds">เตียง 1 เตียง ขนาด 6 ฟุต</span><span class="room-open-row" data-i18n="rooms.card.open">ดูรูปภาพและรายละเอียด</span></div>
+        </a>
+        <a class="room-entry" href="rooms-detail.html?room=triple">
+          <div class="room-entry-image"><img src="../assets/images/bestier/triple.jpg" alt="ห้อง Triple Room สำหรับผู้เข้าพัก 3 ท่าน" data-i18n-alt="rooms.triple.alt" loading="lazy"></div>
+          <div class="room-entry-copy"><div class="room-entry-heading"><span class="room-name" data-i18n="rooms.triple.name">ทริปเปิล รูม</span><span class="room-feature-badge room-card-feature" data-room-card-badge data-i18n="roomDetail.dysonBadge" hidden>ไดร์ Dyson</span></div><span class="room-entry-price"><strong data-room-card-price="triple"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span><span class="room-summary-meta">4 <span data-i18n="rooms.value.rooms">ห้อง</span> · 3 <span data-i18n="rooms.value.guests">ท่าน</span></span><span class="room-summary-beds" data-i18n="rooms.triple.beds">เตียง 6 ฟุต 1 เตียง และเตียง 3.5 ฟุต 1 เตียง</span><span class="room-open-row" data-i18n="rooms.card.open">ดูรูปภาพและรายละเอียด</span></div>
+        </a>
+        <a class="room-entry" href="rooms-detail.html?room=superior-king">
+          <div class="room-entry-image"><img src="../assets/images/bestier/superiorking.jpg" alt="ห้อง Superior King พร้อมเตียงขนาด 6 ฟุต" data-i18n-alt="rooms.king.alt" loading="lazy"></div>
+          <div class="room-entry-copy"><span class="room-name" data-i18n="rooms.king.name">ซูพีเรีย คิง</span><span class="room-entry-price"><strong data-room-card-price="superior-king"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span><span class="room-summary-meta">21 <span data-i18n="rooms.value.rooms">ห้อง</span> · 2 <span data-i18n="rooms.value.guests">ท่าน</span></span><span class="room-summary-beds" data-i18n="rooms.king.beds">เตียง 1 เตียง ขนาด 6 ฟุต</span><span class="room-open-row" data-i18n="rooms.card.open">ดูรูปภาพและรายละเอียด</span></div>
+        </a>
+        <a class="room-entry" href="rooms-detail.html?room=superior-twin">
+          <div class="room-entry-image"><img src="../assets/images/bestier/superiortwin.jpg" alt="ห้อง Superior Twin มีเตียงเดี่ยวสองเตียง" data-i18n-alt="rooms.twin.alt" loading="lazy"></div>
+          <div class="room-entry-copy"><span class="room-name" data-i18n="rooms.twin.name">ซูพีเรีย ทวิน</span><span class="room-entry-price"><strong data-room-card-price="superior-twin"></strong><span data-i18n="rooms.rate.unit">ต่อคืน</span></span><span class="room-summary-meta">3 <span data-i18n="rooms.value.rooms">ห้อง</span> · 2 <span data-i18n="rooms.value.guests">ท่าน</span></span><span class="room-summary-beds" data-i18n="rooms.twin.beds">เตียงเดี่ยว 2 เตียง ขนาด 3.5 ฟุต</span><span class="room-open-row" data-i18n="rooms.card.open">ดูรูปภาพและรายละเอียด</span></div>
+        </a>
       </div>
     </section>
 
-    <!-- Shared room facilities are described once for all categories. -->
-    <section class="bestier-section bestier-section--alternate" aria-labelledby="room-standard-title">
-      <div class="bestier-container">
-        <div class="bestier-section-heading"><div class="bestier-section-heading__copy"><p class="bestier-eyebrow bestier-type-label" data-i18n-th="ครบครันในทุกห้อง" data-i18n-en="In every room">ครบครันในทุกห้อง</p><h2 class="bestier-section-title bestier-type-section-title" id="room-standard-title" data-i18n-th="สิ่งอำนวยความสะดวกพื้นฐาน" data-i18n-en="Standard room amenities">สิ่งอำนวยความสะดวกพื้นฐาน</h2></div></div>
-        <ul class="bestier-facility-list"><li data-i18n-th="มินิบาร์ฟรีและกาต้มน้ำร้อน" data-i18n-en="Complimentary minibar and electric kettle">มินิบาร์ฟรีและกาต้มน้ำร้อน</li><li data-i18n-th="เตารีดและที่รองรีด" data-i18n-en="Iron and ironing board">เตารีดและที่รองรีด</li><li data-i18n-th="ตู้เซฟ" data-i18n-en="In-room safe">ตู้เซฟ</li><li data-i18n-th="ไดร์เป่าผม" data-i18n-en="Hair dryer">ไดร์เป่าผม</li><li data-i18n-th="สมาร์ททีวี 55 นิ้ว รองรับ Netflix" data-i18n-en="55-inch Smart TV with Netflix support">สมาร์ททีวี 55 นิ้ว รองรับ Netflix</li><li data-i18n-th="ที่ชาร์จโทรศัพท์แบบดิจิทัล" data-i18n-en="Digital phone charger">ที่ชาร์จโทรศัพท์แบบดิจิทัล</li><li data-i18n-th="เครื่องทำน้ำอุ่น" data-i18n-en="Water heater">เครื่องทำน้ำอุ่น</li><li data-i18n-th="ชุดของใช้และอุปกรณ์อำนวยความสะดวกในห้องพัก" data-i18n-en="Guest toiletries and in-room essentials">ชุดของใช้และอุปกรณ์อำนวยความสะดวกในห้องพัก</li></ul>
-        <p class="bestier-note" data-i18n-th="ห้อง Business, Triple และ Deluxe มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson" data-i18n-en="Business, Triple and Deluxe rooms include a complimentary capsule coffee set and Dyson hair dryer.">ห้อง Business, Triple และ Deluxe มีชุดทำกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson</p>
-      </div>
+    <!-- Contact prompt for room enquiries. -->
+    <section class="closing-banner">
+      <div><p class="eyebrow" data-i18n="rooms.closing.eyebrow">NEED HELP CHOOSING?</p><h2 data-i18n="rooms.closing.title">สอบถามข้อมูลห้องพัก</h2></div>
+      <a class="button button-light" href="contact.html#contact-methods" data-i18n="common.contact">ติดต่อเรา</a>
     </section>
-    <!-- Room inquiry call to action opens hotel contact options. -->
-    <section class="bestier-section"><div class="bestier-container"><div class="bestier-cta-panel"><div><h2 class="bestier-section-title bestier-type-section-title" data-i18n-th="สอบถามข้อมูลห้องพัก" data-i18n-en="Ask us about rooms">สอบถามข้อมูลห้องพัก</h2><p data-i18n-th="ติดต่อโรงแรมโดยตรงผ่านช่องทางที่คุณสะดวก" data-i18n-en="Contact the hotel directly using your preferred channel.">ติดต่อโรงแรมโดยตรงผ่านช่องทางที่คุณสะดวก</p></div><a class="bestier-button bestier-button--accent" href="location.html#contact"><span data-i18n-th="ติดต่อโรงแรม" data-i18n-en="Contact the hotel">ติดต่อโรงแรม</span></a></div></div></section>
   </main>
 
-  <!-- Native dialog enhances linked room photos with previous/next controls. -->
-  <dialog class="bestier-image-dialog" data-image-dialog data-aria-th="แกลเลอรีภาพห้องพัก" data-aria-en="Room photo gallery" aria-label="แกลเลอรีภาพห้องพัก"><div class="bestier-image-dialog__layout"><div class="bestier-image-dialog__top"><span data-i18n-th="ภาพห้องพัก" data-i18n-en="Room photo">ภาพห้องพัก</span><button class="bestier-image-dialog__close" type="button" data-dialog-close><span data-i18n-th="ปิด" data-i18n-en="Close">ปิด</span></button></div><button class="bestier-image-dialog__control" type="button" data-dialog-previous data-aria-th="ภาพก่อนหน้า" data-aria-en="Previous photo" aria-label="ภาพก่อนหน้า">‹</button><img class="bestier-image-dialog__image" data-dialog-image alt=""><button class="bestier-image-dialog__control" type="button" data-dialog-next data-aria-th="ภาพถัดไป" data-aria-en="Next photo" aria-label="ภาพถัดไป">›</button><p class="bestier-image-dialog__caption" data-dialog-caption></p></div></dialog>
-
-  <!-- Shared footer: secondary navigation, hotel contact channels and social links. -->
-  <footer class="bestier-footer"><div class="bestier-container"><div class="bestier-footer__grid"><div><h2 class="bestier-type-footer-title">Bestier Hotel</h2><p data-i18n-th="โรงแรมหรูในหาดใหญ่" data-i18n-en="A luxury hotel in Hat Yai">โรงแรมหรูในหาดใหญ่</p><a href="https://maps.app.goo.gl/mq9aB4kUzAg3vj827" target="_blank" rel="noopener noreferrer"><span data-i18n-th="เปิดแผนที่" data-i18n-en="Open map">เปิดแผนที่</span></a></div><div><h3 class="bestier-type-footer-title" data-i18n-th="สำรวจเว็บไซต์" data-i18n-en="Explore">สำรวจเว็บไซต์</h3><nav class="bestier-footer__links" data-aria-th="เมนูส่วนท้าย" data-aria-en="Footer navigation" aria-label="เมนูส่วนท้าย"><a href="index.html"><span data-i18n-th="หน้าแรก" data-i18n-en="Home">หน้าแรก</span></a><a href="rooms.html"><span data-i18n-th="ห้องพัก" data-i18n-en="Rooms">ห้องพัก</span></a><a href="facilities.html"><span data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</span></a><a href="location.html"><span data-i18n-th="ที่ตั้งและข้อมูล" data-i18n-en="Location & Info">ที่ตั้งและข้อมูล</span></a></nav></div><div><h3 class="bestier-type-footer-title" data-i18n-th="ติดต่อโรงแรม" data-i18n-en="Contact">ติดต่อโรงแรม</h3><div class="bestier-footer__links"><a href="tel:074813380">074 813 380</a><a href="mailto:bestierhotel.hatyai@gmail.com">bestierhotel.hatyai@gmail.com</a><a href="https://line.me/ti/p/@bestier" target="_blank" rel="noopener noreferrer">LINE: @Bestier</a><a href="https://wa.me/66921500002" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></div><div class="bestier-footer__bottom bestier-type-small"><span>Bestier Hotel · Hat Yai</span><div class="bestier-utility-links"><a href="https://www.facebook.com/BestierHotelHatyai/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com/bestierhotel?utm_source=ig_web_button_share_sheet&amp;vrfl=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a></div></div></div></footer>
-  <!-- Return-to-top link works as a standard anchor without JavaScript. -->
-  <a class="bestier-back-to-top" href="#top" data-back-to-top><span aria-hidden="true">↑</span><span class="bestier-visually-hidden" data-i18n-th="กลับด้านบน" data-i18n-en="Back to top">กลับด้านบน</span></a>
+  <!-- Shared footer and hotel-information note. -->
+  <footer class="site-footer">
+    <div class="footer-main"><a class="footer-brand" href="index.html" aria-label="Bestier" data-i18n-aria-label="common.brand"><img src="../assets/images/bestier/bestier-logo-lockup.png" alt="Bestier by Indigo Hatyai"></a><nav class="footer-links" aria-label="เมนูท้ายเว็บไซต์" data-i18n-aria-label="common.navigation"><a href="rooms.html" data-i18n="common.rooms">ห้องพัก</a><a href="facilities.html" data-i18n="common.facilities">บริการและสิ่งอำนวยความสะดวก</a><a href="contact.html" data-i18n="common.contact">ติดต่อเรา</a></nav></div>
+    <div class="footer-bottom"><span>© <span data-current-year>2026</span> Bestier</span><span data-i18n="common.footer.note">ข้อมูลอาจเปลี่ยนแปลงได้ โปรดติดต่อโรงแรมเพื่อยืนยัน</span></div>
+  </footer>
 </body>
 </html>
