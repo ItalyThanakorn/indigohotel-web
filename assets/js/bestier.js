@@ -17,6 +17,9 @@ const messages = {
     "common.exploreRooms": "เลือกห้องพักที่เหมาะกับคุณ",
     "common.viewFacilities": "ดูบริการทั้งหมด",
     "common.contactDetails": "ดูข้อมูลติดต่อ",
+    "common.footer.contact": "ติดต่อด่วน",
+    "common.footer.phone": "โทร 074-813-380",
+    "common.footer.line": "LINE @Bestier",
     "common.footer.note": "ข้อมูลอาจเปลี่ยนแปลงได้ โปรดติดต่อโรงแรมเพื่อยืนยัน",
     // Home page
     "home.title": "Bestier | โรงแรมหาดใหญ่",
@@ -208,6 +211,9 @@ const messages = {
     "common.exploreRooms": "Find your room",
     "common.viewFacilities": "Explore facilities",
     "common.contactDetails": "Contact details",
+    "common.footer.contact": "Quick contact",
+    "common.footer.phone": "Call 074-813-380",
+    "common.footer.line": "LINE @Bestier",
     "common.footer.note": "Details may change. Please contact the hotel to confirm.",
     // Home page
     "home.title": "Bestier | Hotel in Hat Yai",
