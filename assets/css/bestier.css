@@ -1560,10 +1560,24 @@ button {
 }
 
 .amenity-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
   color: #53605a;
   font-size: calc(14px * var(--font-scale));
+}
+
+.amenity-list .bi {
+  flex: 0 0 20px;
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contact-address .text-link .bi {
+  font-size: 1rem;
 }
 
 .amenities-extra {
@@ -1597,6 +1611,33 @@ button {
 .amenities-details {
   grid-column: 1 / -1;
   border-bottom: 1px solid var(--line);
+}
+
+.supply-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 20px;
+  padding: 0;
+  margin: 18px 0 24px;
+  list-style: none;
+}
+
+.supply-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  color: #53605a;
+  font-size: calc(13px * var(--font-scale));
+  line-height: 1.65;
+}
+
+.supply-list .bi {
+  flex: 0 0 18px;
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 .policy-card summary {
@@ -2010,6 +2051,51 @@ button {
   gap: clamp(32px, 6vw, 82px);
 }
 
+.room-detail-supplies {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: stretch;
+  gap: clamp(24px, 5vw, 56px);
+  margin-top: clamp(48px, 7vw, 80px);
+  padding: clamp(22px, 4vw, 42px);
+  background: var(--sand);
+}
+
+.room-detail-supplies-image {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+
+.room-detail-supplies-content {
+  align-self: center;
+}
+
+.room-detail-supplies-content > .eyebrow {
+  margin-bottom: 8px;
+}
+
+.room-detail-supplies h2 {
+  margin: 0 0 10px;
+  color: var(--forest);
+  font-size: clamp(calc(24px * var(--font-scale)), calc(2.6vw * var(--font-scale)), calc(32px * var(--font-scale)));
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.room-detail-supplies-content > p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: calc(14px * var(--font-scale));
+  line-height: 1.8;
+}
+
+.room-detail-supplies .supply-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
 .room-detail-hero-image {
   width: 100%;
   height: clamp(300px, 42vw, 500px);
@@ -2131,8 +2217,17 @@ button {
 
 .room-detail-amenities p {
   margin: 0 0 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: var(--muted);
   font-size: calc(14px * var(--font-scale));
+}
+
+.contact-method > span .bi {
+  flex: 0 0 18px;
+  color: var(--accent);
+  font-size: 17px;
 }
 
 .room-detail-amenities a {
@@ -2304,12 +2399,28 @@ button {
   .service-card > img {
     height: min(65vw, 330px);
   }
+  .amenities-details .supply-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .room-detail-supplies {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 22px;
+  }
+  .room-detail-supplies-image {
+    min-height: 330px;
+  }
+  .room-detail-supplies .supply-list {
+    grid-template-columns: 1fr;
+  }
   .room-amenities {
     grid-template-columns: 1fr;
     gap: 22px;
     padding-top: 65px;
   }
   .amenity-list {
+    grid-template-columns: 1fr;
+  }
+  .amenities-details .supply-list {
     grid-template-columns: 1fr;
   }
   .amenities-extra, .amenities-details {
@@ -2328,6 +2439,17 @@ button {
   }
   .room-entry-image {
     height: min(66vw, 360px);
+  }
+  .room-detail-supplies {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 48px;
+    padding: 16px;
+  }
+  .room-detail-supplies-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
   .room-entry-copy {
     padding: 18px;

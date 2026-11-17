@@ -159,8 +159,17 @@ const messages = {
     "facilities.extra.alt": "ไดร์เป่าผม Dyson ที่มีให้บริการในห้องพักบางประเภท",
     "facilities.extra.title": "เพิ่มเติมในบางห้อง",
     "facilities.extra.copy": "ห้องทริปเปิล บิสซิเนส และดีลักซ์ มีชุดกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson",
+    "facilities.supplies.eyebrow": "ของใช้ที่เตรียมไว้ให้",
     "facilities.supplies.title": "ของใช้เพิ่มเติมในห้องพัก",
-    "facilities.supplies.copy": "มีร่ม ไม้แขวนเสื้อ ชุดแปรงสีฟันและยาสีฟัน แชมพู ครีมนวด โลชั่น สบู่เหลว คอตตอนบัด หวี หมวกคลุมอาบน้ำ เสื้อคลุมอาบน้ำ ถุงใส่ผ้าสำหรับส่งซัก รองเท้าแตะ เครื่องชั่งน้ำหนัก แฟ้มกระดาษ และดินสอ",
+    "facilities.supplies.copy": "ของใช้จำเป็นสำหรับชีวิตประจำวัน เตรียมไว้ให้ในห้องพักทุกประเภท",
+    "facilities.supplies.imageAlt": "มินิบาร์และกาต้มน้ำภายในห้องพัก",
+    "facilities.supplies.item1": "ร่ม",
+    "facilities.supplies.item2": "ไม้แขวนเสื้อและถุงใส่ผ้าสำหรับส่งซัก",
+    "facilities.supplies.item3": "แปรงสีฟัน ยาสีฟัน คอตตอนบัด และหวี",
+    "facilities.supplies.item4": "แชมพู ครีมนวด โลชั่น และสบู่เหลว",
+    "facilities.supplies.item5": "หมวกคลุมอาบน้ำ เสื้อคลุมอาบน้ำ และรองเท้าแตะ",
+    "facilities.supplies.item6": "เครื่องชั่งน้ำหนัก",
+    "facilities.supplies.item7": "แฟ้มกระดาษและดินสอ",
     "facilities.closing.eyebrow": "ครบครันเพื่อการพักผ่อนที่สบาย",
     "facilities.closing.title": "สอบถามข้อมูลเพิ่มเติม",
     // Contact page
@@ -353,8 +362,17 @@ const messages = {
     "facilities.extra.alt": "Dyson hair dryer available in selected room types",
     "facilities.extra.title": "Extra touches in selected rooms",
     "facilities.extra.copy": "Triple, Business, and Deluxe rooms include complimentary capsule coffee and a Dyson hair dryer.",
+    "facilities.supplies.eyebrow": "THOUGHTFUL EXTRAS",
     "facilities.supplies.title": "Additional in-room supplies",
-    "facilities.supplies.copy": "Umbrella, hangers, toothbrush and toothpaste, shampoo, conditioner, lotion, body wash, cotton buds, comb, shower cap, bathrobe, laundry bag, slippers, weighing scale, paper folder, and pencil.",
+    "facilities.supplies.copy": "Every room includes practical essentials for everyday comfort.",
+    "facilities.supplies.imageAlt": "The minibar and kettle in a guest room",
+    "facilities.supplies.item1": "Umbrella",
+    "facilities.supplies.item2": "Hangers and laundry bag",
+    "facilities.supplies.item3": "Toothbrush, toothpaste, cotton buds, and comb",
+    "facilities.supplies.item4": "Shampoo, conditioner, lotion, and body wash",
+    "facilities.supplies.item5": "Shower cap, bathrobe, and slippers",
+    "facilities.supplies.item6": "Weighing scale",
+    "facilities.supplies.item7": "Paper folder and pencil",
     "facilities.closing.eyebrow": "EVERYTHING YOU NEED FOR A COMFORTABLE STAY",
     "facilities.closing.title": "Need more information?",
     // Contact page
@@ -463,6 +481,43 @@ const roomCatalog = {
   }
 };
 
+const inRoomSupplies = [
+  { icon: "bi-umbrella", key: "facilities.supplies.item1" },
+  { icon: "bi-bag", key: "facilities.supplies.item2" },
+  { icon: "bi-brush", key: "facilities.supplies.item3" },
+  { icon: "bi-droplet-half", key: "facilities.supplies.item4" },
+  { icon: "bi-person-standing", key: "facilities.supplies.item5" },
+  { icon: "bi-speedometer2", key: "facilities.supplies.item6" },
+  { icon: "bi-journal-text", key: "facilities.supplies.item7" }
+];
+
+function renderInRoomSupplies(language) {
+  const dictionary = messages[language];
+
+  document.querySelectorAll("[data-in-room-supplies]").forEach((list) => {
+    const items = [];
+
+    inRoomSupplies.forEach((supply) => {
+      if (!Object.prototype.hasOwnProperty.call(dictionary, supply.key)) {
+        console.error(`Missing ${language} translation: ${supply.key}`);
+        return;
+      }
+
+      const item = document.createElement("li");
+      const icon = document.createElement("i");
+      const label = document.createElement("span");
+
+      icon.className = `bi ${supply.icon}`;
+      icon.setAttribute("aria-hidden", "true");
+      label.textContent = dictionary[supply.key];
+      item.append(icon, label);
+      items.push(item);
+    });
+
+    list.replaceChildren(...items);
+  });
+}
+
 function formatRoomPrice(rate, language) {
   const formattedRate = new Intl.NumberFormat(language === "th" ? "th-TH" : "en-US").format(rate);
   return language === "th" ? `฿${formattedRate}` : `THB ${formattedRate}`;
@@ -551,6 +606,7 @@ function applyLanguage(language) {
     console.error(`Missing ${language} translation: ${descriptionKey}`);
   }
 
+  renderInRoomSupplies(language);
   renderRoomDetail(language);
   renderRoomCardPrices(language);
 

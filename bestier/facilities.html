@@ -11,8 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Taviraj:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/bestier.css?v=20261117">
-  <script src="../assets/js/bestier.js?v=20261117" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../assets/css/bestier.css?v=20261117-3">
+  <script src="../assets/js/bestier.js?v=20261117-3" defer></script>
 </head>
 <body data-page="facilities">
   <a class="skip-link" href="#main" data-i18n="common.skip">ข้ามไปยังเนื้อหา</a>
@@ -56,19 +57,20 @@
       <section class="room-amenities" id="room-amenities">
         <div class="amenities-heading"><p class="eyebrow eyebrow-dark" data-i18n="facilities.room.eyebrow">IN EVERY ROOM</p><h2 data-i18n="facilities.room.title">สิ่งอำนวยความสะดวกในห้องพัก</h2><p data-i18n="facilities.room.copy">มีให้ใช้ในห้องพักทุกประเภท</p></div>
         <ul class="amenity-list">
-          <li data-i18n="facilities.room.item1">มินิบาร์ฟรี และกาต้มน้ำร้อน</li>
-          <li data-i18n="facilities.room.item2">เตารีดและที่รองรีด</li>
-          <li data-i18n="facilities.room.item3">ตู้เซฟ</li>
-          <li data-i18n="facilities.room.item4">ไดร์เป่าผม และเครื่องทำน้ำอุ่น</li>
-          <li data-i18n="facilities.room.item5">ที่ชาร์จโทรศัพท์แบบดิจิทัล</li>
-          <li data-i18n="facilities.room.item6">สมาร์ททีวีขนาด 55 นิ้ว รองรับ Netflix</li>
+          <li><i class="bi bi-cup-hot" aria-hidden="true"></i><span data-i18n="facilities.room.item1">มินิบาร์ฟรี และกาต้มน้ำร้อน</span></li>
+          <li><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i><span data-i18n="facilities.room.item2">เตารีดและที่รองรีด</span></li>
+          <li><i class="bi bi-shield-lock" aria-hidden="true"></i><span data-i18n="facilities.room.item3">ตู้เซฟ</span></li>
+          <li><i class="bi bi-droplet-half" aria-hidden="true"></i><span data-i18n="facilities.room.item4">ไดร์เป่าผม และเครื่องทำน้ำอุ่น</span></li>
+          <li><i class="bi bi-phone" aria-hidden="true"></i><span data-i18n="facilities.room.item5">ที่ชาร์จโทรศัพท์แบบดิจิทัล</span></li>
+          <li><i class="bi bi-tv" aria-hidden="true"></i><span data-i18n="facilities.room.item6">สมาร์ททีวีขนาด 55 นิ้ว รองรับ Netflix</span></li>
         </ul>
         <div class="amenities-extra"><img src="../assets/images/bestier/dyson.jpg" alt="ไดร์เป่าผม Dyson ที่มีให้บริการในห้องพักบางประเภท" data-i18n-alt="facilities.extra.alt" loading="lazy">
           <div><h3 data-i18n="facilities.extra.title">เพิ่มเติมในบางห้อง</h3><p data-i18n="facilities.extra.copy">ห้อง Triple, Business และ Deluxe มีชุดกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson</p></div>
         </div>
         <div class="amenities-details">
           <h3 data-i18n="facilities.supplies.title">ของใช้เพิ่มเติมในห้องพัก</h3>
-          <p data-i18n="facilities.supplies.copy">มีร่ม ไม้แขวนเสื้อ ชุดแปรงสีฟันและยาสีฟัน แชมพู ครีมนวด โลชั่น สบู่เหลว คอตตอนบัด หวี หมวกคลุมอาบน้ำ เสื้อคลุมอาบน้ำ ถุงใส่ผ้าสำหรับส่งซัก รองเท้าแตะ เครื่องชั่งน้ำหนัก แฟ้มกระดาษ และดินสอ</p>
+          <p data-i18n="facilities.supplies.copy">ของใช้จำเป็นสำหรับชีวิตประจำวัน เตรียมไว้ให้ในห้องพักทุกประเภท</p>
+          <ul class="supply-list" data-in-room-supplies></ul>
         </div>
       </section>
     </section>
