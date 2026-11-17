@@ -66,11 +66,8 @@ const messages = {
     "rooms.list.copy": "เรียงตามราคาต่อคืนจากสูงไปต่ำ พร้อมดูจำนวนผู้เข้าพักและรูปแบบเตียง",
     "rooms.rate.notice": "ราคาที่แสดงเป็นราคาต่อคืน อาจเปลี่ยนตามวันเข้าพัก โปรดสอบถามโรงแรมก่อนจอง",
     "rooms.card.open": "ดูรูปภาพและรายละเอียด",
-    "rooms.rate.starting": "ราคา",
     "rooms.rate.unit": "ต่อคืน",
     "rooms.detail.highlights": "รายละเอียดห้อง",
-    "rooms.detail.shared": "ดูสิ่งอำนวยความสะดวกที่มีให้ในทุกห้อง",
-    "rooms.detail.photos": "รูปภาพห้องพัก",
     "rooms.label.count": "จำนวนห้อง",
     "rooms.label.guests": "ผู้เข้าพัก",
     "rooms.label.beds": "รูปแบบเตียง",
@@ -86,43 +83,38 @@ const messages = {
     "roomDetail.rate": "ราคาห้องพัก",
     "roomDetail.rateUnit": "ต่อคืน",
     "roomDetail.rateNotice": "ราคาอาจเปลี่ยนตามวันเข้าพัก โปรดสอบถามโรงแรมก่อนจอง",
-    "roomDetail.highlights": "จุดเด่นของห้อง",
-    "roomDetail.dysonBadge": "ไดร์ Dyson",
     "roomDetail.amenities": "สิ่งอำนวยความสะดวกในห้อง",
-    "roomDetail.amenitiesLink": "ดูรายการสิ่งอำนวยความสะดวกทั้งหมด",
+    "roomDetail.amenitiesEyebrow": "สิ่งที่เตรียมไว้ในห้องพัก",
+    "roomDetail.amenitiesCopy": "รวมอุปกรณ์และของใช้ที่เตรียมไว้ให้ในห้องนี้",
+    "roomDetail.dysonAmenity": "ไดร์เป่าผม Dyson",
     "roomDetail.contact": "สอบถามห้องนี้",
     "rooms.twin.alt": "ห้องซูพีเรีย ทวิน มีเตียงเดี่ยวสองเตียง",
     "rooms.twin.name": "ซูพีเรีย ทวิน",
     "rooms.twin.beds": "เตียงเดี่ยว 2 เตียง ขนาด 3.5 ฟุต",
     "rooms.twin.highlight": "เตียงเดี่ยว 2 เตียง ขนาด 3.5 ฟุต สำหรับผู้เข้าพัก 2 ท่าน",
-    "rooms.twin.photo1": "ภาพที่ 1 ของห้องซูพีเรีย ทวิน",
     "rooms.twin.photo2": "ภาพที่ 2 ของห้องซูพีเรีย ทวิน",
     "rooms.twin.photo3": "ภาพที่ 3 ของห้องซูพีเรีย ทวิน",
     "rooms.king.alt": "ห้องซูพีเรีย คิง พร้อมเตียงขนาด 6 ฟุต",
     "rooms.king.name": "ซูพีเรีย คิง",
     "rooms.king.beds": "เตียง 1 เตียง ขนาด 6 ฟุต",
     "rooms.king.highlight": "เตียงขนาด 6 ฟุต สำหรับผู้เข้าพัก 2 ท่าน",
-    "rooms.king.photo1": "ภาพที่ 1 ของห้องซูพีเรีย คิง",
     "rooms.king.photo2": "ภาพที่ 2 ของห้องซูพีเรีย คิง",
     "rooms.king.photo3": "ภาพที่ 3 ของห้องซูพีเรีย คิง",
     "rooms.business.alt": "ห้องบิสซิเนส",
     "rooms.business.name": "บิสซิเนส รูม",
     "rooms.business.beds": "เตียง 1 เตียง ขนาด 6 ฟุต",
     "rooms.business.highlight": "เตียงขนาด 6 ฟุต พร้อมกาแฟแคปซูลฟรี",
-    "rooms.business.photo1": "ภาพที่ 1 ของห้องบิสซิเนส",
     "rooms.business.photo2": "ภาพที่ 2 ของห้องบิสซิเนส",
     "rooms.business.photo3": "ภาพที่ 3 ของห้องบิสซิเนส",
     "rooms.triple.alt": "ห้องทริปเปิล สำหรับผู้เข้าพัก 3 ท่าน",
     "rooms.triple.name": "ทริปเปิล รูม",
     "rooms.triple.beds": "เตียง 6 ฟุต 1 เตียง และเตียง 3.5 ฟุต 1 เตียง",
     "rooms.triple.highlight": "พักได้ 3 ท่าน มีเตียง 6 ฟุตและ 3.5 ฟุต พร้อมกาแฟแคปซูลฟรี",
-    "rooms.triple.photo1": "ภาพที่ 1 ของห้องทริปเปิล",
     "rooms.triple.photo2": "ภาพที่ 2 ของห้องทริปเปิล",
     "rooms.deluxe.alt": "ห้องดีลักซ์ พร้อมเตียงขนาด 6 ฟุต",
     "rooms.deluxe.name": "ดีลักซ์ รูม",
     "rooms.deluxe.beds": "เตียง 1 เตียง ขนาด 6 ฟุต",
     "rooms.deluxe.highlight": "เตียงขนาด 6 ฟุต พร้อมกาแฟแคปซูลฟรี",
-    "rooms.deluxe.photo1": "ภาพที่ 1 ของห้องดีลักซ์",
     "rooms.deluxe.photo2": "ภาพที่ 2 ของห้องดีลักซ์",
     "rooms.deluxe.photo3": "ภาพที่ 3 ของห้องดีลักซ์",
     "rooms.closing.eyebrow": "อยากให้ช่วยเลือกห้องไหม",
@@ -159,9 +151,6 @@ const messages = {
     "facilities.extra.alt": "ไดร์เป่าผม Dyson ที่มีให้บริการในห้องพักบางประเภท",
     "facilities.extra.title": "เพิ่มเติมในบางห้อง",
     "facilities.extra.copy": "ห้องทริปเปิล บิสซิเนส และดีลักซ์ มีชุดกาแฟแคปซูลฟรีและไดร์เป่าผม Dyson",
-    "facilities.supplies.eyebrow": "ของใช้ที่เตรียมไว้ให้",
-    "facilities.supplies.title": "ของใช้เพิ่มเติมในห้องพัก",
-    "facilities.supplies.copy": "ของใช้จำเป็นสำหรับชีวิตประจำวัน เตรียมไว้ให้ในห้องพักทุกประเภท",
     "facilities.supplies.imageAlt": "มินิบาร์และกาต้มน้ำภายในห้องพัก",
     "facilities.supplies.item1": "ร่ม",
     "facilities.supplies.item2": "ไม้แขวนเสื้อและถุงใส่ผ้าสำหรับส่งซัก",
@@ -188,7 +177,6 @@ const messages = {
     "contact.channels.title": "ช่องทางติดต่อ",
     "contact.channels.line": "LINE Official Account",
     "contact.channels.phone": "โทรศัพท์",
-    "contact.channels.extension": "ต่อ 4",
     "contact.policies.eyebrow": "ก่อนเข้าพัก",
     "contact.policies.title": "ข้อมูลสำคัญสำหรับผู้เข้าพัก",
     "contact.policy.checkin.title": "เช็กอินและเช็กเอาต์",
@@ -269,11 +257,8 @@ const messages = {
     "rooms.list.copy": "Rooms are sorted by nightly rate, highest to lowest. Compare guest capacity and bed setup.",
     "rooms.rate.notice": "Displayed rates are per night and may vary by date. Please contact the hotel to confirm before booking.",
     "rooms.card.open": "View photos and details",
-    "rooms.rate.starting": "Rate",
     "rooms.rate.unit": "per night",
     "rooms.detail.highlights": "Room details",
-    "rooms.detail.shared": "See amenities included in every room",
-    "rooms.detail.photos": "Room photos",
     "rooms.label.count": "Rooms",
     "rooms.label.guests": "Guests",
     "rooms.label.beds": "Bed setup",
@@ -289,43 +274,38 @@ const messages = {
     "roomDetail.rate": "Room rate",
     "roomDetail.rateUnit": "per night",
     "roomDetail.rateNotice": "Rates may vary by date. Please contact the hotel to confirm before booking.",
-    "roomDetail.highlights": "Room highlights",
-    "roomDetail.dysonBadge": "Dyson hair dryer",
     "roomDetail.amenities": "In-room amenities",
-    "roomDetail.amenitiesLink": "See all in-room amenities",
+    "roomDetail.amenitiesEyebrow": "IN-ROOM DETAILS",
+    "roomDetail.amenitiesCopy": "Equipment and everyday essentials prepared for this room.",
+    "roomDetail.dysonAmenity": "Dyson hair dryer",
     "roomDetail.contact": "Ask about this room",
     "rooms.twin.alt": "Superior Twin room with two single beds",
     "rooms.twin.name": "Superior Twin",
     "rooms.twin.beds": "Two 3.5-foot single beds",
     "rooms.twin.highlight": "Two 3.5-foot single beds for up to two guests.",
-    "rooms.twin.photo1": "Superior Twin room photo 1",
     "rooms.twin.photo2": "Superior Twin room photo 2",
     "rooms.twin.photo3": "Superior Twin room photo 3",
     "rooms.king.alt": "Superior King room with a 6-foot bed",
     "rooms.king.name": "Superior King",
     "rooms.king.beds": "One 6-foot bed",
     "rooms.king.highlight": "One 6-foot bed for up to two guests.",
-    "rooms.king.photo1": "Superior King room photo 1",
     "rooms.king.photo2": "Superior King room photo 2",
     "rooms.king.photo3": "Superior King room photo 3",
     "rooms.business.alt": "Business Room",
     "rooms.business.name": "Business Room",
     "rooms.business.beds": "One 6-foot bed",
     "rooms.business.highlight": "One 6-foot bed and complimentary capsule coffee.",
-    "rooms.business.photo1": "Business Room photo 1",
     "rooms.business.photo2": "Business Room photo 2",
     "rooms.business.photo3": "Business Room photo 3",
     "rooms.triple.alt": "Triple Room for up to three guests",
     "rooms.triple.name": "Triple Room",
     "rooms.triple.beds": "One 6-foot bed and one 3.5-foot bed",
     "rooms.triple.highlight": "Sleeps three, with one 6-foot bed and one 3.5-foot bed, plus complimentary capsule coffee.",
-    "rooms.triple.photo1": "Triple Room photo 1",
     "rooms.triple.photo2": "Triple Room photo 2",
     "rooms.deluxe.alt": "Deluxe Room with a 6-foot bed",
     "rooms.deluxe.name": "Deluxe Room",
     "rooms.deluxe.beds": "One 6-foot bed",
     "rooms.deluxe.highlight": "One 6-foot bed and complimentary capsule coffee.",
-    "rooms.deluxe.photo1": "Deluxe Room photo 1",
     "rooms.deluxe.photo2": "Deluxe Room photo 2",
     "rooms.deluxe.photo3": "Deluxe Room photo 3",
     "rooms.closing.eyebrow": "NEED HELP CHOOSING?",
@@ -362,9 +342,6 @@ const messages = {
     "facilities.extra.alt": "Dyson hair dryer available in selected room types",
     "facilities.extra.title": "Extra touches in selected rooms",
     "facilities.extra.copy": "Triple, Business, and Deluxe rooms include complimentary capsule coffee and a Dyson hair dryer.",
-    "facilities.supplies.eyebrow": "THOUGHTFUL EXTRAS",
-    "facilities.supplies.title": "Additional in-room supplies",
-    "facilities.supplies.copy": "Every room includes practical essentials for everyday comfort.",
     "facilities.supplies.imageAlt": "The minibar and kettle in a guest room",
     "facilities.supplies.item1": "Umbrella",
     "facilities.supplies.item2": "Hangers and laundry bag",
@@ -391,7 +368,6 @@ const messages = {
     "contact.channels.title": "Contact channels",
     "contact.channels.line": "LINE Official Account",
     "contact.channels.phone": "Phone",
-    "contact.channels.extension": "ext. 4",
     "contact.policies.eyebrow": "BEFORE YOU ARRIVE",
     "contact.policies.title": "Important information for guests",
     "contact.policy.checkin.title": "Check-in and check-out",
@@ -481,7 +457,13 @@ const roomCatalog = {
   }
 };
 
-const inRoomSupplies = [
+const inRoomAmenities = [
+  { icon: "bi-cup-hot", key: "facilities.room.item1" },
+  { icon: "bi-grid-3x3-gap", key: "facilities.room.item2" },
+  { icon: "bi-shield-lock", key: "facilities.room.item3" },
+  { icon: "bi-droplet-half", key: "facilities.room.item4" },
+  { icon: "bi-phone", key: "facilities.room.item5" },
+  { icon: "bi-tv", key: "facilities.room.item6" },
   { icon: "bi-umbrella", key: "facilities.supplies.item1" },
   { icon: "bi-bag", key: "facilities.supplies.item2" },
   { icon: "bi-brush", key: "facilities.supplies.item3" },
@@ -491,15 +473,24 @@ const inRoomSupplies = [
   { icon: "bi-journal-text", key: "facilities.supplies.item7" }
 ];
 
-function renderInRoomSupplies(language) {
+function renderInRoomAmenities(language) {
   const dictionary = messages[language];
+  const roomId = new URLSearchParams(window.location.search).get("room");
+  const room = roomId && Object.prototype.hasOwnProperty.call(roomCatalog, roomId)
+    ? roomCatalog[roomId]
+    : null;
 
-  document.querySelectorAll("[data-in-room-supplies]").forEach((list) => {
+  document.querySelectorAll("[data-in-room-amenities]").forEach((list) => {
     const items = [];
+    const amenities = [...inRoomAmenities];
 
-    inRoomSupplies.forEach((supply) => {
-      if (!Object.prototype.hasOwnProperty.call(dictionary, supply.key)) {
-        console.error(`Missing ${language} translation: ${supply.key}`);
+    if (list.hasAttribute("data-room-specific-amenities") && room && room.hasDysonHairDryer) {
+      amenities.push({ icon: "bi-wind", key: "roomDetail.dysonAmenity" });
+    }
+
+    amenities.forEach((amenity) => {
+      if (!Object.prototype.hasOwnProperty.call(dictionary, amenity.key)) {
+        console.error(`Missing ${language} translation: ${amenity.key}`);
         return;
       }
 
@@ -507,9 +498,9 @@ function renderInRoomSupplies(language) {
       const icon = document.createElement("i");
       const label = document.createElement("span");
 
-      icon.className = `bi ${supply.icon}`;
+      icon.className = `bi ${amenity.icon}`;
       icon.setAttribute("aria-hidden", "true");
-      label.textContent = dictionary[supply.key];
+      label.textContent = dictionary[amenity.key];
       item.append(icon, label);
       items.push(item);
     });
@@ -532,11 +523,6 @@ function renderRoomCardPrices(language) {
       return;
     }
     element.textContent = formatRoomPrice(room.rate, language);
-    const card = element.closest(".room-entry");
-    const badge = card && card.querySelector("[data-room-card-badge]");
-    if (badge) {
-      badge.hidden = !room.hasDysonHairDryer;
-    }
   });
 }
 
@@ -606,7 +592,7 @@ function applyLanguage(language) {
     console.error(`Missing ${language} translation: ${descriptionKey}`);
   }
 
-  renderInRoomSupplies(language);
+  renderInRoomAmenities(language);
   renderRoomDetail(language);
   renderRoomCardPrices(language);
 
@@ -644,7 +630,6 @@ function renderRoomDetail(language) {
   detailPage.hidden = false;
   const roomName = dictionary[room.nameKey];
   detailPage.querySelector("[data-room-name]").textContent = roomName;
-  detailPage.querySelector("[data-room-badge]").hidden = !room.hasDysonHairDryer;
   detailPage.querySelector("[data-room-count]").textContent = `${room.count} ${dictionary["rooms.value.rooms"]}`;
   detailPage.querySelector("[data-room-guests]").textContent = `${room.guests} ${dictionary["rooms.value.guests"]}`;
   detailPage.querySelector("[data-room-beds]").textContent = dictionary[room.bedsKey];
