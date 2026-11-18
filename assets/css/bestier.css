@@ -1,4 +1,12 @@
-/* Design tokens and browser-wide defaults. */
+/*
+  Bestier styles
+  1. Tokens and base elements
+  2. Shared navigation, hero, buttons, and footer
+  3. Home, facilities, rooms, and contact components
+  4. Responsive overrides are colocated with the components they affect
+*/
+
+/* 1. Design tokens and browser-wide defaults. */
 :root {
   color-scheme: light;
   /* Increase once (for example 1.1) to scale every font size by 10%. */
@@ -10,10 +18,17 @@
   --paper: #fbfaf6;
   --ink: #1d2825;
   --muted: #626b64;
+  --text-subtle: #53605a;
+  --text-footer: #57635c;
   --accent-text: #73532f;
   --line: #dedfd8;
+  --line-strong: #d6d8d1;
   --accent: #c79763;
+  --surface-footer: #f0eee7;
+  --surface-notice: #f1e9dc;
   --sans: "Prompt", "DM Sans", sans-serif;
+  --display: var(--sans);
+  --font-ui: "DM Sans", var(--sans);
 }
 
 html[lang="en"] {
@@ -71,7 +86,7 @@ button {
   transform: translateY(0);
 }
 
-/* Shared header, navigation, buttons, and links. */
+/* 2. Shared header, navigation, buttons, and links. */
 .site-header {
   position: relative;
   z-index: 5;
@@ -106,7 +121,7 @@ button {
 
 .site-nav > a {
   position: relative;
-  color: #53605a;
+  color: var(--text-subtle);
   font-size: calc(13px * var(--font-scale));
   white-space: nowrap;
   transition: color .2s ease;
@@ -130,7 +145,7 @@ button {
   display: none;
 }
 
-/* Hero banners and page-introduction layouts. */
+/* Shared hero banners and page-introduction layouts. */
 .hero, .page-hero {
   position: relative;
   min-height: 620px;
@@ -168,7 +183,7 @@ button {
 .eyebrow {
   margin: 0 0 18px;
   color: #e2c29c;
-  font-family: "DM Sans", var(--sans);
+  font-family: var(--font-ui);
   font-size: calc(12px * var(--font-scale));
   font-weight: 600;
   letter-spacing: 2.4px;
@@ -258,7 +273,7 @@ button {
   color: white;
 }
 
-/* Home page content, feature sections, and footer. */
+/* Shared section layouts and calls to action. */
 .section-wrap {
   padding-right: max(8vw, 26px);
   padding-left: max(8vw, 26px);
@@ -307,7 +322,7 @@ button {
 
 .site-footer {
   padding: 50px max(8vw, 26px) 20px;
-  background: #f0eee7;
+  background: var(--surface-footer);
 }
 
 /* Shared footer branding, navigation, and copyright row. */
@@ -333,7 +348,7 @@ button {
 }
 
 .footer-links a {
-  color: #57635c;
+  color: var(--text-footer);
   font-size: calc(13px * var(--font-scale));
 }
 
@@ -355,7 +370,7 @@ button {
 }
 
 .footer-contact a {
-  color: #57635c;
+  color: var(--text-footer);
   font-size: calc(13px * var(--font-scale));
 }
 
@@ -370,7 +385,7 @@ button {
   padding-top: 16px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-family: "DM Sans", var(--sans);
+  font-family: var(--font-ui);
   font-size: calc(12px * var(--font-scale));
 }
 
@@ -404,6 +419,7 @@ button {
 
 .rooms-list .section-heading {
   align-items: end;
+  margin-bottom: 30px;
 }
 
 .section-intro {
@@ -621,6 +637,7 @@ button {
   }
 }
 
+/* 3. Home-page components. */
 /* Language controls and home-page content. */
 .language-switch {
   display: inline-flex;
@@ -702,7 +719,7 @@ button {
 }
 
 .home-stats strong {
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--font-ui);
   font-size: calc(24px * var(--font-scale));
   font-weight: 500;
   line-height: 1.2;
@@ -843,7 +860,7 @@ button {
   max-width: 700px;
 }
 
-/* Facility listings and in-room amenity layout. */
+/* Facilities and in-room amenities. */
 .facilities-page {
   padding-top: 85px;
   padding-bottom: 100px;
@@ -946,7 +963,7 @@ button {
   gap: 12px;
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
-  color: #53605a;
+  color: var(--text-subtle);
   font-size: calc(14px * var(--font-scale));
 }
 
@@ -978,6 +995,9 @@ button {
 
 .policy-card summary {
   position: relative;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
   padding: 18px 36px 18px 0;
   color: var(--forest);
   font-size: calc(14px * var(--font-scale));
@@ -995,7 +1015,7 @@ button {
   right: 5px;
   color: var(--accent);
   content: "+";
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--font-ui);
   font-size: calc(20px * var(--font-scale));
   line-height: 1;
 }
@@ -1004,8 +1024,7 @@ button {
   content: "−";
 }
 
-/* Facility, contact, and room-list page components. */
-/* Room-list cards, pricing note, and room-detail image presentation. */
+/* Room catalog and contact components. */
 .room-catalog {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1016,7 +1035,11 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   align-content: start;
+  overflow: hidden;
+  color: inherit;
   background: var(--sand);
+  text-decoration: none;
+  transition: box-shadow .25s ease;
 }
 
 .room-entry-image {
@@ -1057,7 +1080,7 @@ button {
 
 .room-entry-copy dl {
   margin: 0;
-  border-top: 1px solid #d6d8d1;
+  border-top: 1px solid var(--line-strong);
 }
 
 .room-entry-copy dl > div {
@@ -1065,7 +1088,7 @@ button {
   grid-template-columns: 105px 1fr;
   gap: 12px;
   padding: 9px 0;
-  border-bottom: 1px solid #d6d8d1;
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .room-entry-copy dt {
@@ -1127,7 +1150,7 @@ button {
   justify-content: space-between;
   gap: 8px 18px;
   padding: 15px 0;
-  border-top: 1px solid #d6d8d1;
+  border-top: 1px solid var(--line-strong);
 }
 
 .contact-method > span {
@@ -1137,7 +1160,7 @@ button {
 
 .contact-method strong {
   color: var(--forest);
-  font-family: "DM Sans", var(--sans);
+  font-family: var(--font-ui);
   font-size: calc(14px * var(--font-scale));
   font-weight: 600;
 }
@@ -1166,12 +1189,6 @@ button {
 .policy-card {
   padding: 0 20px;
   background: var(--paper);
-}
-
-.policy-card summary {
-  min-height: 62px;
-  display: flex;
-  align-items: center;
 }
 
 .policy-card > div {
@@ -1229,17 +1246,6 @@ button {
   font-weight: 600;
 }
 
-.rooms-list .section-heading {
-  margin-bottom: 30px;
-}
-
-.room-entry {
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-  transition: box-shadow .25s ease;
-}
-
 .room-entry:hover {
   box-shadow: 0 8px 26px rgba(24,60,54,.08);
 }
@@ -1267,7 +1273,7 @@ button {
 }
 
 .room-entry-price strong {
-  font-family: "DM Sans", var(--sans);
+  font-family: var(--font-ui);
   font-size: calc(22px * var(--font-scale));
   font-weight: 600;
 }
@@ -1302,7 +1308,7 @@ button {
   display: block;
   padding-top: 13px;
   margin-top: 12px;
-  border-top: 1px solid #d6d8d1;
+  border-top: 1px solid var(--line-strong);
   color: var(--forest);
   font-size: calc(14px * var(--font-scale));
 }
@@ -1316,7 +1322,7 @@ button {
   padding: 11px 14px;
   margin: -12px 0 24px;
   color: var(--accent-text);
-  background: #f1e9dc;
+  background: var(--surface-notice);
   font-size: calc(13px * var(--font-scale));
 }
 
@@ -1332,7 +1338,7 @@ button {
   flex-wrap: wrap;
   gap: 6px 12px;
   padding: 17px 0;
-  border-top: 1px solid #d6d8d1;
+  border-top: 1px solid var(--line-strong);
 }
 
 .room-rate-label {
@@ -1342,7 +1348,7 @@ button {
 
 .room-rate strong {
   color: var(--forest);
-  font-family: "DM Sans", var(--sans);
+  font-family: var(--font-ui);
   font-size: calc(24px * var(--font-scale));
   font-weight: 600;
 }
@@ -1484,7 +1490,7 @@ button {
 
 .room-detail-specs {
   margin: 0;
-  border-top: 1px solid #d6d8d1;
+  border-top: 1px solid var(--line-strong);
 }
 
 .room-detail-specs > div {
@@ -1492,7 +1498,7 @@ button {
   grid-template-columns: 120px 1fr;
   gap: 14px;
   padding: 11px 0;
-  border-bottom: 1px solid #d6d8d1;
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .room-detail-specs dt {
