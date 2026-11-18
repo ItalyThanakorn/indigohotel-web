@@ -13,8 +13,11 @@
   --accent-text: #73532f;
   --line: #dedfd8;
   --accent: #c79763;
-  --sans: "Noto Sans Thai", "DM Sans", sans-serif;
-  --display: "Taviraj", serif;
+  --sans: "Prompt", "DM Sans", sans-serif;
+}
+
+html[lang="en"] {
+  --sans: "DM Sans", "Prompt", sans-serif;
 }
 
 * {
@@ -796,37 +799,44 @@ button {
 .home-feature {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 440px;
+  grid-template-rows: minmax(0, 1fr);
+  height: 320px;
   background: var(--forest);
 }
 
 .home-feature-image {
-  min-height: 440px;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 .home-feature-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 70%;
 }
 
 .home-feature-copy {
   align-self: center;
-  max-width: 610px;
-  padding: 55px clamp(35px, 8vw, 110px);
+  min-height: 0;
+  max-width: 560px;
+  padding: 24px clamp(24px, 4vw, 56px);
   color: white;
 }
 
 .home-feature-copy h2 {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   color: white;
+  font-size: clamp(calc(24px * var(--font-scale)), calc(2.5vw * var(--font-scale)), calc(32px * var(--font-scale)));
+  line-height: 1.25;
 }
 
 .home-feature-copy > p:not(.eyebrow) {
-  margin: 0 0 25px;
+  margin: 0 0 16px;
   color: rgba(255,255,255,.78);
-  font-size: calc(15px * var(--font-scale));
-  line-height: 1.9;
+  font-size: calc(14px * var(--font-scale));
+  line-height: 1.65;
 }
 
 .page-hero h1 {
@@ -859,7 +869,7 @@ button {
   padding: 24px;
 }
 
-.service-card h3, .amenities-extra h3 {
+.service-card h3 {
   margin: 0 0 12px;
   color: var(--forest);
   font-size: calc(21px * var(--font-scale));
@@ -947,36 +957,23 @@ button {
   line-height: 1.5;
 }
 
-.contact-address .text-link .bi {
-  font-size: 1rem;
-}
-
-.amenities-extra {
-  display: grid;
-  grid-template-columns: 150px 1fr;
+.amenity-list .facility-exclusive-amenity {
   grid-column: 1 / -1;
   align-items: center;
-  gap: 24px;
-  margin-top: 12px;
-  padding: 22px;
+  gap: 14px;
+  margin-top: 10px;
+  padding: 16px;
+  border: 0;
   background: var(--sand);
+  color: var(--forest);
 }
 
-.amenities-extra img {
-  width: 150px;
-  height: 120px;
-  object-fit: cover;
+.facility-exclusive-amenity .bi {
+  flex-basis: 20px;
 }
 
-.amenities-extra h3 {
-  margin-bottom: 5px;
-}
-
-.amenities-extra p {
-  margin: 0;
-  color: var(--muted);
-  font-size: calc(14px * var(--font-scale));
-  line-height: 1.9;
+.contact-address .text-link .bi {
+  font-size: 1rem;
 }
 
 .policy-card summary {
@@ -1291,6 +1288,14 @@ button {
   margin-top: 8px;
   color: var(--ink);
   font-size: calc(13px * var(--font-scale));
+}
+
+.room-summary-feature {
+  display: block;
+  margin-top: 6px;
+  color: var(--accent-text);
+  font-size: calc(13px * var(--font-scale));
+  font-weight: 500;
 }
 
 .room-entry .room-open-row {
@@ -1651,13 +1656,15 @@ button {
   }
   .home-feature {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
   }
   .home-feature-image {
-    min-height: 280px;
-    height: 280px;
+    min-height: 0;
+    height: 240px;
   }
   .home-feature-copy {
-    padding: 38px 7%;
+    padding: 22px 6%;
   }
   .service-grid, .room-catalog, .contact-grid, .policy-grid {
     grid-template-columns: 1fr;
@@ -1676,20 +1683,6 @@ button {
   }
   .amenity-list {
     grid-template-columns: 1fr;
-  }
-  .amenities-extra {
-    grid-column: auto;
-  }
-  .amenities-extra {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-    padding: 15px;
-  }
-  .amenities-extra img {
-    width: min(100%, 280px);
-    height: auto;
-    aspect-ratio: 1;
-    justify-self: center;
   }
   .room-entry-image {
     height: min(66vw, 360px);
@@ -1753,7 +1746,7 @@ button {
   .room-rate-notice {
     font-size: calc(14px * var(--font-scale));
   }
-  .home-intro-copy > p:not(.eyebrow), .home-feature-copy > p:not(.eyebrow), .service-card > div > p:not(.eyebrow), .amenities-extra p, .contact-landmark, .room-detail-highlight, .room-detail-amenities-content > p:not(.eyebrow) {
+  .home-intro-copy > p:not(.eyebrow), .home-feature-copy > p:not(.eyebrow), .service-card > div > p:not(.eyebrow), .contact-landmark, .room-detail-highlight, .room-detail-amenities-content > p:not(.eyebrow) {
     font-size: calc(15px * var(--font-scale));
   }
   .home-stats span {
@@ -1777,7 +1770,7 @@ button {
   .room-entry-copy .eyebrow {
     font-size: calc(12px * var(--font-scale));
   }
-  .room-summary-meta, .room-summary-beds, .room-entry .room-open-row {
+  .room-summary-meta, .room-summary-beds, .room-summary-feature, .room-entry .room-open-row {
     font-size: calc(14px * var(--font-scale));
   }
   .room-rate-label, .room-rate small, .room-rate-note, .room-back-link {
@@ -1807,5 +1800,13 @@ button {
     grid-column: 1 / -1;
     width: calc(50% - 11px);
     justify-self: center;
+  }
+  .home-feature {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+  .home-feature-image {
+    height: 240px;
   }
 }
