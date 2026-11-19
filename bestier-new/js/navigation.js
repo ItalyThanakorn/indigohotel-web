@@ -29,7 +29,7 @@
     const setOpen = open => {
       header.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open);
-      document.body.style.overflow = open ? "hidden" : "";
+      document.addEventListener("click", e => { if (!header.contains(e.target)) setOpen(false); });
     };
     toggle.addEventListener("click", () => setOpen(!header.classList.contains("is-open")));
     header.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", () => setOpen(false)));

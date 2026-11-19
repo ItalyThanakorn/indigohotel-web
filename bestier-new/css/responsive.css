@@ -6,9 +6,16 @@
   .booking-box{position:static}
   .header-inner{grid-template-columns:1fr auto}
   .menu-toggle{display:block}
-  .nav{position:fixed;inset:var(--header-h) 0 0 0;flex-direction:column;justify-content:center;align-items:center;gap:2rem;background:var(--ink);color:#f4f2ec;visibility:hidden;opacity:0;transition:opacity .35s,visibility .35s}
-  .nav a{font:400 2rem var(--serif)}
-  .is-open .nav{visibility:visible;opacity:1}
+  .nav{position:fixed;top:calc(var(--header-h) + .5rem);right:1.5rem;width:min(240px,calc(100% - 3rem));
+  flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.25rem;
+  background:var(--ink);color:#f4f2ec;
+  visibility:hidden;opacity:0;transform:translateY(-8px);
+  transition:opacity .25s,transform .25s,visibility .25s}
+  .nav a{font:400 1rem var(--sans);padding:.9rem 0;border-bottom:1px solid rgba(244,242,236,.14)}
+  .nav a:last-child{border-bottom:0}
+  .nav a::after{display:none}
+  .nav a.is-active{color:var(--brass)}
+  .is-open .nav{visibility:visible;opacity:1;transform:none}
 }
 @media (max-width:640px){
   .grid--3,.footer-grid,.booking{grid-template-columns:1fr}
