@@ -1,0 +1,53 @@
+/* Fonts: โหลดจาก Google Fonts — ถ้าจะใช้ฟอนต์เอง ให้วางไฟล์ใน assets/fonts แล้วเปลี่ยนเป็น @font-face */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root{
+  --ink:#4B2E2B; --ink-2:#17332f; --stone:#eceeea; --mist:#dde2dc;
+  --brass:#C08552; --brass-d:#7d6232; --text:#1b2b29; --muted:#5a6a66; --line:rgba(13,35,33,.16);
+  --serif:"Kanit",Georgia,serif;
+  --sans:"Kanit",system-ui,sans-serif;
+  --header-h:76px; --max:1200px; --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:300 1.0625rem/1.75 var(--sans);color:var(--text);background:var(--stone);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0 0 .5em}
+:lang(th) :is(h1,h2,h3,h4){line-height:1.3}
+h1{font-size:clamp(3rem,8vw,5rem);letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.5vw,3.4rem)}
+h3{font-size:1.6rem}
+p{margin:0 0 1em;max-width:62ch}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+.container{width:min(100% - 3rem,var(--max));margin-inline:auto}
+.section{padding:clamp(4.5rem,9vw,8rem) 0}
+.section--dark{background:var(--ink);color:#f4f2ec}
+.section--mist{background:var(--mist)}
+.section-head{margin-bottom:3.5rem}
+.grid{display:grid;gap:2.5rem}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.lead{font-size:1.2rem;max-width:46ch;opacity:.9}
+
+/* กล่องสีแทนรูป → เปลี่ยนเป็น <img src="assets/images/..."> */
+.ph{width:100%;aspect-ratio:4/3;background:linear-gradient(160deg,var(--ink-2),#3b4f44 60%,#6b6048)}
+.ph--tall{aspect-ratio:4/4}
+
+/* Hero: ใส่รูปจริงโดยเติม url(../assets/images/hero.jpg) ต่อท้าย background */
+.hero,.page-hero{position:relative;display:flex;align-items:flex-end;color:#f4f2ec;
+  background:linear-gradient(180deg,rgba(140,90,60,.4),rgba(13,35,33,.15) 35%,rgba(13,35,33,.85)),
+             url(../assets/images/deluxe6.jpg) center/cover}
+.hero{min-height:100svh;flex-direction:column;justify-content:flex-end;align-items:stretch;padding-top:calc(var(--header-h) + 3rem)}
+.hero-body{padding-bottom:3.5rem}
+.page-hero{min-height:46vh;padding:calc(var(--header-h) + 4rem) 0 3.5rem}
+.page-hero--sm{min-height:30vh}
+.page-hero h1{margin:0;font-size:clamp(2.6rem,6vw,4.8rem)}
+.hero h1{white-space:pre-line}
+.hero-body>*{animation:rise 1.1s var(--ease) both}
+.hero-body>:nth-child(2){animation-delay:.15s}
+.hero-body>:nth-child(3){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
