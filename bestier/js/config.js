@@ -12,11 +12,11 @@ const SITE = {
   },
   phone: { label: "074-813-380 ต่อ 4", tel: "+6674813380,4" },
   whatsapp: "+66 92 150 0002",
-  line: "@Bestier",
-  facebook: "",   // TODO: ใส่ลิงก์ Facebook Page (เว้นว่าง = ซ่อนปุ่ม)
+  line: "https://lin.ee/44mlplj",
+  facebook: "https://www.facebook.com/BestierHotelHatyai",   // TODO: ใส่ลิงก์ Facebook Page (เว้นว่าง = ซ่อนปุ่ม)
   // แผนที่: ค่าเริ่มต้นค้นหาจากข้อความนี้ — ถ้าต้องการปักหมุดเป๊ะ ให้ใส่ลิงก์ embed จาก Google Maps (แชร์ > ฝังแผนที่) ที่ mapEmbed
   mapQuery: "Bestier Hotel Hat Yai",
-  mapEmbed: "",
+  mapEmbed: "https://www.google.com/maps?q=Bestier+Hotel+Hat+Yai&output=embed",
   promo: { th: "", en: "" },   // โปรโมชันประจำเดือน (เว้นว่าง = ซ่อน)
   ota: [                        // ลิงก์จองผ่านตัวแทน (เว้นว่าง url = ซ่อน)
     { name: "Agoda", url: "" },
@@ -26,7 +26,7 @@ const SITE = {
 };
 
 const LINKS = {
-  lineChat: (text = "") => `https://line.me/R/oaMessage/${SITE.line}/?${encodeURIComponent(text)}`,
+  lineChat: (text = "") => `https://lin.ee/44mlplj/${SITE.line}/?${encodeURIComponent(text)}`,
   tel: `tel:${SITE.phone.tel}`,
   whatsapp: `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`,
   map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapQuery)}`,
@@ -60,10 +60,10 @@ const NEARBY = [
 
 /* สาขาในเครือ — url ใส่ได้เมื่อมี (เว้นว่าง = ไม่มีลิงก์) */
 const BRANCHES = [
-  { name: { th: "สาขาถนนเพชรเกษม", en: "Phetkasem Road" }, note: { th: "ตรงข้าม Big C Extra", en: "Opposite Big C Extra" }, url: "" },
-  { name: { th: "สาขาลีการ์เดนส์", en: "Lee Gardens" }, note: { th: "โซนลีการ์เดนส์", en: "Lee Gardens area" }, url: "" },
-  { name: { th: "สาขาเขต 8", en: "Khet 8" }, note: { th: "หาดใหญ่", en: "Hat Yai" }, url: "" },
-  { name: { th: "สาขาทะเลม่วงงาม", en: "Thale Muang Ngam" }, note: { th: "สิงหนคร", en: "Singhanakhon" }, url: "" },
+  { name: { th: "โรงแรมอินดิโก้ สาขาเพรชเกษม", en: "Indigo Hotel Phetkasem Road" }, note: { th: "ตรงข้าม Big C Extra", en: "Opposite Big C Extra" }, url: "" },
+  { name: { th: "โรงแรมอินดิโก้ 2 สาขาเขต 8", en: "Indigo Hotel 2 Khet 8" }, note: { th: "หาดใหญ่", en: "Hat Yai" }, url: "" },
+  { name: { th: "โรงแรมอินดิโก้ 3 สาขาลีการ์เดนส์", en: "Indigo Hotel 3 Lee Gardens" }, note: { th: "โซนลีการ์เดนส์", en: "Lee Gardens area" }, url: "" },
+  { name: { th: "อินดิโก้ บีชฟรอนท์ พูลวิลล่า สาขาทะเลม่วงงาม", en: "Indigo Beachfront Pool Villa" }, note: { th: "สิงหนคร", en: "Singhanakhon" }, url: "" },
 ];
 
 /* แกลเลอรี — cat ต้องตรงกับ id ใน categories; src ที่ไม่มีไฟล์จะแสดงเป็นรูปแตก ให้ตรวจชื่อไฟล์ */

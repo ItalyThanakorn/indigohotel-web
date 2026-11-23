@@ -78,6 +78,7 @@
 .quick__btn{position:relative;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--stone);color:var(--ink);font-size:.8rem;box-shadow:0 4px 16px rgba(42,24,21,.28)}
 .quick__btn svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .quick__btn--line{background:var(--line-green);color:#102018}
+.quick__btn--fb{background:var(--fb-blue);color:#fff}
 .quick__btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ---------- Home sections ---------- */

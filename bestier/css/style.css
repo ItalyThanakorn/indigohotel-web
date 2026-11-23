@@ -5,13 +5,14 @@
   --ink:#4B2E2B; --ink-2:#6a463d; --stone:#f7f2eb; --mist:#eee5d9;
   --brass:#C08552; --brass-d:#8f5a2f; --on-brass:#2a1815; --text:#3a2a27; --muted:#7a6a62; --line:rgba(75,46,43,.16);
   --line-green:#06c755;
+  --fb-blue:#1470e8;
   --hero-overlay:linear-gradient(180deg,rgba(52,31,27,.55),rgba(52,31,27,.22) 40%,rgba(52,31,27,.85));
   --serif:"Kanit",Georgia,serif;
   --sans:"Kanit",system-ui,sans-serif;
   --header-h:76px; --max:1200px; --ease:cubic-bezier(.2,.7,.2,1);
   --fs-body:1.0625rem;
   --fs-lead:1.2rem;
-  --fs-h1:clamp(3rem,8vw,5rem);
+  --fs-h1:clamp(1.5rem,8vw,5rem);
   --fs-h1-page:clamp(2.6rem,6vw,4.8rem);
   --fs-h2:clamp(2rem,4.5vw,3.4rem);
   --fs-h3:1.6rem;
@@ -49,7 +50,7 @@ p{margin:0 0 1em;max-width:62ch}
 /* รูป hero ของแต่ละหน้า: เปลี่ยนที่นี่ (path นับจากโฟลเดอร์ css/) */
 .page-hero--rooms{--hero-img:url(../assets/images/superiorking.jpg)}
 .page-hero--facilities{--hero-img:url(../assets/images/center.jpg)}
-.page-hero--contact{--hero-img:url(../assets/images/Building1.jpg)}
+.page-hero--contact{--hero-img:url(../assets/images/front2.jpg)}
 .hero{min-height:100svh;flex-direction:column;justify-content:flex-end;align-items:stretch;padding-top:calc(var(--header-h) + 3rem)}
 .hero-body{padding-bottom:3.5rem}
 .page-hero{min-height:46vh;padding:calc(var(--header-h) + 4rem) 0 3.5rem}
