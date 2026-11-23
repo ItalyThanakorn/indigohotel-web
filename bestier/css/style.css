@@ -1,9 +1,11 @@
 /* Fonts: โหลดจาก Google Fonts — ถ้าจะใช้ฟอนต์เอง ให้วางไฟล์ใน assets/fonts แล้วเปลี่ยนเป็น @font-face */
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap");
 
 :root{
-  --ink:#4B2E2B; --ink-2:#17332f; --stone:#eceeea; --mist:#dde2dc;
-  --brass:#C08552; --brass-d:#7d6232; --text:#1b2b29; --muted:#5a6a66; --line:rgba(13,35,33,.16);
+  --ink:#4B2E2B; --ink-2:#6a463d; --stone:#f7f2eb; --mist:#eee5d9;
+  --brass:#C08552; --brass-d:#8f5a2f; --on-brass:#2a1815; --text:#3a2a27; --muted:#7a6a62; --line:rgba(75,46,43,.16);
+  --line-green:#06c755;
+  --hero-overlay:linear-gradient(180deg,rgba(52,31,27,.55),rgba(52,31,27,.22) 40%,rgba(52,31,27,.85));
   --serif:"Kanit",Georgia,serif;
   --sans:"Kanit",system-ui,sans-serif;
   --header-h:76px; --max:1200px; --ease:cubic-bezier(.2,.7,.2,1);
@@ -40,13 +42,14 @@ p{margin:0 0 1em;max-width:62ch}
 .lead{font-size:1.2rem;max-width:46ch;opacity:.9}
 
 /* กล่องสีแทนรูป → เปลี่ยนเป็น <img src="assets/images/..."> */
-.ph{width:100%;aspect-ratio:4/3;background:linear-gradient(160deg,var(--ink-2),#3b4f44 60%,#6b6048)}
-.ph--tall{aspect-ratio:4/4}
+.ph{width:100%;aspect-ratio:4/3;background:linear-gradient(160deg,var(--ink-2),#8a6a58 60%,#c9a98a)}
 
-/* Hero: ใส่รูปจริงโดยเติม url(../assets/images/hero.jpg) ต่อท้าย background */
 .hero,.page-hero{position:relative;display:flex;align-items:flex-end;color:#f4f2ec;
-  background:linear-gradient(180deg,rgba(140,90,60,.4),rgba(13,35,33,.15) 35%,rgba(13,35,33,.85)),
-             url(../assets/images/deluxe6.jpg) center/cover}
+  background:var(--hero-overlay),var(--hero-img,url(../assets/images/deluxe6.jpg)) center/cover}
+/* รูป hero ของแต่ละหน้า: เปลี่ยนที่นี่ (path นับจากโฟลเดอร์ css/) */
+.page-hero--rooms{--hero-img:url(../assets/images/superiorking.jpg)}
+.page-hero--facilities{--hero-img:url(../assets/images/center.jpg)}
+.page-hero--contact{--hero-img:url(../assets/images/Building1.jpg)}
 .hero{min-height:100svh;flex-direction:column;justify-content:flex-end;align-items:stretch;padding-top:calc(var(--header-h) + 3rem)}
 .hero-body{padding-bottom:3.5rem}
 .page-hero{min-height:46vh;padding:calc(var(--header-h) + 4rem) 0 3.5rem}
@@ -58,3 +61,9 @@ p{margin:0 0 1em;max-width:62ch}
 .hero-body>:nth-child(3){animation-delay:.3s}
 @keyframes rise{from{opacity:0;transform:translateY(20px)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.75rem}
+.skip{position:fixed;left:1rem;top:-4rem;z-index:200;padding:.6rem 1rem;background:var(--ink);color:#fff;transition:top .2s}
+.skip:focus{top:1rem}
+address{font-style:normal;margin:1rem 0 1.5rem}
+[hidden]{display:none!important}
