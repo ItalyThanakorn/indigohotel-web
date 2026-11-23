@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Bestier</title>
+<meta name="description" content="ติดต่อโรงแรม Bestier หาดใหญ่ ทาง LINE @Bestier โทร 074-813-380 ต่อ 4 หรือ WhatsApp">
+<meta name="theme-color" content="#4B2E2B">
+<link rel="icon" href="assets/images/bestier-mark.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="common.skip"></a>
+<header id="site-header"></header>
+<main id="main">
+<section class="page-hero page-hero--contact"><div class="container"><h1 data-i18n="contact.title"></h1></div></section>
+<section class="section">
+  <div class="container split" style="align-items:start">
+    <div>
+      <p data-i18n="contact.official"></p>
+      <ul class="contact-info" data-render="contact"></ul>
+      <div style="margin-top:2rem" data-render="map"></div>
+    </div>
+    <form class="form" data-line-form>
+      <div class="field"><label for="name" data-i18n="contact.name"></label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="phone" data-i18n="contact.phone"></label><input id="phone" name="phone" autocomplete="tel"></div>
+      <div class="field"><label for="msg" data-i18n="contact.message"></label><textarea id="msg" name="message" rows="5" required></textarea></div>
+      <button class="btn btn--chat" type="submit" data-i18n="contact.send"></button>
+    </form>
+  </div>
+</section>
+<section class="section section--mist">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="policy.title"></h2></div>
+    <div data-render="policies"></div>
+  </div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/config.js"></script>
+<script src="js/language.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

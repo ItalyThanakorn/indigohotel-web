@@ -1,0 +1,110 @@
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;padding:.95rem 2rem;font:400 .95rem var(--sans);letter-spacing:.04em;border:1px solid var(--brass);background:var(--brass);color:var(--on-brass);cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease)}
+.btn:hover{background:var(--brass-d);border-color:var(--brass-d);color:#fff}
+.btn--line{background:transparent;color:inherit}
+.btn--line:hover{background:var(--brass);border-color:var(--brass);color:var(--on-brass)}
+.btn--chat{background:var(--line-green);border-color:var(--line-green);color:#102018}
+.btn--chat:hover{background:#05a948;border-color:#05a948;color:#102018}
+.btn--sm{padding:.6rem 1.3rem;font-size:.875rem}
+
+/* ---------- Header (ใช้ร่วมทุกหน้า — สร้างโดย js/navigation.js) ---------- */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--header-h);color:#f4f2ec;transition:background .35s,color .35s}
+.site-header.is-scrolled,.site-header.is-open{background:rgba(247,242,235,.97);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.header-inner{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem}
+.logo{font:400 1.65rem/1 var(--serif);letter-spacing:.02em}
+.nav{display:flex;gap:2.5rem}
+.nav a{position:relative;padding:.35rem 0;font-size:.95rem}
+.nav a::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav a:hover::after,.nav a.is-active::after{transform:scaleX(1)}
+.header-actions{display:flex;justify-content:flex-end;align-items:center;gap:1.25rem}
+.lang button{background:none;border:0;color:inherit;font:inherit;font-size:.85rem;padding:.25rem .3rem;opacity:.55;cursor:pointer}
+.lang button.is-active{opacity:1;text-decoration:underline;text-underline-offset:.4em}
+.menu-toggle{display:none;position:relative;width:32px;height:32px;background:none;border:0;color:inherit;cursor:pointer}
+.menu-toggle span{position:absolute;left:4px;right:4px;height:1px;background:currentColor;transition:transform .3s,top .3s}
+.menu-toggle span:first-child{top:12px}.menu-toggle span:last-child{top:19px}
+.is-open .menu-toggle span:first-child{top:16px;transform:rotate(45deg)}
+.is-open .menu-toggle span:last-child{top:16px;transform:rotate(-45deg)}
+.header-logo{display:block;width:auto;max-height:50px}
+
+/* ---------- Footer (ใช้ร่วมทุกหน้า) ---------- */
+.site-footer{background:var(--ink);color:rgba(244,242,236,.72);padding:5rem 0 2rem}
+.site-footer .logo{color:#f4f2ec;display:inline-block;margin-bottom:1rem}
+.site-footer h4{font-size:1.25rem;color:#f4f2ec;margin-bottom:1rem}
+.site-footer li{margin-bottom:.5rem}
+.site-footer a:hover{color:var(--brass)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(244,242,236,.14)}
+.footer-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.85rem}
+
+/* ---------- Rooms ---------- */
+.room-card{display:block}
+.room-card .media{margin-bottom:1.25rem}
+.media img,.gallery img{width:100%;object-fit:cover}
+.media img{aspect-ratio:4/3}
+.room-card:hover h3{color:var(--brass-d)}
+.room-card h3{margin-bottom:.3rem}
+.meta{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;font-size:.9rem;color:var(--muted)}
+.price{font:400 1.35rem var(--serif);color:var(--brass-d);margin:.6rem 0 0}
+.price small{font:300 .9rem var(--sans);color:var(--muted)}
+.detail{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem}
+.gallery img{aspect-ratio:4/3}
+.gallery>:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.amenities{columns:2;gap:2rem}
+.amenities li{padding:.45rem 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.booking-box{position:sticky;top:calc(var(--header-h) + 1.5rem);padding:2rem;background:var(--mist)}
+.booking-box .btn{margin-top:1.5rem}
+.back{display:inline-block;margin-bottom:1rem;opacity:.85}
+
+/* ---------- Facilities ---------- */
+.fac-list,.fac-list li{border-color:var(--line)}
+.fac-list{border-top:1px solid}
+.fac-list li{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:baseline;padding:2rem 0;border-bottom:1px solid}
+.fac-list h3,.fac-list p{margin:0}
+.section--dark .fac-list,.section--dark .fac-list li{border-color:rgba(244,242,236,.18)}
+.section--dark .fac-list p{opacity:.75}
+
+/* ---------- Forms ---------- */
+.field{display:grid;gap:.25rem}
+.field label{font-size:.85rem;color:var(--muted)}
+.field :is(input,select,textarea){font:inherit;color:inherit;padding:.6rem 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.field :is(input,select,textarea):focus{outline:0;box-shadow:0 1px 0 var(--brass);border-color:var(--brass)}
+.form .field{margin-bottom:1.75rem}
+.booking{width:min(100% - 3rem,var(--max));margin-inline:auto;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:1.5rem;align-items:end;padding:1.75rem 2.25rem;background:var(--stone);color:var(--text)}
+.contact-info li{padding:1rem 0;border-bottom:1px solid var(--line)}
+.contact-info li:first-child{border-top:1px solid var(--line)}
+
+/* ---------- ปุ่มติดต่อด่วน (สร้างโดย navigation.js) ---------- */
+.quick{position:fixed;z-index:90;right:1.25rem;bottom:1.25rem;display:flex;flex-direction:column;gap:.6rem}
+.quick__btn{position:relative;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--stone);color:var(--ink);font-size:.8rem;box-shadow:0 4px 16px rgba(42,24,21,.28)}
+.quick__btn svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.quick__btn--line{background:var(--line-green);color:#102018}
+.quick__btn--fb{background:var(--fb-blue);color:#fff}
+.quick__btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- Home sections ---------- */
+.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:2.5rem 0}
+.highlights li{padding-top:1rem;border-top:1px solid var(--line);font-weight:400}
+.promo{display:inline-block;margin:0;padding:.4rem 1rem;background:var(--brass);color:var(--on-brass)}
+.ota{margin:2rem 0 0;font-size:var(--fs-small);color:var(--muted)}
+.ota a{margin-left:1.25rem;color:var(--text);text-decoration:underline;text-underline-offset:.25em}
+.price--ask{font:400 1rem var(--sans)}
+.tick-list{margin-bottom:1.5rem}
+.tick-list li{padding:.55rem 0;border-bottom:1px solid var(--line)}
+.map{display:block;width:100%;min-height:340px;aspect-ratio:4/3;border:0}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.tabs button{padding:.5rem 1.1rem;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;font-size:var(--fs-small);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.gallery-grid img{width:100%;aspect-ratio:1;object-fit:cover}
+.branches{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.branch{display:block;padding:1.5rem;background:var(--mist)}
+.branch h3{font-size:1.25rem;margin-bottom:.25rem}
+.branch p{margin:0;color:var(--muted)}
+a.branch:hover h3{color:var(--brass-d)}
+.cta{text-align:center}
+.cta p{margin-inline:auto}
+.policy{display:grid;grid-template-columns:1fr 2fr;gap:2rem;padding:2rem 0;border-top:1px solid var(--line)}
+.policy h3{font-size:1.25rem;margin:0}
+.policy li{margin-bottom:.6rem}
+.field :is(input,select){height:2.9rem}
+.hero .btn--line{border-color:rgba(244,242,236,.7)}

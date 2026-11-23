@@ -1,207 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#242543">
-  <meta name="description" content="เบสเทียร์ โรงแรมหรูในหาดใหญ่ พร้อมห้องพัก 5 ประเภท สิ่งอำนวยความสะดวก และช่องทางติดต่อโรงแรม" data-description-th="เบสเทียร์ โรงแรมหรูในหาดใหญ่ พร้อมห้องพัก 5 ประเภท สิ่งอำนวยความสะดวก และช่องทางติดต่อโรงแรม" data-description-en="Bestier, a luxury hotel in Hat Yai, with five room types, hotel facilities and contact information.">
-  <title data-title-th="เบสเทียร์ | โรงแรมหรูในหาดใหญ่" data-title-en="Bestier | Luxury Hotel in Hat Yai">เบสเทียร์ | โรงแรมหรูในหาดใหญ่</title>
-  <link rel="icon" href="../assets/images/bestier/bestier-mark.png" type="image/png">
-  <!-- Local font files load first; tokens and components then define the Bestier design. -->
-  <link rel="stylesheet" href="../assets/css/bestier/fonts.css">
-  <link rel="stylesheet" href="../assets/css/bestier/tokens.css">
-  <link rel="stylesheet" href="../assets/css/bestier/site.css">
-  <script src="../assets/js/bestier/language.js" defer></script>
-  <script src="../assets/js/bestier/interactions.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bestier</title>
+<meta name="description" content="โรงแรม Bestier หาดใหญ่ ใกล้ ญ.ว. ใจกลางเมือง ห้องพักสะอาด ทันสมัย จองตรงทาง LINE รับโปรโมชันพิเศษ">
+<meta name="theme-color" content="#4B2E2B">
+<link rel="icon" href="assets/images/bestier-mark.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
-<body class="bestier-site bestier-type-body" id="top" data-page="home">
-  <a class="bestier-skip-link" href="#main"><span data-i18n-th="ข้ามไปยังเนื้อหาหลัก" data-i18n-en="Skip to main content">ข้ามไปยังเนื้อหาหลัก</span></a>
-  <!-- Shared header: brand, page navigation, language control and contact shortcut. -->
-  <header class="bestier-header">
-    <div class="bestier-container bestier-header__inner">
-      <a class="bestier-logo" href="index.html" data-aria-th="หน้าแรก" data-aria-en="Bestier home" aria-label="หน้าแรก">
-          <img src="../assets/images/bestier/bestier-logo-lockup.png" alt="เบสเทียร์ บาย อินดิโก้ หาดใหญ่" data-alt-th="เบสเทียร์ บาย อินดิโก้ หาดใหญ่" data-alt-en="Bestier by Indigo Hatyai Hotel" width="802" height="230">
-      </a>
-      <nav class="bestier-desktop-nav" data-aria-th="เมนูหลัก" data-aria-en="Main navigation" aria-label="เมนูหลัก">
-        <a href="index.html" aria-current="page"><span data-i18n-th="หน้าแรก" data-i18n-en="Home">หน้าแรก</span></a>
-        <a href="rooms.html"><span data-i18n-th="ห้องพัก" data-i18n-en="Rooms">ห้องพัก</span></a>
-        <a href="facilities.html"><span data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</span></a>
-        <a href="location.html"><span data-i18n-th="ที่ตั้งและข้อมูล" data-i18n-en="Location & Info">ที่ตั้งและข้อมูล</span></a>
-      </nav>
-      <div class="bestier-header__actions">
-        <div class="bestier-language-switch" role="group" data-aria-th="เลือกภาษา" data-aria-en="Choose language" aria-label="เลือกภาษา">
-          <button type="button" data-language-choice="th" aria-pressed="true">TH</button>
-          <button type="button" data-language-choice="en" aria-pressed="false">EN</button>
-        </div>
-        <a class="bestier-button bestier-button--accent bestier-header__contact" href="location.html#contact">
-          <span data-i18n-th="ติดต่อโรงแรม" data-i18n-en="Contact">ติดต่อโรงแรม</span>
-        </a>
-      </div>
-      <details class="bestier-mobile-nav">
-        <summary><span class="bestier-menu-icon" aria-hidden="true"></span><span class="bestier-visually-hidden" data-i18n-th="เปิดเมนู" data-i18n-en="Open menu">เปิดเมนู</span></summary>
-        <nav class="bestier-mobile-nav__panel bestier-mobile-nav__links" data-aria-th="เมนูมือถือ" data-aria-en="Mobile navigation" aria-label="เมนูมือถือ">
-          <a href="index.html" aria-current="page"><span data-i18n-th="หน้าแรก" data-i18n-en="Home">หน้าแรก</span></a>
-          <a href="rooms.html"><span data-i18n-th="ห้องพัก" data-i18n-en="Rooms">ห้องพัก</span></a>
-          <a href="facilities.html"><span data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</span></a>
-          <a href="location.html"><span data-i18n-th="ที่ตั้งและข้อมูล" data-i18n-en="Location & Info">ที่ตั้งและข้อมูล</span></a>
-          <a href="location.html#contact"><span data-i18n-th="ช่องทางติดต่อ" data-i18n-en="Contact details">ช่องทางติดต่อ</span></a>
-        </nav>
-      </details>
+<body>
+<a class="skip" href="#main" data-i18n="common.skip"></a>
+<header id="site-header"></header>
+<main id="main">
+<section class="hero">
+  <div class="container hero-body">
+    <h1 data-i18n="hero.title"></h1>
+    <p class="lead" data-i18n="hero.text"></p>
+    <div class="actions">
+      <a class="btn btn--chat" data-line-cta target="_blank" rel="noopener" data-i18n="cta.book"></a>
+      <a class="btn btn--line" href="rooms.html" data-i18n="cta.rooms"></a>
     </div>
-  </header>
+  </div>
+  <form class="booking" data-line-form>
+    <div class="field"><label for="in" data-i18n="book.in"></label><input id="in" name="checkin" type="date" required></div>
+    <div class="field"><label for="out" data-i18n="book.out"></label><input id="out" name="checkout" type="date" required></div>
+    <div class="field"><label for="rooms" data-i18n="book.rooms"></label>
+      <select id="rooms" name="rooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="field"><label for="contact" data-i18n="book.contact"></label><input id="contact" name="contact" autocomplete="tel"></div>
+    <button class="btn btn--chat" type="submit" data-i18n="book.search"></button>
+  </form>
+</section>
 
-  <!-- Main content: page-specific information is grouped into labeled sections below. -->
-  <main id="main">
-    <!-- Home hero introduces the hotel and primary actions. -->
-    <section class="bestier-container bestier-hero" aria-labelledby="home-title">
-      <div class="bestier-hero__content">
-        <p class="bestier-eyebrow bestier-type-label">Bestier Hotel · Hat Yai</p>
-        <h1 class="bestier-display bestier-type-display" id="home-title" data-i18n-th="โรงแรมหรูในหาดใหญ่" data-i18n-en="A luxury hotel in Hat Yai">โรงแรมหรูในหาดใหญ่</h1>
-        <p class="bestier-lead bestier-type-lead" data-i18n-th="สัมผัสความหรูหราและความสะดวกสบายในเมืองหาดใหญ่ พร้อมห้องพักและบริการที่ตอบโจทย์การเข้าพักของคุณ" data-i18n-en="Enjoy luxury and comfort in Hat Yai, with room choices and services for your stay.">สัมผัสความหรูหราและความสะดวกสบายในเมืองหาดใหญ่ พร้อมห้องพักและบริการที่ตอบโจทย์การเข้าพักของคุณ</p>
-        <div class="bestier-hero__actions">
-          <a class="bestier-button bestier-button--accent" href="rooms.html"><span data-i18n-th="เลือกชมห้องพัก" data-i18n-en="Explore rooms">เลือกชมห้องพัก</span></a>
-          <a class="bestier-button bestier-button--outline" href="location.html#location"><span data-i18n-th="ดูที่ตั้งโรงแรม" data-i18n-en="Find the hotel">ดูที่ตั้งโรงแรม</span></a>
-        </div>
-      </div>
-      <!-- Hotel photo slideshow cycles through the existing exterior, room and lounge photos. -->
-      <div class="bestier-hero__media bestier-hero__carousel" data-hero-carousel role="region" data-aria-th="ภาพแนะนำโรงแรม" data-aria-en="Hotel highlights" aria-label="ภาพแนะนำโรงแรม">
-        <div class="bestier-hero__slides" id="home-hero-slides" aria-live="off">
-          <figure class="bestier-hero__slide is-active" data-hero-slide data-aria-th="ภาพที่ 1 จาก 3" data-aria-en="Slide 1 of 3" aria-label="ภาพที่ 1 จาก 3" aria-hidden="false">
-            <img src="../assets/images/bestier/building.JPG" alt="อาคารโรงแรมเบสเทียร์ หาดใหญ่" data-alt-th="อาคารโรงแรมเบสเทียร์ หาดใหญ่" data-alt-en="Bestier Hotel building in Hat Yai" width="1920" height="1280" fetchpriority="high" decoding="async">
-            <figcaption class="bestier-hero__caption" data-i18n-th="เบสเทียร์ หาดใหญ่" data-i18n-en="Bestier Hotel · Hat Yai">เบสเทียร์ หาดใหญ่</figcaption>
-          </figure>
-          <figure class="bestier-hero__slide" data-hero-slide data-aria-th="ภาพที่ 2 จาก 3" data-aria-en="Slide 2 of 3" aria-label="ภาพที่ 2 จาก 3" aria-hidden="true">
-            <img src="../assets/images/bestier/inside-room.jpg" alt="บรรยากาศห้องพักของโรงแรมเบสเทียร์" data-alt-th="บรรยากาศห้องพักของโรงแรมเบสเทียร์" data-alt-en="An inviting Bestier Hotel guest room" width="1920" height="1280" decoding="async">
-            <figcaption class="bestier-hero__caption" data-i18n-th="พักผ่อนอย่างสบายในห้องพักของเรา" data-i18n-en="Relax in a comfortable guest room">พักผ่อนอย่างสบายในห้องพักของเรา</figcaption>
-          </figure>
-          <figure class="bestier-hero__slide" data-hero-slide data-aria-th="ภาพที่ 3 จาก 3" data-aria-en="Slide 3 of 3" aria-label="ภาพที่ 3 จาก 3" aria-hidden="true">
-            <img src="../assets/images/bestier/center.JPG" alt="พื้นที่พักผ่อนด้านในของโรงแรมเบสเทียร์" data-alt-th="พื้นที่พักผ่อนด้านในของโรงแรมเบสเทียร์" data-alt-en="A relaxing shared space at Bestier Hotel" width="1920" height="1280" decoding="async">
-            <figcaption class="bestier-hero__caption" data-i18n-th="มุมพักผ่อนภายในโรงแรม" data-i18n-en="A calm space to unwind">มุมพักผ่อนภายในโรงแรม</figcaption>
-          </figure>
-        </div>
-        <div class="bestier-hero__controls" role="group" data-aria-th="ตัวควบคุมภาพแนะนำ" data-aria-en="Slideshow controls" aria-label="ตัวควบคุมภาพแนะนำ">
-          <button class="bestier-hero__control" type="button" data-hero-previous aria-controls="home-hero-slides" data-aria-th="ภาพก่อนหน้า" data-aria-en="Previous slide" aria-label="ภาพก่อนหน้า"><svg class="bestier-hero__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"></path></svg></button>
-          <div class="bestier-hero__dots">
-            <button class="bestier-hero__dot" type="button" data-hero-dot="0" aria-controls="home-hero-slides" data-aria-th="แสดงภาพที่ 1" data-aria-en="Show slide 1" aria-label="แสดงภาพที่ 1" aria-pressed="true"></button>
-            <button class="bestier-hero__dot" type="button" data-hero-dot="1" aria-controls="home-hero-slides" data-aria-th="แสดงภาพที่ 2" data-aria-en="Show slide 2" aria-label="แสดงภาพที่ 2" aria-pressed="false"></button>
-            <button class="bestier-hero__dot" type="button" data-hero-dot="2" aria-controls="home-hero-slides" data-aria-th="แสดงภาพที่ 3" data-aria-en="Show slide 3" aria-label="แสดงภาพที่ 3" aria-pressed="false"></button>
-          </div>
-          <button class="bestier-hero__control" type="button" data-hero-toggle data-aria-th="หยุดสไลด์อัตโนมัติ" data-aria-en="Pause slideshow" data-aria-play-th="เล่นสไลด์อัตโนมัติ" data-aria-play-en="Play slideshow" aria-label="หยุดสไลด์อัตโนมัติ" aria-pressed="false"><span data-hero-toggle-icon aria-hidden="true">Ⅱ</span></button>
-          <button class="bestier-hero__control" type="button" data-hero-next aria-controls="home-hero-slides" data-aria-th="ภาพถัดไป" data-aria-en="Next slide" aria-label="ภาพถัดไป"><svg class="bestier-hero__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"></path></svg></button>
-        </div>
-      </div>
-    </section>
+<div class="container">
+  <ul class="highlights">
+    <li data-i18n="hl.1"></li><li data-i18n="hl.2"></li><li data-i18n="hl.3"></li><li data-i18n="hl.4"></li>
+  </ul>
+</div>
 
-    <!-- Highlight cards summarize confirmed guest-facing facts. -->
-    <section class="bestier-section bestier-section--alternate" data-aria-th="จุดเด่นของโรงแรม" data-aria-en="Hotel highlights" aria-label="จุดเด่นของโรงแรม">
-      <div class="bestier-container">
-        <div class="bestier-section-heading">
-          <div class="bestier-section-heading__copy">
-            <p class="bestier-eyebrow bestier-type-label" data-i18n-th="เบสเทียร์ หาดใหญ่" data-i18n-en="Bestier Hat Yai">เบสเทียร์ หาดใหญ่</p>
-            <h2 class="bestier-section-title bestier-type-section-title" data-i18n-th="รายละเอียดที่ช่วยให้คุณวางแผนการเข้าพัก" data-i18n-en="Details to help plan your stay">รายละเอียดที่ช่วยให้คุณวางแผนการเข้าพัก</h2>
-          </div>
-        </div>
-        <div class="bestier-highlight-grid">
-          <article class="bestier-highlight"><span class="bestier-highlight__mark" aria-hidden="true"></span><p data-i18n-th="ห้องพัก 5 ประเภท รองรับผู้เข้าพัก 2–3 ท่านตามประเภทห้อง" data-i18n-en="Five room types for 2–3 guests, depending on the room">ห้องพัก 5 ประเภท รองรับผู้เข้าพัก 2–3 ท่านตามประเภทห้อง</p></article>
-          <article class="bestier-highlight"><span class="bestier-highlight__mark" aria-hidden="true"></span><p data-i18n-th="เคาน์เตอร์ให้บริการตลอด 24 ชั่วโมง" data-i18n-en="Front desk service is available 24 hours">เคาน์เตอร์ให้บริการตลอด 24 ชั่วโมง</p></article>
-          <article class="bestier-highlight"><span class="bestier-highlight__mark" aria-hidden="true"></span><p data-i18n-th="มีที่จอดรถบริเวณด้านในและด้านนอกอาคาร" data-i18n-en="Parking is available in areas inside and outside the building">มีที่จอดรถบริเวณด้านในและด้านนอกอาคาร</p></article>
-          <article class="bestier-highlight"><span class="bestier-highlight__mark" aria-hidden="true"></span><p data-i18n-th="บริการรถตุ๊กตุ๊กฟรีในระยะไม่เกิน 1 กิโลเมตร" data-i18n-en="Complimentary tuk-tuk service within 1 kilometre">บริการรถตุ๊กตุ๊กฟรีในระยะไม่เกิน 1 กิโลเมตร</p></article>
-        </div>
-      </div>
-    </section>
+<section class="section">
+  <div class="container split">
+    <div><h2 data-i18n="about.title"></h2><p data-i18n="about.p1"></p><p data-i18n="about.p2"></p></div>
+    <img class="ph ph--tall" src="assets/images/center.jpg" alt="" data-i18n-alt="about.alt" loading="lazy">
+  </div>
+</section>
 
-    <!-- Room preview links to full room details. -->
-    <section class="bestier-section" aria-labelledby="rooms-preview-title">
-      <div class="bestier-container">
-        <div class="bestier-section-heading">
-          <div class="bestier-section-heading__copy">
-            <p class="bestier-eyebrow bestier-type-label" data-i18n-th="ห้องพัก" data-i18n-en="Accommodation">ห้องพัก</p>
-            <h2 class="bestier-section-title bestier-type-section-title" id="rooms-preview-title" data-i18n-th="เลือกห้องที่เหมาะกับการเดินทางของคุณ" data-i18n-en="Find a room for your stay">เลือกห้องที่เหมาะกับการเดินทางของคุณ</h2>
-          </div>
-          <a class="bestier-button bestier-button--outline" href="rooms.html"><span data-i18n-th="ดูห้องพักทั้งหมด" data-i18n-en="View all rooms">ดูห้องพักทั้งหมด</span></a>
-        </div>
-        <div class="bestier-room-grid">
-          <article class="bestier-room-card">
-            <a class="bestier-room-card__image" href="rooms.html#superior-twin"><img src="../assets/images/bestier/superiortwin.jpg" alt="ห้อง Superior Twin" data-alt-th="ห้อง Superior Twin" data-alt-en="Superior Twin room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <div class="bestier-room-card__body"><h3 class="bestier-card-title bestier-type-card-title">Superior Twin</h3><p class="bestier-room-card__facts"><span data-i18n-th="2 ท่าน" data-i18n-en="2 guests">2 ท่าน</span><span data-i18n-th="เตียงเดี่ยว 2 เตียง" data-i18n-en="Two single beds">เตียงเดี่ยว 2 เตียง</span></p><a href="rooms.html#superior-twin"><span data-i18n-th="ดูรายละเอียด" data-i18n-en="Room details">ดูรายละเอียด</span></a></div>
-          </article>
-          <article class="bestier-room-card">
-            <a class="bestier-room-card__image" href="rooms.html#superior-king"><img src="../assets/images/bestier/superiorking.jpg" alt="ห้อง Superior King" data-alt-th="ห้อง Superior King" data-alt-en="Superior King room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <div class="bestier-room-card__body"><h3 class="bestier-card-title bestier-type-card-title">Superior King</h3><p class="bestier-room-card__facts"><span data-i18n-th="2 ท่าน" data-i18n-en="2 guests">2 ท่าน</span><span data-i18n-th="เตียงเดี่ยว 6 ฟุต" data-i18n-en="One 6-foot bed">เตียงเดี่ยว 6 ฟุต</span></p><a href="rooms.html#superior-king"><span data-i18n-th="ดูรายละเอียด" data-i18n-en="Room details">ดูรายละเอียด</span></a></div>
-          </article>
-          <article class="bestier-room-card">
-            <a class="bestier-room-card__image" href="rooms.html#business"><img src="../assets/images/bestier/business.jpg" alt="ห้อง Business" data-alt-th="ห้อง Business" data-alt-en="Business room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <div class="bestier-room-card__body"><h3 class="bestier-card-title bestier-type-card-title">Business Room</h3><p class="bestier-room-card__facts"><span data-i18n-th="2 ท่าน" data-i18n-en="2 guests">2 ท่าน</span><span data-i18n-th="เตียงเดี่ยว 6 ฟุต" data-i18n-en="One 6-foot bed">เตียงเดี่ยว 6 ฟุต</span></p><a href="rooms.html#business"><span data-i18n-th="ดูรายละเอียด" data-i18n-en="Room details">ดูรายละเอียด</span></a></div>
-          </article>
-          <article class="bestier-room-card">
-            <a class="bestier-room-card__image" href="rooms.html#triple"><img src="../assets/images/bestier/triple.jpg" alt="ห้อง Triple" data-alt-th="ห้อง Triple" data-alt-en="Triple room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <div class="bestier-room-card__body"><h3 class="bestier-card-title bestier-type-card-title">Triple Room</h3><p class="bestier-room-card__facts"><span data-i18n-th="3 ท่าน" data-i18n-en="3 guests">3 ท่าน</span><span data-i18n-th="เตียง 6 ฟุตและ 3.5 ฟุต" data-i18n-en="One 6-foot and one 3.5-foot bed">เตียง 6 ฟุตและ 3.5 ฟุต</span></p><a href="rooms.html#triple"><span data-i18n-th="ดูรายละเอียด" data-i18n-en="Room details">ดูรายละเอียด</span></a></div>
-          </article>
-          <article class="bestier-room-card">
-            <a class="bestier-room-card__image" href="rooms.html#deluxe"><img src="../assets/images/bestier/deluxe.jpg" alt="ห้อง Deluxe" data-alt-th="ห้อง Deluxe" data-alt-en="Deluxe room" width="1920" height="1280" loading="lazy" decoding="async"></a>
-            <div class="bestier-room-card__body"><h3 class="bestier-card-title bestier-type-card-title">Deluxe Room</h3><p class="bestier-room-card__facts"><span data-i18n-th="2 ท่าน" data-i18n-en="2 guests">2 ท่าน</span><span data-i18n-th="เตียงเดี่ยว 6 ฟุต" data-i18n-en="One 6-foot bed">เตียงเดี่ยว 6 ฟุต</span></p><a href="rooms.html#deluxe"><span data-i18n-th="ดูรายละเอียด" data-i18n-en="Room details">ดูรายละเอียด</span></a></div>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="section section--mist" id="rooms">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="rooms.title"></h2><p class="promo" data-render="promo" hidden></p></div>
+    <div class="grid grid--3" data-rooms></div>
+    <p class="ota" data-render="ota" hidden></p>
+  </div>
+</section>
 
-    <!-- Facility preview links to the full services list. -->
-    <section class="bestier-section bestier-section--alternate" aria-labelledby="facilities-preview-title">
-      <div class="bestier-container">
-        <div class="bestier-section-heading">
-          <div class="bestier-section-heading__copy">
-            <p class="bestier-eyebrow bestier-type-label" data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</p>
-            <h2 class="bestier-section-title bestier-type-section-title" id="facilities-preview-title" data-i18n-th="รายละเอียดบริการสำหรับการเข้าพัก" data-i18n-en="Services and comforts for your stay">รายละเอียดบริการสำหรับการเข้าพัก</h2>
-          </div>
-          <a class="bestier-button bestier-button--outline" href="facilities.html"><span data-i18n-th="ดูบริการทั้งหมด" data-i18n-en="Explore facilities">ดูบริการทั้งหมด</span></a>
-        </div>
-        <div class="bestier-facility-grid">
-          <article class="bestier-facility-card"><div class="bestier-facility-card__body"><h3 class="bestier-card-title bestier-type-card-title" data-i18n-th="สิ่งอำนวยความสะดวกในห้องพัก" data-i18n-en="In-room amenities">สิ่งอำนวยความสะดวกในห้องพัก</h3><p data-i18n-th="มินิบาร์ กาต้มน้ำ ตู้เซฟ เตารีดและที่รองรีด พร้อมอุปกรณ์อำนวยความสะดวกตามข้อมูลโรงแรม" data-i18n-en="Minibar, kettle, safe, iron and ironing board, plus the amenities listed by the hotel.">มินิบาร์ กาต้มน้ำ ตู้เซฟ เตารีดและที่รองรีด พร้อมอุปกรณ์อำนวยความสะดวกตามข้อมูลโรงแรม</p></div></article>
-          <article class="bestier-facility-card"><div class="bestier-facility-card__body"><h3 class="bestier-card-title bestier-type-card-title" data-i18n-th="บริการต้อนรับ" data-i18n-en="Guest services">บริการต้อนรับ</h3><p data-i18n-th="เคาน์เตอร์เปิดบริการ 24 ชั่วโมง พร้อม Welcome drink และน้ำดื่มที่จุดเช็กอิน" data-i18n-en="The front desk is open 24 hours. A welcome drink and drinking water are available at check-in.">เคาน์เตอร์เปิดบริการ 24 ชั่วโมง พร้อม Welcome drink และน้ำดื่มที่จุดเช็กอิน</p></div></article>
-          <article class="bestier-facility-card"><div class="bestier-facility-card__body"><h3 class="bestier-card-title bestier-type-card-title" data-i18n-th="ที่จอดรถและการเดินทางระยะใกล้" data-i18n-en="Parking and local transport">ที่จอดรถและการเดินทางระยะใกล้</h3><p data-i18n-th="มีที่จอดรถทั้งด้านในและด้านนอกอาคาร และบริการรถตุ๊กตุ๊กฟรีภายในระยะ 1 กิโลเมตร" data-i18n-en="Parking is available inside and outside the building, with complimentary tuk-tuk service within 1 kilometre.">มีที่จอดรถทั้งด้านในและด้านนอกอาคาร และบริการรถตุ๊กตุ๊กฟรีภายในระยะ 1 กิโลเมตร</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location preview provides address and directions. -->
-    <section class="bestier-section" aria-labelledby="location-preview-title">
-      <div class="bestier-container bestier-location-grid">
-        <div>
-          <p class="bestier-eyebrow bestier-type-label" data-i18n-th="ที่ตั้ง" data-i18n-en="Location">ที่ตั้ง</p>
-          <h2 class="bestier-section-title bestier-type-section-title" id="location-preview-title" data-i18n-th="พบกับเบสเทียร์ในหาดใหญ่" data-i18n-en="Find Bestier in Hat Yai">พบกับเบสเทียร์ในหาดใหญ่</h2>
-          <address class="bestier-lead bestier-home-address" data-i18n-th="116 ถนนนิพัทธ์สงเคราะห์ 4 ต.หาดใหญ่ อ.หาดใหญ่ จ.สงขลา ประเทศไทย" data-i18n-en="116 Niphat Songkhro 4 Road, Hat Yai, Songkhla, Thailand">116 ถนนนิพัทธ์สงเคราะห์ 4 ต.หาดใหญ่ จ.สงขลา ประเทศไทย</address>
-          <p data-i18n-th="หลังธนาคารแห่งประเทศไทยและใกล้โรงเรียนหาดใหญ่วิทยาลัย" data-i18n-en="Behind the Bank of Thailand and near Hatyaiwittayalai School">หลังธนาคารแห่งประเทศไทยและใกล้โรงเรียนหาดใหญ่วิทยาลัย</p>
-          <a class="bestier-button" href="https://maps.app.goo.gl/mq9aB4kUzAg3vj827" target="_blank" rel="noopener noreferrer"><span data-i18n-th="เปิด Google Maps" data-i18n-en="Open Google Maps">เปิด Google Maps</span></a>
-        </div>
-        <figure class="bestier-hero__media">
-          <img src="../assets/images/bestier/front2.JPG" alt="ด้านหน้าโรงแรมเบสเทียร์" data-alt-th="ด้านหน้าโรงแรมเบสเทียร์" data-alt-en="Front of Bestier Hotel" width="1920" height="1280" loading="lazy" decoding="async">
-        </figure>
-      </div>
-    </section>
-
-    <!-- Closing call to action routes guests to hotel contacts. -->
-    <section class="bestier-section bestier-section--alternate">
-      <div class="bestier-container">
-        <div class="bestier-cta-panel">
-          <div><h2 class="bestier-section-title bestier-type-section-title" data-i18n-th="ต้องการสอบถามข้อมูลเพิ่มเติม?" data-i18n-en="Have a question?">ต้องการสอบถามข้อมูลเพิ่มเติม?</h2><p data-i18n-th="เลือกช่องทางติดต่อโรงแรมที่สะดวกสำหรับคุณ" data-i18n-en="Contact the hotel using your preferred channel.">เลือกช่องทางติดต่อโรงแรมที่สะดวกสำหรับคุณ</p></div>
-          <a class="bestier-button bestier-button--accent" href="location.html#contact"><span data-i18n-th="ช่องทางติดต่อ" data-i18n-en="Contact details">ช่องทางติดต่อ</span></a>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bestier-footer">
-    <div class="bestier-container">
-      <div class="bestier-footer__grid">
-        <div><h2 class="bestier-type-footer-title">Bestier Hotel</h2><p data-i18n-th="โรงแรมหรูในหาดใหญ่" data-i18n-en="A luxury hotel in Hat Yai">โรงแรมหรูในหาดใหญ่</p><a href="https://maps.app.goo.gl/mq9aB4kUzAg3vj827" target="_blank" rel="noopener noreferrer"><span data-i18n-th="เปิดแผนที่" data-i18n-en="Open map">เปิดแผนที่</span></a></div>
-        <div><h3 class="bestier-type-footer-title" data-i18n-th="สำรวจเว็บไซต์" data-i18n-en="Explore">สำรวจเว็บไซต์</h3><nav class="bestier-footer__links" data-aria-th="เมนูส่วนท้าย" data-aria-en="Footer navigation" aria-label="เมนูส่วนท้าย"><a href="index.html"><span data-i18n-th="หน้าแรก" data-i18n-en="Home">หน้าแรก</span></a><a href="rooms.html"><span data-i18n-th="ห้องพัก" data-i18n-en="Rooms">ห้องพัก</span></a><a href="facilities.html"><span data-i18n-th="สิ่งอำนวยความสะดวก" data-i18n-en="Facilities">สิ่งอำนวยความสะดวก</span></a><a href="location.html"><span data-i18n-th="ที่ตั้งและข้อมูล" data-i18n-en="Location & Info">ที่ตั้งและข้อมูล</span></a></nav></div>
-        <div><h3 class="bestier-type-footer-title" data-i18n-th="ติดต่อโรงแรม" data-i18n-en="Contact">ติดต่อโรงแรม</h3><div class="bestier-footer__links"><a href="tel:074813380">074 813 380</a><a href="mailto:bestierhotel.hatyai@gmail.com">bestierhotel.hatyai@gmail.com</a><a href="https://line.me/ti/p/@bestier" target="_blank" rel="noopener noreferrer">LINE: @Bestier</a><a href="https://wa.me/66921500002" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div>
-      </div>
-      <div class="bestier-footer__bottom bestier-type-small"><span>Bestier Hotel · Hat Yai</span><div class="bestier-utility-links"><a href="https://www.facebook.com/BestierHotelHatyai/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.instagram.com/bestierhotel?utm_source=ig_web_button_share_sheet&amp;vrfl=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a></div></div>
+<section class="section" id="location">
+  <div class="container split">
+    <div>
+      <h2 data-i18n="loc.title"></h2>
+      <p data-i18n="loc.text"></p>
+      <address data-render="address"></address>
+      <ul class="tick-list" data-render="nearby"></ul>
+      <a class="btn btn--line" data-map-link target="_blank" rel="noopener" data-i18n="loc.open"></a>
     </div>
-  </footer>
-  <!-- Return-to-top link works as a standard anchor without JavaScript. -->
-  <a class="bestier-back-to-top" href="#top" data-back-to-top><span aria-hidden="true">↑</span><span class="bestier-visually-hidden" data-i18n-th="กลับด้านบน" data-i18n-en="Back to top">กลับด้านบน</span></a>
+    <div data-render="map"></div>
+  </div>
+</section>
+
+<section class="section section--mist">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="fac.title"></h2></div>
+    <ul class="fac-list" data-render="facilities" data-limit="4"></ul>
+    <p style="margin:3rem 0 0"><a class="btn btn--line" href="facilities.html" data-i18n="fac.more"></a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="gal.title"></h2></div>
+    <div data-render="gallery"></div>
+  </div>
+</section>
+
+<section class="section section--mist">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="br.title"></h2><p data-i18n="br.text"></p></div>
+    <div class="branches" data-render="branches"></div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container cta">
+    <h2 data-i18n="cta.title"></h2>
+    <p data-i18n="cta.text"></p>
+    <a class="btn btn--chat" data-line-cta target="_blank" rel="noopener" data-i18n="cta.book"></a>
+  </div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/config.js"></script>
+<script src="js/language.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/rooms.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
