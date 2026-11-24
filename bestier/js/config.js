@@ -12,12 +12,12 @@ const SITE = {
   },
   phone: { label: "074-813-380 ต่อ 4", tel: "+6674813380,4" },
   whatsapp: "+66 92 150 0002",
-  line: "https://lin.ee/44mlplj",
+  line: "@Bestier",
   facebook: "https://www.facebook.com/BestierHotelHatyai",   // TODO: ใส่ลิงก์ Facebook Page (เว้นว่าง = ซ่อนปุ่ม)
   // แผนที่: ค่าเริ่มต้นค้นหาจากข้อความนี้ — ถ้าต้องการปักหมุดเป๊ะ ให้ใส่ลิงก์ embed จาก Google Maps (แชร์ > ฝังแผนที่) ที่ mapEmbed
   mapQuery: "Bestier Hotel Hat Yai",
   mapEmbed: "https://www.google.com/maps?q=Bestier+Hotel+Hat+Yai&output=embed",
-  promo: { th: "", en: "" },   // โปรโมชันประจำเดือน (เว้นว่าง = ซ่อน)
+  promo: { th: "พักสบายคืนวันเพ็ญ เพียง 𝟗𝟗𝟎.- บาท", en: "Stay for a night during Loy Krathong for just 990 THB." },   // โปรโมชันประจำเดือน (เว้นว่าง = ซ่อน)
   ota: [                        // ลิงก์จองผ่านตัวแทน (เว้นว่าง url = ซ่อน)
     { name: "Agoda", url: "" },
     { name: "Booking.com", url: "" },
@@ -26,7 +26,7 @@ const SITE = {
 };
 
 const LINKS = {
-  lineChat: (text = "") => `https://lin.ee/44mlplj/${SITE.line}/?${encodeURIComponent(text)}`,
+  lineChat: (text = "") => `https://line.me/R/ti/p/@788piklw/?${encodeURIComponent(text)}`,
   tel: `tel:${SITE.phone.tel}`,
   whatsapp: `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`,
   map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapQuery)}`,
@@ -60,10 +60,10 @@ const NEARBY = [
 
 /* สาขาในเครือ — url ใส่ได้เมื่อมี (เว้นว่าง = ไม่มีลิงก์) */
 const BRANCHES = [
-  { name: { th: "โรงแรมอินดิโก้ สาขาเพรชเกษม", en: "Indigo Hotel Phetkasem Road" }, note: { th: "ตรงข้าม Big C Extra", en: "Opposite Big C Extra" }, url: "" },
-  { name: { th: "โรงแรมอินดิโก้ 2 สาขาเขต 8", en: "Indigo Hotel 2 Khet 8" }, note: { th: "หาดใหญ่", en: "Hat Yai" }, url: "" },
-  { name: { th: "โรงแรมอินดิโก้ 3 สาขาลีการ์เดนส์", en: "Indigo Hotel 3 Lee Gardens" }, note: { th: "โซนลีการ์เดนส์", en: "Lee Gardens area" }, url: "" },
-  { name: { th: "อินดิโก้ บีชฟรอนท์ พูลวิลล่า สาขาทะเลม่วงงาม", en: "Indigo Beachfront Pool Villa" }, note: { th: "สิงหนคร", en: "Singhanakhon" }, url: "" },
+  { name: { th: "โรงแรมอินดิโก้ สาขาเพรชเกษม", en: "Indigo Hotel Phetkasem Road" }, note: { th: "ตรงข้าม Big C Extra", en: "Opposite Big C Extra" }, url: "https://indigohatyai.com/index-hotel.html", image: "assets/images/indigo1.jpg" },
+  { name: { th: "โรงแรมอินดิโก้ 2 สาขาเขต 8", en: "Indigo Hotel 2 Khet 8" }, note: { th: "หาดใหญ่", en: "Hat Yai" }, url: "https://italythanakorn.github.io/indigohotel-web/indigo2/index.html", image: "assets/images/indigo2.jpg" },
+  { name: { th: "โรงแรมอินดิโก้ 3 สาขาลีการ์เดนส์ เร็วๆนี้", en: "Indigo Hotel 3 Lee Gardens Opening soon" }, note: { th: "โซนลีการ์เดนส์", en: "Lee Gardens area" }, url: "", image: "assets/images/indigo3.jpg" },
+  { name: { th: "อินดิโก้ บีชฟรอนท์ พูลวิลล่า สาขาทะเลม่วงงาม", en: "Indigo Beachfront Pool Villa" }, note: { th: "สิงหนคร", en: "Singhanakhon" }, url: "https://italythanakorn.github.io/indigohotel-web/indigopoolvilla1/index.html", image: "assets/images/poolvilla1.jpg" },
 ];
 
 /* แกลเลอรี — cat ต้องตรงกับ id ใน categories; src ที่ไม่มีไฟล์จะแสดงเป็นรูปแตก ให้ตรวจชื่อไฟล์ */
@@ -79,15 +79,41 @@ const GALLERY = {
     { cat: "common", src: "assets/images/center.jpg", alt: { th: "มุมนั่งพักผ่อน", en: "Lounge garden" } },
     { cat: "common", src: "assets/images/counter.jpg", alt: { th: "เคาน์เตอร์ต้อนรับ", en: "Front desk" } },
     { cat: "common", src: "assets/images/hallway.jpg", alt: { th: "ทางเดินชั้นห้องพัก", en: "Corridor" } },
+    { cat: "common", src: "assets/images/stair.jpg", alt: { th: "บันได", en: "Stairs" } },
+    { cat: "common", src: "assets/images/view.jpg", alt: { th: "บรรยากาศ", en: "Scenic view" } },
     { cat: "rooms", src: "assets/images/superiorking.jpg", alt: { th: "Superior King", en: "Superior King" } },
+    { cat: "rooms", src: "assets/images/superiorking2.jpg", alt: { th: "Superior King", en: "Superior King" } },
+    { cat: "rooms", src: "assets/images/superiorking3.jpg", alt: { th: "Superior King", en: "Superior King" } },
+    { cat: "rooms", src: "assets/images/superiorking4.jpg", alt: { th: "Superior King", en: "Superior King" } },
+    { cat: "rooms", src: "assets/images/superiorking5.jpg", alt: { th: "Superior King", en: "Superior King" } },
     { cat: "rooms", src: "assets/images/superiortwin.jpg", alt: { th: "Superior Twin", en: "Superior Twin" } },
+    { cat: "rooms", src: "assets/images/superiortwin2.jpg", alt: { th: "Superior Twin", en: "Superior Twin" } },
+    { cat: "rooms", src: "assets/images/superiortwin3.jpg", alt: { th: "Superior Twin", en: "Superior Twin" } },
     { cat: "rooms", src: "assets/images/business.jpg", alt: { th: "Business", en: "Business" } },
+    { cat: "rooms", src: "assets/images/business2.jpg", alt: { th: "Business", en: "Business" } },
+    { cat: "rooms", src: "assets/images/business3.jpg", alt: { th: "Business", en: "Business" } },
+    { cat: "rooms", src: "assets/images/business4.jpg", alt: { th: "Business", en: "Business" } },
+    { cat: "rooms", src: "assets/images/business5.jpg", alt: { th: "Business", en: "Business" } },
+    { cat: "rooms", src: "assets/images/business6.jpg", alt: { th: "Business", en: "Business" } },
+    { cat: "rooms", src: "assets/images/business7.jpg", alt: { th: "Business", en: "Business" } },
     { cat: "rooms", src: "assets/images/deluxe.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
+    { cat: "rooms", src: "assets/images/deluxe2.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
+    { cat: "rooms", src: "assets/images/deluxe3.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
+    { cat: "rooms", src: "assets/images/deluxe4.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
+    { cat: "rooms", src: "assets/images/deluxe5.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
+    { cat: "rooms", src: "assets/images/deluxe6.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
+    { cat: "rooms", src: "assets/images/deluxe7.jpg", alt: { th: "Deluxe", en: "Deluxe" } },
     { cat: "rooms", src: "assets/images/triple.jpg", alt: { th: "Triple", en: "Triple" } },
-    { cat: "details", src: "assets/images/superiorking5.jpg", alt: { th: "ห้องน้ำ", en: "Bathroom" } },
+    { cat: "rooms", src: "assets/images/triple2.jpg", alt: { th: "Triple", en: "Triple" } },
+    { cat: "details", src: "assets/images/bathroom.jpg", alt: { th: "ห้องน้ำ", en: "Bathroom" } },
     { cat: "details", src: "assets/images/minibar.jpg", alt: { th: "มินิบาร์", en: "Minibar" } },
     { cat: "details", src: "assets/images/dyson.jpg", alt: { th: "ไดร์เป่าผม Dyson", en: "Dyson hair dryer" } },
-    { cat: "details", src: "assets/images/business16.jpg", alt: { th: "ชุดของใช้ในห้องพัก", en: "Amenities" } },
+    { cat: "details", src: "assets/images/amenities.jpg", alt: { th: "ชุดของใช้ในห้องพัก", en: "Amenities" } },
+    { cat: "details", src: "assets/images/amenities2.jpg", alt: { th: "ชุดของใช้ในห้องพัก", en: "Amenities" } },
+    { cat: "details", src: "assets/images/amenities3.jpg", alt: { th: "ชุดของใช้ในห้องพัก", en: "Amenities" } },
+    { cat: "details", src: "assets/images/amenities5.jpg", alt: { th: "ชุดของใช้ในห้องพัก", en: "Amenities" } },
+    { cat: "details", src: "assets/images/amenities6.jpg", alt: { th: "ชุดของใช้ในห้องพัก", en: "Amenities" } },
+
   ],
 };
 

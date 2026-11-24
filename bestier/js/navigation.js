@@ -56,8 +56,7 @@
     footer.innerHTML = `
       <div class="container">
         <div class="footer-grid">
-          <div>${logo}<p data-i18n="footer.about"></p></div>
-          <div><h4 data-i18n="footer.explore"></h4><ul>${NAV.map(([h, k]) => `<li>${navLink([h, k])}</li>`).join("")}</ul></div>
+          <div>${logo}</div>
           <div><h4 data-i18n="footer.contact"></h4><ul data-render="contact"></ul></div>
         </div>
         <div class="footer-bottom"><span>© ${new Date().getFullYear()} ${esc(SITE.name)} <span data-i18n="footer.rights"></span></span></div>

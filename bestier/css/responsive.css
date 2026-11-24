@@ -22,6 +22,7 @@
   .header-actions .btn{display:none}
   .amenities{columns:1}
   .booking{padding:1.5rem}
+  .site-footer [data-render="contact"]{grid-template-columns:1fr}
 }
 
 @media (max-width:960px){
