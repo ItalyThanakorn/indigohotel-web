@@ -10,12 +10,12 @@
   const navLink = ([href, key]) =>
     `<a href="${href}" data-i18n="${key}"${isActive(href) ? ' class="is-active" aria-current="page"' : ""}></a>`;
 
-  const svg = d => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
-  const ICON = {
-    chat: svg('<path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/>'),
-    phone: svg('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>'),
-    facebook: svg('<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'),
-  };
+  const quick = [
+    { id: "line", href: LINKS.lineChat(), icon: '<i class="fa-brands fa-line" aria-hidden="true"></i>' },
+    { id: "call", href: LINKS.tel, icon: '<i class="fa-solid fa-phone" aria-hidden="true"></i>' },
+    { id: "wa", href: LINKS.whatsapp, icon: '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>' },
+    SITE.facebook && { id: "fb", href: SITE.facebook, icon: '<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>' },
+  ].filter(Boolean);
 
   const logo = `<a class="logo" href="index.html" aria-label="${esc(SITE.name)}">${
     SITE.logo ? `<img class="header-logo" src="${esc(SITE.logo)}" alt="${esc(SITE.name)}">` : esc(SITE.name)}</a>`;
@@ -56,26 +56,21 @@
     footer.innerHTML = `
       <div class="container">
         <div class="footer-grid">
-          <div>${logo}<p data-i18n="footer.about"></p></div>
-          <div><h4 data-i18n="footer.explore"></h4><ul>${NAV.map(([h, k]) => `<li>${navLink([h, k])}</li>`).join("")}</ul></div>
+          <div>${logo}</div>
           <div><h4 data-i18n="footer.contact"></h4><ul data-render="contact"></ul></div>
         </div>
         <div class="footer-bottom"><span>© ${new Date().getFullYear()} ${esc(SITE.name)} <span data-i18n="footer.rights"></span></span></div>
       </div>`;
   }
 
+  const tQuickLabel = id => i18n.t(`quick.${id}`);
+
   /* ---------- ปุ่มติดต่อด่วน (ลอยตลอดการเลื่อน) ---------- */
-  const quick = [
-    { id: "line", href: LINKS.lineChat(), icon: ICON.chat },
-    { id: "call", href: LINKS.tel, icon: ICON.phone },
-    { id: "wa", href: LINKS.whatsapp, icon: ICON.chat },
-    SITE.facebook && { id: "fb", href: SITE.facebook, icon: ICON.facebook },
-  ].filter(Boolean);
   const bar = document.createElement("nav");
   bar.className = "quick";
   bar.setAttribute("data-i18n-label", "quick.label");
   bar.innerHTML = quick.map(q =>
-    `<a class="quick__btn quick__btn--${q.id}" href="${esc(q.href)}"${q.id === "call" ? "" : ' target="_blank" rel="noopener"'}>${q.icon}<span data-i18n="quick.${q.id}"></span></a>`).join("");
+    `<a class="quick__btn quick__btn--${q.id}" href="${esc(q.href)}" aria-label="${tQuickLabel(q.id)}"${q.id === "call" ? "" : ' target="_blank" rel="noopener"'}>${q.icon}<span data-i18n="quick.${q.id}"></span></a>`).join("");
   document.body.append(bar);
 
   i18n.apply(); // header/footer เพิ่งถูกสร้าง ต้องใส่ข้อความตามภาษาอีกรอบ

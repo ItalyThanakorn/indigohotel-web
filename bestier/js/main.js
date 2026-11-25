@@ -33,7 +33,8 @@
     },
     branches: el => {
       el.innerHTML = BRANCHES.map(b => {
-        const body = `<h3>${esc(pick(b.name))}</h3><p>${esc(pick(b.note))}</p>`;
+        const img = b.image ? `<img src="${esc(b.image)}" alt="${esc(pick(b.name))}" loading="lazy" decoding="async">` : "";
+        const body = `${img}<div class="branch__body"><h3>${esc(pick(b.name))}</h3><p>${esc(pick(b.note))}</p></div>`;
         return b.url ? `<a class="branch" href="${esc(b.url)}" ${ext}>${body}</a>` : `<div class="branch">${body}</div>`;
       }).join("");
     },
@@ -43,19 +44,24 @@
     },
     gallery: el => {
       const active = el.dataset.filter || "all";
+      const limit = +el.dataset.limit || 12;
+      const open = el.dataset.open === "1";
       const tabs = [{ id: "all", label: t("gal.all") }, ...GALLERY.categories.map(c => ({ id: c.id, label: pick(c.label) }))];
-      const items = GALLERY.items.filter(i => active === "all" || i.cat === active);
+      const all = GALLERY.items.filter(i => active === "all" || i.cat === active);
+      const items = open ? all : all.slice(0, limit);
       el.innerHTML = `
         <div class="tabs">${tabs.map(tab => `<button type="button" data-filter="${tab.id}" aria-pressed="${tab.id === active}">${esc(tab.label)}</button>`).join("")}</div>
-        <div class="gallery-grid">${items.map(i => `<img src="${esc(i.src)}" alt="${esc(pick(i.alt))}" loading="lazy" decoding="async">`).join("")}</div>`;
+        <div class="gallery-grid">${items.map(i => `<img src="${esc(i.src)}" alt="${esc(pick(i.alt))}" loading="lazy" decoding="async">`).join("")}</div>
+        ${all.length > limit ? `<p class="gallery-more"><button class="btn btn--line" type="button" data-more>${t(open ? "gal.less" : "gal.more")}</button></p>` : ""}`;
       if (!el.dataset.bound) {
-        el.dataset.bound = "1";
-        el.addEventListener("click", e => {
-          const b = e.target.closest("[data-filter]");
-          if (b) { el.dataset.filter = b.dataset.filter; RENDER.gallery(el); }
-        });
-      }
-    },
+      el.dataset.bound = "1";
+      el.addEventListener("click", e => {
+        const tab = e.target.closest("[data-filter]");
+        if (tab) { el.dataset.filter = tab.dataset.filter; el.dataset.open = ""; RENDER.gallery(el); }
+        else if (e.target.closest("[data-more]")) { el.dataset.open = el.dataset.open === "1" ? "" : "1"; RENDER.gallery(el); }
+    });
+  }
+},
   };
 
   function render() {
@@ -77,13 +83,21 @@
     window.open(LINKS.lineChat([t("form.intro"), ...lines].join("\n")), "_blank", "noopener");
   });
 
-  /* วันที่ขั้นต่ำของฟอร์มสอบถาม */
+  /* วันที่ขั้นต่ำของฟอร์มสอบถาม (ใช้วันที่เวลาไทย, เช็กเอาต์ต้องหลังเช็กอินอย่างน้อย 1 วัน) */
+  const ymd = d => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Bangkok" }).format(d); // "2026-12-01"
+  const addDays = (iso, n) => {
+    const d = new Date(`${iso}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  };
+
   const checkIn = document.getElementById("in"), checkOut = document.getElementById("out");
   if (checkIn && checkOut) {
-    checkIn.min = new Date().toISOString().slice(0, 10);
+    checkIn.min = ymd(new Date());
+    checkOut.min = addDays(checkIn.min, 1);
     checkIn.addEventListener("change", () => {
-      checkOut.min = checkIn.value;
-      if (checkOut.value && checkOut.value < checkIn.value) checkOut.value = checkIn.value;
+      checkOut.min = addDays(checkIn.value || checkIn.min, 1);
+      if (checkOut.value && checkOut.value < checkOut.min) checkOut.value = checkOut.min;
     });
   }
 
