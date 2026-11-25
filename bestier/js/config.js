@@ -26,7 +26,7 @@ const SITE = {
 };
 
 const LINKS = {
-  lineChat: (text = "") => `https://line.me/R/ti/p/@788piklw/?${encodeURIComponent(text)}`,
+  lineChat: (text = "") =>`https://line.me/R/oaMessage/%40788piklw/?${encodeURIComponent(text)}`,
   tel: `tel:${SITE.phone.tel}`,
   whatsapp: `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`,
   map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapQuery)}`,
@@ -60,7 +60,7 @@ const NEARBY = [
 
 /* สาขาในเครือ — url ใส่ได้เมื่อมี (เว้นว่าง = ไม่มีลิงก์) */
 const BRANCHES = [
-  { name: { th: "โรงแรมอินดิโก้ สาขาเพรชเกษม", en: "Indigo Hotel Phetkasem Road" }, note: { th: "ตรงข้าม Big C Extra", en: "Opposite Big C Extra" }, url: "https://indigohatyai.com/index-hotel.html", image: "assets/images/indigo1.jpg" },
+  { name: { th: "โรงแรมอินดิโก้ สาขาเพชรเกษม", en: "Indigo Hotel Phetkasem Road" }, note: { th: "ตรงข้าม Big C Extra", en: "Opposite Big C Extra" }, url: "https://indigohatyai.com/index-hotel.html", image: "assets/images/indigo1.jpg" },
   { name: { th: "โรงแรมอินดิโก้ 2 สาขาเขต 8", en: "Indigo Hotel 2 Khet 8" }, note: { th: "หาดใหญ่", en: "Hat Yai" }, url: "https://italythanakorn.github.io/indigohotel-web/indigo2/index.html", image: "assets/images/indigo2.jpg" },
   { name: { th: "โรงแรมอินดิโก้ 3 สาขาลีการ์เดนส์ เร็วๆนี้", en: "Indigo Hotel 3 Lee Gardens Opening soon" }, note: { th: "โซนลีการ์เดนส์", en: "Lee Gardens area" }, url: "", image: "assets/images/indigo3.jpg" },
   { name: { th: "อินดิโก้ บีชฟรอนท์ พูลวิลล่า สาขาทะเลม่วงงาม", en: "Indigo Beachfront Pool Villa" }, note: { th: "สิงหนคร", en: "Singhanakhon" }, url: "https://italythanakorn.github.io/indigohotel-web/indigopoolvilla1/index.html", image: "assets/images/poolvilla1.jpg" },

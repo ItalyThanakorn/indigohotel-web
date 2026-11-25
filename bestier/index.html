@@ -7,6 +7,7 @@
 <meta name="description" content="โรงแรม Bestier หาดใหญ่ ใกล้ ญ.ว. ใจกลางเมือง ห้องพักสะอาด ทันสมัย จองตรงทาง LINE รับโปรโมชันพิเศษ">
 <meta name="theme-color" content="#4B2E2B">
 <link rel="icon" href="assets/images/bestier-mark.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/responsive.css">
@@ -28,7 +29,9 @@
     <div class="field"><label for="in" data-i18n="book.in"></label><input id="in" name="checkin" type="date" required></div>
     <div class="field"><label for="out" data-i18n="book.out"></label><input id="out" name="checkout" type="date" required></div>
     <div class="field"><label for="rooms" data-i18n="book.rooms"></label>
-      <select id="rooms" name="rooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <select id="rooms" name="rooms"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="field"><label for="guests" data-i18n="book.guests"></label>
+    <input id="guests" name="guests" type="number" min="1" max="20" value="2" inputmode="numeric"></div>
     <div class="field"><label for="contact" data-i18n="book.contact"></label><input id="contact" name="contact" autocomplete="tel"></div>
     <button class="btn btn--chat" type="submit" data-i18n="book.search"></button>
   </form>
@@ -85,7 +88,7 @@
 
 <section class="section section--mist">
   <div class="container">
-    <div class="section-head"><h2 data-i18n="br.title"></h2><p data-i18n="br.text"></p></div>
+    <div class="section-head"><h2 data-i18n="br.title"></h2></div>
     <div class="branches" data-render="branches"></div>
   </div>
 </section>
