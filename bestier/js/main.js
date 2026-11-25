@@ -83,13 +83,21 @@
     window.open(LINKS.lineChat([t("form.intro"), ...lines].join("\n")), "_blank", "noopener");
   });
 
-  /* วันที่ขั้นต่ำของฟอร์มสอบถาม */
+  /* วันที่ขั้นต่ำของฟอร์มสอบถาม (ใช้วันที่เวลาไทย, เช็กเอาต์ต้องหลังเช็กอินอย่างน้อย 1 วัน) */
+  const ymd = d => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Bangkok" }).format(d); // "2026-12-01"
+  const addDays = (iso, n) => {
+    const d = new Date(`${iso}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  };
+
   const checkIn = document.getElementById("in"), checkOut = document.getElementById("out");
   if (checkIn && checkOut) {
-    checkIn.min = new Date().toISOString().slice(0, 10);
+    checkIn.min = ymd(new Date());
+    checkOut.min = addDays(checkIn.min, 1);
     checkIn.addEventListener("change", () => {
-      checkOut.min = checkIn.value;
-      if (checkOut.value && checkOut.value < checkIn.value) checkOut.value = checkIn.value;
+      checkOut.min = addDays(checkIn.value || checkIn.min, 1);
+      if (checkOut.value && checkOut.value < checkOut.min) checkOut.value = checkOut.min;
     });
   }
 
