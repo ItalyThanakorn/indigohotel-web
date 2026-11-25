@@ -2,6 +2,9 @@
 const langSwitch = document.getElementById('langSwitch');
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.querySelector('.nav-links');
+const villaMenuToggle = document.getElementById('villaMenuToggle');
+const villaDropdown = document.getElementById('villaDropdown');
+const villaDropdownRoot = document.getElementById('villaDropdownRoot');
 let language='th';
 // เปลี่ยนข้อความทั้งหน้าและภาษาของเอกสาร
 function setLanguage(next) {
@@ -31,6 +34,37 @@ navLinks.querySelectorAll('a').forEach((link) => {
     menuToggle.setAttribute('aria-expanded', 'false');
   });
 });
+// เลือกบ้านพักจากเมนูดรอปดาวน์บนหน้าแรก
+if (villaMenuToggle && villaDropdown && villaDropdownRoot) {
+  function closeVillaDropdown(returnFocus = false) {
+    villaDropdown.hidden = true;
+    villaMenuToggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus) villaMenuToggle.focus();
+  }
+
+  villaMenuToggle.addEventListener('click', () => {
+    const open = villaDropdown.hidden;
+    villaDropdown.hidden = !open;
+    villaMenuToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!villaDropdownRoot.contains(event.target)) closeVillaDropdown();
+  });
+
+  villaDropdown.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeVillaDropdown(true);
+  });
+
+  villaMenuToggle.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      villaDropdown.hidden = false;
+      villaMenuToggle.setAttribute('aria-expanded', 'true');
+      villaDropdown.querySelector('a')?.focus();
+    }
+  });
+}
 // แสดงปีปัจจุบันในส่วนท้ายเว็บ
 document.getElementById('year').textContent=new Date().getFullYear();
 // แสดงภาพสระทีละภาพ พร้อมเลื่อนอัตโนมัติและรองรับการปัดบนมือถือ

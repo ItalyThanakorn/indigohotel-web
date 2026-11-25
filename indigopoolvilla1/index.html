@@ -15,16 +15,34 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Anuphan:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     >
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=38">
 </head>
 <body>
   <a class="skip-link" href="#mainContent" data-th="ข้ามไปยังเนื้อหา" data-en="Skip to content">ข้ามไปยังเนื้อหา</a>
   <!-- ส่วนหัวเว็บ: โลโก้ เมนู และปุ่มสลับภาษา -->
   <header class="topbar">
     <a class="brand" href="#home" aria-label="Indigo Pool Villa home"><img class="brand-logo" src="assets/indigo-logo.png" alt="Indigo Beachfront Pool Villa"></a>
-    <nav class="nav-links"><a href="#villas" data-th="บ้านพัก" data-en="Villas">บ้านพัก</a><a href="amenities.html" data-th="สิ่งอำนวยความสะดวก" data-en="Amenities">สิ่งอำนวยความสะดวก</a><a href="#location" data-th="ที่ตั้ง" data-en="Location">ที่ตั้ง</a><a href="#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a></nav>
+    <nav class="nav-links" aria-label="Main navigation">
+      <div class="nav-dropdown" id="villaDropdownRoot">
+        <button class="nav-dropdown-toggle" id="villaMenuToggle" type="button" aria-expanded="false" aria-controls="villaDropdown">
+          <span data-th="บ้านพัก A-C" data-en="Villas A-C">บ้านพัก A-C</span><span class="dropdown-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="nav-dropdown-menu" id="villaDropdown" hidden>
+          <a href="villa-a215.html" data-th="บ้านพัก A-215" data-en="Villa A-215">บ้านพัก A-215</a>
+          <a href="villa-b216.html" data-th="บ้านพัก B-216" data-en="Villa B-216">บ้านพัก B-216</a>
+          <a href="villa-c217.html" data-th="บ้านพัก C-217" data-en="Villa C-217">บ้านพัก C-217</a>
+        </div>
+      </div>
+      <a href="amenities.html" data-th="สิ่งอำนวยความสะดวก" data-en="Amenities">สิ่งอำนวยความสะดวก</a><a href="#location" data-th="ที่ตั้ง" data-en="Location">ที่ตั้ง</a><a href="#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a>
+    </nav>
     <div class="nav-actions"><button class="lang-switch" id="langSwitch" aria-label="Switch language">EN</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
   </header>
+
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 18v2M3 18v2M3 11h18v3"/><path d="M7 11V8h5a3 3 0 0 1 3 3"/></symbol>
+    <symbol id="icon-shower" viewBox="0 0 24 24"><path d="M4 10a8 8 0 0 1 16 0M4 10h16M7 14v1m5-1v1m5-1v1M8 19v1m8-1v1"/><path d="M12 2v2"/></symbol>
+    <symbol id="icon-guests" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20v-1a5.5 5.5 0 0 1 11 0v1M16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V20"/></symbol>
+  </svg>
 
   <!-- เนื้อหาหลักของเว็บไซต์ -->
   <main id="mainContent">
@@ -34,6 +52,7 @@
       <div class="hero-content"><span class="eyebrow"></span>
         <h1 data-th="อินดิโก้ บีชฟรอนท์<br><span class='hero-highlight'>พูลวิลล่า</span>" data-en="Indigo Beachfront<br><span class='hero-highlight'>Pool Villa</span>">อินดิโก้ บีชฟรอนท์<br><span class="hero-highlight">พูลวิลล่า</span></h1>
         <p data-th="พูลวิลล่าริมทะเล พร้อมสระส่วนตัว" data-en="Beachfront pool villa with a private pool">พูลวิลล่าริมทะเล พร้อมสระส่วนตัว</p>
+        
       </div>
     </section>
 
@@ -53,11 +72,11 @@
 </section>
 
     <!-- รายการบ้านพักและราคา -->
-    <section class="villas section-wrap" id="villas"><div class="section-heading"><div><h2 data-th="บ้านพักริมทะเล" data-en="Seaside villas">บ้านพักริมทะเล</h2></div></div>
+    <section class="villas section-wrap" id="villas"><div class="section-heading"><div><h2 data-th="บ้านพักริมทะเล" data-en="Seaside villas">บ้านพักริมทะเล</h2><p class="section-lead" data-th="เลือกพื้นที่พักผ่อนที่เหมาะกับทริปและจำนวนผู้เข้าพักของคุณ" data-en="Choose a private seaside stay that fits your trip and group.">เลือกพื้นที่พักผ่อนที่เหมาะกับทริปและจำนวนผู้เข้าพักของคุณ</p></div></div>
       <div class="villa-grid">
         <article class="villa-card">
           <a class="villa-image image-a" href="villa-a215.html" aria-label="View A-215 villa details"><span class="image-label">INDIGO POOL VILLA</span><span class="image-code">A-215</span></a>
-          <div class="villa-info"><div class="villa-title"><div><span class="villa-type" data-th="พูลวิลล่าติดทะเล" data-en="SEASIDE POOL VILLA">พูลวิลล่าติดทะเล</span><h3>A-215</h3></div><div class="villa-price"><small data-th="ราคา/คืน" data-en="PRICE/NIGHT">ราคา/คืน</small><strong>฿16,900</strong></div></div><div class="villa-specs"><span>⌂ <b data-th="4 ห้องนอน" data-en="4 bedrooms">4 ห้องนอน</b></span><span>▤ <b data-th="5 ห้องน้ำ" data-en="5 bathrooms">5 ห้องน้ำ</b></span><span>♙ <b data-th="สูงสุด 12 ท่าน" data-en="Up to 12 guests">สูงสุด 12 ท่าน</b></span></div><p
+          <div class="villa-info"><div class="villa-title"><div><span class="villa-type" data-th="พูลวิลล่าติดทะเล" data-en="SEASIDE POOL VILLA">พูลวิลล่าติดทะเล</span><h3>A-215</h3></div><div class="villa-price"><small data-th="ราคา/คืน" data-en="PRICE/NIGHT">ราคา/คืน</small><strong>฿16,900</strong></div></div><div class="villa-specs"><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-bed"></use></svg><b data-th="4 ห้องนอน" data-en="4 bedrooms">4 ห้องนอน</b></span><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-shower"></use></svg><b data-th="5 ห้องน้ำ" data-en="5 bathrooms">5 ห้องน้ำ</b></span><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-guests"></use></svg><b data-th="สูงสุด 12 ท่าน" data-en="Up to 12 guests">สูงสุด 12 ท่าน</b></span></div><p
       class="villa-description"
       data-th="บ้านพักกว้างขวางสำหรับครอบครัวและกลุ่มเพื่อน พร้อมสระส่วนตัวและสไลเดอร์"
       data-en="A spacious retreat for families and friends, with a private pool and waterslide."
@@ -65,7 +84,7 @@
         </article>
         <article class="villa-card">
           <a class="villa-image image-b" href="villa-b216.html" aria-label="View B-216 villa details"><span class="image-label">INDIGO POOL VILLA</span><span class="image-code">B-216</span></a>
-          <div class="villa-info"><div class="villa-title"><div><span class="villa-type" data-th="พูลวิลล่าติดทะเล" data-en="SEASIDE POOL VILLA">พูลวิลล่าติดทะเล</span><h3>B-216</h3></div><div class="villa-price"><small data-th="ราคา/คืน" data-en="PRICE/NIGHT">ราคา/คืน</small><strong>฿9,900</strong></div></div><div class="villa-specs"><span>⌂ <b data-th="2 ห้องนอน" data-en="2 bedrooms">2 ห้องนอน</b></span><span>▤ <b data-th="2 ห้องน้ำ" data-en="2 bathrooms">2 ห้องน้ำ</b></span><span>♙ <b data-th="สูงสุด 4 ท่าน" data-en="Up to 4 guests">สูงสุด 4 ท่าน</b></span></div><p
+          <div class="villa-info"><div class="villa-title"><div><span class="villa-type" data-th="พูลวิลล่าติดทะเล" data-en="SEASIDE POOL VILLA">พูลวิลล่าติดทะเล</span><h3>B-216</h3></div><div class="villa-price"><small data-th="ราคา/คืน" data-en="PRICE/NIGHT">ราคา/คืน</small><strong>฿9,900</strong></div></div><div class="villa-specs"><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-bed"></use></svg><b data-th="2 ห้องนอน" data-en="2 bedrooms">2 ห้องนอน</b></span><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-shower"></use></svg><b data-th="2 ห้องน้ำ" data-en="2 bathrooms">2 ห้องน้ำ</b></span><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-guests"></use></svg><b data-th="สูงสุด 4 ท่าน" data-en="Up to 4 guests">สูงสุด 4 ท่าน</b></span></div><p
       class="villa-description"
       data-th="บ้านพักส่วนตัวบรรยากาศสงบ พร้อมสระว่ายน้ำและพื้นที่นั่งเล่นริมทะเล"
       data-en="A calm, intimate escape with a private pool and a relaxed seaside lounge."
@@ -73,7 +92,7 @@
         </article>
         <article class="villa-card">
           <a class="villa-image image-c" href="villa-c217.html" aria-label="View C-217 villa details"><span class="image-label">INDIGO POOL VILLA</span><span class="image-code">C-217</span></a>
-          <div class="villa-info"><div class="villa-title"><div><span class="villa-type" data-th="พูลวิลล่าติดทะเล" data-en="SEASIDE POOL VILLA">พูลวิลล่าติดทะเล</span><h3>C-217</h3></div><div class="villa-price"><small data-th="ราคา/คืน" data-en="PRICE/NIGHT">ราคา/คืน</small><strong>฿14,900</strong></div></div><div class="villa-specs"><span>⌂ <b data-th="4 ห้องนอน" data-en="4 bedrooms">4 ห้องนอน</b></span><span>▤ <b data-th="4 ห้องน้ำ" data-en="4 bathrooms">4 ห้องน้ำ</b></span><span>♙ <b data-th="สูงสุด 14 ท่าน" data-en="Up to 14 guests">สูงสุด 14 ท่าน</b></span></div><p
+          <div class="villa-info"><div class="villa-title"><div><span class="villa-type" data-th="พูลวิลล่าติดทะเล" data-en="SEASIDE POOL VILLA">พูลวิลล่าติดทะเล</span><h3>C-217</h3></div><div class="villa-price"><small data-th="ราคา/คืน" data-en="PRICE/NIGHT">ราคา/คืน</small><strong>฿14,900</strong></div></div><div class="villa-specs"><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-bed"></use></svg><b data-th="4 ห้องนอน" data-en="4 bedrooms">4 ห้องนอน</b></span><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-shower"></use></svg><b data-th="4 ห้องน้ำ" data-en="4 bathrooms">4 ห้องน้ำ</b></span><span><svg class="facility-emoji" aria-hidden="true"><use href="#icon-guests"></use></svg><b data-th="สูงสุด 14 ท่าน" data-en="Up to 14 guests">สูงสุด 14 ท่าน</b></span></div><p
       class="villa-description"
       data-th="พื้นที่กว้างสำหรับกลุ่มใหญ่ ครบครันด้วยสระส่วนตัวและมุมพักผ่อน"
       data-en="A generous home for larger groups, with a private pool and plenty of space to unwind."
@@ -87,15 +106,7 @@
       <div class="amenity-photo"></div>
       <div class="amenity-copy">
         
-
-
-
-
-
-
-
-        
-        <h2 data-th="เช่าเหมาโครงการ" data-en="Rent thewhole project">เช่าเหมาโครงการ</h2>
+        <h2 data-th="เช่าเหมาโครงการ" data-en="Rent the whole project">เช่าเหมาโครงการ</h2>
         <p class="rental-summary" data-th="บ้านพัก 3 หลัง A + B + C สนุกกับสระว่ายน้ำ 3 สระ พร้อมพื้นที่กิจกรรมส่วนตัว" data-en="Three villas — A, B and C — with three swimming pools and a private activity area.">บ้านพัก 3 หลัง A + B + C สนุกกับสระว่ายน้ำ 3 สระ พร้อมพื้นที่กิจกรรมส่วนตัว</p>
         <div class="rental-highlights">
           <span data-th="15 เตียงคิงส์" data-en="15 king beds">15 เตียงคิงส์</span>
@@ -110,7 +121,9 @@
     </section>
 
     <!-- เวลาเช็กอิน เงินประกัน และเงื่อนไข -->
-    <section class="stay-notes section-wrap"><div class="notes-grid"><div><span class="note-number">01</span><h3 data-th="เช็กอินและเช็กเอาต์" data-en="Check-in & check-out">เช็กอินและเช็กเอาต์</h3><p data-th="เช็กอิน 15:00 น. - เช็กเอาต์ 11:00 น." data-en="Check-in 3:00 PM - Check-out 11:00 AM">เช็กอิน 15:00 น. - เช็กเอาต์ 11:00 น.</p></div><div><span class="note-number">02</span><h3 data-th="เงินประกัน" data-en="Security deposit">เงินประกัน</h3><p data-th="เงินประกันความเสียหาย 3,000 บาท" data-en="฿3,000 refundable damage deposit">เงินประกันความเสียหาย 3,000 บาท</p></div><div><span class="note-number">03</span><h3 data-th="การจอง" data-en="Reservations">การจอง</h3><p
+    <section class="stay-notes section-wrap">
+      <div class="stay-heading"><h2 data-th="ข้อมูลก่อนเข้าพัก" data-en="Before your stay">ข้อมูลก่อนเข้าพัก</h2></div>
+      <div class="notes-grid"><div><span class="note-number">01</span><h3 data-th="เช็กอินและเช็กเอาต์" data-en="Check-in & check-out">เช็กอินและเช็กเอาต์</h3><p data-th="เช็กอิน 15:00 น. - เช็กเอาต์ 11:00 น." data-en="Check-in 3:00 PM - Check-out 11:00 AM">เช็กอิน 15:00 น. - เช็กเอาต์ 11:00 น.</p></div><div><span class="note-number">02</span><h3 data-th="เงินประกัน" data-en="Security deposit">เงินประกัน</h3><p data-th="เงินประกันความเสียหาย 3,000 บาท" data-en="฿3,000 refundable damage deposit">เงินประกันความเสียหาย 3,000 บาท</p></div><div><span class="note-number">03</span><h3 data-th="การจอง" data-en="Reservations">การจอง</h3><p
       data-th="ยืนยันการจองเมื่อชำระเงินเต็มจำนวน กรุณาตรวจสอบราคาและวันว่างก่อนจอง"
       data-en="Reservations are confirmed after full payment. Please confirm availability and
       pricing before booking."
@@ -120,7 +133,7 @@
     <section class="location section-wrap" id="location">
       <div class="section-heading">
         <div>
-          <h2 data-th="ที่ตั้งของเรา" data-en="Our location">ที่ตั้งของเรา</h2>
+          <h2 data-th="ที่ตั้งของบ้านพัก" data-en="Villa location">ที่ตั้งของบ้านพัก</h2>
         </div>
       </div>
       <div class="location-content">
@@ -129,7 +142,6 @@
           <h3 data-th="อินดิโก้ บีชฟรอนท์ พูลวิลล่า" data-en="Indigo Beachfront Pool Villa">อินดิโก้ บีชฟรอนท์ พูลวิลล่า</h3>
           <address data-th="215 หมู่ที่ 3 ตำบลม่วงงาม อำเภอสิงหนคร จังหวัดสงขลา 90330"
             data-en="215 Moo 3, Muang Ngam, Singhanakhon, Songkhla 90330, Thailand">215 หมู่ที่ 3 ตำบลม่วงงาม อำเภอสิงหนคร จังหวัดสงขลา 90330</address>
-          <p class="location-coordinates"><span data-th="พิกัด" data-en="Coordinates">พิกัด</span>: 7.3520416, 100.4906997</p>
           <a class="location-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=7.3520416%2C100.4906997" target="_blank" rel="noopener noreferrer">
             <span data-th="เปิดเส้นทางใน Google Maps" data-en="Get directions in Google Maps">เปิดเส้นทางใน Google Maps</span><span aria-hidden="true">↗</span>
           </a>
