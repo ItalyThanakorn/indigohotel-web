@@ -74,7 +74,7 @@ const GALLERY = {
     { id: "details", label: { th: "รายละเอียด", en: "Details" } },
   ],
   items: [
-    { cat: "common", src: "assets/images/Building1.jpg", alt: { th: "ด้านหน้าโรงแรม", en: "Hotel front" } },
+    { cat: "common", src: "assets/images/front.jpg", alt: { th: "ด้านหน้าโรงแรม", en: "Hotel front" } },
     { cat: "common", src: "assets/images/breakspace.jpg", alt: { th: "พื้นที่ต้อนรับ", en: "Lobby" } },
     { cat: "common", src: "assets/images/center.jpg", alt: { th: "มุมนั่งพักผ่อน", en: "Lounge garden" } },
     { cat: "common", src: "assets/images/counter.jpg", alt: { th: "เคาน์เตอร์ต้อนรับ", en: "Front desk" } },
