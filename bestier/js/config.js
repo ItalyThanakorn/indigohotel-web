@@ -26,7 +26,14 @@ const SITE = {
 };
 
 const LINKS = {
-  lineChat: (text = "") =>`https://line.me/R/oaMessage/%40788piklw/?${encodeURIComponent(text)}`,
+  lineChat: (text = "") => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const lineId = "%40788piklw";
+    if (isMobile) {
+      return `https://line.me/R/oaMessage/${lineId}/?${encodeURIComponent(text)}`;
+    }
+    return `https://line.me/R/ti/p/${lineId}`;
+  },
   tel: `tel:${SITE.phone.tel}`,
   whatsapp: `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`,
   map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapQuery)}`,
@@ -74,7 +81,7 @@ const GALLERY = {
     { id: "details", label: { th: "รายละเอียด", en: "Details" } },
   ],
   items: [
-    { cat: "common", src: "assets/images/Building1.jpg", alt: { th: "ด้านหน้าโรงแรม", en: "Hotel front" } },
+    { cat: "common", src: "assets/images/front.jpg", alt: { th: "ด้านหน้าโรงแรม", en: "Hotel front" } },
     { cat: "common", src: "assets/images/breakspace.jpg", alt: { th: "พื้นที่ต้อนรับ", en: "Lobby" } },
     { cat: "common", src: "assets/images/center.jpg", alt: { th: "มุมนั่งพักผ่อน", en: "Lounge garden" } },
     { cat: "common", src: "assets/images/counter.jpg", alt: { th: "เคาน์เตอร์ต้อนรับ", en: "Front desk" } },

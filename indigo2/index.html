@@ -1,256 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย" data-th="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย" data-en="INDIGO 2 HOTEL in Hatyai's Khet 8, offering a comfortable and relaxing stay.">
-    <title>INDIGO 2 HOTEL | Hatyai</title>
-
+    <meta name="theme-color" content="#10232d">
+    <meta name="description" content="INDIGO 2 HOTEL, a warm and comfortable stay in Hat Yai, Thailand.">
+    <title>INDIGO 2 HOTEL | HATYAI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="INDIGO 2 HOTEL home">
+            <span class="brand-name">INDIGO <span>2</span></span>
+            <span class="brand-caption">HOTEL · HATYAI</span>
+        </a>
 
-<!-- 1. TOP BAR -->
-<div class="topbar">
-    <span>INDIGO 2 HOTEL · HATYAI</span>
-    <span>074 813 380</span>
-</div>
-
-<!-- 2. HEADER / MENU -->
-<header class="header" id="home">
-    <a href="#home" class="logo">
-        INDIGO <span>2</span>
-        <small>HOTEL · HATYAI</small>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle"
-        aria-label="เปิดเมนู" aria-expanded="false">☰</button>
-    <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English">EN</button>
-
-    <nav class="nav" id="mainNav">
-        <a href="#home" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
-        <a href="#about" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</a>
-        <a href="#rooms" data-th="ห้องพัก" data-en="Rooms">ห้องพัก</a>
-        <a href="#gallery" data-th="แกลเลอรี" data-en="Gallery">แกลเลอรี</a>
-        <a href="#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a>
-        <a href="#booking" class="nav-button" data-th="ค้นหาห้องพัก ↗" data-en="Find a Room ↗">ค้นหาห้องพัก ↗</a>
-    </nav>
-</header>
-
-<main>
-
-<!-- 3. HERO / BANNER -->
-<section class="hero">
-    <div class="hero-shade"></div>
-    <div class="hero-content">
-        <p class="eyebrow" data-th="ยินดีต้อนรับสู่ INDIGO 2 HOTEL" data-en="WELCOME TO INDIGO 2 HOTEL">WELCOME TO INDIGO 2 HOTEL</p>
-        <h1><span data-th="พักผ่อนอย่างสบาย" data-en="Stay in Comfort.">Stay in Comfort.</span><br><span data-th="ใช้ชีวิตอย่างมีสไตล์" data-en="Live in Style.">Live in Style.</span></h1>
-        <p class="hero-description"
-           data-th="ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย สำหรับนักเดินทางยุคใหม่ ในย่านเขต 8 หาดใหญ่"
-           data-en="A welcoming, peaceful, and comfortable stay for modern travelers in Hatyai's Khet 8.">
-            ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย สำหรับนักเดินทางยุคใหม่ ในย่านเขต 8 หาดใหญ่
-        </p>หหห
-        <div class="hero-buttons">
-            <a href="#rooms" class="button gold" data-th="สำรวจห้องพัก" data-en="Explore Rooms">สำรวจห้องพัก</a>
-            <a href="#about" class="button outline" data-th="รู้จักโรงแรม" data-en="About the Hotel">รู้จักโรงแรม</a>
-        </div>
-    </div>
-    <div class="hero-bottom" data-th="สะดวกสบายทันสมัย · หาดใหญ่ ประเทศไทย" data-en="MODERN COMFORT · HATYAI, THAILAND">MODERN COMFORT · HATYAI, THAILAND</div>
-</section>
-
-<!-- 4. BOOKING SEARCH -->
-<section class="booking" id="booking">
-    <form id="bookingForm">
-        <div class="booking-title">
-            <p class="eyebrow" data-th="วางแผนการเข้าพัก" data-en="PLAN YOUR STAY">PLAN YOUR STAY</p>
-            <h2 data-th="ค้นหาห้องพัก" data-en="Find a Room">ค้นหาห้องพัก</h2>
-        </div>
-
-        <div class="field">
-            <label for="checkin" data-th="วันเช็กอิน" data-en="Check-in">วันเช็กอิน</label>
-            <input type="date" id="checkin" required>
-        </div>
-
-        <div class="field">
-            <label for="checkout" data-th="วันเช็กเอาต์" data-en="Check-out">วันเช็กเอาต์</label>
-            <input type="date" id="checkout" required>
-        </div>
-
-        <div class="field">
-            <label for="guests" data-th="ผู้เข้าพัก" data-en="Guests">ผู้เข้าพัก</label>
-            <select id="guests">
-                <option value="1" data-th="1 คน" data-en="1 guest">1 คน</option>
-                <option value="2" selected data-th="2 คน" data-en="2 guests">2 คน</option>
-                <option value="3" data-th="3 คน" data-en="3 guests">3 คน</option>
-                <option value="4" data-th="4 คน" data-en="4 guests">4 คน</option>
-            </select>
-        </div>
-
-        <button class="button gold search-button" type="submit">
-            <span data-th="ค้นหาห้อง ↗" data-en="Search Rooms ↗">ค้นหาห้อง ↗</span>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+            <span></span><span></span><span></span>
         </button>
-    </form>
-</section>
 
-<!-- 5. ABOUT HOTEL -->
-<section class="about section" id="about">
-    <div class="about-photo">
-        <img src="../assets/images/indigo2/777777777777777777.jpg" alt="บรรยากาศห้องพัก INDIGO 2" data-th-alt="บรรยากาศห้องพัก INDIGO 2" data-en-alt="INDIGO 2 guest room">
-        <span class="photo-label">INDIGO 2 · KHET 8</span>
-    </div>
-
-    <div class="about-text">
-        <p class="eyebrow" data-th="เกี่ยวกับโรงแรม" data-en="ABOUT OUR HOTEL">ABOUT OUR HOTEL</p>
-        <h2 class="section-title"><span data-th="ความเรียบง่าย" data-en="Simple Comfort">ความเรียบง่าย</span><br><span data-th="ที่มาพร้อมความสบาย" data-en="Made for Your Stay">ที่มาพร้อมความสบาย</span></h2>
-        <div class="gold-line"></div>
-        <p data-th="INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักสำหรับผู้ที่ต้องการความสะดวกสบาย บรรยากาศผ่อนคลาย และพื้นที่พักผ่อนหลังการเดินทาง เหมาะสำหรับนักท่องเที่ยวและผู้ที่เดินทางมาติดต่อธุรกิจ"
-           data-en="INDIGO 2 HOTEL in Hatyai's Khet 8 offers a comfortable, relaxing place to unwind after a journey. It is suitable for visitors and business travelers.">
-            INDIGO 2 HOTEL เขต 8 หาดใหญ่ ที่พักสำหรับผู้ที่ต้องการความสะดวกสบาย บรรยากาศผ่อนคลาย และพื้นที่พักผ่อนหลังการเดินทาง เหมาะสำหรับนักท่องเที่ยวและผู้ที่เดินทางมาติดต่อธุรกิจ
-        </p>
-        <a href="#contact" class="text-link" data-th="ติดต่อสอบถาม ↗" data-en="Get in Touch ↗">ติดต่อสอบถาม ↗</a>
-    </div>
-</section>
-
-<!-- 6. ROOM CARDS -->
-<section class="rooms section" id="rooms">
-    <div class="section-heading">
-        <p class="eyebrow" data-th="เลือกห้องพักที่ใช่" data-en="FIND YOUR COMFORT">FIND YOUR COMFORT</p>
-        <h2 class="section-title" data-th="ห้องพักของเรา" data-en="Our Rooms">ห้องพักของเรา</h2>
-        <p data-th="เลือกห้องพักที่เหมาะกับการเดินทางของคุณ" data-en="Choose the room that suits your stay.">เลือกห้องพักที่เหมาะกับการเดินทางของคุณ</p>
-        <div class="gold-line"></div>
-    </div>
-
-    <div class="room-grid">
-        <article class="room-card">
-            <img src="../assets/images/indigo2/room2.jpg" alt="ห้องทวิน ลอฟต์" data-th-alt="ห้องทวิน ลอฟต์" data-en-alt="Loft twin room" loading="lazy">
-            <div class="room-info">
-                <p class="room-type">ROOM 01</p>
-                <h3><span data-th="ห้องทวิน" data-en="Twin Room">ห้องทวิน</span><small data-th="Loft Twin Room" data-en="Loft Twin Room">Loft Twin Room</small></h3>
-                <p data-th="ห้องพักเตียงแฝดในรูปแบบลอฟต์" data-en="A loft-style room with twin beds.">ห้องพักเตียงแฝดในรูปแบบลอฟต์</p>
-                <p class="room-price" data-th="฿1,090 / คืน" data-en="Price 1090- / night">Price 1090- / night</p>
-                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
-            </div>
-        </article>
-
-        <article class="room-card">
-            <img src="../assets/images/indigo2/room1.jpg" alt="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง" data-th-alt="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง" data-en-alt="Superior king room with city view" loading="lazy">
-            <div class="room-info">
-                <p class="room-type">ROOM 02</p>
-                <h3><span data-th="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง" data-en="Superior King Room - City View">ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง</span><small data-th="Superior King Room - City View" data-en="ห้องสุพีเรียร์เตียงคิงไซส์พร้อมวิวเมือง">Superior King Room - City View</small></h3>
-                <p data-th="ห้องสุพีเรียร์พร้อมเตียงคิงไซส์และวิวเมือง" data-en="A superior room with a king bed and city view.">ห้องสุพีเรียร์พร้อมเตียงคิงไซส์และวิวเมือง</p>
-                <p class="room-price" data-th="฿1,090 / คืน" data-en="฿1,090 / night">฿1,090 / คืน</p>
-                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
-            </div>
-        </article>
-
-        <article class="room-card">
-            <img src="../assets/images/indigo2/TripleStandard.jpg" alt="ห้องมาตรฐานสำหรับ 3 คน" data-th-alt="ห้องมาตรฐานสำหรับ 3 คน" data-en-alt="Triple standard room" loading="lazy">
-            <div class="room-info">
-                <p class="room-type">ROOM 03</p>
-                <h3><span data-th="ห้องมาตรฐาน สำหรับ 3 คน" data-en="Triple Standard">ห้องมาตรฐาน สำหรับ 3 คน</span><small data-th="Triple Standard" data-en="ห้องมาตรฐาน สำหรับ 3 คน">Triple Standard</small></h3>
-                <p data-th="ห้องมาตรฐานสำหรับผู้เข้าพัก 3 คน" data-en="A standard room for up to 3 guests.">ห้องมาตรฐานสำหรับผู้เข้าพัก 3 คน</p>
-                <p class="room-price" data-th="฿1,290 / คืน" data-en="฿1,290 / night">฿1,290 / คืน</p>
-                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
-            </div>
-        </article>
-
-        <article class="room-card">
-            <img src="../assets/images/indigo2/SuperiorTwinRoom.jpg" alt="ห้องสุพีเรียร์เตียงแฝด" data-th-alt="ห้องสุพีเรียร์เตียงแฝด" data-en-alt="Superior twin room" loading="lazy">
-            <div class="room-info">
-                <p class="room-type">ROOM 04</p>
-                <h3><span data-th="ซูพีเรีย เตียงแฝด" data-en="Superior Twin Room">ซูพีเรีย เตียงแฝด</span><small data-th="Superior Twin Room" data-en="ซูพีเรีย เตียงแฝด">Superior Twin Room</small></h3>
-                <p data-th="ห้องสุพีเรียร์พร้อมเตียงแฝด" data-en="A superior room with twin beds.">ห้องสุพีเรียร์พร้อมเตียงแฝด</p>
-                <p class="room-price" data-th="฿1,090 / คืน" data-en="฿1,090 / night">฿1,090 / คืน</p>
-                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
-            </div>
-        </article>
-
-        <article class="room-card">
-            <img src="../assets/images/indigo2/room9.jpg" alt="ห้องสุพีเรียร์เตียงคิงไซส์" data-th-alt="ห้องสุพีเรียร์เตียงคิงไซส์" data-en-alt="Superior king room" loading="lazy">
-            <div class="room-info">
-                <p class="room-type">ROOM 05</p>
-                <h3><span data-th="ห้องสุพีเรียร์เตียงคิงไซส์" data-en="Superior King Room">ห้องสุพีเรียร์เตียงคิงไซส์</span><small data-th="Superior King Room" data-en="ห้องสุพีเรียร์เตียงคิงไซส์">Superior King Room</small></h3>
-                <p data-th="ห้องสุพีเรียร์พร้อมเตียงคิงไซส์" data-en="A superior room with a king bed.">ห้องสุพีเรียร์พร้อมเตียงคิงไซส์</p>
-                <p class="room-price" data-th="฿1,090 / คืน" data-en="฿1,090 / night">฿1,090 / คืน</p>
-                <a href="#contact" class="room-link" data-th="สอบถามราคา ↗" data-en="Ask about rates ↗">สอบถามราคา ↗</a>
-            </div>
-        </article>
-    </div>
-    <p class="disclaimer" data-th="ราคาและห้องว่างอาจเปลี่ยนแปลง กรุณาติดต่อโรงแรมเพื่อยืนยันก่อนจอง" data-en="Rates and availability may change. Please contact the hotel to confirm before booking.">ราคาและห้องว่างอาจเปลี่ยนแปลง กรุณาติดต่อโรงแรมเพื่อยืนยันก่อนจอง</p>
-</section>
-
-<!-- 7. GALLERY -->
-<section class="gallery section" id="gallery">
-    <div class="section-heading">
-        <p class="eyebrow" data-th="บรรยากาศของเรา" data-en="OUR SPACE">OUR SPACE</p>
-        <h2 class="section-title" data-th="บรรยากาศของโรงแรม" data-en="Hotel Gallery">บรรยากาศของโรงแรม</h2>
-        <div class="gold-line"></div>
-    </div>
-
-    <div class="gallery-grid">
-        <img src="../assets/images/indigo2/room1.jpg" alt="ห้องพักเตียงคิงไซส์" data-th-alt="ห้องพักเตียงคิงไซส์" data-en-alt="King room" loading="lazy">
-        <img src="../assets/images/indigo2/room2.jpg" alt="ห้องพักเตียงแฝด" data-th-alt="ห้องพักเตียงแฝด" data-en-alt="Twin room" loading="lazy">
-        <img src="../assets/images/indigo2/room3.jpg" alt="ห้องพักตกแต่งพิเศษ" data-th-alt="ห้องพักตกแต่งพิเศษ" data-en-alt="Specially decorated room" loading="lazy">
-        <img src="../assets/images/indigo2/room4_n.jpg" alt="มุมโทรทัศน์ภายในห้องพัก" data-th-alt="มุมโทรทัศน์ภายในห้องพัก" data-en-alt="In-room TV area" loading="lazy">
-        <img src="../assets/images/indigo2/room5.jpg" alt="ห้องน้ำและฝักบัว" data-th-alt="ห้องน้ำและฝักบัว" data-en-alt="Bathroom and shower" loading="lazy">
-        <img src="../assets/images/indigo2/room6.jpg" alt="มุมเครื่องดื่ม" data-th-alt="มุมเครื่องดื่ม" data-en-alt="Refreshment station" loading="lazy">
-        <img src="../assets/images/indigo2/room7.jpg" alt="พื้นที่ส่วนกลาง" data-th-alt="พื้นที่ส่วนกลาง" data-en-alt="Hotel lounge" loading="lazy">
-        <img src="../assets/images/indigo2/room8.jpg" alt="อาคารโรงแรม" data-th-alt="อาคารโรงแรม" data-en-alt="Hotel exterior" loading="lazy">
-        <img src="../assets/images/indigo2/room9.jpg" alt="ห้องพักเตียงคิงไซส์" data-th-alt="ห้องพักเตียงคิงไซส์" data-en-alt="King room" loading="lazy">
-    </div>
-</section>
-
-<!-- 8. CONTACT -->
-<section class="contact section" id="contact">
-    <div class="section-heading">
-        <p class="eyebrow" data-th="ติดต่อเรา" data-en="GET IN TOUCH">GET IN TOUCH</p>
-        <h2 class="section-title" data-th="ติดต่อ INDIGO 2" data-en="Contact INDIGO 2">ติดต่อ INDIGO 2</h2>
-        <div class="gold-line"></div>
-    </div>
-
-    <div class="contact-grid">
-        <div class="contact-card">
-            <span class="contact-icon">01</span>
-            <h3 data-th="โทรศัพท์" data-en="Phone">โทรศัพท์</h3>
-            <p data-th="สอบถามรายละเอียดและการเข้าพัก" data-en="For room details and booking inquiries.">สอบถามรายละเอียดและการเข้าพัก</p>
-            <a href="tel:074813380">074 813 380</a>
-        </div>
-
-        <div class="contact-card">
-            <span class="contact-icon">02</span>
-            <h3 data-th="ที่อยู่" data-en="Address">ที่อยู่</h3>
-            <p>
-                <span data-th="251 ถนนรัตนอุทิศ ซอย 15" data-en="251 Ratana Uthit Road, Soi 15">251 ถนนรัตนอุทิศ ซอย 15</span><br>
-                <span data-th="ตำบลหาดใหญ่ อำเภอหาดใหญ่" data-en="Hat Yai Subdistrict, Hat Yai District">ตำบลหาดใหญ่ อำเภอหาดใหญ่</span><br>
-                <span data-th="จังหวัดสงขลา 90110" data-en="Songkhla 90110, Thailand">จังหวัดสงขลา 90110</span>
-            </p>
-            <a href="https://www.google.com/maps/search/?api=1&query=INDIGO+HATYAI+HOTEL+2+251+Ratana+Uthit+Soi+15+Hat+Yai"
-               target="_blank" rel="noopener" data-th="เปิดแผนที่ ↗" data-en="Open Map ↗">เปิดแผนที่ ↗</a>
-        </div>
-
-        <div class="contact-card">
-            <span class="contact-icon">03</span>
-            <h3 data-th="ทำเลที่ตั้ง" data-en="Location">ทำเลที่ตั้ง</h3>
-            <p data-th="เขต 8 อำเภอหาดใหญ่ จังหวัดสงขลา" data-en="Khet 8, Hat Yai District, Songkhla">เขต 8 อำเภอหาดใหญ่ จังหวัดสงขลา</p>
-            <a href="https://indigohatyai.com/" target="_blank" rel="noopener">
-                <span data-th="เว็บไซต์โรงแรม ↗" data-en="Hotel Website ↗">เว็บไซต์โรงแรม ↗</span>
+        <nav class="primary-nav" id="primary-nav">
+            <a href="#home" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+            <a href="#about" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</a>
+            <a href="#rooms" data-th="ห้องพัก" data-en="Rooms">ห้องพัก</a>
+            <a href="#facilities" data-th="สิ่งอำนวยความสะดวก" data-en="Facilities">สิ่งอำนวยความสะดวก</a>
+            <a href="#gallery" data-th="แกลเลอรี" data-en="Gallery">แกลเลอรี</a>
+            <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+            <button class="language-switch" type="button" aria-label="Switch language">EN</button>
+            <a class="button button-gold nav-booking" href="#booking">
+                <i data-lucide="bed-double" aria-hidden="true"></i>
+                <span data-th="จองห้องพัก" data-en="Book Now">จองห้องพัก</span>
+                <i data-lucide="search" aria-hidden="true"></i>
             </a>
-        </div>
-    </div>
-</section>
+        </nav>
+    </header>
 
-</main>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-shade"></div>
+            <div class="hero-content">
+                <p class="eyebrow" data-th="ยินดีต้อนรับสู่ INDIGO 2 HOTEL" data-en="WELCOME TO INDIGO 2 HOTEL">ยินดีต้อนรับสู่ INDIGO 2 HOTEL</p>
+                <h1>
+                    <span data-th="พักผ่อนอย่างสบาย" data-en="Stay in Comfort.">พักผ่อนอย่างสบาย</span>
+                    <span><span data-th="ใช้ชีวิตอย่าง" data-en="Live in">ใช้ชีวิตอย่าง</span> <em data-th="มีสไตล์" data-en="Style.">มีสไตล์</em></span>
+                </h1>
+                <p class="hero-description"
+                   data-th="ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย<br>สำหรับนักเดินทางยุคใหม่ในหาดใหญ่ เขต 8"
+                   data-en="A warm, peaceful and comfortable stay<br>for modern travellers in Hat Yai, Khet 8.">
+                    ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย<br>สำหรับนักเดินทางยุคใหม่ในหาดใหญ่ เขต 8
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-gold" href="#rooms"><span data-th="เลือกห้องพัก" data-en="Explore Rooms">เลือกห้องพัก</span><span aria-hidden="true">→</span></a>
+                    <a class="video-link" href="#about"><span class="play-icon" aria-hidden="true">▶</span><span data-th="รู้จักโรงแรมของเรา" data-en="Discover our hotel">รู้จักโรงแรมของเรา</span></a>
+                </div>
+            </div>
+            <!-- <div class="hero-pagination" aria-hidden="true"><span class="active"></span><span></span><span></span></div> -->
+            <a class="scroll-cue" href="#about" aria-label="Scroll to discover">↓</a>
+        </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <a href="#home" class="footer-logo">INDIGO 2</a>
-    <p data-th="ที่พักอบอุ่น เงียบสงบ และสะดวกสบายสำหรับนักเดินทางยุคใหม่" data-en="A welcoming, peaceful, and comfortable stay for modern travelers.">ที่พักอบอุ่น เงียบสงบ และสะดวกสบายสำหรับนักเดินทางยุคใหม่</p>
-    <p class="copyright">© 2026 INDIGO 2 HOTEL · HATYAI, THAILAND</p>
-</footer>
+        <section class="booking-wrap" id="booking" aria-label="Room search">
+            <form class="booking-bar" id="booking-form">
+                <label class="booking-field">
+                    <span class="field-icon" aria-hidden="true"><i data-lucide="log-in"></i></span>
+                    <span class="field-copy">
+                        <span class="field-label" data-th="เช็กอิน" data-en="Check-in">เช็กอิน</span>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </span>
+                </label>
+                <label class="booking-field">
+                    <span class="field-icon" aria-hidden="true"><i data-lucide="log-out"></i></span>
+                    <span class="field-copy">
+                        <span class="field-label" data-th="เช็กเอาต์" data-en="Check-out">เช็กเอาต์</span>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </span>
+                </label>
+                <label class="booking-field">
+                    <span class="field-icon guests-icon" aria-hidden="true"><i data-lucide="users"></i></span>
+                    <span class="field-copy">
+                        <span class="field-label" data-th="ผู้เข้าพัก" data-en="Guests">ผู้เข้าพัก</span>
+                        <select id="guests" name="guests" aria-label="Guests">
+                            <option value="1" data-th="1 ท่าน" data-en="1 Guest">1 ท่าน</option>
+                            <option value="2" selected data-th="2 ท่าน" data-en="2 Guests">2 ท่าน</option>
+                            <option value="3" data-th="3 ท่าน" data-en="3 Guests">3 ท่าน</option>
+                            <option value="4" data-th="4 ท่าน" data-en="4 Guests">4 ท่าน</option>
+                        </select>
+                    </span>
+                </label>
+                <button class="button button-gold booking-submit" type="submit">
+                    <i data-lucide="search" aria-hidden="true"></i><span data-th="ค้นหาห้องพัก" data-en="Search Rooms">ค้นหาห้องพัก</span>
+                </button>
+            </form>
+        </section>
 
-<script src="script.js?v=3"></script>
+        <section class="about section-shell" id="about">
+            <a class="about-photo image-frame" href="#gallery" aria-label="View hotel photos">
+                <img src="../assets/images/indigo2/777777777777777777.jpg" alt="The welcoming hallway at INDIGO 2 HOTEL" loading="lazy">
+                <span class="photo-tag"><span aria-hidden="true">◆</span> INDIGO 2 · KHET 8</span>
+            </a>
+            <div class="about-copy">
+                <p class="eyebrow" data-th="เกี่ยวกับโรงแรมของเรา" data-en="ABOUT OUR HOTEL">เกี่ยวกับโรงแรมของเรา</p>
+                <h2 data-th="ความสบายเรียบง่าย<br>เพื่อการพักผ่อนของคุณ" data-en="Simple Comfort<br>Made for Your Stay">ความสบายเรียบง่าย<br>เพื่อการพักผ่อนของคุณ</h2>
+                <p class="about-description"
+                   data-th="INDIGO 2 HOTEL หาดใหญ่ สาขาเขต 8 มอบบรรยากาศการพักผ่อนที่อบอุ่น เรียบง่าย และสะดวกสบาย เหมาะสำหรับการพักผ่อนและเดินทางในหาดใหญ่"
+                   data-en="INDIGO 2 HOTEL in Hat Yai’s Khet 8 offers a warm, thoughtfully simple and comfortable place to rest—whether you are here to unwind or explore the city.">
+                    INDIGO 2 HOTEL หาดใหญ่ สาขาเขต 8 มอบบรรยากาศการพักผ่อนที่อบอุ่น เรียบง่าย และสะดวกสบาย เหมาะสำหรับการพักผ่อนและเดินทางในหาดใหญ่
+                </p>
+                <a class="button button-outline" href="#contact"><span data-th="สอบถามเพิ่มเติม" data-en="Learn More">สอบถามเพิ่มเติม</span><span aria-hidden="true">→</span></a>
+            </div>
+            <div class="about-highlights">
+                <div class="highlight"><span class="highlight-icon" aria-hidden="true"><i data-lucide="bed-double"></i></span><span data-th="ห้องพักหลากหลายประเภท<br>รองรับทุกการเดินทาง" data-en="Room options for<br>different kinds of stays">ห้องพักหลากหลายประเภท<br>รองรับทุกการเดินทาง</span></div>
+                <div class="highlight"><span class="highlight-icon" aria-hidden="true"><i data-lucide="wifi"></i></span><span data-th="บริการอินเทอร์เน็ต<br>พร้อมใช้งานในโรงแรม" data-en="Stay connected with<br>hotel Wi-Fi">บริการอินเทอร์เน็ต<br>พร้อมใช้งานในโรงแรม</span></div>
+                <div class="highlight"><span class="highlight-icon" aria-hidden="true"><i data-lucide="armchair"></i></span><span data-th="มุมกาแฟและพื้นที่<br>สำหรับการพักผ่อน" data-en="A coffee corner and<br>spaces to unwind">มุมกาแฟและพื้นที่<br>สำหรับการพักผ่อน</span></div>
+                <div class="highlight"><span class="highlight-icon" aria-hidden="true"><i data-lucide="map-pin"></i></span><span data-th="ใกล้แหล่งท่องเที่ยว<br>และย่านใจกลางหาดใหญ่" data-en="Conveniently located<br>in Hat Yai">ใกล้แหล่งท่องเที่ยว<br>และย่านใจกลางหาดใหญ่</span></div>
+            </div>
+        </section>
+
+        <section class="rooms section-shell" id="rooms">
+            <div class="section-heading">
+                <p class="eyebrow" data-th="ห้องพักของเรา" data-en="OUR ROOMS">ห้องพักของเรา</p>
+                <h2 data-th="เลือกห้องที่ใช่สำหรับคุณ" data-en="Choose the Room That Suits You">เลือกห้องที่ใช่สำหรับคุณ</h2>
+                <p data-th="พื้นที่พักผ่อนที่ใส่ใจในทุกรายละเอียด" data-en="A comfortable space, thoughtfully prepared for your stay.">พื้นที่พักผ่อนที่ใส่ใจในทุกรายละเอียด</p>
+            </div>
+            <div class="room-grid">
+                <article class="room-card">
+                    <a class="room-image" href="#contact"><img src="../assets/images/indigo2/SuperiorTwinRoom.jpg" alt="Superior twin room with two comfortable beds" loading="lazy"><span class="room-badge" data-th="พักได้ 2 ท่าน" data-en="Up to 2 guests">พักได้ 2 ท่าน</span></a>
+                    <div class="room-details"><p class="room-kicker" data-th="ห้องพักเตียงคู่" data-en="TWIN ROOM">ห้องพักเตียงคู่</p><h3 data-th="ซูพีเรีย ทวิน" data-en="Superior Twin">ซูพีเรีย ทวิน</h3><p data-th="ห้องพักโปร่งสบาย พร้อมเตียงเดี่ยว 2 เตียง" data-en="A bright, relaxing room with two comfortable single beds.">ห้องพักโปร่งสบาย พร้อมเตียงเดี่ยว 2 เตียง</p><div class="room-price"><strong>฿1,090</strong><span data-th="/ คืน" data-en="/ night">/ คืน</span></div><a href="#contact"><span data-th="ดูรายละเอียด" data-en="View Details">ดูรายละเอียด</span><span aria-hidden="true">→</span></a></div>
+                </article>
+                <article class="room-card">
+                    <a class="room-image" href="#contact"><img src="../assets/images/indigo2/king1.jpg" alt="King room at INDIGO 2 HOTEL" loading="lazy"><span class="room-badge" data-th="พักได้ 2 ท่าน" data-en="Up to 2 guests">พักได้ 2 ท่าน</span></a>
+                    <div class="room-details"><p class="room-kicker" data-th="ห้องพักเตียงคิงไซส์" data-en="KING ROOM">ห้องพักเตียงคิงไซส์</p><h3 data-th="ซูพีเรีย คิง" data-en="Superior King">ซูพีเรีย คิง</h3><p data-th="พักผ่อนสบายบนเตียงคิงไซส์ ในห้องพักโทนอบอุ่น" data-en="Unwind in a warm, inviting room with a comfortable king bed.">พักผ่อนสบายบนเตียงคิงไซส์ ในห้องพักโทนอบอุ่น</p><div class="room-price"><strong>฿1,090</strong><span data-th="/ คืน" data-en="/ night">/ คืน</span></div><a href="#contact"><span data-th="ดูรายละเอียด" data-en="View Details">ดูรายละเอียด</span><span aria-hidden="true">→</span></a></div>
+                </article>
+                <article class="room-card">
+                    <a class="room-image" href="#contact"><img src="../assets/images/indigo2/TripleStandard.jpg" alt="Triple standard room at INDIGO 2 HOTEL" loading="lazy"><span class="room-badge" data-th="พักได้ 3 ท่าน" data-en="Up to 3 guests">พักได้ 3 ท่าน</span></a>
+                    <div class="room-details"><p class="room-kicker" data-th="ห้องพักสำหรับครอบครัว" data-en="TRIPLE ROOM">ห้องพักสำหรับครอบครัว</p><h3 data-th="ทริปเปิล สแตนดาร์ด" data-en="Triple Standard">ทริปเปิล สแตนดาร์ด</h3><p data-th="พื้นที่กว้างขึ้น สำหรับการเดินทางกับเพื่อนหรือครอบครัว" data-en="Extra room to settle in when travelling with friends or family.">พื้นที่กว้างขึ้น สำหรับการเดินทางกับเพื่อนหรือครอบครัว</p><div class="room-price"><strong>฿1,290</strong><span data-th="/ คืน" data-en="/ night">/ คืน</span></div><a href="#contact"><span data-th="ดูรายละเอียด" data-en="View Details">ดูรายละเอียด</span><span aria-hidden="true">→</span></a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="facilities" id="facilities">
+            <div class="facilities-copy">
+                <p class="eyebrow" data-th="สิ่งอำนวยความสะดวก" data-en="OUR FACILITIES">สิ่งอำนวยความสะดวก</p>
+                <h2 data-th="มากกว่าการเข้าพัก<br>คือช่วงเวลาดีๆ ของคุณ" data-en="More Than Just a Stay">มากกว่าการเข้าพัก<br>คือช่วงเวลาดีๆ ของคุณ</h2>
+                <p data-th="เติมเต็มการเดินทางด้วยความสบายและสิ่งจำเป็นที่พร้อมสำหรับคุณ" data-en="Enjoy thoughtful essentials and an easy, comfortable stay from the moment you arrive.">เติมเต็มการเดินทางด้วยความสบายและสิ่งจำเป็นที่พร้อมสำหรับคุณ</p>
+                <div class="facility-list">
+                    <span><i data-lucide="wifi" aria-hidden="true"></i><span data-th="ฟรี Wi-Fi" data-en="Free Wi-Fi">ฟรี Wi-Fi</span></span>
+                    <span><i data-lucide="coffee" aria-hidden="true"></i><span data-th="มุมกาแฟ" data-en="Coffee Corner">มุมกาแฟ</span></span>
+                    <span><i data-lucide="car-front" aria-hidden="true"></i><span data-th="ที่จอดรถ" data-en="Parking">ที่จอดรถ</span></span>
+                    <span><i data-lucide="bed-double" aria-hidden="true"></i><span data-th="ห้องพักสะดวกสบาย" data-en="Comfortable Rooms">ห้องพักสะดวกสบาย</span></span>
+                </div>
+            </div>
+            <img class="facilities-image" src="../assets/images/indigo2/room2.jpg" alt="Bright and comfortable INDIGO 2 guest room" loading="lazy">
+        </section>
+
+        <section class="gallery section-shell" id="gallery">
+            <div class="section-heading">
+                <p class="eyebrow" data-th="บรรยากาศของเรา" data-en="A CLOSER LOOK">บรรยากาศของเรา</p>
+                <h2 data-th="แกลเลอรีโรงแรม" data-en="Our Gallery">แกลเลอรีโรงแรม</h2>
+            </div>
+            <div class="gallery-grid">
+                <a href="../assets/images/indigo2/room1.jpg" target="_blank" rel="noreferrer"><img src="../assets/images/indigo2/room1.jpg" alt="King guest room with a window view" loading="lazy"></a>
+                <a href="../assets/images/indigo2/777777777777777777.jpg" target="_blank" rel="noreferrer"><img src="../assets/images/indigo2/777777777777777777.jpg" alt="Hotel corridor with contemporary decor" loading="lazy"></a>
+                <a href="../assets/images/indigo2/room5.jpg" target="_blank" rel="noreferrer"><img src="../assets/images/indigo2/room5.jpg" alt="Twin beds in a spacious guest room" loading="lazy"></a>
+                <a href="../assets/images/indigo2/room3.jpg" target="_blank" rel="noreferrer"><img src="../assets/images/indigo2/room3.jpg" alt="Romantic room styling at INDIGO 2 HOTEL" loading="lazy"></a>
+                <a href="../assets/images/indigo2/room4_n.jpg" target="_blank" rel="noreferrer"><img src="../assets/images/indigo2/room4_n.jpg" alt="A second view of a guest room" loading="lazy"></a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-photo"><img src="../assets/images/indigo2/room8.jpg" alt="Welcome to INDIGO 2 HOTEL in Hat Yai" loading="lazy"><span>INDIGO 2</span></div>
+            <div class="contact-copy">
+                <p class="eyebrow" data-th="ติดต่อเรา" data-en="GET IN TOUCH">ติดต่อเรา</p>
+                <h2 data-th="ยินดีต้อนรับ<br>สู่ INDIGO 2" data-en="We'd love to<br>welcome you">ยินดีต้อนรับ<br>สู่ INDIGO 2</h2>
+                <p data-th="สอบถามห้องพักหรือวางแผนการเข้าพัก ติดต่อเราได้เลย" data-en="Get in touch with us to ask about rooms or plan your stay.">สอบถามห้องพักหรือวางแผนการเข้าพัก ติดต่อเราได้เลย</p>
+                <a class="contact-link" href="tel:074813380"><span aria-hidden="true"><i data-lucide="phone-call"></i></span><span><small data-th="โทรศัพท์" data-en="CALL US">โทรศัพท์</small><strong>074 813 380</strong></span></a>
+                <a class="contact-link" href="https://maps.google.com/?q=INDIGO+2+HOTEL+Hat+Yai" target="_blank" rel="noreferrer"><span aria-hidden="true"><i data-lucide="map-pin"></i></span><span><small data-th="ที่อยู่" data-en="FIND US">ที่อยู่</small><strong data-th="251 ซอย 15 ถนนราษฎร์อุทิศ (เขต 8), หาดใหญ่" data-en="251 Soi 15 Ratana Uthit Rd. (Khet 8), Hat Yai">251 ซอย 15 ถนนราษฎร์อุทิศ (เขต 8), หาดใหญ่</strong></span></a>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <label><span data-th="ชื่อของคุณ" data-en="Your name">ชื่อของคุณ</span><input type="text" name="name" autocomplete="name" required></label>
+                <label><span data-th="อีเมล" data-en="Email">อีเมล</span><input type="email" name="email" autocomplete="email" required></label>
+                <label><span data-th="ข้อความ" data-en="Message">ข้อความ</span><textarea name="message" rows="3" required></textarea></label>
+                <button class="button button-gold" type="submit"><span data-th="ส่งข้อความ" data-en="Send Message">ส่งข้อความ</span><span aria-hidden="true">→</span></button>
+                <p class="form-note" data-th="ข้อความจะเปิดแอปอีเมลในอุปกรณ์ของคุณ" data-en="Your message will open in your device's email app.">ข้อความจะเปิดแอปอีเมลในอุปกรณ์ของคุณ</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="#home" aria-label="INDIGO 2 HOTEL home"><img src="../assets/images/indigo2/indigo2-logo.png" alt="INDIGO 2 HOTEL · HATYAI"></a>
+        <p data-th="ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย ในหาดใหญ่" data-en="A warm, peaceful and comfortable stay in Hat Yai.">ที่พักอบอุ่น เงียบสงบ และสะดวกสบาย ในหาดใหญ่</p>
+        <div class="footer-bottom"><span>© 2026 INDIGO 2 HOTEL · HATYAI, THAILAND</span><a href="#home" data-th="กลับด้านบน ↑" data-en="Back to top ↑">กลับด้านบน ↑</a></div>
+    </footer>   
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
 </body>
 </html>

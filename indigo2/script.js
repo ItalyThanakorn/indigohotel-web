@@ -1,164 +1,134 @@
-
-/* ==================================
-   1. MOBILE MENU
-================================== */
-
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
-const languageToggle = document.getElementById("languageToggle");
-let currentLanguage = document.documentElement.lang === "en" ? "en" : "th";
-
-function applyLanguage(language) {
-    currentLanguage = language;
-    document.documentElement.lang = language;
-    document.title = language === "th"
-        ? "INDIGO 2 HOTEL | Hatyai"
-        : "INDIGO 2 HOTEL | Hat Yai";
-
-    document.querySelectorAll("body [data-th][data-en]").forEach(function (element) {
-        const translation = element.getAttribute(`data-${language}`);
-        if (translation !== null) {
-            element.textContent = translation;
-        }
-    });
-
-    document.querySelectorAll("[data-th-alt][data-en-alt]").forEach(function (image) {
-        image.alt = image.getAttribute(`data-${language}-alt`);
-    });
-
-    const description = document.querySelector('meta[name="description"]');
-    description.content = description.getAttribute(`data-${language}`);
-
-    languageToggle.textContent = language === "th" ? "EN" : "TH";
-    languageToggle.setAttribute(
-        "aria-label",
-        language === "th" ? "Switch to English" : "เปลี่ยนเป็นภาษาไทย"
-    );
-    menuToggle.setAttribute(
-        "aria-label",
-        mainNav.classList.contains("is-open")
-            ? (language === "th" ? "ปิดเมนู" : "Close menu")
-            : (language === "th" ? "เปิดเมนู" : "Open menu")
-    );
-}
-
-languageToggle.addEventListener("click", function () {
-    const nextLanguage = document.documentElement.lang === "th" ? "en" : "th";
-    applyLanguage(nextLanguage);
-});
-
-menuToggle.addEventListener("click", function () {
-    const isOpen = mainNav.classList.toggle("is-open");
-
-    menuToggle.setAttribute("aria-expanded", isOpen);
-    menuToggle.setAttribute(
-        "aria-label",
-        isOpen
-            ? (currentLanguage === "th" ? "ปิดเมนู" : "Close menu")
-            : (currentLanguage === "th" ? "เปิดเมนู" : "Open menu")
-    );
-
-    menuToggle.textContent = isOpen ? "✕" : "☰";
-});
-
-mainNav.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        mainNav.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute(
-            "aria-label",
-            currentLanguage === "th" ? "เปิดเมนู" : "Open menu"
-        );
-        menuToggle.textContent = "☰";
-    });
-});
-
-applyLanguage(currentLanguage);
-
-
-/* ==================================
-   2. DATE SETTINGS
-================================== */
-
 const checkin = document.getElementById("checkin");
 const checkout = document.getElementById("checkout");
+const bookingForm = document.getElementById("booking-form");
+const languageButton = document.querySelector(".language-switch");
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.getElementById("primary-nav");
+const contactForm = document.getElementById("contact-form");
 
-function formatLocalDate(date) {
+let currentLanguage = "th";
+
+function toLocalDateString(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-
     return `${year}-${month}-${day}`;
 }
 
-const today = formatLocalDate(new Date());
+function setDefaultDates() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-checkin.min = today;
-checkout.min = today;
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
-checkin.addEventListener("change", function () {
-    checkout.min = checkin.value || today;
+    checkin.min = toLocalDateString(today);
+    checkout.min = toLocalDateString(tomorrow);
+    checkin.value = checkin.min;
+    checkout.value = checkout.min;
+}
 
-    if (checkout.value && checkout.value <= checkin.value) {
-        checkout.value = "";
+function setLanguage(language) {
+    currentLanguage = language;
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-th][data-en]").forEach((element) => {
+        element.innerHTML = element.dataset[language];
+    });
+
+    languageButton.textContent = language === "th" ? "EN" : "TH";
+    languageButton.setAttribute(
+        "aria-label",
+        language === "th" ? "Switch to English" : "เปลี่ยนเป็นภาษาไทย"
+    );
+    menuButton.setAttribute(
+        "aria-label",
+        language === "th" ? "เปิดเมนูนำทาง" : "Open navigation"
+    );
+    document.title = language === "th"
+        ? "INDIGO 2 HOTEL | หาดใหญ่"
+        : "INDIGO 2 HOTEL | HATYAI";
+}
+
+function closeNavigation() {
+    navigation.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+}
+
+checkin.addEventListener("change", () => {
+    if (!checkin.value) {
+        return;
+    }
+
+    const followingDay = new Date(`${checkin.value}T00:00:00`);
+    followingDay.setDate(followingDay.getDate() + 1);
+    checkout.min = toLocalDateString(followingDay);
+
+    if (!checkout.value || checkout.value <= checkin.value) {
+        checkout.value = checkout.min;
     }
 });
 
-
-/* ==================================
-   3. BOOKING FORM
-================================== */
-
-const bookingForm = document.getElementById("bookingForm");
-
-bookingForm.addEventListener("submit", function (event) {
+bookingForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const startDate = checkin.value;
-    const endDate = checkout.value;
-    const guests = document.getElementById("guests").selectedOptions[0].textContent;
-
-    if (!startDate || !endDate) {
-        alert(currentLanguage === "th"
-            ? "กรุณาเลือกวันเช็กอินและวันเช็กเอาต์"
-            : "Please select your check-in and check-out dates.");
+    if (!bookingForm.reportValidity()) {
         return;
     }
 
-    if (startDate < today) {
-        alert(currentLanguage === "th"
-            ? "กรุณาเลือกวันเช็กอินตั้งแต่วันนี้เป็นต้นไป"
-            : "Please choose a check-in date that is today or later.");
+    if (checkout.value <= checkin.value) {
+        checkout.setCustomValidity(
+            currentLanguage === "th"
+                ? "วันที่เช็กเอาต์ต้องอยู่หลังวันที่เช็กอิน"
+                : "Check-out must be after check-in."
+        );
+        checkout.reportValidity();
+        checkout.setCustomValidity("");
         return;
     }
 
-    if (endDate <= startDate) {
-        alert(currentLanguage === "th"
-            ? "วันเช็กเอาต์ต้องอยู่หลังวันเช็กอิน"
-            : "Check-out must be after check-in.");
-        return;
-    }
+    const guestCount = document.getElementById("guests").value;
+    const message = currentLanguage === "th"
+        ? `ขอบคุณที่สนใจ INDIGO 2 HOTEL\nเช็กอิน: ${checkin.value}\nเช็กเอาต์: ${checkout.value}\nผู้เข้าพัก: ${guestCount} ท่าน\nกรุณาโทร 074 813 380 เพื่อยืนยันห้องพัก`
+        : `Thank you for choosing INDIGO 2 HOTEL.\nCheck-in: ${checkin.value}\nCheck-out: ${checkout.value}\nGuests: ${guestCount}\nPlease call 074 813 380 to confirm availability.`;
 
-    const start = new Date(startDate + "T00:00:00");
-    const end = new Date(endDate + "T00:00:00");
-
-    const nights = Math.round(
-        (end - start) / (1000 * 60 * 60 * 24)
-    );
-
-    alert(currentLanguage === "th"
-        ? "INDIGO 2 HOTEL\n\n" +
-          "เช็กอิน: " + startDate + "\n" +
-          "เช็กเอาต์: " + endDate + "\n" +
-          "จำนวนคืน: " + nights + " คืน\n" +
-          "ผู้เข้าพัก: " + guests + "\n\n" +
-          "นี่เป็นตัวอย่างการค้นหาเท่านั้น\n" +
-          "กรุณาโทร 074 813 380 เพื่อสอบถามห้องว่างจริง"
-        : "INDIGO 2 HOTEL\n\n" +
-          "Check-in: " + startDate + "\n" +
-          "Check-out: " + endDate + "\n" +
-          "Nights: " + nights + "\n" +
-          "Guests: " + guests + "\n\n" +
-          "This is a sample search only.\n" +
-          "Call 074 813 380 to check actual availability.");
+    window.alert(message);
 });
+
+languageButton.addEventListener("click", () => {
+    setLanguage(currentLanguage === "th" ? "en" : "th");
+});
+
+menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+});
+
+navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeNavigation);
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeNavigation();
+    }
+});
+
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) {
+        return;
+    }
+
+    const formData = new FormData(contactForm);
+    const message = currentLanguage === "th"
+        ? `ชื่อ: ${formData.get("name")}\nอีเมล: ${formData.get("email")}\nข้อความ: ${formData.get("message")}`
+        : `Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\nMessage: ${formData.get("message")}`;
+    const subject = currentLanguage === "th" ? "สอบถามห้องพัก" : "Room inquiry";
+
+    window.location.href = `mailto:indigo.hotel02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+});
+
+lucide.createIcons();
+setDefaultDates();
