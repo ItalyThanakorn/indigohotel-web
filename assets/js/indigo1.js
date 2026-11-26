@@ -87,7 +87,7 @@ let currentLang = getInitialLanguage();
                 iconHtml: '<i class="fa-solid fa-building text-indigo2 fa-bounce" style="--fa-animation-duration: 3s;"></i>',
                 barClass: 'bg-primary',
                 barColor: '#a5b4fc',
-                targetUrl: `${siteBase}indigo2new/index.html`,
+                targetUrl: `${siteBase}indigo2/index.html`,
                 isComingSoon: false
             },
             'indigo-hatyai-3': {
