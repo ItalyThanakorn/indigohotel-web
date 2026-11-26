@@ -26,7 +26,14 @@ const SITE = {
 };
 
 const LINKS = {
-  lineChat: (text = "") =>`https://line.me/R/oaMessage/%40788piklw/?${encodeURIComponent(text)}`,
+  lineChat: (text = "") => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const lineId = "%40788piklw";
+    if (isMobile) {
+      return `https://line.me/R/oaMessage/${lineId}/?${encodeURIComponent(text)}`;
+    }
+    return `https://line.me/R/ti/p/${lineId}`;
+  },
   tel: `tel:${SITE.phone.tel}`,
   whatsapp: `https://wa.me/${SITE.whatsapp.replace(/\D/g, "")}`,
   map: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapQuery)}`,
