@@ -246,6 +246,11 @@ img {
     text-transform: uppercase;
 }
 
+.facilities .eyebrow,
+.contact .eyebrow {
+    font-size: 16px;
+}
+
 .hero .eyebrow::after {
     background: var(--gold);
     content: "";
@@ -503,7 +508,7 @@ img {
 
 .about-description {
     color: #515d63;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.8;
     margin: 0 0 15px;
 }
@@ -525,7 +530,7 @@ img {
 .highlight {
     align-items: center;
     display: flex;
-    font-size: 11px;
+    font-size: 16px;
     gap: 13px;
     line-height: 1.6;
 }
@@ -701,7 +706,7 @@ img {
 
 .facilities-copy > p:not(.eyebrow) {
     color: rgba(255, 255, 255, .7);
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.8;
     margin: 0 0 20px;
     max-width: 400px;
@@ -717,7 +722,7 @@ img {
     align-items: center;
     color: rgba(255, 255, 255, .91);
     display: flex;
-    font-size: 10px;
+    font-size: 16px;
     gap: 9px;
 }
 
@@ -868,7 +873,7 @@ img {
 .contact-form label {
     color: rgba(255, 255, 255, .83);
     display: grid;
-    font-size: 9px;
+    font-size: 16px;
     gap: 5px;
 }
 
@@ -892,14 +897,14 @@ img {
 
 .contact-form .button {
     border-radius: 3px;
-    font-size: 10px;
+    font-size: 16px;
     min-height: 36px;
     width: 100%;
 }
 
 .form-note {
     color: rgba(255, 255, 255, .55);
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0;
     text-align: center;
@@ -977,7 +982,7 @@ img {
     }
 
     .highlight {
-        font-size: 9px;
+        font-size: 16px;
     }
 
     .contact {
@@ -1150,7 +1155,7 @@ img {
     }
 
     .highlight {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .rooms {
@@ -1293,7 +1298,7 @@ img {
     }
 
     .about-description {
-        font-size: 11px;
+        font-size: 16px;
     }
 
     .about-highlights {
@@ -1301,7 +1306,7 @@ img {
     }
 
     .highlight {
-        font-size: 9px;
+        font-size: 16px;
         gap: 8px;
     }
 
