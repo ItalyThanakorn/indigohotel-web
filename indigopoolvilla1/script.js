@@ -147,37 +147,4 @@ if(poolCarousel){
   }, { passive: true });
   startPoolCarousel();
 }
-const modal=document.getElementById('posterModal');
-if(modal){
-const modalImage=modal.querySelector('img');
-// จัดการหน้าต่างภาพ พร้อมคืนโฟกัสหลังปิด
-let modalTrigger=null;
-function openPoster(src) {
-  modalTrigger = document.activeElement;
-  modalImage.src = src;
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  modal.querySelector('.modal-close').focus();
-}
-function closePoster() {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  modalImage.removeAttribute('src');
-  document.body.style.overflow = '';
-  if (modalTrigger) modalTrigger.focus();
-}
-// ให้การ์ดแต่ละหลังเปิดภาพประกาศเต็ม
-document.querySelectorAll('[data-poster]').forEach((button) => {
-  button.addEventListener('click', () => openPoster(button.dataset.poster));
-});
-modal.addEventListener('click', (event) => {
-  if (event.target === modal || event.target.classList.contains('modal-close')) {
-    closePoster();
-  }
-});
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closePoster();
-});
-}
 

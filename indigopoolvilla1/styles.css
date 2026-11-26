@@ -77,16 +77,6 @@ button:focus-visible, a:focus-visible {
   font-weight: 500;
   letter-spacing: 3px;
 }
-.brand-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 1px solid #ffffffb0;
-  border-radius: 50%;
-  font: italic 20px var(--thai);
-  letter-spacing: 0;
-}
 .nav-links {
   display: flex;
   gap: 38px;
@@ -140,27 +130,13 @@ button:focus-visible, a:focus-visible {
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #102f35d9 0%, #102f3591 38%, #102f3512 83%), linear-gradient(0deg, #102f3570, transparent 38%);
+  background: linear-gradient(90deg, #082f49df 0%, #0b465a75 44%, #0b465a12 84%), linear-gradient(0deg, #0a3a50a3, transparent 44%);
 }
 .hero-content {
   position: absolute;
   top: 27%;
   left: 12%;
   max-width: 690px;
-}
-.eyebrow, .intro-kicker {
-  font: 500 10px var(--sans);
-  letter-spacing: 2.3px;
-}
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-.eyebrow i {
-  width: 26px;
-  height: 1px;
-  background: #b9d4c8;
 }
 .hero h1 {
   margin: 26px 0 16px;
@@ -194,32 +170,6 @@ button:focus-visible, a:focus-visible {
 .button-light span:last-child {
   font-size: 17px;
 }
-.hero-note {
-  position: absolute;
-  right: 6.2%;
-  bottom: 35px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-.hero-note span:first-child {
-  padding-right: 18px;
-  border-right: 1px solid #ffffff8c;
-  font-family: var(--sans);
-}
-.hero-scroll {
-  position: absolute;
-  bottom: 35px;
-  left: 6.2%;
-  font: 500 9px var(--sans);
-  letter-spacing: 2px;
-}
-.hero-scroll span {
-  margin-left: 15px;
-  font-size: 15px;
-}
 /* กรอบและระยะห่างเนื้อหา */
 .section-wrap {
   max-width: 1200px;
@@ -231,29 +181,12 @@ button:focus-visible, a:focus-visible {
   padding-top: 110px;
   padding-bottom: 110px;
 }
-.intro-kicker {
-  color: #648a85;
-}
-.intro-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: end;
-  gap: 13%;
-  margin-top: 25px;
-}
-.intro-row h2, .section-heading h2, .amenity-copy h2, .booking h2 {
+.section-heading h2, .amenity-copy h2, .booking h2 {
   margin: 0;
   font-size: 58px;
   font-weight: 400;
   line-height: 1.23;
   letter-spacing: -.8px;
-}
-.intro-row p {
-  max-width: 425px;
-  margin: 0 0 5px;
-  color: #697b7a;
-  font-size: 14px;
-  line-height: 2.1;
 }
 /* การ์ดแสดงบ้านพัก */
 .villas {
@@ -270,17 +203,6 @@ button:focus-visible, a:focus-visible {
 .section-heading h2 {
   margin-top: 11px;
   font-size: 39px;
-}
-.heading-count {
-  padding-bottom: 6px;
-  font: 500 12px var(--sans);
-  letter-spacing: 1px;
-}
-.heading-count i {
-  margin-left: 6px;
-  color: #90a09b;
-  font-size: 9px;
-  font-style: normal;
 }
 .villa-grid {
   display: grid;
@@ -332,12 +254,6 @@ button:focus-visible, a:focus-visible {
   left: 20px;
   font: 400 34px var(--sans);
   letter-spacing: 1px;
-}
-.image-open {
-  position: absolute;
-  right: 19px;
-  bottom: 20px;
-  font: 20px var(--sans);
 }
 .villa-info {
   padding: 22px 21px 20px;
@@ -417,7 +333,7 @@ button:focus-visible, a:focus-visible {
   min-height: 460px;
   grid-template-columns: 1.05fr .95fr;
   margin-bottom: 115px;
-  background: #eaf0e9;
+  background: #e8f4f2;
 }
 .amenity-photo {
   min-height: 460px;
@@ -434,21 +350,8 @@ button:focus-visible, a:focus-visible {
 .amenity-copy > p {
   max-width: 400px;
   color: #607571;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 2;
-}
-.amenity-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-.amenity-tags span {
-  padding: 8px 10px;
-  border: 1px solid #b4c6bd;
-  color: #496e65;
-  font: 500 8px var(--sans);
-  letter-spacing: 1px;
 }
 /* ข้อมูลก่อนเข้าพัก */
 .stay-notes {
@@ -484,7 +387,7 @@ button:focus-visible, a:focus-visible {
 .booking {
   padding: 77px 7%;
   color: white;
-  background: var(--deep);
+  background: linear-gradient(115deg, #0b3d57, #126c78);
 }
 .booking-inner {
   display: grid;
@@ -493,9 +396,6 @@ button:focus-visible, a:focus-visible {
   align-items: center;
   gap: 22px;
   margin: auto;
-}
-.booking .intro-kicker {
-  color: #abc9b8;
 }
 .booking h2 {
   margin: 17px 0;
@@ -506,11 +406,6 @@ button:focus-visible, a:focus-visible {
   color: #d1dfdb;
   font-size: 11px;
   line-height: 1.9;
-}
-.booking-inner > div > .rate-note {
-  margin-top: 14px;
-  color: #e9c9a6;
-  font-size: 10px;
 }
 .contact-card {
   position: relative;
@@ -531,19 +426,16 @@ button:focus-visible, a:focus-visible {
   font: 500 10px var(--sans);
   letter-spacing: 1.2px;
 }
+.contact-card[href^="tel:"] small {
+  font-family: var(--thai);
+}
 .contact-card strong {
   margin: 14px 0 6px;
   font: 500 18px var(--sans);
 }
 .contact-card > span:last-child {
   color: #d4e2dd;
-  font-size: 10px;
-}
-.contact-icon {
-  position: absolute;
-  top: 15px;
-  right: 18px;
-  font-size: 17px;
+  font-size: 13px;
 }
 footer {
   display: flex;
@@ -574,22 +466,6 @@ footer > span {
   margin-bottom: 32px;
   padding-bottom: 22px;
   border-bottom-color: #d2e1dc;
-}
-
-.location-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #548982;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-}
-
-.location-kicker::before {
-  width: 28px;
-  height: 1px;
-  background: #75aaa0;
-  content: "";
 }
 
 .location .section-heading h2 {
@@ -686,18 +562,6 @@ footer > span {
   line-height: 2;
 }
 
-.location-coordinates {
-  display: inline-flex;
-  margin: 18px 0 24px;
-  padding: 9px 12px;
-  border: 1px solid #ffffff20;
-  border-radius: 4px;
-  color: #d1e6e3;
-  background: #ffffff0c;
-  font: 11px var(--sans);
-  letter-spacing: .2px;
-}
-
 .location-directions {
   display: inline-flex;
   align-items: center;
@@ -792,253 +656,216 @@ footer > span {
   }
 }
 
-/* หน้าต่างภาพประกาศแบบขยาย */
-.modal {
-  position: fixed;
-  z-index: 20;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  background: #102628ed;
-}
-.modal.open {
-  display: flex;
-}
-.modal img {
-  display: block;
-  max-width: min(90vw, 600px);
-  max-height: 90vh;
-  object-fit: contain;
-  box-shadow: 0 20px 70px #0006;
-}
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 32px;
-  cursor: pointer;
-  border: 0;
-  color: #fff;
-  background: none;
-  font-size: 36px;
-}
-.modal-hint {
-  position: absolute;
-  bottom: 15px;
-  color: #d0dfda;
-  font-size: 10px;
-}
 /* ปรับเลย์เอาต์สำหรับแท็บเล็ต */
 @media (max-width: 900px) {
-  /* แถบเมนูและโลโก้ */
-}
-.topbar {
-  padding: 0 5%;
-}
-.nav-links {
-  gap: 20px;
-}
-.hero-content {
-  left: 8%;
-}
-/* กรอบและระยะห่างเนื้อหา */
-.section-wrap {
-  padding-right: 5%;
-  padding-left: 5%;
-}
-.villa-grid {
-  gap: 12px;
-}
-.villa-image {
-  height: 225px;
-}
-.villa-info {
-  padding: 17px 14px;
-}
-.villa-specs {
-  gap: 6px;
-  font-size: 9px;
-}
-.villa-price strong {
-  font-size: 22px;
-}
+  .topbar {
+    padding: 0 5%;
+  }
 
-/* ส่วนสิ่งอำนวยความสะดวก */
-.amenities {
-  margin-right: 5%;
-  margin-left: 5%;
-}
-.amenity-copy {
-  padding: 35px 8%;
-}
-.booking-inner {
-  grid-template-columns: 1fr 1fr;
-}
-.booking-inner > div:first-child {
-  grid-column: span 2;
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero-content {
+    left: 8%;
+  }
+
+  .section-wrap {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .villa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .villa-image {
+    height: 225px;
+  }
+
+  .villa-info {
+    padding: 17px 14px;
+  }
+
+  .villa-specs {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .amenities {
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .amenity-copy {
+    padding: 35px 8%;
+  }
+
+  .booking-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .booking-inner > div:first-child {
+    grid-column: span 2;
+  }
 }
 /* ปรับเลย์เอาต์สำหรับมือถือ */
 @media (max-width: 620px) {
   html {
     scroll-padding-top: 68px;
   }
-  /* แถบเมนูและโลโก้ */
-}
-.topbar {
-  height: 68px;
-  padding: 0 6%;
-}
-.nav-links {
-  position: absolute;
-  top: 68px;
-  left: 0;
-  display: none;
-  width: 100%;
-  flex-direction: column;
-  gap: 16px;
-  padding: 18px 6%;
-  background: #173d42f5;
-}
-.nav-links.show {
-  display: flex;
-}
-.menu-toggle {
-  display: block;
-}
-/* ภาพปกและข้อความหน้าแรก */
-.hero {
-  height: 90vh;
-  min-height: 620px;
-}
-.hero-photo {
-  background-position: 57% center;
-}
-.hero-shade {
-  background: linear-gradient(90deg, #102f35bf, #102f3520), linear-gradient(0deg, #102f3580, transparent 65%);
-}
-.hero-content {
-  top: 30%;
-  right: 7%;
-  left: 7%;
-}
-.hero h1 {
-  font-size: 47px;
-}
-.hero-content > p {
-  max-width: 330px;
-  font-size: 12px;
-}
-.hero-note {
-  right: 7%;
-  bottom: 25px;
-  left: 7%;
-  justify-content: flex-end;
-  gap: 8px;
-  font-size: 8px;
-}
-.hero-scroll {
-  display: none;
-}
-.intro {
-  padding-top: 75px;
-  padding-bottom: 75px;
-}
-.intro-row {
-  grid-template-columns: 1fr;
-  gap: 15px;
-  margin-top: 20px;
-}
-.intro-row h2 {
-  font-size: 44px;
-}
-.intro-row p {
-  font-size: 12px;
-}
-/* การ์ดแสดงบ้านพัก */
-.villas {
-  padding-bottom: 75px;
-}
-.section-heading h2 {
-  font-size: 33px;
-}
-.villa-grid {
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-.villa-image {
-  height: 280px;
-}
-.villa-info {
-  padding: 20px;
-}
-.villa-specs {
-  gap: 14px;
-  font-size: 10px;
-}
-.villa-description {
-  font-size: 12px;
-}
-/* ส่วนสิ่งอำนวยความสะดวก */
-.amenities {
-  grid-template-columns: 1fr;
-  margin: 0 5% 75px;
-}
-.amenity-photo {
-  min-height: 200px;
-}
-.amenity-copy {
-  padding: 36px 8% 42px;
-}
-.amenity-copy h2 {
-  font-size: 43px;
-}
-.notes-grid {
-  grid-template-columns: 1fr;
-  gap: 22px;
-}
-/* ข้อมูลก่อนเข้าพัก */
-.stay-notes {
-  padding-bottom: 75px;
-}
-/* ช่องทางติดต่อและท้ายเว็บ */
-.booking {
-  padding: 55px 7%;
-}
-.booking-inner {
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.booking-inner > div:first-child {
-  grid-column: span 2;
-}
-.booking h2 {
-  font-size: 40px;
-}
-.contact-card {
-  min-height: 145px;
-  padding: 15px;
-}
-.contact-card strong {
-  font-size: 15px;
-}
-footer {
-  min-height: 100px;
-  height: auto;
-  flex-wrap: wrap;
-  gap: 13px;
-  padding: 22px 6%;
-}
-footer > span:nth-child(2) {
-  display: none;
-}
-/* หน้าต่างภาพประกาศแบบขยาย */
-.modal {
-  padding: 18px;
-}
-.modal img {
-  max-width: 96vw;
-  max-height: 88vh;
+  .topbar {
+    height: 68px;
+    padding: 0 6%;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 6%;
+    background: #173d42f5;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    height: 90vh;
+    min-height: 620px;
+  }
+
+  .hero-photo {
+    background-position: 57% center;
+  }
+
+  .hero-shade {
+    background: linear-gradient(90deg, #102f35bf, #102f3520), linear-gradient(0deg, #102f3580, transparent 65%);
+  }
+
+  .hero-content {
+    top: 30%;
+    right: 7%;
+    left: 7%;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+  }
+
+  .hero-content > p {
+    max-width: 330px;
+    font-size: 12px;
+  }
+
+  .intro {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .villas {
+    padding-bottom: 75px;
+  }
+
+  .section-heading h2 {
+    font-size: 33px;
+  }
+
+  .villa-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .villa-image {
+    height: 280px;
+  }
+
+  .villa-info {
+    padding: 20px;
+  }
+
+  .villa-specs {
+    gap: 14px;
+    font-size: 10px;
+  }
+
+  .villa-description {
+    font-size: 12px;
+  }
+
+  .amenities {
+    grid-template-columns: 1fr;
+    margin: 0 5% 75px;
+  }
+
+  .amenity-photo {
+    min-height: 200px;
+  }
+
+  .amenity-copy {
+    padding: 36px 8% 42px;
+  }
+
+  .amenity-copy h2 {
+    font-size: 43px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .stay-notes {
+    padding-bottom: 75px;
+  }
+
+  .booking {
+    padding: 55px 7%;
+  }
+
+  .booking-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .booking-inner > div:first-child {
+    grid-column: span 2;
+  }
+
+  .booking h2 {
+    font-size: 40px;
+  }
+
+  .contact-card {
+    min-height: 145px;
+    padding: 15px;
+  }
+
+  .contact-card strong {
+    font-size: 15px;
+  }
+
+  footer {
+    min-height: 100px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding: 22px 6%;
+  }
+
+  footer > span:nth-child(2) {
+    display: none;
+  }
 }
 /* ขนาดโลโก้และการจัดข้อความหน้าแรกให้อยู่กึ่งกลาง */
 .brand-logo{
@@ -1046,9 +873,6 @@ footer > span:nth-child(2) {
   width:78px;
   height:auto;
   filter:brightness(0) invert(1)
-}
-@media(max-width:620px){
-  /* ขนาดโลโก้และการจัดข้อความหน้าแรกให้อยู่กึ่งกลาง */
 }
 .brand-logo{
   width:66px
@@ -1071,29 +895,6 @@ footer > span:nth-child(2) {
     right:auto;
     left:50%;
     width:88%
-  }
-}
-/* จัดหัวข้อโปรโมทและคำอธิบายให้อยู่กึ่งกลาง โดยใช้ตัวปกติ */
-.hero-content .hero-lead{
-  max-width:760px;
-  margin:0 auto 2px;
-  font-size:18px;
-  font-weight:400;
-  line-height:1.5
-}
-.hero-content .hero-description{
-  max-width:760px;
-  margin:0 auto;
-  font-size:14px;
-  font-weight:300;
-  line-height:1.9
-}
-@media(max-width:620px){
-  .hero-content .hero-lead{
-    font-size:16px
-  }
-  .hero-content .hero-description{
-    font-size:12px
   }
 }
 /* จัดหัวข้อและคำโปรโมทให้อยู่กึ่งกลางและชิดกัน */
@@ -1153,9 +954,6 @@ footer > span:nth-child(2) {
   transform:none;
   text-align:left
 }
-.hero-content .eyebrow{
-  display:none
-}
 .hero h1{
   margin:0 0 10px
 }
@@ -1196,7 +994,7 @@ footer > span:nth-child(2) {
   background:url("assets/facilities-cover.jpg") center 56%/cover no-repeat
 }
 .facilities-shade{
-  background:linear-gradient(90deg,#10353bbd,#10353b45),linear-gradient(0deg,#10353b50,transparent 65%)
+  background:linear-gradient(90deg,#082f49c9,#0b465a48),linear-gradient(0deg,#0a3a5070,transparent 65%)
 }
 .facilities-hero-copy{
   position:relative;
@@ -1204,11 +1002,6 @@ footer > span:nth-child(2) {
   max-width:760px;
   padding:130px 24px 45px;
   text-align:center
-}
-.facilities-kicker{
-  color:#c2ded3;
-  font:500 10px var(--sans);
-  letter-spacing:2px
 }
 .facilities-hero h1{
   margin:15px 0;
@@ -1320,9 +1113,6 @@ footer > span:nth-child(2) {
 }
 .complimentary-icon{
   font-size:40px
-}
-.complimentary-card .facilities-kicker{
-  color:#c2e3d6
 }
 .complimentary-card h2{
   margin:6px 0;
@@ -1470,7 +1260,7 @@ footer > span:nth-child(2) {
   right:0;
   left:0;
   height:3px;
-  background:linear-gradient(90deg,#3c9692,#b6d7c9);
+  background:linear-gradient(90deg,#10a6b5,#8fd6d0,#f1e4cc);
   content:""
 }
 .facility-card:hover{
@@ -1552,10 +1342,7 @@ footer > span:nth-child(2) {
   }
 }
 /* ธีมทะเล: น้ำเงินเข้ม เทอร์ควอยซ์ และคลื่นขอบแบนเนอร์ */
-.hero-shade{
-  background:linear-gradient(90deg,#082f49df 0%,#0b465a75 44%,#0b465a12 84%),linear-gradient(0deg,#0a3a50a3,transparent 44%)
-}
-.hero-content,.hero-note,.hero-scroll{
+.hero-content{
   z-index:2
 }
 .hero::after{
@@ -1565,12 +1352,8 @@ footer > span:nth-child(2) {
   bottom:-1px;
   left:0;
   height:52px;
-  background:var(--paper);
-  clip-path:polygon(0 58%,14% 72%,30% 58%,46% 78%,62% 57%,79% 72%,100% 52%,100% 100%,0 100%);
+  background:url("assets/home-wave.svg") center bottom / 100% 100% no-repeat;
   content:""
-}
-.facilities-shade{
-  background:linear-gradient(90deg,#082f49c9,#0b465a48),linear-gradient(0deg,#0a3a5070,transparent 65%)
 }
 .facilities-hero::after{
   position:absolute;
@@ -1578,22 +1361,12 @@ footer > span:nth-child(2) {
   right:0;
   bottom:-1px;
   left:0;
-  height:38px;
-  background:var(--paper);
-  clip-path:polygon(0 50%,18% 68%,36% 54%,53% 73%,71% 52%,87% 68%,100% 48%,100% 100%,0 100%);
+  height:52px;
+  background:url("assets/home-wave.svg") center bottom / 100% 100% no-repeat;
   content:""
-}
-.booking{
-  background:linear-gradient(115deg,#0b3d57,#126c78)
-}
-.amenities{
-  background:#e8f4f2
 }
 .facility-card{
   border-color:#dce9e8
-}
-.facility-card::before{
-  background:linear-gradient(90deg,#10a6b5,#8fd6d0,#f1e4cc)
 }
 .complimentary-card{
   background:linear-gradient(115deg,#0b5264,#138b91)
@@ -1616,54 +1389,10 @@ footer > span:nth-child(2) {
   grid-template-columns:repeat(2,minmax(0,1fr));
   column-gap:24px
 }
-.pool-gallery{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:10px;
-  margin:18px 0 12px
-}
-.pool-gallery-item{
-  position:relative;
-  overflow:hidden;
-  aspect-ratio:1.55;
-  margin:0;
-  background:#d9e9e8
-}
-.pool-gallery-item img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .35s
-}
-.pool-gallery-item:hover img{
-  transform:scale(1.04)
-}
-.pool-gallery-item figcaption{
-  position:absolute;
-  right:0;
-  bottom:0;
-  left:0;
-  padding:20px 10px 8px;
-  color:#fff;
-  background:linear-gradient(transparent,#092f45c9);
-  font-size:10px;
-  line-height:1.4
-}
 @media(max-width:620px){
   .facility-card#pool-activities .facility-list{
     grid-template-columns:1fr;
     column-gap:0
-  }
-  .pool-gallery{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px
-  }
-  .pool-gallery-item{
-    aspect-ratio:1.35
-  }
-  .pool-gallery-item figcaption{
-    font-size:9px
   }
 }
 /* สไลด์ภาพเดียวสำหรับมือถือและจอคอม */
@@ -1827,11 +1556,6 @@ footer > span:nth-child(2) {
 .stay-heading{
   margin-bottom:28px
 }
-.stay-kicker{
-  color:#668e8d;
-  font:500 10px var(--sans);
-  letter-spacing:1.8px
-}
 .stay-heading h2{
   margin:8px 0 0;
   color:var(--deep);
@@ -1866,17 +1590,6 @@ footer > span:nth-child(2) {
   .notes-grid p{
     font-size:13px
   }
-}
-
-/* สรุปแพ็กเกจเช่าเหมาทั้งโครงการ */
-.rental-kicker {
-  color: var(--deep-soft);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-}
-
-.amenity-copy .rental-kicker + h2 {
-  margin: 12px 0 16px;
 }
 
 .rental-summary {
@@ -1967,6 +1680,7 @@ footer > span:nth-child(2) {
 
 @media (max-width: 900px) {
   .villa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
@@ -2485,17 +2199,6 @@ footer > span:nth-child(2) {
   background: #fff;
 }
 
-.dropdown-chevron {
-  display: inline-block;
-  font-size: 15px;
-  line-height: 1;
-  transition: transform .2s;
-}
-
-.nav-dropdown-toggle[aria-expanded="true"] .dropdown-chevron {
-  transform: rotate(180deg);
-}
-
 .nav-dropdown-menu {
   position: absolute;
   z-index: 10;
@@ -2580,37 +2283,6 @@ footer > span:nth-child(2) {
   font-size: 16px;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 22px;
-  margin-top: 28px;
-}
-
-.hero-actions .button-light {
-  min-height: 48px;
-  padding: 13px 20px;
-  box-shadow: 0 9px 26px #061f2b35;
-}
-
-.hero-contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid #ffffffa0;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 400;
-  transition: gap .2s, border-color .2s;
-}
-
-.hero-contact-link:hover {
-  gap: 17px;
-  border-color: #fff;
-}
-
 /* บทนำให้เป็นแถบพักสายตาระหว่างภาพปกและบ้านพัก */
 .intro.promo-section {
   position: relative;
@@ -2651,15 +2323,6 @@ footer > span:nth-child(2) {
   margin: auto;
 }
 
-.promo-kicker,
-.section-kicker {
-  display: inline-block;
-  color: #548982;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1.4px;
-}
-
 .promo-title {
   margin: 11px 0 12px;
   font-size: clamp(28px, 3vw, 39px);
@@ -2692,22 +2355,6 @@ footer > span:nth-child(2) {
   line-height: 1.8;
 }
 
-.villa-count {
-  display: flex;
-  align-items: baseline;
-  gap: 9px;
-  padding-bottom: 3px;
-  color: var(--deep);
-  font: 500 24px var(--sans);
-}
-
-.villa-count i {
-  color: #77918c;
-  font: 500 9px var(--sans);
-  letter-spacing: 1.2px;
-  font-style: normal;
-}
-
 .villa-card {
   border: 1px solid #e8efeb;
   border-radius: 6px;
@@ -2722,11 +2369,7 @@ footer > span:nth-child(2) {
 
 .villa-image {
   background-size: 100% 100%, cover;
-  transition: background-size .55s ease, filter .25s;
-}
-
-.villa-image:hover {
-  background-size: 100% 100%, 110% 110%;
+  transition: filter .25s;
 }
 
 .image-label {
@@ -2805,14 +2448,6 @@ footer > span:nth-child(2) {
 
 .amenities.section-wrap .amenity-copy {
   background: linear-gradient(145deg, #f1f6f2, #e6efea);
-}
-
-.rental-kicker {
-  display: inline-block;
-  color: #548982;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
 }
 
 .amenity-copy h2 {
@@ -2899,7 +2534,7 @@ footer > span:nth-child(2) {
 
 .stay-notes .notes-grid p {
   color: #657d79;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* ช่องทางสอบถามและจอง */
@@ -2934,9 +2569,6 @@ footer > span:nth-child(2) {
 }
 
 @media (max-width: 620px) {
-  .hero-actions {
-    gap: 15px;
-  }
 
   .hero-content > p {
     font-size: 14px;
@@ -2961,15 +2593,6 @@ footer > span:nth-child(2) {
   .section-lead {
     max-width: 280px;
     font-size: 12px;
-  }
-
-  .villa-count {
-    gap: 5px;
-    font-size: 19px;
-  }
-
-  .villa-count i {
-    font-size: 8px;
   }
 
   .villa-card:hover {

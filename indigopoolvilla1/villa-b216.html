@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Anuphan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=40">
   <link rel="stylesheet" href="villa-a215.css?v=4">
   <link rel="stylesheet" href="villa-b216.css?v=1">
 </head>
@@ -19,9 +19,17 @@
     <a class="brand" href="index.html#home" aria-label="Indigo Pool Villa home">
       <img class="brand-logo" src="assets/indigo-logo.png" alt="Indigo Beachfront Pool Villa">
     </a>
-    <nav class="nav-links">
-      <a href="index.html#villas" data-th="บ้านพัก" data-en="Villas">บ้านพัก</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <div class="nav-dropdown" id="villaDropdownRoot">
+        <button class="nav-dropdown-toggle" id="villaMenuToggle" type="button" aria-expanded="false" aria-controls="villaDropdown"><span data-th="บ้านพัก A-C" data-en="Villas A-C">บ้านพัก A-C</span></button>
+        <div class="nav-dropdown-menu" id="villaDropdown" hidden>
+          <a href="villa-a215.html" data-th="บ้านพัก A-215" data-en="Villa A-215">บ้านพัก A-215</a>
+          <a href="villa-b216.html" data-th="บ้านพัก B-216" data-en="Villa B-216">บ้านพัก B-216</a>
+          <a href="villa-c217.html" data-th="บ้านพัก C-217" data-en="Villa C-217">บ้านพัก C-217</a>
+        </div>
+      </div>
       <a href="amenities.html" data-th="สิ่งอำนวยความสะดวก" data-en="Amenities">สิ่งอำนวยความสะดวก</a>
+      <a href="index.html#location" data-th="ที่ตั้ง" data-en="Location">ที่ตั้ง</a>
       <a href="index.html#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a>
     </nav>
     <div class="nav-actions">
@@ -57,25 +65,25 @@
         <div><h2 data-th="ภาพบ้านพัก B-216" data-en="Villa B-216 gallery">ภาพบ้านพัก B-216</h2></div>
       </div>
       <div class="a215-photo-grid">
-        <figure class="a215-photo a215-photo-feature"><img src="assets/b216-01.png" alt="ด้านหน้าบ้านพัก B-216" loading="eager"><figcaption data-th="บ้านพัก B-216" data-en="Villa B-216">บ้านพัก B-216</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-02.png" alt="ห้องนอนพร้อมอ่างอาบน้ำและฝักบัว" loading="lazy"><figcaption data-th="ห้องนอนพร้อมอ่างอาบน้ำ" data-en="Bedroom with bathtub">ห้องนอนพร้อมอ่างอาบน้ำ</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-03.png" alt="สระว่ายน้ำส่วนตัวริมทะเล" loading="lazy"><figcaption data-th="สระว่ายน้ำส่วนตัว" data-en="Private swimming pool">สระว่ายน้ำส่วนตัว</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-04.png" alt="ห้องนั่งเล่นพร้อมโซฟาและโต๊ะกลาง" loading="lazy"><figcaption data-th="ห้องนั่งเล่น" data-en="Living room">ห้องนั่งเล่น</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-05.png" alt="ห้องน้ำพร้อมเรนชาวเวอร์" loading="lazy"><figcaption data-th="ห้องน้ำพร้อมเรนชาวเวอร์" data-en="Bathroom with rain shower">ห้องน้ำพร้อมเรนชาวเวอร์</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-06.png" alt="สระว่ายน้ำและสนามหญ้าริมทะเล" loading="lazy"><figcaption data-th="สระและสนามหญ้าริมทะเล" data-en="Pool and seaside lawn">สระและสนามหญ้าริมทะเล</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-07.png" alt="ห้องนั่งเล่นและพื้นที่ครัว" loading="lazy"><figcaption data-th="พื้นที่นั่งเล่นและครัว" data-en="Living and kitchen area">พื้นที่นั่งเล่นและครัว</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-08.png" alt="ห้องพักมองเห็นสระและทะเล" loading="lazy"><figcaption data-th="ห้องพักวิวทะเล" data-en="Sea-view bedroom">ห้องพักวิวทะเล</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-09.png" alt="มุมรับประทานอาหารในบ้านพัก" loading="lazy"><figcaption data-th="มุมรับประทานอาหาร" data-en="Dining area">มุมรับประทานอาหาร</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-10.png" alt="อ่างอาบน้ำกลางแจ้งและฝักบัว" loading="lazy"><figcaption data-th="มุมอ่างอาบน้ำ" data-en="Outdoor bathtub">มุมอ่างอาบน้ำ</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-11.png" alt="ซุ้มนั่งเล่นริมสระและทะเล" loading="lazy"><figcaption data-th="ซุ้มพักผ่อนริมสระ" data-en="Poolside pavilion">ซุ้มพักผ่อนริมสระ</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-12.png" alt="พื้นที่พักผ่อนพร้อมเก้าอี้อาบแดด" loading="lazy"><figcaption data-th="พื้นที่พักผ่อนริมสระ" data-en="Poolside relaxation area">พื้นที่พักผ่อนริมสระ</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-13.png" alt="ห้องนอนพร้อมเตียงและพื้นที่เก็บของ" loading="lazy"><figcaption data-th="ห้องนอนพักผ่อนสบาย" data-en="Comfortable bedroom">ห้องนอนพักผ่อนสบาย</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-14.png" alt="สระส่วนตัวและซุ้มริมทะเล" loading="lazy"><figcaption data-th="สระส่วนตัวและซุ้มริมทะเล" data-en="Private pool and seaside pavilion">สระส่วนตัวและซุ้มริมทะเล</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-15.png" alt="ครัวและตู้เย็นภายในบ้านพัก" loading="lazy"><figcaption data-th="ครัวพร้อมตู้เย็น" data-en="Kitchen with refrigerator">ครัวพร้อมตู้เย็น</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-16.png" alt="สระว่ายน้ำพร้อมห่วงยางแฟนซี" loading="lazy"><figcaption data-th="สระว่ายน้ำและห่วงยาง" data-en="Pool and floats">สระว่ายน้ำและห่วงยาง</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-17.png" alt="ห้องนอนพร้อมประตูกระจก" loading="lazy"><figcaption data-th="ห้องนอนพร้อมวิวสวน" data-en="Bedroom overlooking the garden">ห้องนอนพร้อมวิวสวน</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-18.png" alt="บ้านพัก B-216 และพื้นที่จอดรถ" loading="lazy"><figcaption data-th="ทางเข้าบ้านพัก B-216" data-en="Entrance to Villa B-216">ทางเข้าบ้านพัก B-216</figcaption></figure>
-        <figure class="a215-photo"><img src="assets/b216-19.png" alt="ซุ้มนั่งเล่นและสระว่ายน้ำติดทะเล" loading="lazy"><figcaption data-th="บรรยากาศริมสระติดทะเล" data-en="Seaside pool atmosphere">บรรยากาศริมสระติดทะเล</figcaption></figure>
+        <figure class="a215-photo a215-photo-feature"><img src="assets/b216-01.jpg" alt="ด้านหน้าบ้านพัก B-216" loading="eager"><figcaption data-th="บ้านพัก B-216" data-en="Villa B-216">บ้านพัก B-216</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-02.jpg" alt="ห้องนอนพร้อมอ่างอาบน้ำและฝักบัว" loading="lazy"><figcaption data-th="ห้องนอนพร้อมอ่างอาบน้ำ" data-en="Bedroom with bathtub">ห้องนอนพร้อมอ่างอาบน้ำ</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-03.jpg" alt="สระว่ายน้ำส่วนตัวริมทะเล" loading="lazy"><figcaption data-th="สระว่ายน้ำส่วนตัว" data-en="Private swimming pool">สระว่ายน้ำส่วนตัว</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-04.jpg" alt="ห้องนั่งเล่นพร้อมโซฟาและโต๊ะกลาง" loading="lazy"><figcaption data-th="ห้องนั่งเล่น" data-en="Living room">ห้องนั่งเล่น</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-05.jpg" alt="ห้องน้ำพร้อมเรนชาวเวอร์" loading="lazy"><figcaption data-th="ห้องน้ำพร้อมเรนชาวเวอร์" data-en="Bathroom with rain shower">ห้องน้ำพร้อมเรนชาวเวอร์</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-06.jpg" alt="สระว่ายน้ำและสนามหญ้าริมทะเล" loading="lazy"><figcaption data-th="สระและสนามหญ้าริมทะเล" data-en="Pool and seaside lawn">สระและสนามหญ้าริมทะเล</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-07.jpg" alt="ห้องนั่งเล่นและพื้นที่ครัว" loading="lazy"><figcaption data-th="พื้นที่นั่งเล่นและครัว" data-en="Living and kitchen area">พื้นที่นั่งเล่นและครัว</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-08.jpg" alt="ห้องพักมองเห็นสระและทะเล" loading="lazy"><figcaption data-th="ห้องพักวิวทะเล" data-en="Sea-view bedroom">ห้องพักวิวทะเล</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-09.jpg" alt="มุมรับประทานอาหารในบ้านพัก" loading="lazy"><figcaption data-th="มุมรับประทานอาหาร" data-en="Dining area">มุมรับประทานอาหาร</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-10.jpg" alt="อ่างอาบน้ำกลางแจ้งและฝักบัว" loading="lazy"><figcaption data-th="มุมอ่างอาบน้ำ" data-en="Outdoor bathtub">มุมอ่างอาบน้ำ</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-11.jpg" alt="ซุ้มนั่งเล่นริมสระและทะเล" loading="lazy"><figcaption data-th="ซุ้มพักผ่อนริมสระ" data-en="Poolside pavilion">ซุ้มพักผ่อนริมสระ</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-12.jpg" alt="พื้นที่พักผ่อนพร้อมเก้าอี้อาบแดด" loading="lazy"><figcaption data-th="พื้นที่พักผ่อนริมสระ" data-en="Poolside relaxation area">พื้นที่พักผ่อนริมสระ</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-13.jpg" alt="ห้องนอนพร้อมเตียงและพื้นที่เก็บของ" loading="lazy"><figcaption data-th="ห้องนอนพักผ่อนสบาย" data-en="Comfortable bedroom">ห้องนอนพักผ่อนสบาย</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-14.jpg" alt="สระส่วนตัวและซุ้มริมทะเล" loading="lazy"><figcaption data-th="สระส่วนตัวและซุ้มริมทะเล" data-en="Private pool and seaside pavilion">สระส่วนตัวและซุ้มริมทะเล</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-15.jpg" alt="ครัวและตู้เย็นภายในบ้านพัก" loading="lazy"><figcaption data-th="ครัวพร้อมตู้เย็น" data-en="Kitchen with refrigerator">ครัวพร้อมตู้เย็น</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-16.jpg" alt="สระว่ายน้ำพร้อมห่วงยางแฟนซี" loading="lazy"><figcaption data-th="สระว่ายน้ำและห่วงยาง" data-en="Pool and floats">สระว่ายน้ำและห่วงยาง</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-17.jpg" alt="ห้องนอนพร้อมประตูกระจก" loading="lazy"><figcaption data-th="ห้องนอนพร้อมวิวสวน" data-en="Bedroom overlooking the garden">ห้องนอนพร้อมวิวสวน</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-18.jpg" alt="บ้านพัก B-216 และพื้นที่จอดรถ" loading="lazy"><figcaption data-th="ทางเข้าบ้านพัก B-216" data-en="Entrance to Villa B-216">ทางเข้าบ้านพัก B-216</figcaption></figure>
+        <figure class="a215-photo"><img src="assets/b216-19.jpg" alt="ซุ้มนั่งเล่นและสระว่ายน้ำติดทะเล" loading="lazy"><figcaption data-th="บรรยากาศริมสระติดทะเล" data-en="Seaside pool atmosphere">บรรยากาศริมสระติดทะเล</figcaption></figure>
       </div>
     </section>
 

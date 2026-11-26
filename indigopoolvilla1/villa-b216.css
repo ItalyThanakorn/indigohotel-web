@@ -1,4 +1,4 @@
-/* ภาพหลักของหน้ารายละเอียดบ้าน B-216 */
+/* รูปพื้นหลังเฉพาะของหน้า B-216 */
 .a215-hero {
-  background-image: linear-gradient(90deg, #0b344ed9 0%, #0b344e80 48%, #0b344e05 100%), linear-gradient(0deg, #0b344e70, transparent 60%), url("assets/b216-01.png");
+  background-image: url("assets/b216-01.jpg");
 }

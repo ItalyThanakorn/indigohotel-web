@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Anuphan:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     >
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
   <!-- ไอคอนเส้น SVG สำหรับรายการสิ่งอำนวยความสะดวก -->
@@ -46,9 +46,19 @@
   <!-- ส่วนหัวเว็บไซต์ ใช้เมนูและปุ่มภาษาแบบเดียวกับหน้าแรก -->
   <header class="topbar">
     <a class="brand" href="index.html#home" aria-label="Indigo Pool Villa home"><img class="brand-logo" src="assets/indigo-logo.png" alt="Indigo Beachfront Pool Villa"></a>
-    <nav class="nav-links">
-      <a href="index.html#villas" data-th="บ้านพัก" data-en="Villas">บ้านพัก</a>
-      <a href="amenities.html" aria-current="page" data-th="สิ่งอำนวยความสะดวก" data-en="Amenities">สิ่งอำนวยความสะดวก</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <div class="nav-dropdown" id="villaDropdownRoot">
+        <button class="nav-dropdown-toggle" id="villaMenuToggle" type="button" aria-expanded="false" aria-controls="villaDropdown">
+          <span data-th="บ้านพัก A-C" data-en="Villas A-C">บ้านพัก A-C</span>
+        </button>
+        <div class="nav-dropdown-menu" id="villaDropdown" hidden>
+          <a href="villa-a215.html" data-th="บ้านพัก A-215" data-en="Villa A-215">บ้านพัก A-215</a>
+          <a href="villa-b216.html" data-th="บ้านพัก B-216" data-en="Villa B-216">บ้านพัก B-216</a>
+          <a href="villa-c217.html" data-th="บ้านพัก C-217" data-en="Villa C-217">บ้านพัก C-217</a>
+        </div>
+      </div>
+      <a href="amenities.html" aria-current="page" data-th="สิ่งอำนวยความสะดวก" data-en="สิ่งอำนวยความสะดวก">สิ่งอำนวยความสะดวก</a>
+      <a href="index.html#location" data-th="ที่ตั้ง" data-en="Location">ที่ตั้ง</a>
       <a href="index.html#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a>
     </nav>
     <div class="nav-actions">
