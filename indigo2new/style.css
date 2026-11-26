@@ -7,7 +7,7 @@
     --paper: #fffdfa;
     --ink: #1b2b35;
     --muted: #6b7477;
-    --serif: "Playfair Display", Georgia, serif;
+    --serif: "Playfair Display",
     --sans: "DM Sans", "Prompt", sans-serif;
 }
 
@@ -69,24 +69,35 @@ img {
 }
 
 .brand {
+    display: block;
+    flex: 0 0 auto;
+    width: 132px;
+}
+
+.brand img {
+    height: auto;
+    width: 100%;
+}
+
+.site-header .brand {
     display: inline-flex;
     flex-direction: column;
     line-height: 1;
     min-width: 154px;
 }
 
-.brand-name {
+.site-header .brand-name {
     font-family: var(--serif);
     font-size: 28px;
     letter-spacing: 1.8px;
     white-space: nowrap;
 }
 
-.brand-name > span {
+.site-header .brand-name > span {
     color: var(--gold);
 }
 
-.brand-caption {
+.site-header .brand-caption {
     font-size: 8px;
     letter-spacing: 3.2px;
     margin: 5px 0 0 4px;
@@ -175,9 +186,10 @@ img {
     padding: 0 17px;
 }
 
-.calendar-icon {
-    font-size: 17px;
-    line-height: 1;
+.nav-booking svg {
+    flex: 0 0 auto;
+    height: 15px;
+    width: 15px;
 }
 
 .menu-toggle {
@@ -226,12 +238,17 @@ img {
 
 .eyebrow {
     color: var(--gold);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 2.2px;
     line-height: 1.7;
     margin: 0 0 11px;
     text-transform: uppercase;
+}
+
+.facilities .eyebrow,
+.contact .eyebrow {
+    font-size: 16px;
 }
 
 .hero .eyebrow::after {
@@ -254,6 +271,11 @@ img {
 
 .hero h1 > span {
     display: block;
+}
+
+.hero h1 > span + span {
+    font-size: .68em;
+    white-space: nowrap;
 }
 
 .hero h1 em {
@@ -486,7 +508,7 @@ img {
 
 .about-description {
     color: #515d63;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.8;
     margin: 0 0 15px;
 }
@@ -508,7 +530,7 @@ img {
 .highlight {
     align-items: center;
     display: flex;
-    font-size: 11px;
+    font-size: 16px;
     gap: 13px;
     line-height: 1.6;
 }
@@ -684,7 +706,7 @@ img {
 
 .facilities-copy > p:not(.eyebrow) {
     color: rgba(255, 255, 255, .7);
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.8;
     margin: 0 0 20px;
     max-width: 400px;
@@ -700,7 +722,7 @@ img {
     align-items: center;
     color: rgba(255, 255, 255, .91);
     display: flex;
-    font-size: 10px;
+    font-size: 16px;
     gap: 9px;
 }
 
@@ -801,7 +823,7 @@ img {
 
 .contact-copy > p:not(.eyebrow) {
     color: rgba(255, 255, 255, .7);
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.7;
     margin: 0 0 17px;
 }
@@ -851,7 +873,7 @@ img {
 .contact-form label {
     color: rgba(255, 255, 255, .83);
     display: grid;
-    font-size: 9px;
+    font-size: 16px;
     gap: 5px;
 }
 
@@ -875,14 +897,14 @@ img {
 
 .contact-form .button {
     border-radius: 3px;
-    font-size: 10px;
+    font-size: 16px;
     min-height: 36px;
     width: 100%;
 }
 
 .form-note {
     color: rgba(255, 255, 255, .55);
-    font-size: 9px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0;
     text-align: center;
@@ -896,16 +918,8 @@ img {
 }
 
 .footer-brand {
-    align-items: center;
-}
-
-.footer-brand .brand-name {
-    font-size: 22px;
-}
-
-.footer-brand .brand-caption {
-    font-size: 7px;
-    margin-left: 0;
+    margin: 0 auto;
+    width: 108px;
 }
 
 .site-footer > p {
@@ -968,7 +982,7 @@ img {
     }
 
     .highlight {
-        font-size: 9px;
+        font-size: 16px;
     }
 
     .contact {
@@ -988,15 +1002,15 @@ img {
         padding: 0 6%;
     }
 
-    .brand {
+    .site-header .brand {
         min-width: 0;
     }
 
-    .brand-name {
+    .site-header .brand-name {
         font-size: 24px;
     }
 
-    .brand-caption {
+    .site-header .brand-caption {
         font-size: 7px;
     }
 
@@ -1141,7 +1155,7 @@ img {
     }
 
     .highlight {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .rooms {
@@ -1284,7 +1298,7 @@ img {
     }
 
     .about-description {
-        font-size: 11px;
+        font-size: 16px;
     }
 
     .about-highlights {
@@ -1292,7 +1306,7 @@ img {
     }
 
     .highlight {
-        font-size: 9px;
+        font-size: 16px;
         gap: 8px;
     }
 
